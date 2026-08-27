@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import MentorshipModal from './MentorshipModal';
 import { 
   Users, 
   Search, 
@@ -18,6 +19,7 @@ export default function AlumniNetwork({ onRequestMentorship }) {
   const [alumniList, setAlumniList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedAlumni, setSelectedAlumni] = useState(null);
 
   // Filters State
   const [search, setSearch] = useState('');
@@ -257,7 +259,13 @@ export default function AlumniNetwork({ onRequestMentorship }) {
                 <div style={{ display: 'flex', gap: '0.5rem', paddingTop: '0.75rem', borderTop: '1px solid var(--border-color)' }}>
                   <button
                     className="btn-primary"
-                    onClick={() => onRequestMentorship(alumni)}
+                    onClick={() => {
+                      if (typeof onRequestMentorship === 'function') {
+                        onRequestMentorship(alumni);
+                      } else {
+                        setSelectedAlumni(alumni);
+                      }
+                    }}
                     style={{ flex: 1, justifyContent: 'center', fontSize: '0.85rem', padding: '0.55rem' }}
                   >
                     <Send size={15} />
@@ -280,6 +288,13 @@ export default function AlumniNetwork({ onRequestMentorship }) {
             );
           })}
         </div>
+      )}
+
+      {selectedAlumni && (
+        <MentorshipModal
+          alumni={selectedAlumni}
+          onClose={() => setSelectedAlumni(null)}
+        />
       )}
     </div>
   );
