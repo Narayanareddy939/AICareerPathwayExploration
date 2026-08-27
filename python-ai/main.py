@@ -347,9 +347,16 @@ Respond in a helpful, structured manner. Use **bold** for important terms. Be sp
 
 
 # ─────────────────────────────────────────────────────
-#  Health Check
-# ─────────────────────────────────────────────────────
-@app.route('/health', methods=['GET'])
+@app.route('/', methods=['GET', 'HEAD'])
+def index():
+    return jsonify({
+        'status': 'online',
+        'service': 'AI Carrier Python Engine',
+        'gemini': 'configured' if gemini_model else 'not configured (using fallback)'
+    })
+
+
+@app.route('/health', methods=['GET', 'HEAD'])
 def health():
     return jsonify({
         'status': 'ok',
@@ -362,4 +369,6 @@ def health():
 if __name__ == '__main__':
     print(f"🐍 Python AI Engine starting on http://localhost:{PORT}")
     print(f"   Gemini: {'✅ Active' if gemini_model else '⚠️  Not configured'}")
-    app.run(host='0.0.0.0', port=PORT, debug=True)
+    is_dev = os.getenv('FLASK_ENV') == 'development'
+    app.run(host='0.0.0.0', port=PORT, debug=is_dev)
+
