@@ -48,12 +48,8 @@ CERTIFICATIONS
     setLoading(true);
 
     try {
-      const res = await fetch('/api/analyze-resume', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ resumeText, targetRole })
-      });
-      const data = await res.json();
+      const res = await axios.post('/api/analyze-resume', { resumeText, targetRole });
+      const data = res.data;
       if (data.success) {
         setAnalysis(data);
       }

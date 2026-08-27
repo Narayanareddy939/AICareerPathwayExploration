@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { 
   MessageSquareCode, 
   Send, 
@@ -37,15 +38,11 @@ export default function ChatbotWidget({ activeStudent }) {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: textToSend,
-          studentContext: activeStudent || {}
-        })
+      const res = await axios.post('/api/chat', {
+        message: textToSend,
+        studentContext: activeStudent || {}
       });
-      const data = await res.json();
+      const data = res.data;
 
       if (data.success) {
         setMessages(prev => [...prev, {

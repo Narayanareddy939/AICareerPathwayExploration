@@ -19,11 +19,10 @@ export default function Dashboard({ setActiveTab }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/analytics')
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          setAnalytics(data);
+    axios.get('/api/analytics')
+      .then(res => {
+        if (res.data && res.data.success) {
+          setAnalytics(res.data);
         }
         setLoading(false);
       })

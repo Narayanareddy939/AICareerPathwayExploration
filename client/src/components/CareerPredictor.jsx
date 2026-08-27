@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { 
   Sparkles, 
   Target, 
@@ -18,10 +19,10 @@ import confetti from 'canvas-confetti';
 export default function CareerPredictor({ activeStudent, studentList, onRequestMentorship }) {
   const [formData, setFormData] = useState({
     name: activeStudent?.name || 'Ananya Sharma',
-    branch: activeStudent?.branch || 'Computer Science & Engineering',
-    cgpa: activeStudent?.cgpa || 8.7,
-    targetRole: activeStudent?.careerGoal || 'Data Scientist',
-    skills: activeStudent?.skills ? activeStudent.skills.join(', ') : 'Python, Machine Learning, SQL, TensorFlow',
+    branch: activeStudent?.branch || 'Computer Science Engineering (CSE)',
+    cgpa: activeStudent?.cgpa || '8.7',
+    targetRole: activeStudent?.targetRole || 'Full Stack Engineer',
+    skills: activeStudent?.skills ? activeStudent.skills.join(', ') : 'React, Node.js, JavaScript, Python, SQL, Git',
     certifications: activeStudent?.certifications ? activeStudent.certifications.join(', ') : 'Google Data Analytics'
   });
 
@@ -61,20 +62,12 @@ export default function CareerPredictor({ activeStudent, studentList, onRequestM
 
     try {
       // 1. Fetch AI Recommendation
-      const resRec = await fetch('/api/recommend', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      const dataRec = await resRec.json();
+      const resRec = await axios.post('/api/recommend', payload);
+      const dataRec = resRec.data;
 
       // 2. Fetch Personalised Roadmap
-      const resRoadmap = await fetch('/api/roadmap', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ targetRole: formData.targetRole, currentSkills: skillsArray })
-      });
-      const dataRoadmap = await resRoadmap.json();
+      const resRoadmap = await axios.post('/api/roadmap', { targetRole: formData.targetRole, currentSkills: skillsArray });
+      const dataRoadmap = resRoadmap.data;
 
       if (dataRec.success) {
         setRecommendation(dataRec);

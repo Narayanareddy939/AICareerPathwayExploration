@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { 
   Users, 
   Search, 
@@ -33,11 +34,11 @@ export default function AlumniNetwork({ onRequestMentorship }) {
   const fetchAlumni = async () => {
     try {
       setLoading(true);
-      const res = await fetch('/api/alumni');
-      const data = await res.json();
+      const res = await axios.get('/api/alumni');
+      const data = res.data;
       if (data.success) {
-        setAlumniList(data.data);
-        setFilteredList(data.data);
+        setAlumniList(data.data || []);
+        setFilteredList(data.data || []);
       }
     } catch (err) {
       console.error("Error fetching alumni list:", err);
@@ -45,6 +46,7 @@ export default function AlumniNetwork({ onRequestMentorship }) {
       setLoading(false);
     }
   };
+
 
   // Handle live search & filters
   useEffect(() => {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { X, Send, CheckCircle2, Building2, MapPin, GraduationCap } from 'lucide-react';
 
 export default function MentorshipModal({ alumni, activeStudent, onClose }) {
@@ -13,16 +14,12 @@ export default function MentorshipModal({ alumni, activeStudent, onClose }) {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/mentorship/request', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          alumniId: alumni.alumniId,
-          studentName: activeStudent?.name || 'Student',
-          message
-        })
+      const res = await axios.post('/api/mentorship/request', {
+        alumniId: alumni.alumniId,
+        studentName: activeStudent?.name || 'Student',
+        message
       });
-      const data = await res.json();
+      const data = res.data;
       if (data.success) {
         setSubmitted(true);
       }
