@@ -351,18 +351,20 @@ Respond in a helpful, structured manner. Use **bold** for important terms. Be sp
 # ─────────────────────────────────────────────────────
 @app.route('/', methods=['GET', 'HEAD'])
 def index():
+    is_active = bool(GEMINI_API_KEY and GEMINI_API_KEY != 'your_gemini_api_key_here')
     return jsonify({
         'status': 'online',
         'service': 'AI Carrier Python Engine',
-        'gemini': 'configured' if gemini_model else 'not configured (using fallback)'
+        'gemini': 'configured' if is_active else 'not configured (using fallback)'
     })
 
 
 @app.route('/health', methods=['GET', 'HEAD'])
 def health():
+    is_active = bool(GEMINI_API_KEY and GEMINI_API_KEY != 'your_gemini_api_key_here')
     return jsonify({
         'status': 'ok',
-        'gemini': 'configured' if gemini_model else 'not configured (using fallback)',
+        'gemini': 'configured' if is_active else 'not configured (using fallback)',
         'alumni_records': len(alumni_data),
         'student_records': len(students_data)
     })
@@ -370,7 +372,9 @@ def health():
 
 if __name__ == '__main__':
     print(f"🐍 Python AI Engine starting on http://localhost:{PORT}")
-    print(f"   Gemini: {'✅ Active' if gemini_model else '⚠️  Not configured'}")
+    is_active = bool(GEMINI_API_KEY and GEMINI_API_KEY != 'your_gemini_api_key_here')
+    print(f"   Gemini: {'✅ Active' if is_active else '⚠️  Not configured'}")
     is_dev = os.getenv('FLASK_ENV') == 'development'
     app.run(host='0.0.0.0', port=PORT, debug=is_dev)
+
 
