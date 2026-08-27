@@ -21,22 +21,37 @@ PORT = int(os.getenv('PORT', 8000))
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', '')
 
 # ─────────────────────────────────────────────────────
-#  Gemini AI Setup
+#  Gemini AI REST Client Setup
 # ─────────────────────────────────────────────────────
-gemini_model = None
+import requests
 
 if GEMINI_API_KEY and GEMINI_API_KEY != 'your_gemini_api_key_here':
-    try:
-        import google.generativeai as genai
-        genai.configure(api_key=GEMINI_API_KEY)
-        gemini_model = genai.GenerativeModel('gemini-1.5-flash')
-        print("✅ Gemini AI configured successfully")
-    except ImportError:
-        print("⚠️  google-generativeai not installed. Run: pip install google-generativeai")
-    except Exception as e:
-        print(f"⚠️  Gemini configuration error: {e}")
+    print("✅ Gemini AI REST Client active")
 else:
-    print("⚠️  GEMINI_API_KEY not set. Using local fallback. Set it in python-ai/.env")
+    print("⚠️  GEMINI_API_KEY not set. Using dataset fallback.")
+
+
+def call_gemini_api(prompt: str) -> str:
+    """Call Google Gemini API directly via HTTP REST endpoint."""
+    if not GEMINI_API_KEY or GEMINI_API_KEY == 'your_gemini_api_key_here':
+        return None
+    try:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
+        payload = {"contents": [{"parts": [{"text": prompt}]}]}
+        res = requests.post(url, json=payload, timeout=12)
+        if res.status_code == 200:
+            data = res.json()
+            candidates = data.get('candidates', [])
+            if candidates:
+                parts = candidates[0].get('content', {}).get('parts', [])
+                if parts:
+                    return parts[0].get('text', '')
+        else:
+            print(f"Gemini API returned status {res.status_code}: {res.text[:200]}")
+    except Exception as e:
+        print(f"Gemini API call failed: {e}")
+    return None
+
 
 
 # ─────────────────────────────────────────────────────
@@ -175,10 +190,7 @@ def recommend():
     )
 
     # Generate Gemini summary if available
-    gemini_summary = None
-    if gemini_model:
-        try:
-            prompt = f"""
+    prompt = f"""
 You are an AI career counselor for engineering students in India.
 
 Student Profile:
@@ -193,11 +205,9 @@ Missing Skills: {', '.join(missing_skills[:5])}
 
 Write a 3-sentence personalized career insight summary. Be direct, motivating, and specific.
 """
-            response = gemini_model.generate_content(prompt)
-            gemini_summary = response.text
-        except Exception as e:
-            print(f"Gemini error: {e}")
-            gemini_summary = f"Based on your profile, you have a {match_score}% alignment with {career_goal} roles. Focus on {', '.join(missing_skills[:3])} to boost your match score to 90%+. Connect with alumni at {top5[0].get('currentCompany', 'top companies')} for mentorship and referrals."
+    gemini_summary = call_gemini_api(prompt)
+    if not gemini_summary:
+        gemini_summary = f"Based on your profile, you have a {match_score}% alignment with {career_goal} roles. Focus on {', '.join(missing_skills[:3])} to boost your match score to 90%+. Connect with alumni at {top5[0].get('currentCompany', 'top companies')} for mentorship and referrals."
 
     result = {
         'careerMatchScore': match_score,
@@ -264,12 +274,9 @@ def chat():
     reply = None
 
     # Try Gemini
-    if gemini_model:
-        try:
-            # Build conversation history
-            hist_text = "\n".join([f"{'Student' if m['role'] == 'user' else 'AI'}: {m['content']}" for m in history[-6:]])
+    hist_text = "\n".join([f"{'Student' if m['role'] == 'user' else 'AI'}: {m['content']}" for m in history[-6:]])
 
-            prompt = f"""You are an AI career counselor for engineering students in India at a university placement system.
+    prompt = f"""You are an AI career counselor for engineering students in India at a university placement system.
 
 Student Context:
 - Name: {student.get('fullName', 'Student')}
@@ -288,31 +295,26 @@ Current Question: {message}
 
 Respond in a helpful, structured manner. Use **bold** for important terms. Be specific about skills, companies, salaries relevant to India's tech job market in 2026. Keep response under 200 words.
 """
-            response = gemini_model.generate_content(prompt)
-            reply = response.text
+    reply = call_gemini_api(prompt)
+    if reply:
+        msg_lower = message.lower()
+        if any(w in msg_lower for w in ['skill', 'learn', 'roadmap', 'missing']):
+            card_data = {
+                'careerMatch': match,
+                'missingSkills': missing[:4],
+                'recommendedCourses': recommendation.get('recommendedCourses', [])[:3],
+                'certifications': recommendation.get('certifications', [])[:3]
+            }
+        elif any(w in msg_lower for w in ['salary', 'pay', 'package', 'lpa']):
+            card_data = {
+                'careerMatch': match,
+                'recommendedRoles': recommendation.get('recommendedRoles', [])
+            }
+        elif any(w in msg_lower for w in ['project', 'build', 'portfolio']):
+            card_data = {
+                'recommendedProjects': recommendation.get('recommendedProjects', [])
+            }
 
-            # Generate card data based on question type
-            msg_lower = message.lower()
-            if any(w in msg_lower for w in ['skill', 'learn', 'roadmap', 'missing']):
-                card_data = {
-                    'careerMatch': match,
-                    'missingSkills': missing[:4],
-                    'recommendedCourses': recommendation.get('recommendedCourses', [])[:3],
-                    'certifications': recommendation.get('certifications', [])[:3]
-                }
-            elif any(w in msg_lower for w in ['salary', 'pay', 'package', 'lpa']):
-                card_data = {
-                    'careerMatch': match,
-                    'recommendedRoles': recommendation.get('recommendedRoles', [])
-                }
-            elif any(w in msg_lower for w in ['project', 'build', 'portfolio']):
-                card_data = {
-                    'recommendedProjects': recommendation.get('recommendedProjects', [])
-                }
-
-        except Exception as e:
-            print(f"Gemini chat error: {e}")
-            reply = None
 
     # Local rule-based fallback
     if not reply:
