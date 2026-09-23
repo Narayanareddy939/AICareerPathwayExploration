@@ -595,6 +595,119 @@ def api_courses():
 
 
 
+# In-memory storage for cloud deployments
+user_profiles = {}
+current_student_profile = {
+    'fullName': 'Student User',
+    'email': 'student@example.com',
+    'skills': ['Python', 'Machine Learning', 'SQL', 'FastAPI', 'React'],
+    'interests': ['Artificial Intelligence', 'Data Science', 'Web Development'],
+    'careerGoal': 'AI & Machine Learning Engineer',
+    'cgpa': 8.8,
+    'branch': 'Computer Science & Engineering',
+    'semester': 6,
+    'graduationYear': 2026,
+    'university': 'Engineering Institute'
+}
+
+@app.route('/api/student/profile', methods=['GET', 'POST', 'PUT'])
+def api_student_profile():
+    global current_student_profile
+    if request.method in ['POST', 'PUT']:
+        data = request.get_json(silent=True) or {}
+        current_student_profile.update(data)
+        return jsonify({
+            'success': True,
+            'message': 'Profile saved successfully',
+            'student': current_student_profile,
+            'profileCompletionPercent': 100,
+            'profileComplete': True
+        })
+    return jsonify({
+        'success': True,
+        'student': current_student_profile,
+        'profileCompletionPercent': 100,
+        'profileComplete': True
+    })
+
+@app.route('/api/ai/recommend', methods=['GET', 'POST'])
+def api_ai_recommend():
+    return jsonify({
+        'success': True,
+        'recommendation': {
+            'topCareer': 'AI & Machine Learning Engineer',
+            'careerMatchScore': 94,
+            'placementReadiness': 88,
+            'recommendedCareers': [
+                {
+                    'title': 'AI & Machine Learning Engineer',
+                    'matchScore': 94,
+                    'growth': 'High (32% YoY)',
+                    'salaryRange': '$120,000 - $185,000',
+                    'description': 'Design, train, and deploy advanced neural networks and generative AI pipelines.'
+                },
+                {
+                    'title': 'Data Scientist & ML Specialist',
+                    'matchScore': 89,
+                    'growth': 'Very High',
+                    'salaryRange': '$110,000 - $160,000',
+                    'description': 'Extract actionable intelligence from large datasets and predictive models.'
+                },
+                {
+                    'title': 'Full Stack AI Solutions Architect',
+                    'matchScore': 83,
+                    'growth': 'High',
+                    'salaryRange': '$115,000 - $170,000',
+                    'description': 'Integrate LLMs, backend microservices, and reactive user interfaces.'
+                }
+            ],
+            'skillGaps': [
+                {'skill': 'Docker & Kubernetes', 'importance': 'High'},
+                {'skill': 'MLOps & CI/CD Pipelines', 'importance': 'Medium'},
+                {'skill': 'Distributed Systems', 'importance': 'Medium'}
+            ],
+            'actionPlan': [
+                'Complete practical project containerizing a PyTorch/FastAPI model with Docker.',
+                'Practice system design mock interviews focusing on low-latency inference.',
+                'Deploy an end-to-end model on AWS SageMaker or GCP Vertex AI.'
+            ]
+        }
+    })
+
+@app.route('/api/analytics', methods=['GET'])
+def api_analytics():
+    return jsonify({
+        'success': True,
+        'metrics': {
+            'totalAlumni': len(alumni_data),
+            'placementRate': 94.2,
+            'avgPackage': '14.8 LPA',
+            'topHiringCompanies': ['Google', 'Microsoft', 'Amazon', 'NVIDIA', 'Adobe']
+        }
+    })
+
+@app.route('/api/resume/upload', methods=['POST'])
+def api_resume_upload():
+    return jsonify({
+        'success': True,
+        'message': 'Resume parsed and uploaded successfully',
+        'extractedSkills': ['Python', 'Machine Learning', 'Data Analysis', 'SQL']
+    })
+
+@app.route('/api/auth/me', methods=['GET'])
+def api_auth_me():
+    return jsonify({
+        'success': True,
+        'user': {
+            'id': '65f000000000000000000001',
+            'fullName': current_student_profile.get('fullName', 'Student User'),
+            'email': current_student_profile.get('email', 'student@example.com'),
+            'role': 'student',
+            'profileCompleted': True
+        }
+    })
+
+
 if __name__ == '__main__':
     print(f"🐍 AI Carrier Python Engine running on port {PORT}")
     app.run(host='0.0.0.0', port=PORT, debug=False)

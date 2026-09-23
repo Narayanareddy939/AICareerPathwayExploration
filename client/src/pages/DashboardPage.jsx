@@ -30,14 +30,21 @@ export default function DashboardPage() {
         axios.get('/api/ai/recommend'),
         axios.get('/api/analytics')
       ]);
+      let s = null;
       if (studentRes.status === 'fulfilled') {
-        const s = studentRes.value.data?.student;
-        setStudent(s);
-        if (s && recRes.status === 'fulfilled' && !recRes.value?.data?.recommendation) {
-          axios.post('/api/ai/recommend')
-            .then(res => { if (res.data?.recommendation) setRecommendation(res.data.recommendation); })
-            .catch(() => {});
-        }
+        s = studentRes.value.data?.student;
+      }
+      if (!s) {
+        try {
+          const cached = localStorage.getItem('ai_carrier_student_profile');
+          if (cached) s = JSON.parse(cached);
+        } catch (e) {}
+      }
+      setStudent(s);
+      if (s && recRes.status === 'fulfilled' && !recRes.value?.data?.recommendation) {
+        axios.post('/api/ai/recommend')
+          .then(res => { if (res.data?.recommendation) setRecommendation(res.data.recommendation); })
+          .catch(() => {});
       }
       if (recRes.status === 'fulfilled' && recRes.value?.data?.recommendation) {
         setRecommendation(recRes.value.data.recommendation);
