@@ -9,7 +9,7 @@ const signToken = (id) => {
   return jwt.sign(
     { id },
     process.env.JWT_SECRET || 'ai_carrier_secret_fallback',
-    { expiresIn: '7d' }
+    { expiresIn: '365d' }
   );
 };
 

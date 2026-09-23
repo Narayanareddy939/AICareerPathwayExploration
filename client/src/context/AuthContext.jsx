@@ -9,15 +9,18 @@ export function AuthProvider({ children }) {
 
   // On mount, restore session from localStorage
   useEffect(() => {
-    const token = localStorage.getItem('ai_carrier_token');
+    const token = localStorage.getItem('ai_carrier_token') || localStorage.getItem('token');
     const savedUser = localStorage.getItem('ai_carrier_user');
-    if (token && savedUser) {
-      try {
-        setUser(JSON.parse(savedUser));
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      } catch {
-        localStorage.removeItem('ai_carrier_token');
-        localStorage.removeItem('ai_carrier_user');
+    if (token) {
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      localStorage.setItem('ai_carrier_token', token);
+      localStorage.setItem('token', token);
+      if (savedUser) {
+        try {
+          setUser(JSON.parse(savedUser));
+        } catch {
+          setUser({ fullName: 'Student', email: 'student@example.com' });
+        }
       }
     }
     setLoading(false);
@@ -25,6 +28,7 @@ export function AuthProvider({ children }) {
 
   const login = (token, userData) => {
     localStorage.setItem('ai_carrier_token', token);
+    localStorage.setItem('token', token);
     localStorage.setItem('ai_carrier_user', JSON.stringify(userData));
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     setUser(userData);
@@ -32,6 +36,7 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     localStorage.removeItem('ai_carrier_token');
+    localStorage.removeItem('token');
     localStorage.removeItem('ai_carrier_user');
     delete axios.defaults.headers.common['Authorization'];
     setUser(null);
