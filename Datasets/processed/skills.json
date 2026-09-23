@@ -1,0 +1,739 @@
+[
+  {
+    "id": "skill-1",
+    "name": "Python",
+    "category": "Programming Languages",
+    "demandLevel": "High",
+    "aliases": [
+      "python",
+      "PYTHON",
+      "Python"
+    ]
+  },
+  {
+    "id": "skill-2",
+    "name": "Java",
+    "category": "Programming Languages",
+    "demandLevel": "Very High",
+    "aliases": [
+      "java",
+      "JAVA",
+      "Java"
+    ]
+  },
+  {
+    "id": "skill-3",
+    "name": "C++",
+    "category": "Programming Languages",
+    "demandLevel": "Critical",
+    "aliases": [
+      "c++",
+      "C++",
+      "C++"
+    ]
+  },
+  {
+    "id": "skill-4",
+    "name": "JavaScript",
+    "category": "Programming Languages",
+    "demandLevel": "High",
+    "aliases": [
+      "javascript",
+      "JAVASCRIPT",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": "skill-5",
+    "name": "TypeScript",
+    "category": "Programming Languages",
+    "demandLevel": "Very High",
+    "aliases": [
+      "typescript",
+      "TYPESCRIPT",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": "skill-6",
+    "name": "C#",
+    "category": "Programming Languages",
+    "demandLevel": "Critical",
+    "aliases": [
+      "c#",
+      "C#",
+      "C#"
+    ]
+  },
+  {
+    "id": "skill-7",
+    "name": "Golang",
+    "category": "Programming Languages",
+    "demandLevel": "High",
+    "aliases": [
+      "golang",
+      "GOLANG",
+      "Golang"
+    ]
+  },
+  {
+    "id": "skill-8",
+    "name": "Rust",
+    "category": "Programming Languages",
+    "demandLevel": "Very High",
+    "aliases": [
+      "rust",
+      "RUST",
+      "Rust"
+    ]
+  },
+  {
+    "id": "skill-9",
+    "name": "PHP",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "php",
+      "PHP",
+      "PHP"
+    ]
+  },
+  {
+    "id": "skill-10",
+    "name": "Ruby",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "ruby",
+      "RUBY",
+      "Ruby"
+    ]
+  },
+  {
+    "id": "skill-11",
+    "name": "React",
+    "category": "Web & Frameworks",
+    "demandLevel": "Very High",
+    "aliases": [
+      "react",
+      "REACT",
+      "React"
+    ]
+  },
+  {
+    "id": "skill-12",
+    "name": "Node.js",
+    "category": "Web & Frameworks",
+    "demandLevel": "Critical",
+    "aliases": [
+      "node.js",
+      "NODE.JS",
+      "Node.js"
+    ]
+  },
+  {
+    "id": "skill-13",
+    "name": "Express",
+    "category": "Web & Frameworks",
+    "demandLevel": "High",
+    "aliases": [
+      "express",
+      "EXPRESS",
+      "Express"
+    ]
+  },
+  {
+    "id": "skill-14",
+    "name": "Angular",
+    "category": "Web & Frameworks",
+    "demandLevel": "Very High",
+    "aliases": [
+      "angular",
+      "ANGULAR",
+      "Angular"
+    ]
+  },
+  {
+    "id": "skill-15",
+    "name": "Vue.js",
+    "category": "Web & Frameworks",
+    "demandLevel": "Critical",
+    "aliases": [
+      "vue.js",
+      "VUE.JS",
+      "Vue.js"
+    ]
+  },
+  {
+    "id": "skill-16",
+    "name": "Next.js",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "next.js",
+      "NEXT.JS",
+      "Next.js"
+    ]
+  },
+  {
+    "id": "skill-17",
+    "name": "HTML/CSS",
+    "category": "Web & Frameworks",
+    "demandLevel": "Very High",
+    "aliases": [
+      "html/css",
+      "HTML/CSS",
+      "HTML/CSS"
+    ]
+  },
+  {
+    "id": "skill-18",
+    "name": "Tailwind CSS",
+    "category": "Web & Frameworks",
+    "demandLevel": "Critical",
+    "aliases": [
+      "tailwind css",
+      "TAILWIND CSS",
+      "TailwindCSS"
+    ]
+  },
+  {
+    "id": "skill-19",
+    "name": "Django",
+    "category": "Web & Frameworks",
+    "demandLevel": "High",
+    "aliases": [
+      "django",
+      "DJANGO",
+      "Django"
+    ]
+  },
+  {
+    "id": "skill-20",
+    "name": "Flask",
+    "category": "Web & Frameworks",
+    "demandLevel": "Very High",
+    "aliases": [
+      "flask",
+      "FLASK",
+      "Flask"
+    ]
+  },
+  {
+    "id": "skill-21",
+    "name": "Spring Boot",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "spring boot",
+      "SPRING BOOT",
+      "SpringBoot"
+    ]
+  },
+  {
+    "id": "skill-22",
+    "name": "Machine Learning",
+    "category": "AI & Data Science",
+    "demandLevel": "High",
+    "aliases": [
+      "machine learning",
+      "MACHINE LEARNING",
+      "MachineLearning"
+    ]
+  },
+  {
+    "id": "skill-23",
+    "name": "Deep Learning",
+    "category": "AI & Data Science",
+    "demandLevel": "Very High",
+    "aliases": [
+      "deep learning",
+      "DEEP LEARNING",
+      "DeepLearning"
+    ]
+  },
+  {
+    "id": "skill-24",
+    "name": "Natural Language Processing",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "natural language processing",
+      "NATURAL LANGUAGE PROCESSING",
+      "NaturalLanguageProcessing"
+    ]
+  },
+  {
+    "id": "skill-25",
+    "name": "Computer Vision",
+    "category": "AI & Data Science",
+    "demandLevel": "High",
+    "aliases": [
+      "computer vision",
+      "COMPUTER VISION",
+      "ComputerVision"
+    ]
+  },
+  {
+    "id": "skill-26",
+    "name": "TensorFlow",
+    "category": "AI & Data Science",
+    "demandLevel": "Very High",
+    "aliases": [
+      "tensorflow",
+      "TENSORFLOW",
+      "TensorFlow"
+    ]
+  },
+  {
+    "id": "skill-27",
+    "name": "PyTorch",
+    "category": "AI & Data Science",
+    "demandLevel": "Critical",
+    "aliases": [
+      "pytorch",
+      "PYTORCH",
+      "PyTorch"
+    ]
+  },
+  {
+    "id": "skill-28",
+    "name": "Scikit-Learn",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "scikit-learn",
+      "SCIKIT-LEARN",
+      "Scikit-Learn"
+    ]
+  },
+  {
+    "id": "skill-29",
+    "name": "Pandas",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Very High",
+    "aliases": [
+      "pandas",
+      "PANDAS",
+      "Pandas"
+    ]
+  },
+  {
+    "id": "skill-30",
+    "name": "NumPy",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "numpy",
+      "NUMPY",
+      "NumPy"
+    ]
+  },
+  {
+    "id": "skill-31",
+    "name": "SQL",
+    "category": "Databases",
+    "demandLevel": "High",
+    "aliases": [
+      "sql",
+      "SQL",
+      "SQL"
+    ]
+  },
+  {
+    "id": "skill-32",
+    "name": "MongoDB",
+    "category": "Databases",
+    "demandLevel": "Very High",
+    "aliases": [
+      "mongodb",
+      "MONGODB",
+      "MongoDB"
+    ]
+  },
+  {
+    "id": "skill-33",
+    "name": "PostgreSQL",
+    "category": "Databases",
+    "demandLevel": "Critical",
+    "aliases": [
+      "postgresql",
+      "POSTGRESQL",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "id": "skill-34",
+    "name": "MySQL",
+    "category": "Databases",
+    "demandLevel": "High",
+    "aliases": [
+      "mysql",
+      "MYSQL",
+      "MySQL"
+    ]
+  },
+  {
+    "id": "skill-35",
+    "name": "Redis",
+    "category": "Databases",
+    "demandLevel": "Very High",
+    "aliases": [
+      "redis",
+      "REDIS",
+      "Redis"
+    ]
+  },
+  {
+    "id": "skill-36",
+    "name": "GraphQL",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "graphql",
+      "GRAPHQL",
+      "GraphQL"
+    ]
+  },
+  {
+    "id": "skill-37",
+    "name": "AWS",
+    "category": "Cloud & Infrastructure",
+    "demandLevel": "High",
+    "aliases": [
+      "aws",
+      "AWS",
+      "AWS"
+    ]
+  },
+  {
+    "id": "skill-38",
+    "name": "Azure",
+    "category": "Cloud & Infrastructure",
+    "demandLevel": "Very High",
+    "aliases": [
+      "azure",
+      "AZURE",
+      "Azure"
+    ]
+  },
+  {
+    "id": "skill-39",
+    "name": "Google Cloud",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "google cloud",
+      "GOOGLE CLOUD",
+      "GoogleCloud"
+    ]
+  },
+  {
+    "id": "skill-40",
+    "name": "Docker",
+    "category": "Cloud & Infrastructure",
+    "demandLevel": "High",
+    "aliases": [
+      "docker",
+      "DOCKER",
+      "Docker"
+    ]
+  },
+  {
+    "id": "skill-41",
+    "name": "Kubernetes",
+    "category": "Cloud & Infrastructure",
+    "demandLevel": "Very High",
+    "aliases": [
+      "kubernetes",
+      "KUBERNETES",
+      "Kubernetes"
+    ]
+  },
+  {
+    "id": "skill-42",
+    "name": "CI/CD",
+    "category": "Cloud & Infrastructure",
+    "demandLevel": "Critical",
+    "aliases": [
+      "ci/cd",
+      "CI/CD",
+      "CI/CD"
+    ]
+  },
+  {
+    "id": "skill-43",
+    "name": "Git",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "git",
+      "GIT",
+      "Git"
+    ]
+  },
+  {
+    "id": "skill-44",
+    "name": "Linux",
+    "category": "Cloud & Infrastructure",
+    "demandLevel": "Very High",
+    "aliases": [
+      "linux",
+      "LINUX",
+      "Linux"
+    ]
+  },
+  {
+    "id": "skill-45",
+    "name": "Terraform",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "terraform",
+      "TERRAFORM",
+      "Terraform"
+    ]
+  },
+  {
+    "id": "skill-46",
+    "name": "Data Structures",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "data structures",
+      "DATA STRUCTURES",
+      "DataStructures"
+    ]
+  },
+  {
+    "id": "skill-47",
+    "name": "Algorithms",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Very High",
+    "aliases": [
+      "algorithms",
+      "ALGORITHMS",
+      "Algorithms"
+    ]
+  },
+  {
+    "id": "skill-48",
+    "name": "System Design",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "system design",
+      "SYSTEM DESIGN",
+      "SystemDesign"
+    ]
+  },
+  {
+    "id": "skill-49",
+    "name": "Problem Solving",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "problem solving",
+      "PROBLEM SOLVING",
+      "ProblemSolving"
+    ]
+  },
+  {
+    "id": "skill-50",
+    "name": "REST APIs",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Very High",
+    "aliases": [
+      "rest apis",
+      "REST APIS",
+      "RESTAPIs"
+    ]
+  },
+  {
+    "id": "skill-51",
+    "name": "Microservices",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "microservices",
+      "MICROSERVICES",
+      "Microservices"
+    ]
+  },
+  {
+    "id": "skill-52",
+    "name": "Network Security",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "network security",
+      "NETWORK SECURITY",
+      "NetworkSecurity"
+    ]
+  },
+  {
+    "id": "skill-53",
+    "name": "Ethical Hacking",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Very High",
+    "aliases": [
+      "ethical hacking",
+      "ETHICAL HACKING",
+      "EthicalHacking"
+    ]
+  },
+  {
+    "id": "skill-54",
+    "name": "Cryptography",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "cryptography",
+      "CRYPTOGRAPHY",
+      "Cryptography"
+    ]
+  },
+  {
+    "id": "skill-55",
+    "name": "Cybersecurity",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "cybersecurity",
+      "CYBERSECURITY",
+      "Cybersecurity"
+    ]
+  },
+  {
+    "id": "skill-56",
+    "name": "SIEM",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Very High",
+    "aliases": [
+      "siem",
+      "SIEM",
+      "SIEM"
+    ]
+  },
+  {
+    "id": "skill-57",
+    "name": "Tableau",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "tableau",
+      "TABLEAU",
+      "Tableau"
+    ]
+  },
+  {
+    "id": "skill-58",
+    "name": "PowerBI",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "powerbi",
+      "POWERBI",
+      "PowerBI"
+    ]
+  },
+  {
+    "id": "skill-59",
+    "name": "Data Analysis",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Very High",
+    "aliases": [
+      "data analysis",
+      "DATA ANALYSIS",
+      "DataAnalysis"
+    ]
+  },
+  {
+    "id": "skill-60",
+    "name": "Data Engineering",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "data engineering",
+      "DATA ENGINEERING",
+      "DataEngineering"
+    ]
+  },
+  {
+    "id": "skill-61",
+    "name": "Apache Spark",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "apache spark",
+      "APACHE SPARK",
+      "ApacheSpark"
+    ]
+  },
+  {
+    "id": "skill-62",
+    "name": "Kafka",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Very High",
+    "aliases": [
+      "kafka",
+      "KAFKA",
+      "Kafka"
+    ]
+  },
+  {
+    "id": "skill-63",
+    "name": "Communication",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "communication",
+      "COMMUNICATION",
+      "Communication"
+    ]
+  },
+  {
+    "id": "skill-64",
+    "name": "Leadership",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "leadership",
+      "LEADERSHIP",
+      "Leadership"
+    ]
+  },
+  {
+    "id": "skill-65",
+    "name": "Teamwork",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Very High",
+    "aliases": [
+      "teamwork",
+      "TEAMWORK",
+      "Teamwork"
+    ]
+  },
+  {
+    "id": "skill-66",
+    "name": "Agile Methodology",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "Critical",
+    "aliases": [
+      "agile methodology",
+      "AGILE METHODOLOGY",
+      "AgileMethodology"
+    ]
+  },
+  {
+    "id": "skill-67",
+    "name": "Project Management",
+    "category": "Core Engineering & Tools",
+    "demandLevel": "High",
+    "aliases": [
+      "project management",
+      "PROJECT MANAGEMENT",
+      "ProjectManagement"
+    ]
+  }
+]

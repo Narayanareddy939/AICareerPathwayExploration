@@ -24,6 +24,18 @@ pnpm-debug.log*
 uploads/*
 !uploads/.gitkeep
 
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+**/.venv/
+venv/
+**/venv/
+env/
+**/env/
+
 # Operating system / IDE
 .DS_Store
 .vscode/
@@ -32,3 +44,4 @@ uploads/*
 *.ntvs*
 *.njsproj
 *.sln
+

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ds-1",
+    "name": "Alumni_Data_1000_Rows.csv",
+    "category": "Alumni Trajectories",
+    "records": 1000,
+    "description": "Verified university alumni data with current placements, salary insights, and skills",
+    "status": "Active"
+  },
+  {
+    "id": "ds-2",
+    "name": "student_placement_career_success.csv",
+    "category": "Student Placements",
+    "records": 3500,
+    "description": "Academic performance, CGPA distribution, internship history, and hiring outcomes",
+    "status": "Active"
+  },
+  {
+    "id": "ds-3",
+    "name": "career_dataset.csv",
+    "category": "Career Pathways",
+    "records": 100,
+    "description": "Detailed career definitions, required core competencies, and market compensation benchmarks",
+    "status": "Active"
+  },
+  {
+    "id": "ds-4",
+    "name": "coursera_courses.csv",
+    "category": "Learning Resources",
+    "records": 100,
+    "description": "Accredited university & industry online certifications, ratings, and course skills",
+    "status": "Active"
+  },
+  {
+    "id": "ds-5",
+    "name": "linkedin_job_postings_dataset.csv",
+    "category": "Live Job Market",
+    "records": 100,
+    "description": "Real-time hiring trends, company listings, and skill demand distributions",
+    "status": "Active"
+  },
+  {
+    "id": "ds-6",
+    "name": "Abilities to Work Activities.xlsx",
+    "category": "O*NET Taxonomy",
+    "records": 450,
+    "description": "Standardized cognitive abilities and work activity mappings",
+    "status": "Active"
+  }
+]

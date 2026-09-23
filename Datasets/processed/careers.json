@@ -1,0 +1,1602 @@
+[
+  {
+    "id": "career-1",
+    "title": "Career Pathway 1",
+    "category": "Technology",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 1.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-2",
+    "title": "Career Pathway 2",
+    "category": "Technology",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 2.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-3",
+    "title": "Career Pathway 3",
+    "category": "Marketing",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 3.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-4",
+    "title": "Career Pathway 4",
+    "category": "Technology",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 4.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-5",
+    "title": "Career Pathway 5",
+    "category": "Finance",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 5.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-6",
+    "title": "Career Pathway 6",
+    "category": "Business Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 6.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-7",
+    "title": "Career Pathway 7",
+    "category": "Sales",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 7.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-8",
+    "title": "Career Pathway 8",
+    "category": "Human Resources",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 8.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-9",
+    "title": "Career Pathway 9",
+    "category": "Creative Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 9.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-10",
+    "title": "Career Pathway 10",
+    "category": "Business Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 10.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-11",
+    "title": "Career Pathway 11",
+    "category": "Media & Publishing",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 11.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-12",
+    "title": "Career Pathway 12",
+    "category": "Technology",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 12.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-13",
+    "title": "Career Pathway 13",
+    "category": "Finance",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 13.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-14",
+    "title": "Career Pathway 14",
+    "category": "Customer Service",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 14.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-15",
+    "title": "Career Pathway 15",
+    "category": "Business Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 15.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-16",
+    "title": "Career Pathway 16",
+    "category": "Technology",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 16.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-17",
+    "title": "Career Pathway 17",
+    "category": "Technology",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 17.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-18",
+    "title": "Career Pathway 18",
+    "category": "Marketing",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 18.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-19",
+    "title": "Career Pathway 19",
+    "category": "Research & Development",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 19.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-20",
+    "title": "Career Pathway 20",
+    "category": "Legal Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 20.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-21",
+    "title": "Career Pathway 21",
+    "category": "Technology",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 21.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-22",
+    "title": "Career Pathway 22",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 22.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-23",
+    "title": "Career Pathway 23",
+    "category": "Education",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 23.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-24",
+    "title": "Career Pathway 24",
+    "category": "Engineering",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 24.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-25",
+    "title": "Career Pathway 25",
+    "category": "Marketing",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 25.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-26",
+    "title": "Career Pathway 26",
+    "category": "Technology",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 26.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-27",
+    "title": "Career Pathway 27",
+    "category": "Business Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 27.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-28",
+    "title": "Career Pathway 28",
+    "category": "Media & Publishing",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 28.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-29",
+    "title": "Career Pathway 29",
+    "category": "Technology",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 29.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-30",
+    "title": "Career Pathway 30",
+    "category": "Logistics",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 30.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-31",
+    "title": "Career Pathway 31",
+    "category": "Technology",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 31.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-32",
+    "title": "Career Pathway 32",
+    "category": "Design Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 32.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-33",
+    "title": "Career Pathway 33",
+    "category": "Engineering",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 33.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-34",
+    "title": "Career Pathway 34",
+    "category": "Marketing",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 34.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-35",
+    "title": "Career Pathway 35",
+    "category": "Media & Publishing",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 35.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-36",
+    "title": "Career Pathway 36",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 36.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-37",
+    "title": "Career Pathway 37",
+    "category": "Technology",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 37.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-38",
+    "title": "Career Pathway 38",
+    "category": "Hospitality",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 38.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-39",
+    "title": "Career Pathway 39",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 39.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-40",
+    "title": "Career Pathway 40",
+    "category": "Engineering",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 40.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-41",
+    "title": "Career Pathway 41",
+    "category": "Marketing",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 41.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-42",
+    "title": "Career Pathway 42",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 42.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-43",
+    "title": "Career Pathway 43",
+    "category": "Finance",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 43.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-44",
+    "title": "Career Pathway 44",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 44.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-45",
+    "title": "Career Pathway 45",
+    "category": "Real Estate",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 45.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-46",
+    "title": "Career Pathway 46",
+    "category": "Food Service",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 46.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-47",
+    "title": "Career Pathway 47",
+    "category": "Professional Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 47.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-48",
+    "title": "Career Pathway 48",
+    "category": "Architecture",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 48.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-49",
+    "title": "Career Pathway 49",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 49.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-50",
+    "title": "Career Pathway 50",
+    "category": "Construction",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 50.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-51",
+    "title": "Career Pathway 51",
+    "category": "Fashion",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 51.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-52",
+    "title": "Career Pathway 52",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 52.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-53",
+    "title": "Career Pathway 53",
+    "category": "Insurance",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 53.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-54",
+    "title": "Career Pathway 54",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 54.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-55",
+    "title": "Career Pathway 55",
+    "category": "Fitness & Recreation",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 55.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-56",
+    "title": "Career Pathway 56",
+    "category": "Creative Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 56.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-57",
+    "title": "Career Pathway 57",
+    "category": "Landscaping",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 57.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-58",
+    "title": "Career Pathway 58",
+    "category": "Construction",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 58.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-59",
+    "title": "Career Pathway 59",
+    "category": "Construction",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 59.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-60",
+    "title": "Career Pathway 60",
+    "category": "Construction",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 60.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-61",
+    "title": "Career Pathway 61",
+    "category": "Automotive",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 61.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-62",
+    "title": "Career Pathway 62",
+    "category": "Personal Care",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 62.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-63",
+    "title": "Career Pathway 63",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 63.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-64",
+    "title": "Career Pathway 64",
+    "category": "Food Service",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 64.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-65",
+    "title": "Career Pathway 65",
+    "category": "Security",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 65.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-66",
+    "title": "Career Pathway 66",
+    "category": "Aviation",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 66.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-67",
+    "title": "Career Pathway 67",
+    "category": "Transportation",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 67.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-68",
+    "title": "Career Pathway 68",
+    "category": "Business Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 68.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-69",
+    "title": "Career Pathway 69",
+    "category": "Facilities Management",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 69.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-70",
+    "title": "Career Pathway 70",
+    "category": "Retail",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 70.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-71",
+    "title": "Career Pathway 71",
+    "category": "Food Service",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 71.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-72",
+    "title": "Career Pathway 72",
+    "category": "Retail",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 72.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-73",
+    "title": "Career Pathway 73",
+    "category": "Education",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 73.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-74",
+    "title": "Career Pathway 74",
+    "category": "Arts & Culture",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 74.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-75",
+    "title": "Career Pathway 75",
+    "category": "Government",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 75.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-76",
+    "title": "Career Pathway 76",
+    "category": "Public Safety",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 76.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-77",
+    "title": "Career Pathway 77",
+    "category": "Public Safety",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 77.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-78",
+    "title": "Career Pathway 78",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 78.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-79",
+    "title": "Career Pathway 79",
+    "category": "Social Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 79.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-80",
+    "title": "Career Pathway 80",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 80.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-81",
+    "title": "Career Pathway 81",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 81.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-82",
+    "title": "Career Pathway 82",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 82.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-83",
+    "title": "Career Pathway 83",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 83.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-84",
+    "title": "Career Pathway 84",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 84.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-85",
+    "title": "Career Pathway 85",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 85.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-86",
+    "title": "Career Pathway 86",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 86.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-87",
+    "title": "Career Pathway 87",
+    "category": "Healthcare",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 87.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-88",
+    "title": "Career Pathway 88",
+    "category": "Environmental Services",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 88.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-89",
+    "title": "Career Pathway 89",
+    "category": "Mining & Resources",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 89.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-90",
+    "title": "Career Pathway 90",
+    "category": "Science & Research",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 90.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-91",
+    "title": "Career Pathway 91",
+    "category": "Science & Research",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 91.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-92",
+    "title": "Career Pathway 92",
+    "category": "Science & Research",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 92.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-93",
+    "title": "Career Pathway 93",
+    "category": "Science & Research",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 93.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-94",
+    "title": "Career Pathway 94",
+    "category": "Science & Research",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 94.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-95",
+    "title": "Career Pathway 95",
+    "category": "Science & Research",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 95.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-96",
+    "title": "Career Pathway 96",
+    "category": "Science & Research",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 96.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-97",
+    "title": "Career Pathway 97",
+    "category": "Economics",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 97.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-98",
+    "title": "Career Pathway 98",
+    "category": "Social Sciences",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 98.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-99",
+    "title": "Career Pathway 99",
+    "category": "Social Sciences",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 99.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  },
+  {
+    "id": "career-100",
+    "title": "Career Pathway 100",
+    "category": "Social Sciences",
+    "description": "Comprehensive career pathway and industry profile for Career Pathway 100.",
+    "requiredSkills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "Problem Solving"
+    ],
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "growthRate": "22% CAGR",
+    "educationRequirements": "Bachelor's Degree in CS/IT/Data Science or equivalent",
+    "experienceLevel": "Entry to Mid Level"
+  }
+]

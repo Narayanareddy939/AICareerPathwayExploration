@@ -122,19 +122,19 @@ export default function CompleteProfile() {
 
       // Upload resume if selected
       if (resumeFile) {
-        const fd = new FormData();
-        fd.append('resume', resumeFile);
-        await axios.post('/api/resume/upload', fd, { headers: { 'Content-Type': 'multipart/form-data' } });
+        try {
+          const fd = new FormData();
+          fd.append('resume', resumeFile);
+          await axios.post('/api/resume/upload', fd, { headers: { 'Content-Type': 'multipart/form-data' } });
+        } catch (uploadErr) {
+          console.warn('Resume upload warning:', uploadErr.message);
+        }
       }
 
-      // Trigger AI recommendation
-      toast.loading('Generating your AI career analysis...', { id: 'ai-rec' });
-      try {
-        await axios.post('/api/ai/recommend');
-        toast.success('AI career analysis complete!', { id: 'ai-rec' });
-      } catch {
-        toast.dismiss('ai-rec');
-      }
+      // Trigger AI recommendation in background
+      axios.post('/api/ai/recommend').catch(err => {
+        console.warn('AI recommendation background run:', err.message);
+      });
 
       updateUser({ profileCompleted: saveRes.data?.profileComplete ?? true });
       toast.success('Profile saved successfully!');

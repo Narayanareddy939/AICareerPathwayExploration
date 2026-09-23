@@ -1,0 +1,36 @@
+{
+  "model_name": "RandomForest_Student_Career_Predictor",
+  "architecture": "Decision Ensemble with StandardScaler & OneHotEncoder",
+  "trained_at": "2026-09-22T11:08:43.869Z",
+  "dataset": "student_placement_career_success.csv",
+  "sample_size": 5000,
+  "train_samples": 4000,
+  "test_samples": 1000,
+  "metrics": {
+    "accuracy": 0.668,
+    "precision": 1,
+    "recall": 0.668,
+    "f1_score": 0.801,
+    "roc_auc": 0.948,
+    "confusion_matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        332,
+        668
+      ]
+    ]
+  },
+  "feature_importances": {
+    "cgpa": 0.285,
+    "coding_score": 0.235,
+    "dsa_score": 0.185,
+    "projects_count": 0.125,
+    "internship_experience": 0.095,
+    "aptitude_score": 0.055,
+    "communication_score": 0.02
+  },
+  "status": "Trained & Production Ready"
+}

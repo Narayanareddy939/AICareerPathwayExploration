@@ -30,9 +30,21 @@ export default function DashboardPage() {
         axios.get('/api/ai/recommend'),
         axios.get('/api/analytics')
       ]);
-      if (studentRes.status === 'fulfilled') setStudent(studentRes.value.data.student);
-      if (recRes.status === 'fulfilled') setRecommendation(recRes.value.data.recommendation);
-      if (analyticsRes.status === 'fulfilled') setAnalytics(analyticsRes.value.data);
+      if (studentRes.status === 'fulfilled') {
+        const s = studentRes.value.data?.student;
+        setStudent(s);
+        if (s && recRes.status === 'fulfilled' && !recRes.value?.data?.recommendation) {
+          axios.post('/api/ai/recommend')
+            .then(res => { if (res.data?.recommendation) setRecommendation(res.data.recommendation); })
+            .catch(() => {});
+        }
+      }
+      if (recRes.status === 'fulfilled' && recRes.value?.data?.recommendation) {
+        setRecommendation(recRes.value.data.recommendation);
+      }
+      if (analyticsRes.status === 'fulfilled') {
+        setAnalytics(analyticsRes.value.data);
+      }
     } catch (err) {
       console.error('Dashboard load error:', err);
     } finally {

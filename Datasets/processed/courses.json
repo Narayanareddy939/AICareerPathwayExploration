@@ -1,0 +1,1224 @@
+[
+  {
+    "id": "course-1",
+    "title": "(ISC)² Systems Security Certified Practitioner (SSCP)",
+    "provider": "ISC2",
+    "rating": 4.7,
+    "difficulty": "Beginner",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "['Risk Management'",
+      "'Access Control'",
+      "'Asset'",
+      "'Incident Detection and Response'",
+      "'Cloud Computing Security'"
+    ],
+    "url": "https://www.coursera.org/specializations/sscp-training"
+  },
+  {
+    "id": "course-2",
+    "title": "Learn on your own schedule with 120-day access to content aligned with the latest (ISC)2 SSCP exam domains. We’re offering the complete online self-paced program for only $1",
+    "provider": "000 – a $200 savings when you get all domains bundled together.",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Learn on your own schedule with 120-day access to content aligned with the latest (ISC)2 SSCP exam domains. We’re offering the complete online self-paced program for only $1"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-3",
+    "title": "3 Steps to Career Advancement",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "3 Steps to Career Advancement"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-4",
+    "title": "1.  Register for the course",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "1.  Register for the course"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-5",
+    "title": "2.  Gain access for 120 days",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "2.  Gain access for 120 days"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-6",
+    "title": "3. Register and sit for the SSCP certification exam",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "3. Register and sit for the SSCP certification exam"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-7",
+    "title": "Upon completing the SSCP Professional Certificate",
+    "provider": "you will:",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Upon completing the SSCP Professional Certificate"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-8",
+    "title": "1.  Complete six courses of preparing you to sit for the Systems Security Certified Practitioner (SSCP) certification exam Opens in a new tabas outlined below.",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "1.  Complete six courses of preparing you to sit for the Systems Security Certified Practitioner (SSCP) certification exam Opens in a new tabas outlined below."
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-9",
+    "title": "Course 1 - Access Controls",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Course 1 - Access Controls"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-10",
+    "title": "Course 2 - Security Operations and Administration",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Course 2 - Security Operations and Administration"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-11",
+    "title": "Course 3 - Risk Identification",
+    "provider": "Monitoring",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Course 3 - Risk Identification"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-12",
+    "title": "Course 4 - Cryptography",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Course 4 - Cryptography"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-13",
+    "title": "Course 5 - Network and Communication Security",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Course 5 - Network and Communication Security"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-14",
+    "title": "Course 6 - Systems and Application Security",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Course 6 - Systems and Application Security"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-15",
+    "title": "2. Receive a certificate of program completion.",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "2. Receive a certificate of program completion."
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-16",
+    "title": "3. Understand how to implement",
+    "provider": "monitor and administer an organization’s IT infrastructure in accordance with security policies and procedures that ensure data confidentiality",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "3. Understand how to implement"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-17",
+    "title": "Applied Learning Project",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Applied Learning Project"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-18",
+    "title": "Each course includes a case study that will require students to put into practice the knowledge they have gained throughout each course. Successful completion of course projects will require the basic understanding of the topics covered and the ability to relate those topics to the real world. The objective of each project is to determine whether students have understood course concepts and are able to use them in a real world setting.",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Each course includes a case study that will require students to put into practice the knowledge they have gained throughout each course. Successful completion of course projects will require the basic understanding of the topics covered and the ability to relate those topics to the real world. The objective of each project is to determine whether students have understood course concepts and are able to use them in a real world setting."
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-19",
+    "title": "Specialized Course 19",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Specialized Course 19"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-20",
+    "title": ".NET FullStack Developer",
+    "provider": "Board Infinity",
+    "rating": 4.3,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "['Web API'",
+      "'Web Development'",
+      "'Cascading Style Sheets (CSS)'",
+      "'HTML'",
+      "'React (Web Framework)'"
+    ],
+    "url": "https://www.coursera.org/specializations/dot-net-fullstack"
+  },
+  {
+    "id": "course-21",
+    "title": ".NET Full Stack Foundation:",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      ".NET Full Stack Foundation:"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-22",
+    "title": "Understand the basics of .NET and its significant components.",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Understand the basics of .NET and its significant components."
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-23",
+    "title": "Harnessing the C# programming language",
+    "provider": "mastering everything from basic syntax to complex structures.",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Harnessing the C# programming language"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-24",
+    "title": "Constructing both web and desktop applications with an unparalleled understanding of .NET's capacities.",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Constructing both web and desktop applications with an unparalleled understanding of .NET's capacities."
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-25",
+    "title": "Frontend Development using React:",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Frontend Development using React:"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-26",
+    "title": "Designing web pages employing the core principles of HTML and CSS.",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Designing web pages employing the core principles of HTML and CSS."
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-27",
+    "title": "Utilizing JavaScript for dynamic and interactive functionalities",
+    "provider": "covering everything from basic variables to complex functions.",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Utilizing JavaScript for dynamic and interactive functionalities"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-28",
+    "title": "Constructing dynamic and interactive UIs using React's core concepts such as components",
+    "provider": "state",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Constructing dynamic and interactive UIs using React's core concepts such as components"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-29",
+    "title": "Backend Development using ASP.NET:",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Backend Development using ASP.NET:"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-30",
+    "title": "Master the ASP.NET Core framework",
+    "provider": "designed for modern web applications.",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Master the ASP.NET Core framework"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-31",
+    "title": "Explore ASP.NET MVC and craft web applications following MVC patterns.",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Explore ASP.NET MVC and craft web applications following MVC patterns."
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-32",
+    "title": "Delve into ASP.NET Web API to design and implement RESTful web services.",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Delve into ASP.NET Web API to design and implement RESTful web services."
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-33",
+    "title": "By the end",
+    "provider": "you will be proficient in leveraging .NET technologies",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "By the end"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-34",
+    "title": "Applied Learning Project",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Applied Learning Project"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-35",
+    "title": "Our program is highly focused on practical",
+    "provider": "hands-on learning. We understand that developers learn best by doing",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Our program is highly focused on practical"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-36",
+    "title": "Specialized Course 36",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Specialized Course 36"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-37",
+    "title": "21st Century Energy Transition: how do we make it work?",
+    "provider": "University of Alberta",
+    "rating": 4.8,
+    "difficulty": "Beginner",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "[]"
+    ],
+    "url": "https://www.coursera.org/learn/21st-century-energy-transition"
+  },
+  {
+    "id": "course-38",
+    "title": "In this course from the University of Alberta and Canadian Society for Evolving Energy",
+    "provider": "you will join us to learn about the many energy sources available",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "In this course from the University of Alberta and Canadian Society for Evolving Energy"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-39",
+    "title": "Specialized Course 39",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Specialized Course 39"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-40",
+    "title": "A Crash Course in Causality:  Inferring Causal Effects from Observational Data",
+    "provider": "University of Pennsylvania",
+    "rating": 4.7,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "['Instrumental Variable'",
+      "'Propensity Score Matching'",
+      "'Causal Inference'",
+      "'Causality']"
+    ],
+    "url": "https://www.coursera.org/learn/crash-course-in-causality"
+  },
+  {
+    "id": "course-41",
+    "title": "Over a period of 5 weeks",
+    "provider": "you will learn how causal effects are defined",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Over a period of 5 weeks"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-42",
+    "title": "At the end of the course",
+    "provider": "learners should be able to:",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "At the end of the course"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-43",
+    "title": "1.  Define causal effects using potential outcomes",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "1.  Define causal effects using potential outcomes"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-44",
+    "title": "2.  Describe the difference between association and causation",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "2.  Describe the difference between association and causation"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-45",
+    "title": "3.  Express assumptions with causal graphs",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "3.  Express assumptions with causal graphs"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-46",
+    "title": "4.  Implement several types of causal inference methods (e.g. matching",
+    "provider": "instrumental variables",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "4.  Implement several types of causal inference methods (e.g. matching"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-47",
+    "title": "5.  Identify which causal assumptions are necessary for each type of statistical method",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "5.  Identify which causal assumptions are necessary for each type of statistical method"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-48",
+    "title": "So join us.... and discover for yourself why modern statistical methods for estimating causal effects are indispensable in so many fields of study!",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "So join us.... and discover for yourself why modern statistical methods for estimating causal effects are indispensable in so many fields of study!"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-49",
+    "title": "Specialized Course 49",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Specialized Course 49"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-50",
+    "title": "A life with ADHD",
+    "provider": "University of Geneva",
+    "rating": 4.8,
+    "difficulty": "Beginner",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "['differential diagnosis and comorbidities'",
+      "'symptoms assessment'",
+      "'accomodation'",
+      "'Neuroscience'",
+      "'intervention']"
+    ],
+    "url": "https://www.coursera.org/learn/life-with-adhd"
+  },
+  {
+    "id": "course-51",
+    "title": "Whether you are a person affected by ADHD",
+    "provider": "a family member or a professional",
+    "rating": 4.8,
+    "difficulty": "this course will provide keys to understanding how to live with ADHD over time.",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Whether you are a person affected by ADHD"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-52",
+    "title": "Through presentations by experts in the field",
+    "provider": "activities and various resources such as readings and videos",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Through presentations by experts in the field"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-53",
+    "title": "- The assessment of ADHD symptoms",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "- The assessment of ADHD symptoms"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-54",
+    "title": "- The specifics of ADHD diagnosis",
+    "provider": "as well as its differential diagnoses and comorbidities",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "- The specifics of ADHD diagnosis"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-55",
+    "title": "- Biological (including medication)",
+    "provider": "psychological and environmental interventions for ADHD",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "- Biological (including medication)"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-56",
+    "title": "This MOOC has been created for teenagers and adults affected by ADHD",
+    "provider": "as well as their families. It has also been designed for professionals interested in ADHD. This MOOC is also proposed to medical and psychology students who wish to learn more about ADHD.",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "This MOOC has been created for teenagers and adults affected by ADHD"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-57",
+    "title": "We hope you will have a lot of fun following this MOOC!",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "We hope you will have a lot of fun following this MOOC!"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-58",
+    "title": "Specialized Course 58",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Specialized Course 58"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-59",
+    "title": "AI & Law",
+    "provider": "Lund University",
+    "rating": 4.8,
+    "difficulty": "Beginner",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "[]"
+    ],
+    "url": "https://www.coursera.org/learn/ai-law"
+  },
+  {
+    "id": "course-60",
+    "title": "This four-week course titled AI and Law explores the way in which the increasing use of artificially intelligent technologies (AI) affects the practice and administration of law defined in a broad sense. Subject matters discussed include the connection between AI and Law in the context of legal responsibility",
+    "provider": "law-making",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "This four-week course titled AI and Law explores the way in which the increasing use of artificially intelligent technologies (AI) affects the practice and administration of law defined in a broad sense. Subject matters discussed include the connection between AI and Law in the context of legal responsibility"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-61",
+    "title": "The course aims to equip members of the general public with an elementary ability to understand the meaningful potential of AI for their own lives. The course also aims to enable members of the general public to understand the consequences of using AI and to allow them to interact with AIs in a responsible",
+    "provider": "helpful",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "The course aims to equip members of the general public with an elementary ability to understand the meaningful potential of AI for their own lives. The course also aims to enable members of the general public to understand the consequences of using AI and to allow them to interact with AIs in a responsible"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-62",
+    "title": "At the end of this course",
+    "provider": "you will have a basic understanding of how to:",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "At the end of this course"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-63",
+    "title": "•\tUnderstand the legal significance of the artificially intelligent software and hardware.",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "•\tUnderstand the legal significance of the artificially intelligent software and hardware."
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-64",
+    "title": "•\tUnderstand the impact of the emergence of artificial intelligence on the application and administration of law in the public sector in connection with the enforcement of criminal law",
+    "provider": "the modelling of law and in the context of administrative law.",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "•\tUnderstand the impact of the emergence of artificial intelligence on the application and administration of law in the public sector in connection with the enforcement of criminal law"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-65",
+    "title": "•\tUnderstand the legal relevance of the use of artificially intelligent software in the private sector in connection with innovation and associated intellectual property rights",
+    "provider": "in the financial services sector and when predicting outcomes of legal proceedings.",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "•\tUnderstand the legal relevance of the use of artificially intelligent software in the private sector in connection with innovation and associated intellectual property rights"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-66",
+    "title": "•\tUnderstand the importance of artificial intelligence for selected legal fields",
+    "provider": "including labour law",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "•\tUnderstand the importance of artificial intelligence for selected legal fields"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-67",
+    "title": "Syllabus and Format",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Syllabus and Format"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-68",
+    "title": "The course consists of four modules where one module represents about one week of part-time studies. A module includes a number of lectures and readings",
+    "provider": "and finishes with an assessment – a quiz and/or a peer graded assignment. The assessments are intended to encourage learning and ensure that you understand the material of the course. Participating in forum discussions is voluntary.",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "The course consists of four modules where one module represents about one week of part-time studies. A module includes a number of lectures and readings"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-69",
+    "title": "Modules",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Modules"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-70",
+    "title": "Module 1.\tAI and Law",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Module 1.\tAI and Law"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-71",
+    "title": "Module 2.\tLegal AI in the Public Sector",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Module 2.\tLegal AI in the Public Sector"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-72",
+    "title": "Module 3.\tLegal AI in the Private Sector",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Module 3.\tLegal AI in the Private Sector"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-73",
+    "title": "Module 4.\tSelected Challenges",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Module 4.\tSelected Challenges"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-74",
+    "title": "Lund University",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Lund University"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-75",
+    "title": "Lund University was founded in 1666 and has for a number of years been ranked among the world’s top 100 universities. The University has 47 700 students and 7 500 staff based in Lund",
+    "provider": "Sweden. Lund University unites tradition with a modern",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Lund University was founded in 1666 and has for a number of years been ranked among the world’s top 100 universities. The University has 47 700 students and 7 500 staff based in Lund"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-76",
+    "title": "The Faulty of Law is one of Lund University’s four original faculties",
+    "provider": "dating back to 1666. It is a modern faculty with an international profile",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "The Faulty of Law is one of Lund University’s four original faculties"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-77",
+    "title": "The faculty offers three international Masters: two 2-year Master’s programmes in International Human Rights Law and European Business Law",
+    "provider": "and a 1-year Master’s in European and International Tax Law. Students from around 40 countries take part in the programmes which offer a unique subject specialization within each field",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "The faculty offers three international Masters: two 2-year Master’s programmes in International Human Rights Law and European Business Law"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-78",
+    "title": "Specialized Course 78",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Specialized Course 78"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-79",
+    "title": "AI Applications in Marketing and Finance",
+    "provider": "University of Pennsylvania",
+    "rating": 4.7,
+    "difficulty": "Mixed",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "[]"
+    ],
+    "url": "https://www.coursera.org/learn/wharton-ai-applications-marketing-finance"
+  },
+  {
+    "id": "course-80",
+    "title": "Specialized Course 80",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Specialized Course 80"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-81",
+    "title": "AI Applications in People Management",
+    "provider": "University of Pennsylvania",
+    "rating": 4.7,
+    "difficulty": "Mixed",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "[]"
+    ],
+    "url": "https://www.coursera.org/learn/wharton-ai-applications-people-management"
+  },
+  {
+    "id": "course-82",
+    "title": "Specialized Course 82",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Specialized Course 82"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-83",
+    "title": "AI For Business",
+    "provider": "University of Pennsylvania",
+    "rating": 4.7,
+    "difficulty": "Beginner",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "['Artificial Intelligence (AI)'",
+      "'Machine Learning'",
+      "'Management'",
+      "'Analytics'",
+      "'Fraud Prevention']"
+    ],
+    "url": "https://www.coursera.org/specializations/ai-for-business-wharton"
+  },
+  {
+    "id": "course-84",
+    "title": "By the end of this specialization",
+    "provider": "you will be able to implement ethical AI strategies for people management and have a better understanding of the relationship between data analytics",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "By the end of this specialization"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-85",
+    "title": "For additional reading",
+    "provider": "Professor Hosanagar's book A Human’s Guide to Machine Intelligence can be used as an additional resource",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "For additional reading"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-86",
+    "title": "Applied Learning Project",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Applied Learning Project"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-87",
+    "title": "Each course module in this Specialization culminates in an assessment",
+    "provider": "with two courses including peer-review exercises. These assessments are designed to check learners' knowledge and to provide an opportunity for learners to apply course concepts such as data analytics",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Each course module in this Specialization culminates in an assessment"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-88",
+    "title": "The assessments will be cumulative and cover the application of artificial intelligence",
+    "provider": "ethical governance rules",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "The assessments will be cumulative and cover the application of artificial intelligence"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-89",
+    "title": "Specialized Course 89",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Specialized Course 89"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-90",
+    "title": "AI For Everyone",
+    "provider": "DeepLearning.AI",
+    "rating": 4.8,
+    "difficulty": "Beginner",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "['Workflow of Machine Learning projects'",
+      "'AI terminology'",
+      "'AI strategy'",
+      "'Workflow of Data Science projects']"
+    ],
+    "url": "https://www.coursera.org/learn/ai-for-everyone"
+  },
+  {
+    "id": "course-91",
+    "title": "In this course",
+    "provider": "you will learn:",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "In this course"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-92",
+    "title": "- The meaning behind common AI terminology",
+    "provider": "including neural networks",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "- The meaning behind common AI terminology"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-93",
+    "title": "- What AI realistically can--and cannot--do",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "- What AI realistically can--and cannot--do"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-94",
+    "title": "- How to spot opportunities to apply AI to problems in your own organization",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "- How to spot opportunities to apply AI to problems in your own organization"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-95",
+    "title": "- What it feels like to build machine learning and data science projects",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "- What it feels like to build machine learning and data science projects"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-96",
+    "title": "- How to work with an AI team and build an AI strategy in your company",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "- How to work with an AI team and build an AI strategy in your company"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-97",
+    "title": "- How to navigate ethical and societal discussions surrounding AI",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "- How to navigate ethical and societal discussions surrounding AI"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-98",
+    "title": "Though this course is largely non-technical",
+    "provider": "engineers can also take this course to learn the business aspects of AI.",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Though this course is largely non-technical"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-99",
+    "title": "Specialized Course 99",
+    "provider": "DeepLearning.AI / Stanford",
+    "rating": 4.8,
+    "difficulty": "Intermediate",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "Specialized Course 99"
+    ],
+    "url": "https://www.coursera.org"
+  },
+  {
+    "id": "course-100",
+    "title": "AI For Everyone （すべての人のためのAIリテラシー講座）",
+    "provider": "DeepLearning.AI",
+    "rating": 4.8,
+    "difficulty": "Beginner",
+    "certificateType": "Specialization Certificate",
+    "skills": [
+      "[]"
+    ],
+    "url": "https://www.coursera.org/learn/ai-for-everyone-ja"
+  }
+]

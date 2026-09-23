@@ -1,0 +1,501 @@
+job_id,job_title,company,location,employment_type,experience_level,industry,skills_required,salary_min_usd,salary_max_usd,remote_allowed,posted_date
+1,Product Manager,Meta,"Austin, USA",Full-time,Entry level,Education,"Python, Node.js, SQL, JavaScript, Power BI, Machine Learning",53278,99326,TRUE,25-04-2023
+2,Product Manager,Oracle,"London, UK",Full-time,Mid level,E-commerce,"AWS, Java, JavaScript, Azure, SQL",76062,141049,TRUE,28-07-2024
+3,Machine Learning Engineer,Salesforce,"London, UK",Full-time,Director,Education,"Node.js, Docker, SQL",62676,119728,FALSE,25-01-2024
+4,Data Analyst,StartupX,"Seattle, USA",Contract,Entry level,Finance,"Docker, AWS, Kubernetes",75203,94319,FALSE,06-01-2024
+5,Product Manager,StartupX,"London, UK",Full-time,Mid level,Education,"Java, Kubernetes, Docker, AWS",98520,155086,TRUE,16-06-2023
+6,Data Analyst,Tesla,"Toronto, Canada",Contract,Entry level,Finance,"JavaScript, Excel, Kubernetes, Docker, React",57331,97352,FALSE,29-11-2023
+7,Product Manager,FinTechHub,Remote,Contract,Director,Education,"Azure, JavaScript, Java, Machine Learning, Kubernetes, SQL",84718,113019,TRUE,27-05-2023
+8,DevOps Engineer,Salesforce,"San Francisco, USA",Internship,Director,Education,"Machine Learning, AWS, Node.js, Python, Excel, SQL",70033,101002,FALSE,23-04-2023
+9,DevOps Engineer,Amazon,"Bangalore, India",Full-time,Senior level,Education,"Machine Learning, SQL, Excel, AWS",64621,113090,TRUE,15-12-2023
+10,Marketing Analyst,Adobe,"New York, USA",Contract,Director,Technology,"Node.js, Azure, Tableau",99009,130183,FALSE,06-06-2023
+11,AI Researcher,Microsoft,"San Francisco, USA",Internship,Entry level,Education,"Java, Excel, Kubernetes, Machine Learning",57592,99163,TRUE,03-09-2023
+12,Product Manager,Adobe,"Seattle, USA",Contract,Director,Healthcare,"Node.js, Machine Learning, Kubernetes, SQL, JavaScript, Excel",119163,184624,TRUE,29-09-2023
+13,AI Researcher,Meta,"New York, USA",Full-time,Entry level,Finance,"Node.js, Python, Azure",52757,92918,TRUE,13-12-2023
+14,Full Stack Developer,Meta,Remote,Part-time,Director,Finance,"Tableau, Docker, JavaScript, SQL, Power BI, React",81195,127695,FALSE,10-06-2024
+15,Data Analyst,StartupX,"San Francisco, USA",Full-time,Director,Healthcare,"JavaScript, Node.js, React",103883,175096,FALSE,09-03-2024
+16,Business Analyst,Oracle,"Seattle, USA",Full-time,Director,Education,"Python, Excel, Machine Learning",105296,139346,TRUE,24-05-2023
+17,DevOps Engineer,Oracle,"Bangalore, India",Part-time,Director,Technology,"Docker, Python, Node.js, AWS",80982,112780,FALSE,06-04-2023
+18,Software Engineer,Meta,"London, UK",Part-time,Entry level,Education,"Power BI, Azure, Python",105444,179232,TRUE,20-10-2023
+19,Marketing Analyst,Amazon,"New York, USA",Full-time,Mid level,Technology,"Excel, React, JavaScript",112493,188402,FALSE,21-08-2024
+20,AI Researcher,Microsoft,"Toronto, Canada",Contract,Senior level,Finance,"JavaScript, AWS, Docker, Java, Excel",82271,97480,FALSE,03-05-2023
+21,Data Analyst,Oracle,"San Francisco, USA",Full-time,Mid level,Education,"Java, Azure, SQL, JavaScript, React",91441,110949,FALSE,13-04-2024
+22,AI Researcher,StartupX,Remote,Full-time,Senior level,Technology,"AWS, SQL, React, Power BI",107433,157084,TRUE,11-06-2023
+23,Machine Learning Engineer,Meta,"London, UK",Internship,Senior level,Technology,"Excel, Docker, AWS",86930,124537,TRUE,06-10-2023
+24,Business Analyst,Amazon,"Bangalore, India",Internship,Entry level,Technology,"Node.js, Power BI, Java",93719,120865,TRUE,04-01-2023
+25,Software Engineer,Google,"London, UK",Contract,Entry level,Healthcare,"Excel, JavaScript, Node.js, SQL",69410,135743,FALSE,14-01-2024
+26,Product Manager,Amazon,"Austin, USA",Internship,Entry level,Finance,"Tableau, Docker, Node.js, Excel, JavaScript",103264,133521,FALSE,27-07-2024
+27,Data Analyst,Oracle,"Seattle, USA",Part-time,Director,Healthcare,"React, Tableau, JavaScript, Node.js, Python",64168,124308,TRUE,13-06-2023
+28,Data Scientist,Netflix,"Berlin, Germany",Internship,Senior level,Technology,"Node.js, AWS, Java",93025,139542,FALSE,13-02-2024
+29,Machine Learning Engineer,FinTechHub,"Berlin, Germany",Internship,Entry level,E-commerce,"AWS, Python, Power BI, Docker",64208,131167,TRUE,09-02-2023
+30,DevOps Engineer,Microsoft,"Berlin, Germany",Contract,Entry level,Healthcare,"Excel, Docker, Azure, React, AWS",75825,133564,TRUE,16-06-2024
+31,Software Engineer,Salesforce,"London, UK",Internship,Entry level,Healthcare,"JavaScript, Docker, Tableau, Data Visualization, Power BI",105108,164803,FALSE,16-07-2023
+32,Product Manager,Adobe,"Bangalore, India",Part-time,Entry level,Healthcare,"SQL, React, Tableau, JavaScript, Excel",107905,175859,FALSE,21-04-2024
+33,Data Analyst,Google,"Seattle, USA",Internship,Entry level,E-commerce,"Node.js, Excel, Data Visualization, JavaScript, Docker, Kubernetes",76100,105413,FALSE,19-08-2023
+34,Data Scientist,IBM,"Seattle, USA",Part-time,Director,Technology,"Node.js, React, SQL, Kubernetes",69342,80068,TRUE,07-09-2023
+35,Full Stack Developer,Salesforce,Remote,Internship,Director,Finance,"Kubernetes, AWS, Tableau, JavaScript, Excel, React",119616,171204,FALSE,20-04-2024
+36,Data Scientist,FinTechHub,"London, UK",Part-time,Senior level,Healthcare,"Node.js, Machine Learning, SQL, Java, Power BI",85992,153646,TRUE,02-09-2023
+37,Data Scientist,IBM,"Toronto, Canada",Contract,Director,E-commerce,"JavaScript, React, Docker",70028,108071,FALSE,28-01-2024
+38,Full Stack Developer,Google,"Berlin, Germany",Contract,Director,E-commerce,"Kubernetes, JavaScript, AWS, Docker",52560,112417,FALSE,21-08-2024
+39,DevOps Engineer,FinTechHub,"Austin, USA",Internship,Mid level,Education,"Node.js, Docker, Data Visualization",100968,155025,TRUE,30-01-2023
+40,Full Stack Developer,Amazon,"New York, USA",Contract,Director,Healthcare,"Kubernetes, Azure, React, Docker",106179,133965,FALSE,27-03-2023
+41,Full Stack Developer,Google,Remote,Full-time,Senior level,Finance,"Tableau, Excel, Python",83065,103800,TRUE,07-03-2024
+42,AI Researcher,Amazon,"Seattle, USA",Part-time,Director,Technology,"Kubernetes, Power BI, AWS, Azure",76130,88801,TRUE,11-09-2023
+43,Data Scientist,Salesforce,"New York, USA",Contract,Director,E-commerce,"SQL, Data Visualization, Power BI, Excel",71465,122233,TRUE,28-04-2023
+44,AI Researcher,Google,"Berlin, Germany",Internship,Senior level,Technology,"Python, React, Docker, Kubernetes, SQL",89529,115395,FALSE,15-04-2023
+45,DevOps Engineer,Amazon,Remote,Contract,Director,E-commerce,"React, Power BI, Data Visualization, AWS, Azure, JavaScript",110258,140310,TRUE,06-01-2024
+46,Full Stack Developer,Salesforce,"Toronto, Canada",Contract,Entry level,E-commerce,"Java, Kubernetes, JavaScript, Azure, AWS",109087,151050,FALSE,13-10-2023
+47,Marketing Analyst,Meta,"San Francisco, USA",Part-time,Director,E-commerce,"Power BI, Kubernetes, Excel, Node.js",86211,97541,FALSE,14-10-2023
+48,Business Analyst,Meta,"Toronto, Canada",Part-time,Senior level,Education,"Kubernetes, Machine Learning, React, Azure, Docker",52260,74456,FALSE,03-04-2024
+49,Business Analyst,Netflix,"Seattle, USA",Full-time,Mid level,Healthcare,"Power BI, Machine Learning, Tableau",109473,154982,TRUE,27-12-2023
+50,Business Analyst,FinTechHub,Remote,Contract,Entry level,Finance,"JavaScript, Azure, Java, AWS, Python",78361,151825,TRUE,16-07-2023
+51,Marketing Analyst,Netflix,"Austin, USA",Internship,Entry level,Technology,"Kubernetes, Node.js, React, Azure, Java",55965,73111,TRUE,08-10-2023
+52,Data Scientist,IBM,"Bangalore, India",Full-time,Entry level,Finance,"Tableau, Data Visualization, AWS, SQL",112616,137569,TRUE,16-09-2023
+53,Marketing Analyst,IBM,"Bangalore, India",Internship,Senior level,Education,"AWS, Data Visualization, React, Python, Tableau, SQL",104548,144129,TRUE,02-05-2023
+54,Software Engineer,Meta,"Austin, USA",Full-time,Mid level,Technology,"Kubernetes, Power BI, Data Visualization, Node.js, AWS, Python",84687,105328,TRUE,05-08-2023
+55,Data Scientist,StartupX,"Seattle, USA",Contract,Mid level,E-commerce,"Machine Learning, JavaScript, Excel",87056,156566,TRUE,23-10-2023
+56,Data Analyst,Amazon,"London, UK",Contract,Director,Technology,"Power BI, AWS, Node.js, Docker, React, Machine Learning",68643,88002,FALSE,30-09-2023
+57,DevOps Engineer,FinTechHub,"Berlin, Germany",Contract,Entry level,Technology,"Excel, React, Data Visualization, Tableau",60543,75767,TRUE,24-03-2024
+58,Full Stack Developer,Adobe,"Bangalore, India",Contract,Mid level,Education,"Excel, React, Kubernetes, SQL, Tableau, Azure",55273,88235,FALSE,03-10-2023
+59,Software Engineer,Tesla,"Toronto, Canada",Internship,Senior level,E-commerce,"Kubernetes, SQL, Azure",92081,115791,FALSE,08-12-2023
+60,Marketing Analyst,Google,Remote,Internship,Director,Technology,"Machine Learning, Azure, Data Visualization, Kubernetes",65194,128170,FALSE,28-11-2023
+61,Marketing Analyst,Amazon,"London, UK",Internship,Director,Technology,"Excel, Data Visualization, Tableau",76680,121683,TRUE,22-02-2023
+62,Marketing Analyst,IBM,"San Francisco, USA",Part-time,Entry level,E-commerce,"Excel, React, Java",90730,102522,FALSE,12-06-2023
+63,DevOps Engineer,Oracle,"Bangalore, India",Part-time,Director,Education,"Docker, JavaScript, Data Visualization, Machine Learning",116698,162536,TRUE,26-10-2023
+64,Machine Learning Engineer,Adobe,"London, UK",Full-time,Senior level,Healthcare,"React, Java, Kubernetes, Machine Learning, Tableau, Azure",86208,150595,FALSE,13-03-2023
+65,Machine Learning Engineer,Meta,"Seattle, USA",Internship,Mid level,E-commerce,"Azure, Power BI, Kubernetes",99441,169123,FALSE,19-07-2024
+66,Data Analyst,Amazon,Remote,Contract,Entry level,E-commerce,"Machine Learning, Kubernetes, Python",69936,144859,TRUE,31-01-2024
+67,Full Stack Developer,Netflix,"Berlin, Germany",Internship,Entry level,Healthcare,"Azure, Excel, Power BI, Kubernetes, Machine Learning, Python",70232,90039,TRUE,24-02-2024
+68,Data Scientist,IBM,"San Francisco, USA",Full-time,Director,Finance,"Node.js, Python, React, Azure, Tableau",87667,127484,FALSE,29-08-2023
+69,Software Engineer,Meta,Remote,Internship,Mid level,Finance,"SQL, Data Visualization, Docker, React",99131,165581,TRUE,03-01-2024
+70,Full Stack Developer,StartupX,"London, UK",Internship,Senior level,Technology,"Node.js, AWS, Excel, Machine Learning, Java, SQL",68758,109191,FALSE,24-05-2024
+71,Business Analyst,Oracle,"London, UK",Part-time,Director,E-commerce,"JavaScript, Docker, Data Visualization",89210,154825,FALSE,20-12-2023
+72,Data Analyst,StartupX,"Toronto, Canada",Contract,Entry level,Education,"Node.js, Data Visualization, Power BI",88780,137476,FALSE,11-08-2024
+73,Product Manager,StartupX,"Seattle, USA",Contract,Mid level,Technology,"AWS, Tableau, Kubernetes",80162,136341,TRUE,21-10-2023
+74,Data Scientist,Netflix,"Berlin, Germany",Internship,Mid level,Finance,"Tableau, Machine Learning, Azure, React",97823,125047,FALSE,16-08-2024
+75,Business Analyst,FinTechHub,"Berlin, Germany",Full-time,Director,Technology,"Tableau, JavaScript, Excel, Power BI",83681,156837,FALSE,18-06-2023
+76,DevOps Engineer,Google,"London, UK",Full-time,Director,Healthcare,"Data Visualization, Docker, Excel, Azure, SQL",97942,119778,TRUE,24-07-2024
+77,AI Researcher,Meta,"San Francisco, USA",Internship,Senior level,E-commerce,"Java, Python, React",53280,106272,FALSE,27-04-2024
+78,Product Manager,Adobe,"Austin, USA",Internship,Director,Healthcare,"Data Visualization, Power BI, React, Java, Docker, SQL",65220,87959,FALSE,19-05-2024
+79,Machine Learning Engineer,Meta,"Bangalore, India",Internship,Mid level,Healthcare,"Excel, Azure, Machine Learning",86666,100954,FALSE,22-02-2024
+80,Product Manager,Microsoft,"Bangalore, India",Full-time,Mid level,Education,"Python, Tableau, Azure",102184,148344,TRUE,04-03-2023
+81,Marketing Analyst,Meta,"Seattle, USA",Part-time,Senior level,Finance,"AWS, React, Java",76896,95888,TRUE,09-05-2023
+82,Data Scientist,StartupX,"New York, USA",Part-time,Entry level,Healthcare,"Data Visualization, Azure, Python, Java",82853,115724,FALSE,07-07-2024
+83,Marketing Analyst,Microsoft,"San Francisco, USA",Internship,Director,Healthcare,"Kubernetes, Machine Learning, JavaScript",66614,131790,TRUE,23-02-2023
+84,Data Analyst,Google,"Bangalore, India",Internship,Director,Technology,"Power BI, Kubernetes, SQL, Tableau, Azure, Data Visualization",89535,159571,TRUE,17-06-2024
+85,AI Researcher,StartupX,Remote,Contract,Director,Education,"Kubernetes, Machine Learning, Data Visualization, Docker, SQL",66540,112586,TRUE,09-03-2023
+86,Full Stack Developer,Meta,"Toronto, Canada",Contract,Director,E-commerce,"Power BI, SQL, Azure, Docker, Tableau, AWS",78183,144553,FALSE,18-07-2024
+87,Data Scientist,Microsoft,"San Francisco, USA",Internship,Entry level,Healthcare,"Machine Learning, Python, Data Visualization, Node.js",112163,130962,FALSE,06-06-2023
+88,DevOps Engineer,FinTechHub,"New York, USA",Contract,Senior level,Healthcare,"Data Visualization, Machine Learning, JavaScript",103845,160191,TRUE,06-05-2023
+89,Machine Learning Engineer,Adobe,"Berlin, Germany",Full-time,Senior level,Education,"Tableau, Docker, Machine Learning, Data Visualization",79392,103576,TRUE,08-05-2024
+90,Business Analyst,FinTechHub,"London, UK",Contract,Senior level,Technology,"React, Java, Data Visualization, Excel",53794,87441,FALSE,01-10-2023
+91,Data Scientist,FinTechHub,Remote,Part-time,Director,E-commerce,"Azure, Java, Node.js, AWS, Tableau, Data Visualization",68595,82613,TRUE,13-03-2023
+92,AI Researcher,Google,"San Francisco, USA",Contract,Director,E-commerce,"Data Visualization, Kubernetes, Docker, AWS, JavaScript, Machine Learning",70392,101024,TRUE,23-02-2023
+93,Business Analyst,StartupX,"Bangalore, India",Contract,Entry level,Finance,"Data Visualization, Python, React, JavaScript, AWS, Power BI",106349,130883,TRUE,20-12-2023
+94,Data Scientist,Google,"Bangalore, India",Internship,Mid level,Finance,"Machine Learning, Power BI, JavaScript, Node.js, React, Azure",87938,140945,TRUE,19-09-2023
+95,Data Analyst,Oracle,"San Francisco, USA",Contract,Director,Education,"Power BI, Excel, Docker, AWS, SQL, Tableau",55544,122720,TRUE,11-02-2024
+96,Machine Learning Engineer,Microsoft,"Toronto, Canada",Full-time,Mid level,E-commerce,"Machine Learning, SQL, Docker, AWS, Azure, JavaScript",72527,142832,FALSE,29-11-2023
+97,Data Scientist,Adobe,Remote,Part-time,Senior level,Healthcare,"JavaScript, SQL, Java, AWS",60011,136921,TRUE,22-06-2023
+98,Software Engineer,StartupX,"Bangalore, India",Internship,Director,Education,"React, Excel, Azure, Java, Kubernetes",70036,89912,TRUE,27-06-2023
+99,Business Analyst,Salesforce,"New York, USA",Contract,Entry level,Healthcare,"Kubernetes, Python, React, Azure, AWS, SQL",107961,157652,TRUE,25-04-2024
+100,AI Researcher,Adobe,"New York, USA",Internship,Mid level,Healthcare,"Machine Learning, Java, Python, Kubernetes, SQL, Azure",100394,171042,TRUE,03-06-2024
+101,Product Manager,FinTechHub,"Bangalore, India",Internship,Mid level,Healthcare,"Node.js, AWS, Docker, Tableau, Azure",72617,87747,TRUE,31-05-2024
+102,Data Scientist,Adobe,"Toronto, Canada",Contract,Senior level,Education,"Azure, SQL, Data Visualization, Excel",58639,111852,TRUE,09-12-2023
+103,Software Engineer,Salesforce,"San Francisco, USA",Contract,Director,Healthcare,"Excel, Power BI, React, Node.js",90662,152036,TRUE,25-12-2023
+104,Data Analyst,Tesla,"London, UK",Part-time,Mid level,Healthcare,"JavaScript, Node.js, Java, Tableau, SQL, AWS",116648,174073,TRUE,09-03-2024
+105,Machine Learning Engineer,Salesforce,"Austin, USA",Internship,Mid level,Finance,"React, Power BI, Tableau, Data Visualization",119013,133960,TRUE,03-06-2024
+106,Machine Learning Engineer,StartupX,"Seattle, USA",Internship,Senior level,E-commerce,"Machine Learning, JavaScript, AWS, Kubernetes",55726,119578,TRUE,24-03-2024
+107,Business Analyst,IBM,Remote,Internship,Mid level,Finance,"React, AWS, Python, Excel",107749,178262,FALSE,12-01-2024
+108,Data Scientist,Netflix,"San Francisco, USA",Part-time,Senior level,E-commerce,"React, Docker, SQL, JavaScript",63446,141067,FALSE,16-01-2024
+109,Data Analyst,IBM,Remote,Contract,Mid level,E-commerce,"Azure, JavaScript, Python",53495,117876,FALSE,24-12-2023
+110,Software Engineer,Google,"London, UK",Internship,Mid level,E-commerce,"Data Visualization, Python, SQL, React, AWS, JavaScript",93947,123089,TRUE,12-04-2023
+111,Data Scientist,Netflix,"Seattle, USA",Contract,Entry level,Technology,"Docker, Excel, Tableau, Data Visualization",119176,184652,FALSE,15-07-2024
+112,AI Researcher,Adobe,"New York, USA",Part-time,Mid level,Healthcare,"Python, Data Visualization, Azure, JavaScript, React, Docker",64530,140043,TRUE,06-03-2023
+113,Data Scientist,Adobe,Remote,Full-time,Director,E-commerce,"Excel, Docker, Azure",118614,175879,FALSE,29-03-2023
+114,Machine Learning Engineer,Meta,"San Francisco, USA",Contract,Mid level,Technology,"Machine Learning, Azure, Excel, Java, Tableau",96805,115660,FALSE,17-01-2023
+115,Data Scientist,FinTechHub,"Bangalore, India",Full-time,Senior level,Finance,"Tableau, JavaScript, Python",73891,101566,FALSE,05-05-2024
+116,Marketing Analyst,Oracle,"London, UK",Full-time,Mid level,Healthcare,"React, Tableau, Python, Excel, Azure",117552,179748,FALSE,14-11-2023
+117,DevOps Engineer,FinTechHub,"Bangalore, India",Internship,Senior level,Finance,"Power BI, Kubernetes, Azure, Machine Learning, AWS, SQL",98237,165509,FALSE,08-05-2023
+118,Marketing Analyst,Netflix,"Berlin, Germany",Full-time,Entry level,Healthcare,"AWS, Kubernetes, Data Visualization, Power BI, Docker",106440,140092,TRUE,22-03-2023
+119,Data Analyst,FinTechHub,"Berlin, Germany",Internship,Senior level,Technology,"Excel, Node.js, Docker",96077,164683,FALSE,30-03-2024
+120,Software Engineer,Salesforce,"Bangalore, India",Full-time,Mid level,Technology,"Tableau, Excel, Azure, Node.js",70969,85050,FALSE,09-06-2024
+121,Full Stack Developer,Tesla,"Berlin, Germany",Internship,Entry level,Education,"Machine Learning, Azure, Docker, React",54244,84355,FALSE,03-08-2024
+122,Software Engineer,Oracle,Remote,Internship,Entry level,Healthcare,"Power BI, Kubernetes, JavaScript, Data Visualization, AWS",64869,78265,FALSE,13-09-2023
+123,Data Scientist,Oracle,"Austin, USA",Internship,Entry level,Healthcare,"Power BI, SQL, Machine Learning, Tableau, AWS",66074,93864,FALSE,24-07-2023
+124,Marketing Analyst,Meta,"San Francisco, USA",Part-time,Mid level,Finance,"Python, Azure, Machine Learning, Data Visualization, React, Kubernetes",72818,130199,TRUE,11-06-2023
+125,DevOps Engineer,FinTechHub,"Bangalore, India",Internship,Director,Education,"Java, Azure, Excel",58617,109156,TRUE,30-03-2023
+126,Machine Learning Engineer,Amazon,Remote,Part-time,Mid level,E-commerce,"React, SQL, Machine Learning",111057,188868,TRUE,05-04-2024
+127,Machine Learning Engineer,FinTechHub,"Seattle, USA",Contract,Senior level,Technology,"JavaScript, Excel, Machine Learning, AWS, Java",71581,102810,FALSE,08-11-2023
+128,Software Engineer,Salesforce,"Austin, USA",Part-time,Senior level,Education,"React, Node.js, Python",62245,138118,TRUE,30-06-2024
+129,AI Researcher,IBM,"New York, USA",Internship,Senior level,Healthcare,"JavaScript, Tableau, React, Excel, Docker, AWS",84688,122319,FALSE,16-02-2023
+130,Full Stack Developer,IBM,"Bangalore, India",Internship,Mid level,Healthcare,"Azure, React, Power BI, Node.js",57852,88571,FALSE,16-03-2023
+131,Marketing Analyst,Adobe,"San Francisco, USA",Contract,Mid level,E-commerce,"AWS, Kubernetes, JavaScript",67139,125706,TRUE,13-02-2024
+132,DevOps Engineer,Salesforce,"Toronto, Canada",Part-time,Mid level,Healthcare,"JavaScript, Tableau, Java, Kubernetes, Machine Learning",56632,104670,FALSE,10-04-2023
+133,Data Analyst,Microsoft,"Toronto, Canada",Internship,Mid level,Finance,"Python, Node.js, AWS, Kubernetes, Data Visualization",90441,165632,FALSE,25-05-2024
+134,DevOps Engineer,Amazon,"London, UK",Contract,Director,Healthcare,"Docker, Python, Data Visualization",51071,75160,TRUE,20-10-2023
+135,DevOps Engineer,Adobe,"Bangalore, India",Contract,Entry level,Finance,"Docker, Azure, Tableau",87827,107464,FALSE,07-01-2024
+136,Product Manager,Salesforce,Remote,Internship,Entry level,Technology,"Java, Power BI, Azure",97920,126829,FALSE,25-07-2024
+137,AI Researcher,Adobe,"Austin, USA",Contract,Senior level,Finance,"Data Visualization, Power BI, AWS, Node.js, Azure, Machine Learning",109898,139419,FALSE,15-06-2024
+138,Data Analyst,Tesla,"Berlin, Germany",Full-time,Director,Education,"Tableau, Power BI, React, Excel, Python",89294,161539,FALSE,30-07-2024
+139,AI Researcher,Oracle,"Austin, USA",Internship,Mid level,Finance,"Data Visualization, Power BI, SQL",79824,96555,TRUE,29-09-2023
+140,DevOps Engineer,Amazon,"Toronto, Canada",Part-time,Director,Education,"React, Node.js, Power BI, Tableau, Python, Java",107807,158923,TRUE,20-01-2023
+141,Marketing Analyst,IBM,"Berlin, Germany",Part-time,Director,Education,"Machine Learning, Azure, Excel, Power BI, Tableau",92604,165305,FALSE,28-07-2024
+142,Business Analyst,Adobe,"London, UK",Part-time,Senior level,Healthcare,"Power BI, Node.js, Kubernetes, Azure",75200,117511,FALSE,10-05-2024
+143,Data Scientist,Salesforce,Remote,Internship,Director,Healthcare,"AWS, Python, Node.js, Power BI",85842,133563,TRUE,24-12-2023
+144,Full Stack Developer,Meta,"Seattle, USA",Contract,Senior level,Finance,"Data Visualization, Power BI, Node.js",107983,151595,TRUE,21-12-2023
+145,Product Manager,StartupX,"Seattle, USA",Full-time,Entry level,E-commerce,"Power BI, Kubernetes, SQL, Excel, Java",56653,136257,TRUE,06-09-2023
+146,Full Stack Developer,Oracle,"Seattle, USA",Contract,Senior level,Healthcare,"Node.js, Tableau, SQL",70701,134035,TRUE,17-07-2024
+147,DevOps Engineer,Amazon,"New York, USA",Internship,Director,Finance,"Node.js, Python, React, AWS, Data Visualization",54888,87834,TRUE,01-07-2024
+148,Marketing Analyst,Adobe,"Bangalore, India",Part-time,Director,Healthcare,"Tableau, SQL, Azure, Java",87298,156850,FALSE,10-12-2023
+149,Machine Learning Engineer,Netflix,"Seattle, USA",Part-time,Director,E-commerce,"SQL, Docker, Excel, Node.js, Java",74405,86251,TRUE,21-09-2023
+150,Data Analyst,Netflix,"Toronto, Canada",Part-time,Director,Healthcare,"AWS, Data Visualization, Power BI, React, Python",92415,134927,FALSE,03-05-2024
+151,Data Scientist,Oracle,"London, UK",Part-time,Director,Education,"Power BI, SQL, Excel, AWS, Azure",80972,99114,TRUE,04-01-2024
+152,Software Engineer,Oracle,"Berlin, Germany",Internship,Director,Education,"Tableau, JavaScript, Excel, Data Visualization",67507,140183,TRUE,13-08-2023
+153,Machine Learning Engineer,Microsoft,"San Francisco, USA",Full-time,Mid level,Education,"Java, Azure, Machine Learning, Kubernetes",108556,187784,TRUE,22-06-2024
+154,Marketing Analyst,Oracle,"New York, USA",Internship,Mid level,Education,"Kubernetes, Data Visualization, Python, Machine Learning, Node.js, AWS",114071,135990,TRUE,30-07-2023
+155,Product Manager,Salesforce,"San Francisco, USA",Full-time,Director,Healthcare,"Machine Learning, Python, SQL",83352,93747,FALSE,10-02-2024
+156,Software Engineer,Amazon,"Toronto, Canada",Contract,Director,E-commerce,"Docker, SQL, Excel, Tableau, Machine Learning, Java",87629,151220,FALSE,02-02-2023
+157,Marketing Analyst,Amazon,"Seattle, USA",Full-time,Entry level,Healthcare,"Excel, Power BI, Machine Learning, Docker, Tableau, React",73392,134910,TRUE,02-05-2023
+158,Software Engineer,Netflix,"Seattle, USA",Full-time,Entry level,E-commerce,"JavaScript, Node.js, SQL",110375,165746,TRUE,11-09-2023
+159,Product Manager,FinTechHub,"New York, USA",Internship,Director,Finance,"Tableau, React, Node.js, Python",108515,124895,TRUE,04-02-2023
+160,AI Researcher,Tesla,"Berlin, Germany",Part-time,Senior level,Finance,"Docker, AWS, React, Python",87914,128606,TRUE,30-05-2024
+161,Machine Learning Engineer,StartupX,"Toronto, Canada",Contract,Director,E-commerce,"AWS, Docker, Java, Machine Learning",114962,131107,FALSE,13-03-2024
+162,Software Engineer,Oracle,"New York, USA",Internship,Director,Education,"Docker, JavaScript, AWS, React",79536,128954,FALSE,04-09-2023
+163,Data Scientist,Adobe,"Seattle, USA",Full-time,Senior level,E-commerce,"React, SQL, JavaScript",108954,167591,TRUE,22-03-2023
+164,Business Analyst,Google,"Seattle, USA",Part-time,Entry level,E-commerce,"Power BI, Data Visualization, Node.js, JavaScript",77379,131021,FALSE,05-05-2024
+165,DevOps Engineer,Oracle,Remote,Contract,Senior level,Healthcare,"Machine Learning, Kubernetes, React, SQL, Tableau",92154,139255,FALSE,03-09-2023
+166,DevOps Engineer,Google,"Seattle, USA",Part-time,Entry level,Healthcare,"AWS, Java, JavaScript, Azure, Tableau, Docker",98589,149604,TRUE,28-07-2023
+167,Full Stack Developer,FinTechHub,"Bangalore, India",Internship,Mid level,Healthcare,"Java, Power BI, Machine Learning, Kubernetes",94245,137973,TRUE,26-05-2024
+168,Data Analyst,Microsoft,"New York, USA",Full-time,Director,Finance,"SQL, Power BI, Java, Python",57698,136372,TRUE,09-07-2024
+169,Data Analyst,Salesforce,"Bangalore, India",Internship,Entry level,Technology,"Python, Node.js, Machine Learning, Power BI, AWS, Tableau",109770,168686,FALSE,01-06-2024
+170,Software Engineer,Microsoft,"San Francisco, USA",Part-time,Mid level,Finance,"React, Azure, AWS, Docker, SQL",115826,182262,FALSE,18-01-2023
+171,Product Manager,Netflix,"San Francisco, USA",Full-time,Entry level,E-commerce,"Docker, Machine Learning, Kubernetes, Python, Excel, Power BI",110161,152038,TRUE,20-02-2024
+172,Machine Learning Engineer,Salesforce,"San Francisco, USA",Full-time,Mid level,Finance,"AWS, Python, SQL, Excel, Node.js, Machine Learning",115517,182390,TRUE,26-03-2023
+173,Product Manager,Salesforce,"Austin, USA",Internship,Entry level,Healthcare,"Data Visualization, JavaScript, Node.js, Docker",91220,103272,FALSE,03-07-2023
+174,Marketing Analyst,FinTechHub,"Berlin, Germany",Full-time,Entry level,E-commerce,"React, SQL, Azure, Data Visualization",68343,88622,FALSE,29-01-2024
+175,Full Stack Developer,Oracle,"Seattle, USA",Contract,Director,E-commerce,"Excel, Data Visualization, Node.js, Docker",53883,99708,TRUE,01-12-2023
+176,Data Scientist,Netflix,"Austin, USA",Internship,Mid level,E-commerce,"Azure, SQL, React, Python, AWS",82302,101936,FALSE,30-10-2023
+177,Software Engineer,Microsoft,"Austin, USA",Internship,Director,Education,"SQL, Python, Node.js, Azure, Machine Learning, Tableau",85358,108757,FALSE,04-01-2024
+178,DevOps Engineer,IBM,"San Francisco, USA",Part-time,Mid level,E-commerce,"Java, AWS, React, Tableau",51617,99870,FALSE,30-01-2024
+179,DevOps Engineer,Netflix,"Toronto, Canada",Contract,Director,Technology,"AWS, JavaScript, Power BI, Excel, Kubernetes",58292,90208,TRUE,30-05-2023
+180,Business Analyst,Google,"Toronto, Canada",Contract,Director,Healthcare,"Azure, Docker, Excel, Data Visualization, Java, AWS",64021,91779,FALSE,13-04-2024
+181,Software Engineer,IBM,"Berlin, Germany",Contract,Director,Education,"Azure, Docker, AWS, React",112784,163964,FALSE,25-07-2023
+182,Marketing Analyst,Google,"Bangalore, India",Part-time,Director,Healthcare,"React, Node.js, Tableau",76188,109771,FALSE,27-04-2023
+183,Product Manager,Netflix,"Austin, USA",Internship,Director,Technology,"Data Visualization, Kubernetes, Node.js, Docker, Machine Learning, Excel",68242,117934,FALSE,26-05-2024
+184,Marketing Analyst,Salesforce,"San Francisco, USA",Full-time,Mid level,Healthcare,"Excel, Data Visualization, Python, React",54818,111942,FALSE,10-07-2024
+185,Data Analyst,Microsoft,"London, UK",Part-time,Mid level,E-commerce,"Docker, Kubernetes, Tableau, Excel, Data Visualization",106420,130306,TRUE,06-12-2023
+186,Data Scientist,Netflix,"Toronto, Canada",Full-time,Entry level,Finance,"AWS, Azure, Kubernetes, JavaScript, Machine Learning",53219,126496,FALSE,20-12-2023
+187,Full Stack Developer,FinTechHub,"Bangalore, India",Contract,Entry level,Healthcare,"Tableau, Power BI, SQL",112411,135206,TRUE,23-12-2023
+188,Product Manager,Adobe,"Austin, USA",Part-time,Senior level,Education,"Kubernetes, JavaScript, Tableau, Docker, Excel, Java",64334,95876,TRUE,18-12-2023
+189,AI Researcher,Meta,"Bangalore, India",Internship,Director,Technology,"JavaScript, AWS, Tableau, Power BI",101849,115675,TRUE,18-03-2024
+190,Machine Learning Engineer,Tesla,"Seattle, USA",Internship,Entry level,Healthcare,"Machine Learning, Excel, Azure, Data Visualization, Docker, Power BI",63336,97841,FALSE,14-08-2024
+191,Full Stack Developer,Salesforce,"Austin, USA",Contract,Entry level,Finance,"SQL, JavaScript, AWS, Node.js, Java",95603,151738,FALSE,27-04-2023
+192,DevOps Engineer,Salesforce,"Austin, USA",Internship,Director,Finance,"Excel, Machine Learning, Power BI, Node.js, Java, React",116954,177870,TRUE,25-05-2023
+193,Software Engineer,Tesla,"Bangalore, India",Full-time,Senior level,Technology,"Java, JavaScript, Docker, Machine Learning, Power BI, Kubernetes",87858,116246,FALSE,16-05-2024
+194,Full Stack Developer,Amazon,"San Francisco, USA",Full-time,Mid level,Healthcare,"AWS, JavaScript, Machine Learning",104477,172653,FALSE,18-05-2024
+195,Marketing Analyst,Adobe,"San Francisco, USA",Full-time,Senior level,Education,"Machine Learning, React, Tableau, Python, Kubernetes",109942,184863,TRUE,22-06-2023
+196,Business Analyst,Google,"Bangalore, India",Contract,Senior level,Technology,"React, SQL, Tableau, JavaScript, Power BI, Data Visualization",63423,105867,FALSE,11-03-2024
+197,Product Manager,Meta,"New York, USA",Contract,Senior level,Education,"Azure, Power BI, AWS, Tableau",71755,100004,FALSE,14-03-2024
+198,DevOps Engineer,Google,"London, UK",Part-time,Mid level,Finance,"Power BI, Azure, JavaScript, Excel",62481,90252,FALSE,10-06-2024
+199,DevOps Engineer,IBM,"Bangalore, India",Full-time,Entry level,E-commerce,"Power BI, Azure, Kubernetes, Tableau, React",68634,113855,TRUE,16-05-2024
+200,Data Scientist,Adobe,"Toronto, Canada",Part-time,Director,Finance,"AWS, Azure, Node.js, React, Machine Learning, Data Visualization",110089,167041,TRUE,06-04-2023
+201,Data Analyst,Google,"San Francisco, USA",Internship,Entry level,Technology,"Kubernetes, Node.js, Python, Docker",113614,168668,TRUE,02-08-2024
+202,Business Analyst,Microsoft,"Berlin, Germany",Contract,Entry level,Healthcare,"Python, Docker, Excel, AWS",89566,120403,TRUE,16-05-2023
+203,Data Analyst,Meta,"Bangalore, India",Full-time,Mid level,Education,"Machine Learning, Excel, Kubernetes, Python",61953,84428,TRUE,15-03-2024
+204,Software Engineer,Oracle,"San Francisco, USA",Part-time,Director,Technology,"SQL, Azure, React",65806,131159,FALSE,18-12-2023
+205,Software Engineer,Microsoft,Remote,Full-time,Mid level,E-commerce,"Power BI, JavaScript, Excel, Node.js, Java",100164,127615,FALSE,21-05-2023
+206,Data Scientist,Amazon,"San Francisco, USA",Internship,Senior level,E-commerce,"Tableau, Java, JavaScript, AWS, Excel",78474,99836,TRUE,29-03-2024
+207,Business Analyst,Meta,Remote,Part-time,Director,Healthcare,"Tableau, Node.js, JavaScript",87345,100860,FALSE,12-09-2023
+208,Full Stack Developer,StartupX,"San Francisco, USA",Full-time,Senior level,Healthcare,"Docker, React, Data Visualization, Node.js",64777,106376,FALSE,31-01-2024
+209,Data Scientist,Google,"San Francisco, USA",Full-time,Senior level,Finance,"Node.js, Python, Tableau",72645,144381,FALSE,13-07-2024
+210,DevOps Engineer,IBM,"Toronto, Canada",Full-time,Mid level,Healthcare,"AWS, SQL, Machine Learning",87550,163223,TRUE,02-06-2024
+211,AI Researcher,StartupX,"San Francisco, USA",Contract,Director,Finance,"JavaScript, SQL, Docker",92827,154040,TRUE,09-06-2023
+212,Software Engineer,Microsoft,"New York, USA",Part-time,Entry level,Finance,"Azure, Machine Learning, React, Power BI, AWS, Java",57212,107751,FALSE,09-04-2024
+213,Data Analyst,Tesla,"Toronto, Canada",Contract,Entry level,Healthcare,"Kubernetes, Node.js, Machine Learning",85227,110700,FALSE,10-05-2023
+214,Machine Learning Engineer,Amazon,"London, UK",Full-time,Entry level,Finance,"Python, React, Node.js",115484,147357,TRUE,26-02-2023
+215,DevOps Engineer,Amazon,"Austin, USA",Full-time,Director,Finance,"JavaScript, Docker, Power BI, Azure, AWS",111835,169542,TRUE,17-02-2023
+216,Marketing Analyst,StartupX,"New York, USA",Part-time,Mid level,Education,"Docker, SQL, Kubernetes",98864,124514,FALSE,08-08-2024
+217,Marketing Analyst,Oracle,"New York, USA",Contract,Mid level,Healthcare,"Power BI, Data Visualization, JavaScript, Kubernetes, Azure",92899,114221,FALSE,15-11-2023
+218,Data Analyst,IBM,"New York, USA",Part-time,Senior level,Technology,"Python, Tableau, Excel, Docker, AWS",82129,111864,TRUE,20-07-2023
+219,DevOps Engineer,Oracle,"New York, USA",Part-time,Senior level,Technology,"Node.js, JavaScript, Machine Learning",119443,160660,FALSE,30-07-2023
+220,AI Researcher,Microsoft,Remote,Part-time,Director,Technology,"Docker, Excel, Java",110091,131219,TRUE,17-01-2024
+221,DevOps Engineer,FinTechHub,"Berlin, Germany",Contract,Director,Healthcare,"SQL, JavaScript, Java, Data Visualization",84208,135496,TRUE,26-10-2023
+222,Full Stack Developer,Oracle,"Berlin, Germany",Internship,Entry level,Education,"Tableau, JavaScript, Kubernetes, AWS, Node.js",63848,95392,FALSE,09-06-2023
+223,Business Analyst,FinTechHub,"New York, USA",Part-time,Senior level,Finance,"Power BI, JavaScript, Azure",61851,92509,FALSE,03-05-2023
+224,Business Analyst,Amazon,"New York, USA",Internship,Director,Education,"SQL, Kubernetes, Node.js, Java",56416,105585,TRUE,09-06-2024
+225,Software Engineer,Meta,"Toronto, Canada",Contract,Entry level,Education,"Node.js, React, SQL, Python, Tableau",58083,97218,TRUE,13-01-2023
+226,Machine Learning Engineer,Microsoft,"New York, USA",Internship,Entry level,Finance,"React, Power BI, Docker, Kubernetes, Python, Tableau",66880,88935,FALSE,30-03-2024
+227,Software Engineer,Netflix,"London, UK",Internship,Mid level,Technology,"Excel, AWS, Kubernetes, Docker",96392,134535,FALSE,26-06-2023
+228,DevOps Engineer,Amazon,"Toronto, Canada",Part-time,Mid level,Education,"Docker, Tableau, Power BI",61497,108167,FALSE,04-03-2023
+229,AI Researcher,Adobe,"Berlin, Germany",Internship,Senior level,Finance,"Azure, Data Visualization, JavaScript",113527,168620,TRUE,06-05-2024
+230,Marketing Analyst,Tesla,"Seattle, USA",Part-time,Entry level,Finance,"AWS, Machine Learning, Tableau, Power BI",57679,129503,TRUE,15-10-2023
+231,Software Engineer,Amazon,"Seattle, USA",Contract,Senior level,Education,"Power BI, Node.js, Azure",100911,157415,TRUE,13-08-2023
+232,Marketing Analyst,Netflix,"Austin, USA",Internship,Entry level,Technology,"JavaScript, Data Visualization, Node.js",74672,149189,TRUE,30-07-2024
+233,Machine Learning Engineer,Salesforce,"Seattle, USA",Part-time,Senior level,Finance,"Python, Node.js, Java, Data Visualization, Tableau",112650,122739,TRUE,23-06-2024
+234,Machine Learning Engineer,FinTechHub,"Toronto, Canada",Full-time,Senior level,Healthcare,"Java, Node.js, Power BI, Docker, Excel",97826,117332,FALSE,22-06-2024
+235,Product Manager,StartupX,"Austin, USA",Internship,Senior level,Healthcare,"Java, Power BI, Python, React",72833,129602,FALSE,21-11-2023
+236,AI Researcher,Tesla,"Seattle, USA",Full-time,Director,Finance,"Power BI, SQL, JavaScript, Azure, Node.js",54244,88109,TRUE,04-08-2024
+237,Data Analyst,Netflix,"Seattle, USA",Part-time,Entry level,Healthcare,"Tableau, SQL, Power BI, Python, Node.js",94007,162547,FALSE,01-04-2023
+238,DevOps Engineer,Oracle,"Toronto, Canada",Contract,Director,Technology,"Tableau, React, Data Visualization, Excel, Power BI, JavaScript",105004,136806,TRUE,24-03-2024
+239,Business Analyst,Google,"Berlin, Germany",Contract,Entry level,Technology,"Java, Docker, Node.js, Power BI, SQL",59661,74040,TRUE,07-04-2024
+240,DevOps Engineer,StartupX,"Austin, USA",Internship,Mid level,Technology,"Azure, JavaScript, React",113273,127335,FALSE,13-12-2023
+241,Business Analyst,Meta,"San Francisco, USA",Full-time,Director,Education,"Java, Python, Azure, React, Docker, SQL",84768,131667,FALSE,21-07-2024
+242,Data Analyst,Meta,"Austin, USA",Contract,Entry level,E-commerce,"AWS, Tableau, Docker",76171,98883,FALSE,06-05-2024
+243,Marketing Analyst,IBM,"Austin, USA",Contract,Director,Healthcare,"Kubernetes, Python, AWS, Node.js",84734,106679,FALSE,15-05-2024
+244,AI Researcher,Google,"Austin, USA",Full-time,Entry level,Healthcare,"Tableau, Data Visualization, JavaScript, Machine Learning, Python, Docker",79654,124854,FALSE,27-09-2023
+245,Full Stack Developer,Netflix,"San Francisco, USA",Internship,Entry level,Education,"SQL, Tableau, Kubernetes, Java",112236,153122,TRUE,02-07-2024
+246,Data Analyst,IBM,"San Francisco, USA",Internship,Mid level,Finance,"Azure, Power BI, Tableau, SQL, React",75260,101799,FALSE,05-08-2023
+247,Business Analyst,Adobe,"Bangalore, India",Full-time,Director,Technology,"Java, Node.js, Data Visualization, Tableau, Power BI, SQL",102082,154828,TRUE,23-07-2024
+248,Marketing Analyst,Tesla,"Toronto, Canada",Contract,Director,E-commerce,"Python, Java, AWS, Docker, React, Data Visualization",63237,110735,FALSE,30-07-2024
+249,Product Manager,Google,"Bangalore, India",Contract,Senior level,Technology,"React, Tableau, AWS, Node.js, Power BI",101877,155326,FALSE,09-02-2023
+250,Business Analyst,FinTechHub,"Bangalore, India",Contract,Senior level,E-commerce,"JavaScript, Kubernetes, Node.js",79878,107492,FALSE,11-04-2023
+251,Data Analyst,Adobe,"Austin, USA",Full-time,Senior level,Education,"Java, Tableau, Machine Learning, Data Visualization, Python, Node.js",117698,176707,TRUE,11-05-2024
+252,Data Analyst,Oracle,"New York, USA",Contract,Mid level,Healthcare,"React, Kubernetes, Machine Learning, Docker, Excel",57553,100254,TRUE,25-07-2023
+253,Full Stack Developer,Salesforce,"Bangalore, India",Part-time,Director,Education,"Azure, Java, AWS, Power BI, SQL",81711,140530,FALSE,01-02-2023
+254,Software Engineer,Salesforce,"Seattle, USA",Part-time,Mid level,Finance,"Excel, Docker, Machine Learning, Python, Node.js",100667,117174,TRUE,29-01-2023
+255,AI Researcher,Google,"Seattle, USA",Contract,Senior level,Healthcare,"Node.js, Docker, Azure, Kubernetes, AWS, JavaScript",67342,100043,FALSE,30-04-2024
+256,AI Researcher,Microsoft,"New York, USA",Contract,Senior level,Healthcare,"Kubernetes, SQL, Azure",118241,180296,FALSE,06-11-2023
+257,Business Analyst,Meta,"Austin, USA",Part-time,Entry level,Education,"Excel, Azure, Node.js, Java, Python, Kubernetes",86291,130520,FALSE,29-11-2023
+258,DevOps Engineer,FinTechHub,"New York, USA",Part-time,Senior level,Finance,"Node.js, Excel, Azure, Machine Learning, AWS, Java",104862,167893,TRUE,23-09-2023
+259,Software Engineer,FinTechHub,"London, UK",Part-time,Senior level,Technology,"Azure, JavaScript, Power BI, AWS",62793,134499,FALSE,28-10-2023
+260,AI Researcher,Netflix,"Bangalore, India",Full-time,Director,Technology,"Kubernetes, JavaScript, Machine Learning",98717,142869,TRUE,06-12-2023
+261,DevOps Engineer,Google,"Austin, USA",Part-time,Mid level,Healthcare,"Data Visualization, Kubernetes, Java, Azure, Tableau, SQL",119446,168552,FALSE,26-01-2024
+262,Data Analyst,Google,"Bangalore, India",Contract,Mid level,Finance,"Kubernetes, Tableau, React, SQL",73176,124255,TRUE,07-12-2023
+263,DevOps Engineer,Oracle,"Toronto, Canada",Full-time,Entry level,Education,"Power BI, Azure, Python, React",106283,169156,TRUE,20-03-2024
+264,Product Manager,FinTechHub,"Berlin, Germany",Contract,Mid level,Technology,"Machine Learning, Data Visualization, AWS, Java, SQL, Python",50540,93153,FALSE,19-01-2023
+265,AI Researcher,Adobe,"Berlin, Germany",Internship,Mid level,Healthcare,"Azure, Tableau, JavaScript, Java, Docker, Python",109759,187954,TRUE,25-10-2023
+266,Data Analyst,Salesforce,Remote,Part-time,Entry level,Healthcare,"Docker, Excel, AWS",67197,104878,TRUE,18-08-2023
+267,Data Analyst,FinTechHub,"San Francisco, USA",Internship,Director,E-commerce,"Machine Learning, AWS, Kubernetes",64170,76757,TRUE,19-02-2023
+268,DevOps Engineer,StartupX,"San Francisco, USA",Contract,Mid level,E-commerce,"Machine Learning, Power BI, Data Visualization",51219,100686,TRUE,30-07-2023
+269,Full Stack Developer,Meta,"Seattle, USA",Contract,Mid level,Healthcare,"AWS, Java, Python, Machine Learning, Kubernetes, JavaScript",64943,88871,FALSE,17-10-2023
+270,Data Analyst,StartupX,"San Francisco, USA",Full-time,Director,Finance,"Tableau, Machine Learning, SQL",80737,91095,TRUE,05-12-2023
+271,Business Analyst,Netflix,"Bangalore, India",Full-time,Entry level,Finance,"React, AWS, Azure",80298,150165,FALSE,20-09-2023
+272,Data Analyst,Google,"Austin, USA",Part-time,Senior level,Healthcare,"Data Visualization, AWS, Power BI, SQL, Azure, Excel",65191,87642,TRUE,12-03-2024
+273,Full Stack Developer,Netflix,"Toronto, Canada",Internship,Director,Finance,"Java, Power BI, React",102530,164991,TRUE,27-04-2023
+274,AI Researcher,Oracle,"Bangalore, India",Part-time,Director,Healthcare,"React, Excel, Power BI",63593,128122,TRUE,13-06-2023
+275,DevOps Engineer,Oracle,"New York, USA",Full-time,Senior level,Healthcare,"Power BI, React, Excel",113979,138781,TRUE,09-05-2024
+276,AI Researcher,Microsoft,"Toronto, Canada",Part-time,Director,Healthcare,"Java, React, Machine Learning, Data Visualization, Python, Excel",118039,196603,TRUE,13-12-2023
+277,Software Engineer,Microsoft,"Bangalore, India",Contract,Mid level,Healthcare,"Python, Machine Learning, JavaScript, React, Excel",111510,186500,FALSE,01-06-2024
+278,Full Stack Developer,Oracle,"Bangalore, India",Full-time,Director,E-commerce,"SQL, Kubernetes, Power BI, Excel, Python",80801,101133,TRUE,17-02-2024
+279,Marketing Analyst,Adobe,"New York, USA",Full-time,Senior level,Education,"Excel, Node.js, Kubernetes, Azure",104046,118742,FALSE,18-02-2024
+280,Machine Learning Engineer,Adobe,"Bangalore, India",Contract,Director,Technology,"Tableau, Excel, JavaScript",79218,148784,TRUE,25-02-2023
+281,Marketing Analyst,Adobe,"Berlin, Germany",Full-time,Entry level,Finance,"Java, React, Power BI, Tableau, Docker, SQL",96548,144818,FALSE,16-12-2023
+282,DevOps Engineer,Meta,"Bangalore, India",Part-time,Senior level,Technology,"Python, Excel, React, Data Visualization, SQL, Kubernetes",74581,100407,FALSE,20-07-2023
+283,Data Analyst,Adobe,"New York, USA",Internship,Director,Education,"Power BI, Data Visualization, Java, Node.js",67647,143029,TRUE,31-05-2024
+284,Marketing Analyst,IBM,"Toronto, Canada",Part-time,Senior level,E-commerce,"AWS, Kubernetes, Tableau, Java, Power BI",100778,152962,FALSE,17-04-2023
+285,Marketing Analyst,StartupX,"Seattle, USA",Part-time,Mid level,Education,"Excel, Azure, Node.js, Java, Tableau",89179,140323,TRUE,08-06-2024
+286,Machine Learning Engineer,Adobe,"Bangalore, India",Internship,Senior level,E-commerce,"Machine Learning, SQL, Python",92255,117381,FALSE,30-05-2024
+287,Product Manager,Netflix,"Austin, USA",Contract,Senior level,Finance,"Power BI, Tableau, AWS",56955,74374,TRUE,29-05-2023
+288,Full Stack Developer,Microsoft,Remote,Part-time,Director,Finance,"Power BI, Excel, Python, Docker, Node.js",54234,111247,FALSE,08-07-2024
+289,Business Analyst,Meta,"Bangalore, India",Part-time,Senior level,Education,"Tableau, Power BI, JavaScript, AWS",57051,68750,FALSE,17-11-2023
+290,Software Engineer,FinTechHub,Remote,Full-time,Director,Technology,"AWS, Machine Learning, Node.js, Java, Power BI, Data Visualization",59760,94267,FALSE,01-07-2023
+291,Software Engineer,Google,"Austin, USA",Contract,Entry level,Education,"Kubernetes, Tableau, Data Visualization, Machine Learning, Azure",93327,164449,TRUE,06-01-2023
+292,Software Engineer,Adobe,"San Francisco, USA",Part-time,Director,Education,"SQL, Azure, JavaScript, Tableau, Excel, React",118864,157694,FALSE,22-11-2023
+293,AI Researcher,Adobe,"Bangalore, India",Full-time,Entry level,Healthcare,"JavaScript, Excel, Data Visualization, Tableau, Node.js, Python",88479,127111,FALSE,05-01-2024
+294,Business Analyst,Adobe,"London, UK",Full-time,Senior level,Education,"Kubernetes, Python, AWS, Excel, JavaScript, Azure",64860,125437,TRUE,26-01-2024
+295,Data Analyst,StartupX,"San Francisco, USA",Part-time,Mid level,E-commerce,"JavaScript, Machine Learning, Power BI",71940,151828,FALSE,09-04-2023
+296,Full Stack Developer,FinTechHub,"Berlin, Germany",Full-time,Entry level,Technology,"Java, Tableau, AWS",70152,83265,TRUE,15-03-2023
+297,DevOps Engineer,IBM,"Bangalore, India",Internship,Director,Healthcare,"Docker, Excel, SQL",79837,123738,TRUE,11-08-2024
+298,Machine Learning Engineer,Adobe,"San Francisco, USA",Contract,Senior level,Education,"AWS, Tableau, Kubernetes",55965,75479,FALSE,06-03-2023
+299,Software Engineer,Adobe,"Seattle, USA",Part-time,Director,Education,"Excel, Java, AWS, Node.js, Power BI",54039,126165,FALSE,09-02-2024
+300,Data Analyst,Google,"Toronto, Canada",Full-time,Senior level,Finance,"JavaScript, Docker, Excel, Machine Learning, Java",68530,94682,TRUE,12-01-2023
+301,Product Manager,Microsoft,"Austin, USA",Full-time,Director,Education,"AWS, Excel, SQL",78939,122066,FALSE,08-07-2023
+302,Machine Learning Engineer,Tesla,"Austin, USA",Part-time,Entry level,Healthcare,"Node.js, JavaScript, Azure",75875,149732,FALSE,11-04-2023
+303,AI Researcher,Amazon,"Berlin, Germany",Contract,Director,Finance,"Azure, JavaScript, Tableau",93036,143101,TRUE,06-04-2024
+304,Software Engineer,StartupX,"Berlin, Germany",Internship,Director,E-commerce,"Tableau, AWS, Kubernetes, Machine Learning, SQL",86264,143382,TRUE,22-03-2024
+305,Marketing Analyst,Meta,"London, UK",Full-time,Entry level,Technology,"React, Data Visualization, Node.js",86780,115130,FALSE,25-03-2023
+306,Marketing Analyst,Adobe,"Bangalore, India",Part-time,Senior level,E-commerce,"Node.js, Tableau, Data Visualization, Power BI",54804,98963,FALSE,06-08-2023
+307,Marketing Analyst,Microsoft,"Toronto, Canada",Contract,Entry level,Finance,"Tableau, Machine Learning, Java, Kubernetes",110909,186592,TRUE,18-05-2023
+308,Machine Learning Engineer,Google,"Seattle, USA",Internship,Mid level,Technology,"Azure, JavaScript, Python, Excel, React",69162,142535,FALSE,03-07-2023
+309,Data Analyst,Google,"Berlin, Germany",Full-time,Senior level,Healthcare,"Docker, Excel, Node.js, Azure",111561,181152,TRUE,02-02-2024
+310,Product Manager,Adobe,"Toronto, Canada",Contract,Senior level,E-commerce,"Node.js, Data Visualization, Python, Machine Learning, Java, Kubernetes",82975,142301,TRUE,13-06-2024
+311,Business Analyst,Meta,"Austin, USA",Part-time,Mid level,Healthcare,"Excel, JavaScript, Docker",60104,137545,FALSE,24-08-2023
+312,Full Stack Developer,Meta,"Austin, USA",Internship,Entry level,Finance,"Java, Data Visualization, React",113113,185872,TRUE,27-04-2023
+313,AI Researcher,Amazon,"New York, USA",Part-time,Senior level,Finance,"Data Visualization, Node.js, Excel, Python, Tableau, AWS",117193,132329,TRUE,18-05-2023
+314,Full Stack Developer,Amazon,"Seattle, USA",Internship,Mid level,Education,"Data Visualization, Excel, Machine Learning, AWS",108877,180666,TRUE,10-08-2023
+315,Product Manager,IBM,"Toronto, Canada",Part-time,Entry level,Technology,"Machine Learning, React, Node.js, Excel",109437,128460,FALSE,17-12-2023
+316,Full Stack Developer,Salesforce,"New York, USA",Full-time,Entry level,E-commerce,"Node.js, Data Visualization, Machine Learning, Python",62622,95877,FALSE,03-06-2023
+317,Data Analyst,FinTechHub,Remote,Internship,Mid level,E-commerce,"Azure, Data Visualization, Tableau, Power BI, React, SQL",105139,163685,FALSE,18-06-2024
+318,Product Manager,Microsoft,"London, UK",Internship,Senior level,Finance,"Power BI, Node.js, Tableau",83360,155899,TRUE,18-05-2023
+319,Marketing Analyst,Google,"Toronto, Canada",Part-time,Senior level,E-commerce,"SQL, Java, Docker, Excel, Data Visualization",118490,143934,FALSE,14-08-2024
+320,AI Researcher,Netflix,"Toronto, Canada",Part-time,Director,Education,"Java, Azure, Machine Learning, Tableau, Kubernetes, AWS",105517,163442,FALSE,25-09-2023
+321,Software Engineer,StartupX,"San Francisco, USA",Part-time,Director,Finance,"JavaScript, Machine Learning, Docker",95135,157318,FALSE,14-08-2024
+322,DevOps Engineer,StartupX,"New York, USA",Full-time,Mid level,E-commerce,"SQL, Node.js, AWS, JavaScript, Azure, React",56822,87890,TRUE,17-07-2024
+323,Business Analyst,FinTechHub,"New York, USA",Part-time,Director,E-commerce,"JavaScript, React, Excel",102513,180802,FALSE,29-01-2024
+324,Marketing Analyst,FinTechHub,"Seattle, USA",Part-time,Entry level,Healthcare,"Excel, Python, Java, SQL",54405,131323,FALSE,19-07-2023
+325,DevOps Engineer,Salesforce,"Seattle, USA",Full-time,Entry level,Technology,"Power BI, React, Machine Learning, Data Visualization, Azure",96285,158077,FALSE,14-02-2024
+326,Full Stack Developer,IBM,"New York, USA",Contract,Mid level,E-commerce,"Machine Learning, SQL, Node.js",79661,115157,FALSE,11-10-2023
+327,Business Analyst,Adobe,"London, UK",Internship,Director,Education,"Tableau, JavaScript, Node.js, Azure, Kubernetes, Excel",65336,142613,TRUE,15-12-2023
+328,Data Scientist,IBM,"Seattle, USA",Part-time,Senior level,E-commerce,"Machine Learning, Node.js, Python, Power BI, AWS",65239,109031,TRUE,08-05-2024
+329,Machine Learning Engineer,Microsoft,Remote,Part-time,Director,Healthcare,"JavaScript, Data Visualization, AWS, Java, Excel",62190,124478,TRUE,22-10-2023
+330,Product Manager,Netflix,"Seattle, USA",Part-time,Mid level,Finance,"Java, Tableau, SQL, React, Power BI",76170,116953,FALSE,25-05-2024
+331,Machine Learning Engineer,Salesforce,"Berlin, Germany",Internship,Senior level,E-commerce,"Tableau, Machine Learning, AWS, Docker",55539,128753,TRUE,07-01-2023
+332,Marketing Analyst,IBM,"Bangalore, India",Full-time,Senior level,E-commerce,"Kubernetes, SQL, Power BI, Machine Learning",66809,83906,FALSE,13-08-2024
+333,Product Manager,IBM,"San Francisco, USA",Contract,Senior level,Education,"Java, Machine Learning, AWS, JavaScript, Tableau",51103,62652,FALSE,20-11-2023
+334,Full Stack Developer,IBM,"Seattle, USA",Internship,Senior level,Healthcare,"AWS, Kubernetes, Java, Data Visualization, Tableau, Power BI",97962,132067,TRUE,18-12-2023
+335,Marketing Analyst,IBM,"Toronto, Canada",Part-time,Mid level,Finance,"Tableau, Python, Java, Docker, Kubernetes, Node.js",85382,126289,FALSE,13-04-2023
+336,Marketing Analyst,Salesforce,"New York, USA",Internship,Entry level,Finance,"JavaScript, React, AWS",89326,132221,FALSE,13-05-2024
+337,Business Analyst,Tesla,"Berlin, Germany",Contract,Senior level,Technology,"SQL, Azure, Excel, Data Visualization, JavaScript, Power BI",108963,162827,TRUE,09-04-2023
+338,Marketing Analyst,Oracle,"Bangalore, India",Full-time,Director,Education,"Kubernetes, Excel, Java, Tableau, React",96544,149154,FALSE,19-10-2023
+339,Data Scientist,Amazon,"Berlin, Germany",Part-time,Senior level,Healthcare,"Power BI, AWS, Data Visualization, Excel, Docker",103054,122405,FALSE,07-03-2024
+340,Full Stack Developer,IBM,"Austin, USA",Part-time,Entry level,Finance,"Excel, AWS, Power BI, Tableau",97600,175880,TRUE,31-03-2024
+341,Data Scientist,Microsoft,"San Francisco, USA",Internship,Entry level,Technology,"Machine Learning, Tableau, SQL, React, AWS, Data Visualization",71877,133918,TRUE,04-08-2023
+342,Product Manager,Meta,"London, UK",Internship,Mid level,Finance,"Python, Node.js, Excel, Azure",101097,151646,FALSE,28-03-2023
+343,Marketing Analyst,Oracle,"Austin, USA",Part-time,Director,Education,"Machine Learning, Excel, React, Node.js, AWS, Azure",111235,156940,FALSE,02-05-2024
+344,Full Stack Developer,Netflix,"Berlin, Germany",Internship,Senior level,Finance,"Python, Node.js, Machine Learning, Java, Azure",79770,101508,FALSE,06-07-2024
+345,Full Stack Developer,Netflix,"New York, USA",Internship,Senior level,Education,"Tableau, Python, Machine Learning, Azure",51090,125568,TRUE,25-04-2024
+346,Product Manager,Amazon,"Toronto, Canada",Internship,Mid level,Healthcare,"Docker, Excel, JavaScript",107292,169032,FALSE,26-02-2024
+347,DevOps Engineer,Meta,"San Francisco, USA",Part-time,Mid level,Healthcare,"Excel, Kubernetes, Data Visualization",119722,164957,FALSE,19-10-2023
+348,Machine Learning Engineer,Google,"Austin, USA",Full-time,Entry level,Finance,"AWS, Node.js, Java",114486,149099,FALSE,06-10-2023
+349,Software Engineer,Google,"Bangalore, India",Part-time,Senior level,E-commerce,"Tableau, Node.js, Kubernetes, Azure, React",80514,102336,TRUE,09-01-2023
+350,Data Analyst,Netflix,"Toronto, Canada",Full-time,Director,Finance,"Node.js, React, AWS, Docker",60515,89663,TRUE,05-12-2023
+351,Full Stack Developer,Meta,"New York, USA",Part-time,Director,Technology,"Kubernetes, Docker, Excel, AWS",82631,143067,FALSE,05-05-2023
+352,Data Scientist,Netflix,"Bangalore, India",Contract,Mid level,Healthcare,"React, Excel, JavaScript",55529,133807,TRUE,12-06-2023
+353,Data Analyst,Amazon,"London, UK",Full-time,Director,Finance,"Python, Data Visualization, Tableau",106906,159440,FALSE,30-08-2023
+354,Product Manager,Amazon,"Bangalore, India",Full-time,Senior level,Technology,"Azure, Excel, Java",98679,120407,TRUE,08-06-2023
+355,Machine Learning Engineer,Adobe,"Berlin, Germany",Internship,Mid level,Technology,"Azure, Power BI, Java, AWS, Python, Kubernetes",113942,154439,FALSE,09-05-2023
+356,Product Manager,Salesforce,"Austin, USA",Contract,Senior level,E-commerce,"React, Node.js, Data Visualization, Machine Learning, Java",88628,162865,TRUE,26-07-2024
+357,Business Analyst,Netflix,Remote,Contract,Director,Technology,"Power BI, Java, Python, Data Visualization, Azure, Node.js",70319,139220,TRUE,27-06-2024
+358,Product Manager,Adobe,"Bangalore, India",Part-time,Senior level,Healthcare,"Excel, Azure, SQL, Tableau, Machine Learning, Power BI",58302,119091,TRUE,25-11-2023
+359,Product Manager,Microsoft,"Bangalore, India",Part-time,Entry level,Technology,"Excel, Kubernetes, Machine Learning, Data Visualization, Power BI, AWS",73414,87513,TRUE,13-05-2023
+360,Data Analyst,Meta,"Bangalore, India",Full-time,Director,Technology,"Machine Learning, Power BI, Docker, Azure, Python",78930,98219,FALSE,11-01-2024
+361,Business Analyst,Microsoft,"Seattle, USA",Full-time,Entry level,Finance,"JavaScript, Node.js, Machine Learning, Excel, React, Data Visualization",55328,74553,TRUE,25-06-2024
+362,AI Researcher,Tesla,"Bangalore, India",Internship,Entry level,Finance,"Machine Learning, Docker, Node.js, Azure",104419,128248,TRUE,25-07-2024
+363,Machine Learning Engineer,Adobe,"Berlin, Germany",Contract,Director,E-commerce,"Data Visualization, JavaScript, Node.js, Machine Learning, React",108066,164245,FALSE,30-06-2024
+364,Full Stack Developer,Oracle,"Toronto, Canada",Full-time,Entry level,Healthcare,"Machine Learning, Java, AWS",83303,140490,TRUE,17-07-2024
+365,Machine Learning Engineer,Google,"London, UK",Part-time,Entry level,Technology,"Azure, Java, React, AWS, Node.js, Data Visualization",79083,117240,TRUE,04-11-2023
+366,Data Scientist,Salesforce,"Toronto, Canada",Part-time,Entry level,Healthcare,"Java, Kubernetes, Power BI, Tableau, Data Visualization, SQL",83586,132947,FALSE,27-08-2023
+367,Data Analyst,Tesla,"Berlin, Germany",Internship,Director,Technology,"Power BI, Excel, Data Visualization, Python",100010,120296,FALSE,08-02-2023
+368,Data Analyst,Tesla,Remote,Part-time,Senior level,Education,"Java, Python, Excel, Power BI",89948,168679,FALSE,25-02-2023
+369,Product Manager,IBM,"London, UK",Internship,Mid level,Finance,"SQL, Kubernetes, Data Visualization, Power BI, Python",116155,137962,FALSE,01-04-2024
+370,Marketing Analyst,IBM,"Austin, USA",Part-time,Director,Education,"Kubernetes, Docker, Excel, Data Visualization",61151,123386,TRUE,26-09-2023
+371,Product Manager,Microsoft,"London, UK",Internship,Senior level,Education,"SQL, Excel, Docker",118714,160989,FALSE,28-07-2024
+372,Machine Learning Engineer,Tesla,"New York, USA",Contract,Mid level,Healthcare,"Data Visualization, Java, Kubernetes, Python, JavaScript, Excel",95653,130620,FALSE,10-01-2024
+373,Data Analyst,Meta,"Austin, USA",Contract,Entry level,Healthcare,"AWS, Kubernetes, React",61247,85975,TRUE,09-06-2023
+374,Product Manager,Adobe,Remote,Contract,Director,Education,"Power BI, Node.js, Excel, Python",77395,115165,FALSE,06-12-2023
+375,Business Analyst,Amazon,"New York, USA",Contract,Mid level,Education,"Python, Kubernetes, Excel, Node.js, SQL",119048,134747,FALSE,19-08-2024
+376,Data Analyst,Netflix,"Toronto, Canada",Part-time,Director,Education,"Node.js, Azure, Kubernetes",97214,121355,TRUE,05-10-2023
+377,Full Stack Developer,Adobe,"New York, USA",Full-time,Mid level,Education,"Azure, Kubernetes, Docker, Power BI, Java",76066,151687,TRUE,10-07-2023
+378,Business Analyst,Meta,Remote,Contract,Entry level,Healthcare,"Node.js, React, Python, Machine Learning, AWS, JavaScript",96125,152705,TRUE,22-12-2023
+379,Data Scientist,FinTechHub,"Toronto, Canada",Part-time,Director,Finance,"Docker, AWS, Data Visualization, Azure",101491,129482,FALSE,16-12-2023
+380,Software Engineer,Salesforce,Remote,Part-time,Mid level,Healthcare,"Docker, Tableau, Java, Excel",67271,104371,TRUE,09-07-2024
+381,Data Scientist,Amazon,"Berlin, Germany",Part-time,Entry level,Healthcare,"Docker, AWS, Kubernetes, Power BI, Excel, React",58888,138744,TRUE,22-11-2023
+382,Software Engineer,Google,"London, UK",Part-time,Mid level,Finance,"Azure, SQL, Power BI",63994,91235,FALSE,12-07-2023
+383,Machine Learning Engineer,Amazon,"Toronto, Canada",Internship,Director,Finance,"JavaScript, Node.js, Python, Docker",115840,187281,TRUE,18-05-2023
+384,Product Manager,Meta,"San Francisco, USA",Part-time,Director,Education,"Power BI, Azure, Kubernetes, JavaScript, Docker, Excel",104138,143308,TRUE,04-10-2023
+385,AI Researcher,FinTechHub,Remote,Full-time,Entry level,E-commerce,"React, Python, JavaScript, Machine Learning, Power BI, Docker",91012,152674,TRUE,25-01-2024
+386,Data Analyst,Meta,"London, UK",Internship,Director,Healthcare,"Kubernetes, Java, Docker, AWS, Data Visualization",100777,178426,TRUE,25-07-2024
+387,Full Stack Developer,Microsoft,Remote,Full-time,Mid level,Education,"Docker, Node.js, Azure, Kubernetes",68643,139405,TRUE,13-06-2024
+388,Full Stack Developer,Microsoft,"London, UK",Contract,Mid level,Technology,"SQL, Power BI, Kubernetes",109464,145931,FALSE,03-07-2023
+389,Marketing Analyst,Salesforce,"Austin, USA",Internship,Director,Technology,"Node.js, Azure, Data Visualization, Excel",118657,179000,TRUE,29-03-2023
+390,Data Analyst,IBM,"London, UK",Contract,Director,Healthcare,"SQL, Java, JavaScript, Python",68953,102397,FALSE,16-06-2023
+391,Full Stack Developer,Adobe,"New York, USA",Internship,Mid level,Finance,"Kubernetes, Docker, Node.js, SQL, Data Visualization, Excel",110115,185340,TRUE,13-01-2023
+392,Data Analyst,Amazon,"Austin, USA",Full-time,Senior level,Technology,"React, Python, Excel, Data Visualization",86452,123667,FALSE,08-09-2023
+393,Data Scientist,IBM,"Austin, USA",Part-time,Senior level,Education,"Kubernetes, Power BI, Data Visualization, Azure",61495,77921,TRUE,06-12-2023
+394,Machine Learning Engineer,IBM,"San Francisco, USA",Internship,Entry level,Healthcare,"Java, SQL, Power BI, AWS, Azure, Machine Learning",89229,141541,FALSE,06-04-2023
+395,AI Researcher,Google,"San Francisco, USA",Full-time,Director,Education,"Docker, Data Visualization, Azure, AWS, Machine Learning",77504,114904,FALSE,21-06-2024
+396,Full Stack Developer,Oracle,"Austin, USA",Part-time,Senior level,Finance,"SQL, Python, Kubernetes",115063,193181,TRUE,13-05-2023
+397,Data Analyst,Tesla,"Berlin, Germany",Part-time,Entry level,Finance,"AWS, Tableau, SQL, Node.js, Power BI",104346,168615,FALSE,01-08-2023
+398,Machine Learning Engineer,IBM,"New York, USA",Part-time,Mid level,Healthcare,"Node.js, Excel, Kubernetes, Tableau, Python",64920,118604,TRUE,07-01-2023
+399,Marketing Analyst,Tesla,"Bangalore, India",Internship,Entry level,Education,"Data Visualization, Power BI, Excel, Azure, Machine Learning",70366,140740,TRUE,08-05-2024
+400,Data Scientist,Amazon,"London, UK",Full-time,Senior level,E-commerce,"Data Visualization, Node.js, Docker, Java",93479,149825,TRUE,02-08-2023
+401,Business Analyst,IBM,"San Francisco, USA",Internship,Mid level,Healthcare,"React, AWS, JavaScript, Machine Learning, Node.js, Java",91222,105367,TRUE,12-11-2023
+402,Data Scientist,Oracle,Remote,Full-time,Director,Education,"JavaScript, Azure, Kubernetes, Power BI",54901,91390,FALSE,19-01-2024
+403,Marketing Analyst,StartupX,"Austin, USA",Part-time,Entry level,E-commerce,"Power BI, React, Machine Learning, SQL, Python, AWS",68781,91659,TRUE,02-12-2023
+404,Data Analyst,Microsoft,Remote,Contract,Entry level,Education,"Excel, JavaScript, Azure, React, Power BI",93684,164878,FALSE,31-03-2023
+405,Full Stack Developer,StartupX,"San Francisco, USA",Contract,Mid level,Finance,"SQL, Python, Data Visualization, Machine Learning, Power BI",119766,171597,TRUE,11-10-2023
+406,Business Analyst,Amazon,"London, UK",Part-time,Mid level,Technology,"Data Visualization, Azure, Machine Learning, Kubernetes, Python",95916,147660,TRUE,31-07-2023
+407,Data Scientist,IBM,"New York, USA",Full-time,Director,E-commerce,"Power BI, Data Visualization, React, Excel",111700,128313,FALSE,30-01-2023
+408,Product Manager,FinTechHub,Remote,Full-time,Director,Education,"SQL, React, Tableau, Power BI",90952,144511,FALSE,31-12-2023
+409,Full Stack Developer,Oracle,"Seattle, USA",Part-time,Mid level,Education,"Node.js, Azure, Docker, Java, Excel",109714,160397,FALSE,10-04-2023
+410,Data Analyst,Microsoft,"Bangalore, India",Full-time,Senior level,E-commerce,"React, Java, AWS, Azure, Data Visualization, Excel",109412,183310,TRUE,29-11-2023
+411,Data Scientist,Tesla,Remote,Full-time,Senior level,Education,"Docker, Data Visualization, Node.js, JavaScript, React, Power BI",63491,126665,TRUE,04-06-2024
+412,Machine Learning Engineer,Meta,"Toronto, Canada",Internship,Senior level,Education,"Java, Excel, React, SQL",100307,118965,FALSE,08-05-2024
+413,Marketing Analyst,Microsoft,"Bangalore, India",Part-time,Senior level,E-commerce,"Data Visualization, SQL, Excel",110674,163321,FALSE,28-04-2023
+414,Data Scientist,Meta,"Austin, USA",Full-time,Mid level,Finance,"Machine Learning, AWS, Docker, Data Visualization, Power BI, Kubernetes",114788,132846,TRUE,02-12-2023
+415,AI Researcher,StartupX,"London, UK",Internship,Senior level,Technology,"Data Visualization, Machine Learning, Docker",91497,140783,TRUE,30-07-2023
+416,Marketing Analyst,Google,"New York, USA",Contract,Entry level,Healthcare,"JavaScript, Docker, Power BI",58180,116574,FALSE,29-10-2023
+417,DevOps Engineer,IBM,Remote,Part-time,Mid level,E-commerce,"JavaScript, Machine Learning, Docker, Azure",100173,163392,FALSE,22-11-2023
+418,Software Engineer,Google,"San Francisco, USA",Full-time,Mid level,E-commerce,"Java, SQL, Node.js, Excel, Docker, Kubernetes",87810,114265,FALSE,07-06-2023
+419,DevOps Engineer,Adobe,"Bangalore, India",Internship,Senior level,Finance,"Docker, Data Visualization, Python, React",109558,186328,FALSE,04-07-2023
+420,DevOps Engineer,Adobe,"Berlin, Germany",Full-time,Entry level,Education,"Power BI, Azure, SQL, Data Visualization, Kubernetes, Tableau",115762,161053,TRUE,31-08-2023
+421,Marketing Analyst,Microsoft,Remote,Full-time,Mid level,E-commerce,"Excel, Node.js, Machine Learning",86624,157564,FALSE,23-06-2024
+422,Full Stack Developer,Oracle,Remote,Internship,Senior level,E-commerce,"Tableau, AWS, React, Java, Python",95029,106442,FALSE,24-02-2023
+423,Full Stack Developer,Salesforce,"Austin, USA",Full-time,Senior level,Education,"AWS, Kubernetes, SQL",84136,102186,TRUE,31-07-2024
+424,Business Analyst,Amazon,"London, UK",Contract,Senior level,Technology,"Data Visualization, Java, Node.js",60074,106492,TRUE,01-06-2024
+425,Business Analyst,FinTechHub,"Seattle, USA",Internship,Mid level,Education,"Azure, SQL, Java",98466,131455,TRUE,02-04-2024
+426,Product Manager,StartupX,"Bangalore, India",Part-time,Mid level,Education,"Python, Excel, AWS, SQL, Node.js",104125,164347,TRUE,22-05-2024
+427,Business Analyst,Oracle,Remote,Part-time,Director,E-commerce,"AWS, Java, Machine Learning, Docker, Python, Node.js",102264,174684,FALSE,20-04-2024
+428,Data Analyst,Microsoft,Remote,Contract,Director,Education,"Azure, AWS, React, SQL, Tableau",91377,170878,FALSE,27-01-2024
+429,Marketing Analyst,Tesla,"Austin, USA",Contract,Entry level,Technology,"Python, Docker, SQL",81692,117241,TRUE,17-04-2024
+430,Business Analyst,Netflix,"Seattle, USA",Full-time,Entry level,Education,"Python, Data Visualization, Excel",96073,134832,TRUE,01-04-2024
+431,AI Researcher,Amazon,"Toronto, Canada",Part-time,Entry level,Finance,"AWS, Kubernetes, Excel, SQL, Tableau",65725,87047,FALSE,05-05-2023
+432,Business Analyst,Amazon,"San Francisco, USA",Contract,Entry level,E-commerce,"Azure, Python, AWS, Tableau, Java, Kubernetes",105965,158354,TRUE,11-10-2023
+433,Software Engineer,StartupX,"Bangalore, India",Full-time,Mid level,Education,"JavaScript, Data Visualization, Excel, SQL, Kubernetes, AWS",76302,137765,TRUE,18-05-2024
+434,AI Researcher,FinTechHub,"London, UK",Internship,Entry level,E-commerce,"Excel, Node.js, Python, Tableau",59557,78786,FALSE,05-02-2023
+435,DevOps Engineer,Salesforce,"New York, USA",Internship,Director,E-commerce,"React, Power BI, Tableau, SQL, Machine Learning, JavaScript",69871,123102,TRUE,30-09-2023
+436,AI Researcher,Adobe,"Berlin, Germany",Contract,Senior level,E-commerce,"Excel, Node.js, SQL",113185,139071,FALSE,29-01-2024
+437,Full Stack Developer,Netflix,"Seattle, USA",Part-time,Entry level,E-commerce,"AWS, Power BI, Docker, SQL",94572,115117,FALSE,01-07-2024
+438,Product Manager,Amazon,"New York, USA",Part-time,Entry level,Education,"Kubernetes, Docker, SQL, Machine Learning",61123,128530,FALSE,13-05-2024
+439,Data Analyst,Google,"Berlin, Germany",Full-time,Senior level,Technology,"SQL, JavaScript, Tableau, Excel, Power BI, Machine Learning",119984,188875,FALSE,26-05-2024
+440,Data Scientist,Google,"Austin, USA",Internship,Entry level,E-commerce,"JavaScript, Power BI, Excel",69523,110060,TRUE,03-07-2024
+441,Business Analyst,Microsoft,"Bangalore, India",Part-time,Entry level,Technology,"Kubernetes, Data Visualization, Tableau",72577,89125,TRUE,15-01-2023
+442,Machine Learning Engineer,FinTechHub,"Toronto, Canada",Contract,Entry level,Education,"Azure, React, Tableau, JavaScript",76560,142424,TRUE,06-03-2023
+443,Data Scientist,Netflix,"Austin, USA",Internship,Mid level,Healthcare,"Kubernetes, JavaScript, Data Visualization, Python",93975,112261,TRUE,27-06-2023
+444,Data Analyst,Oracle,"San Francisco, USA",Full-time,Entry level,Finance,"Power BI, Excel, Data Visualization",99300,129977,FALSE,13-04-2023
+445,Product Manager,Amazon,"London, UK",Internship,Director,Finance,"Data Visualization, Power BI, Python, Node.js",112391,139023,TRUE,02-03-2024
+446,Machine Learning Engineer,IBM,"New York, USA",Part-time,Mid level,Technology,"Data Visualization, Azure, Tableau",61537,111015,TRUE,26-05-2024
+447,Data Analyst,Meta,"San Francisco, USA",Part-time,Director,E-commerce,"Java, Excel, Python, Tableau",77277,123508,FALSE,20-04-2024
+448,Business Analyst,Tesla,"Bangalore, India",Full-time,Entry level,Technology,"Java, Tableau, Python, Kubernetes",77471,144444,TRUE,19-10-2023
+449,AI Researcher,Salesforce,"Berlin, Germany",Internship,Mid level,Healthcare,"Tableau, SQL, Azure, JavaScript",80841,149144,TRUE,14-03-2023
+450,DevOps Engineer,Meta,"San Francisco, USA",Internship,Director,Technology,"Java, JavaScript, Data Visualization, Kubernetes, Node.js, Docker",104079,140287,FALSE,31-08-2023
+451,Machine Learning Engineer,Netflix,"Seattle, USA",Contract,Mid level,Technology,"AWS, Java, SQL",109996,145444,FALSE,20-05-2023
+452,Machine Learning Engineer,Meta,"London, UK",Part-time,Mid level,Education,"SQL, Docker, Machine Learning, Kubernetes",104817,137256,TRUE,14-04-2024
+453,Data Analyst,FinTechHub,"Toronto, Canada",Part-time,Mid level,Healthcare,"Data Visualization, JavaScript, Node.js, Java, Tableau, Python",110655,157246,FALSE,29-04-2024
+454,Marketing Analyst,Google,"Toronto, Canada",Internship,Director,Technology,"Kubernetes, JavaScript, SQL, Machine Learning, Python, Docker",55250,126939,TRUE,15-02-2023
+455,Product Manager,StartupX,"San Francisco, USA",Full-time,Director,Healthcare,"Power BI, Kubernetes, Data Visualization, Node.js",96976,145745,TRUE,16-05-2023
+456,DevOps Engineer,Amazon,"Berlin, Germany",Internship,Entry level,Technology,"Node.js, Power BI, Azure, Machine Learning, Python, AWS",110786,138955,FALSE,10-04-2024
+457,AI Researcher,Tesla,"New York, USA",Contract,Entry level,Technology,"Azure, Kubernetes, Data Visualization, Python, Node.js, Excel",77151,97762,TRUE,04-10-2023
+458,Software Engineer,Tesla,"Seattle, USA",Full-time,Director,Education,"Tableau, Power BI, Node.js, JavaScript",58782,95614,FALSE,26-07-2024
+459,DevOps Engineer,Netflix,"New York, USA",Full-time,Senior level,Healthcare,"Kubernetes, Machine Learning, React, SQL, Node.js, Tableau",85043,161046,FALSE,28-12-2023
+460,Product Manager,Oracle,"San Francisco, USA",Full-time,Director,Finance,"SQL, Node.js, Java, AWS, React",98253,116854,TRUE,07-04-2024
+461,Marketing Analyst,StartupX,"New York, USA",Contract,Director,Education,"Kubernetes, Azure, Docker, Node.js",69726,106498,TRUE,23-05-2024
+462,Data Analyst,Meta,Remote,Contract,Director,Education,"Excel, Node.js, Tableau, Azure, Kubernetes",74780,93030,FALSE,26-10-2023
+463,Business Analyst,Amazon,"London, UK",Part-time,Director,Healthcare,"Tableau, React, Python, Java, Azure",89856,117151,FALSE,13-04-2024
+464,Marketing Analyst,Netflix,"Austin, USA",Part-time,Mid level,Finance,"SQL, Python, Azure, Data Visualization",71805,102880,TRUE,11-04-2024
+465,Software Engineer,Meta,Remote,Full-time,Senior level,Healthcare,"Azure, Kubernetes, Machine Learning, Java",84132,142585,FALSE,27-03-2024
+466,Full Stack Developer,Amazon,"Bangalore, India",Contract,Mid level,Technology,"Excel, Power BI, AWS, Kubernetes, Tableau",53266,116292,TRUE,05-05-2023
+467,Data Scientist,FinTechHub,"Bangalore, India",Full-time,Mid level,Education,"AWS, Python, Docker",107947,162339,TRUE,01-08-2024
+468,Machine Learning Engineer,Google,"Seattle, USA",Part-time,Senior level,Finance,"SQL, Machine Learning, Kubernetes",96844,118965,TRUE,01-04-2024
+469,Full Stack Developer,Tesla,Remote,Full-time,Senior level,E-commerce,"Power BI, React, Docker, Azure",101697,137183,FALSE,08-06-2024
+470,Machine Learning Engineer,Tesla,"London, UK",Internship,Entry level,Finance,"Power BI, Docker, Tableau, Kubernetes, AWS, Java",51597,98906,FALSE,17-01-2024
+471,Software Engineer,Meta,"London, UK",Internship,Senior level,Technology,"SQL, Python, Docker, Excel, AWS, Tableau",68293,89575,TRUE,29-02-2024
+472,Product Manager,Amazon,"Toronto, Canada",Contract,Director,Technology,"React, Data Visualization, AWS, Kubernetes, Machine Learning",110570,138517,FALSE,23-07-2024
+473,Software Engineer,Netflix,"London, UK",Internship,Entry level,Healthcare,"Java, Kubernetes, Power BI, Excel, JavaScript, Python",53517,63837,TRUE,18-08-2023
+474,AI Researcher,FinTechHub,"Berlin, Germany",Internship,Director,Healthcare,"Power BI, React, SQL, Azure, Machine Learning, Data Visualization",114625,133370,TRUE,11-10-2023
+475,Software Engineer,Tesla,"Bangalore, India",Part-time,Senior level,Finance,"AWS, Azure, Docker",71344,89013,FALSE,23-09-2023
+476,Marketing Analyst,StartupX,"San Francisco, USA",Part-time,Mid level,Technology,"Machine Learning, Azure, React, Excel",87992,136220,FALSE,19-02-2023
+477,Marketing Analyst,Salesforce,"Berlin, Germany",Part-time,Entry level,Finance,"Azure, Tableau, Kubernetes, Docker, Node.js",97516,120077,TRUE,05-10-2023
+478,Marketing Analyst,Meta,"Seattle, USA",Full-time,Director,E-commerce,"SQL, React, Java",78557,108814,TRUE,15-04-2023
+479,Machine Learning Engineer,Amazon,"Bangalore, India",Contract,Mid level,Healthcare,"Power BI, React, SQL",95640,146478,TRUE,06-05-2024
+480,Business Analyst,Amazon,"Seattle, USA",Part-time,Entry level,E-commerce,"SQL, Python, Tableau",68659,108356,FALSE,12-05-2023
+481,Data Scientist,Google,Remote,Full-time,Director,Technology,"Python, SQL, AWS, Excel, Node.js",55572,91308,TRUE,17-03-2024
+482,Software Engineer,StartupX,"Berlin, Germany",Full-time,Entry level,Finance,"Data Visualization, Azure, React, Java, Machine Learning",76922,113139,TRUE,07-05-2023
+483,AI Researcher,Google,Remote,Part-time,Mid level,Healthcare,"Node.js, Tableau, Machine Learning, Python",58957,81946,TRUE,01-06-2024
+484,Machine Learning Engineer,FinTechHub,"Austin, USA",Internship,Entry level,Finance,"Docker, Node.js, JavaScript, Machine Learning, Tableau",116085,188306,FALSE,08-08-2023
+485,Full Stack Developer,Microsoft,Remote,Part-time,Director,Healthcare,"Machine Learning, Power BI, Python, SQL, Azure",91193,117395,FALSE,26-04-2023
+486,Full Stack Developer,Salesforce,"London, UK",Internship,Mid level,Education,"AWS, React, Docker, JavaScript, SQL, Kubernetes",100434,147607,FALSE,29-04-2023
+487,Data Scientist,IBM,"Bangalore, India",Full-time,Entry level,Finance,"Docker, Power BI, Data Visualization, SQL, Java, React",51675,126116,FALSE,03-07-2023
+488,AI Researcher,IBM,"San Francisco, USA",Part-time,Director,E-commerce,"Tableau, Power BI, Node.js, Data Visualization, React",94385,130633,FALSE,23-07-2023
+489,AI Researcher,IBM,"Bangalore, India",Contract,Mid level,E-commerce,"SQL, AWS, Kubernetes",96674,169041,FALSE,14-02-2024
+490,Data Scientist,FinTechHub,"New York, USA",Full-time,Director,Technology,"Docker, Data Visualization, Excel, Azure",67643,81538,TRUE,25-08-2023
+491,Marketing Analyst,Oracle,"Bangalore, India",Part-time,Senior level,E-commerce,"Machine Learning, AWS, Node.js, Azure, Tableau, Excel",62626,82655,TRUE,07-11-2023
+492,DevOps Engineer,Oracle,"Berlin, Germany",Internship,Director,E-commerce,"Python, Java, Machine Learning",106414,132029,FALSE,02-02-2023
+493,Software Engineer,Netflix,"Toronto, Canada",Internship,Entry level,Education,"Excel, Machine Learning, Node.js, React, Data Visualization, Kubernetes",114419,180869,FALSE,18-06-2023
+494,Data Analyst,IBM,"London, UK",Internship,Director,Education,"Tableau, AWS, Azure, Python, Power BI",70487,146899,TRUE,29-07-2024
+495,AI Researcher,Google,"Berlin, Germany",Internship,Entry level,E-commerce,"Azure, Docker, Node.js, Python, Excel",98026,153753,TRUE,12-05-2023
+496,AI Researcher,Microsoft,"San Francisco, USA",Contract,Entry level,Healthcare,"Python, Machine Learning, Azure, Node.js",80752,131659,FALSE,11-09-2023
+497,Business Analyst,Google,"Bangalore, India",Full-time,Senior level,E-commerce,"Azure, Data Visualization, SQL, Kubernetes, Tableau, JavaScript",117470,182673,FALSE,08-03-2024
+498,Software Engineer,Salesforce,"London, UK",Contract,Director,Finance,"Excel, React, Tableau, SQL, Machine Learning, JavaScript",115898,170402,FALSE,23-05-2024
+499,AI Researcher,IBM,"Seattle, USA",Full-time,Entry level,Education,"AWS, SQL, Data Visualization, Machine Learning, Kubernetes",56230,105200,FALSE,29-09-2023
+500,Business Analyst,Adobe,"London, UK",Internship,Senior level,Finance,"Docker, AWS, Data Visualization, Machine Learning, Kubernetes, Power BI",95523,115571,TRUE,03-08-2023

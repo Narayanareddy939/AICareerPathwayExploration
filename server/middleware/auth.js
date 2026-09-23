@@ -5,7 +5,6 @@ const protect = async (req, res, next) => {
   try {
     let token;
 
-    // Check Authorization header
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
       token = req.headers.authorization.split(' ')[1];
     }
@@ -14,10 +13,7 @@ const protect = async (req, res, next) => {
       return res.status(401).json({ success: false, message: 'Not authorized — no token provided' });
     }
 
-    // Verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET || 'ai_carrier_secret_fallback');
-    
-    // Attach user to request
     const user = await User.findById(decoded.id).select('-password');
     if (!user) {
       return res.status(401).json({ success: false, message: 'User no longer exists' });
@@ -36,4 +32,21 @@ const protect = async (req, res, next) => {
   }
 };
 
-module.exports = { protect };
+const optionalAuth = async (req, res, next) => {
+  try {
+    let token;
+    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
+      token = req.headers.authorization.split(' ')[1];
+    }
+    if (token) {
+      const decoded = jwt.verify(token, process.env.JWT_SECRET || 'ai_carrier_secret_fallback');
+      const user = await User.findById(decoded.id).select('-password');
+      if (user) req.user = user;
+    }
+  } catch (err) {
+    // Ignore invalid/expired token for optional authentication
+  }
+  next();
+};
+
+module.exports = { protect, optionalAuth };

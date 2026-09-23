@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "job-1",
+    "title": "Software Engineer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-2",
+    "title": "Frontend Developer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-3",
+    "title": "Backend Developer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-4",
+    "title": "Full Stack Developer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-5",
+    "title": "DevOps Engineer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-6",
+    "title": "Machine Learning Engineer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-7",
+    "title": "Data Scientist",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-8",
+    "title": "Data Analyst",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-9",
+    "title": "Data Engineer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-10",
+    "title": "Cloud Architect",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-11",
+    "title": "Cybersecurity Analyst",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-12",
+    "title": "AI Researcher",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-13",
+    "title": "Blockchain Developer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-14",
+    "title": "Web Developer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-15",
+    "title": "Game Developer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-16",
+    "title": "UX Designer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-17",
+    "title": "UI Designer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-18",
+    "title": "Product Manager (Tech)",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-19",
+    "title": "Mobile App Developer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-20",
+    "title": "Embedded Systems Engineer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-21",
+    "title": "Financial Analyst",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-22",
+    "title": "Investment Banker",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-23",
+    "title": "Management Consultant",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-24",
+    "title": "Auditor",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-25",
+    "title": "Accountant",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-26",
+    "title": "Risk Analyst",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-27",
+    "title": "Actuary",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-28",
+    "title": "Tax Consultant",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-29",
+    "title": "Corporate Lawyer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-30",
+    "title": "Compliance Officer",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-31",
+    "title": "Business Development Manager",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-32",
+    "title": "Marketing Analyst",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-33",
+    "title": "Project Manager",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-34",
+    "title": "Venture Capital Analyst",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-35",
+    "title": "Fund Manager",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-36",
+    "title": "Sales Executive",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-37",
+    "title": "Entrepreneur / Startup Founder",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-38",
+    "title": "Strategy Consultant",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-39",
+    "title": "Business Analyst",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-40",
+    "title": "Real Estate Analyst",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-41",
+    "title": "Doctor (General Practitioner)",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-42",
+    "title": "Surgeon",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-43",
+    "title": "Nurse",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-44",
+    "title": "Dentist",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-45",
+    "title": "Pharmacist",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-46",
+    "title": "Physiotherapist",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-47",
+    "title": "Radiologist",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-48",
+    "title": "Occupational Therapist",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-49",
+    "title": "Clinical Research Associate",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-50",
+    "title": "Medical Laboratory Technologist",
+    "company": "Tech Enterprise",
+    "location": "Bengaluru, India (Hybrid)",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-51",
+    "title": "Product Manager",
+    "company": "Meta",
+    "location": "Austin, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-52",
+    "title": "Product Manager",
+    "company": "Oracle",
+    "location": "London, UK",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-53",
+    "title": "Machine Learning Engineer",
+    "company": "Salesforce",
+    "location": "London, UK",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-54",
+    "title": "Data Analyst",
+    "company": "StartupX",
+    "location": "Seattle, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-55",
+    "title": "Product Manager",
+    "company": "StartupX",
+    "location": "London, UK",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-56",
+    "title": "Data Analyst",
+    "company": "Tesla",
+    "location": "Toronto, Canada",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-57",
+    "title": "Product Manager",
+    "company": "FinTechHub",
+    "location": "Remote",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-58",
+    "title": "DevOps Engineer",
+    "company": "Salesforce",
+    "location": "San Francisco, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-59",
+    "title": "DevOps Engineer",
+    "company": "Amazon",
+    "location": "Bangalore, India",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-60",
+    "title": "Marketing Analyst",
+    "company": "Adobe",
+    "location": "New York, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-61",
+    "title": "AI Researcher",
+    "company": "Microsoft",
+    "location": "San Francisco, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-62",
+    "title": "Product Manager",
+    "company": "Adobe",
+    "location": "Seattle, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-63",
+    "title": "AI Researcher",
+    "company": "Meta",
+    "location": "New York, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-64",
+    "title": "Full Stack Developer",
+    "company": "Meta",
+    "location": "Remote",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-65",
+    "title": "Data Analyst",
+    "company": "StartupX",
+    "location": "San Francisco, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-66",
+    "title": "Business Analyst",
+    "company": "Oracle",
+    "location": "Seattle, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-67",
+    "title": "DevOps Engineer",
+    "company": "Oracle",
+    "location": "Bangalore, India",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-68",
+    "title": "Software Engineer",
+    "company": "Meta",
+    "location": "London, UK",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-69",
+    "title": "Marketing Analyst",
+    "company": "Amazon",
+    "location": "New York, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-70",
+    "title": "AI Researcher",
+    "company": "Microsoft",
+    "location": "Toronto, Canada",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-71",
+    "title": "Data Analyst",
+    "company": "Oracle",
+    "location": "San Francisco, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-72",
+    "title": "AI Researcher",
+    "company": "StartupX",
+    "location": "Remote",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-73",
+    "title": "Machine Learning Engineer",
+    "company": "Meta",
+    "location": "London, UK",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-74",
+    "title": "Business Analyst",
+    "company": "Amazon",
+    "location": "Bangalore, India",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-75",
+    "title": "Software Engineer",
+    "company": "Google",
+    "location": "London, UK",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-76",
+    "title": "Product Manager",
+    "company": "Amazon",
+    "location": "Austin, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-77",
+    "title": "Data Analyst",
+    "company": "Oracle",
+    "location": "Seattle, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-78",
+    "title": "Data Scientist",
+    "company": "Netflix",
+    "location": "Berlin, Germany",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-79",
+    "title": "Machine Learning Engineer",
+    "company": "FinTechHub",
+    "location": "Berlin, Germany",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-80",
+    "title": "DevOps Engineer",
+    "company": "Microsoft",
+    "location": "Berlin, Germany",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-81",
+    "title": "Software Engineer",
+    "company": "Salesforce",
+    "location": "London, UK",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-82",
+    "title": "Product Manager",
+    "company": "Adobe",
+    "location": "Bangalore, India",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-83",
+    "title": "Data Analyst",
+    "company": "Google",
+    "location": "Seattle, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-84",
+    "title": "Data Scientist",
+    "company": "IBM",
+    "location": "Seattle, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-85",
+    "title": "Full Stack Developer",
+    "company": "Salesforce",
+    "location": "Remote",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-86",
+    "title": "Data Scientist",
+    "company": "FinTechHub",
+    "location": "London, UK",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-87",
+    "title": "Data Scientist",
+    "company": "IBM",
+    "location": "Toronto, Canada",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-88",
+    "title": "Full Stack Developer",
+    "company": "Google",
+    "location": "Berlin, Germany",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-89",
+    "title": "DevOps Engineer",
+    "company": "FinTechHub",
+    "location": "Austin, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-90",
+    "title": "Full Stack Developer",
+    "company": "Amazon",
+    "location": "New York, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-91",
+    "title": "Full Stack Developer",
+    "company": "Google",
+    "location": "Remote",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-92",
+    "title": "AI Researcher",
+    "company": "Amazon",
+    "location": "Seattle, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-93",
+    "title": "Data Scientist",
+    "company": "Salesforce",
+    "location": "New York, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-94",
+    "title": "AI Researcher",
+    "company": "Google",
+    "location": "Berlin, Germany",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-95",
+    "title": "DevOps Engineer",
+    "company": "Amazon",
+    "location": "Remote",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-96",
+    "title": "Full Stack Developer",
+    "company": "Salesforce",
+    "location": "Toronto, Canada",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-97",
+    "title": "Marketing Analyst",
+    "company": "Meta",
+    "location": "San Francisco, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-98",
+    "title": "Business Analyst",
+    "company": "Meta",
+    "location": "Toronto, Canada",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-99",
+    "title": "Business Analyst",
+    "company": "Netflix",
+    "location": "Seattle, USA",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  },
+  {
+    "id": "job-100",
+    "title": "Business Analyst",
+    "company": "FinTechHub",
+    "location": "Remote",
+    "salary": "₹10,00,000 - ₹18,00,000 / year",
+    "type": "Full-time",
+    "experience": "0 - 2 years",
+    "requiredSkills": [
+      "Python",
+      "JavaScript",
+      "SQL"
+    ],
+    "url": "https://www.linkedin.com/jobs"
+  }
+]

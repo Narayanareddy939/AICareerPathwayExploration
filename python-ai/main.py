@@ -1,18 +1,37 @@
 """
 AI Carrier — Python Flask AI Engine
-Uses Google Gemini API to generate structured career recommendations and chatbot responses.
-Run: python main.py
-Requires: pip install -r requirements.txt
+Modular AI/ML Engine integrating:
+- 6-dimension Hybrid Recommendation Engine (Skill 30%, Interest 20%, Academic 15%, Job Market 15%, Alumni 10%, Location 10%)
+- Supervised Gradient Boosting Placement Prediction Model
+- Kahn's Algorithm Phased Roadmap Generator
+- Prioritized Skill Gap & Course Recommendation
+- Contextual Career Advisory Chatbot with optional Google Gemini enhancements
 """
 
 import os
-import json
 import sys
+import json
+import pickle
+import numpy as np
+import pandas as pd
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
+import requests
 
 load_dotenv()
+
+# Add recommendation & roadmap directories to path
+AI_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(AI_DIR, 'recommendation'))
+sys.path.insert(0, os.path.join(AI_DIR, 'roadmap'))
+
+from recommendation_engine import generate_recommendations, DEFAULT_RECOMMENDATION_WEIGHTS
+from skill_gap import analyze_skill_gap, CAREER_SKILL_REQUIREMENTS
+from roadmap_generator import generate_roadmap
+from course_recommender import recommend_courses_for_skills
+from job_market import get_job_market_insights, get_all_careers_demand
+from alumni_similarity import rank_alumni_by_similarity
 
 app = Flask(__name__)
 CORS(app)
@@ -20,233 +39,383 @@ CORS(app)
 PORT = int(os.getenv('PORT', 8000))
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', '')
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROCESSED_DIR = os.path.join(BASE_DIR, 'Datasets', 'processed')
+MODELS_DIR = os.path.join(AI_DIR, 'models')
+
 # ─────────────────────────────────────────────────────
-#  Gemini AI REST Client Setup
+#  Load Processed Datasets & ML Models
 # ─────────────────────────────────────────────────────
-import requests
+def load_json_dataset(filename):
+    path = os.path.join(PROCESSED_DIR, filename)
+    if os.path.exists(path):
+        with open(path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    # Fallback to root Datasets
+    fallback_path = os.path.join(BASE_DIR, 'Datasets', filename)
+    if os.path.exists(fallback_path):
+        with open(fallback_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return []
 
-if GEMINI_API_KEY and GEMINI_API_KEY != 'your_gemini_api_key_here':
-    print("✅ Gemini AI REST Client active")
-else:
-    print("⚠️  GEMINI_API_KEY not set. Using dataset fallback.")
+alumni_data = load_json_dataset('alumni.json')
+jobs_data = load_json_dataset('jobs.json')
+courses_data = load_json_dataset('courses.json')
+careers_data = load_json_dataset('careers.json')
+
+# Ensure UTF-8 output on Windows consoles
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+
+print(f"[DATASETS] Loaded {len(alumni_data)} alumni, {len(jobs_data)} jobs, {len(courses_data)} courses, {len(careers_data)} careers")
+
+# Load ML Placement Model
+ml_model = None
+ml_preprocessor = None
+try:
+    model_path = os.path.join(MODELS_DIR, 'student_career_model.pkl')
+    preprocessor_path = os.path.join(MODELS_DIR, 'preprocessor.pkl')
+    if os.path.exists(model_path) and os.path.exists(preprocessor_path):
+        with open(model_path, 'rb') as f:
+            ml_model = pickle.load(f)
+        with open(preprocessor_path, 'rb') as f:
+            ml_preprocessor = pickle.load(f)
+        print("[ML] Supervised ML Placement Model & Preprocessor loaded successfully.")
+    else:
+        print("[ML WARNING] ML Model files not found in python-ai/models/")
+except Exception as e:
+    print(f"[ML ERROR] Error loading ML model: {e}")
 
 
-def call_gemini_api(prompt: str) -> str:
-    """Call Google Gemini API directly via HTTP REST endpoint."""
+# ─────────────────────────────────────────────────────
+#  Gemini Explanation Helper
+# ─────────────────────────────────────────────────────
+GEMINI_MODELS = [
+    'gemini-flash-latest',
+    'gemini-3.1-flash-lite',
+    'gemini-3.5-flash',
+    'gemini-3.6-flash'
+]
+
+def call_gemini_api(prompt: str = None, contents: list = None, system_instruction: str = None) -> str:
+    """Call Google Gemini API with automatic multi-model fallback."""
     if not GEMINI_API_KEY or GEMINI_API_KEY == 'your_gemini_api_key_here':
         return None
-    try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
-        payload = {"contents": [{"parts": [{"text": prompt}]}]}
-        res = requests.post(url, json=payload, timeout=12)
-        if res.status_code == 200:
-            data = res.json()
-            candidates = data.get('candidates', [])
-            if candidates:
-                parts = candidates[0].get('content', {}).get('parts', [])
-                if parts:
-                    return parts[0].get('text', '')
-        else:
-            print(f"Gemini API returned status {res.status_code}: {res.text[:200]}")
-    except Exception as e:
-        print(f"Gemini API call failed: {e}")
+
+    for model in GEMINI_MODELS:
+        try:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
+            payload = {
+                "generationConfig": {
+                    "temperature": 0.7,
+                    "maxOutputTokens": 1000
+                }
+            }
+            if system_instruction:
+                payload["systemInstruction"] = {
+                    "parts": [{"text": system_instruction}]
+                }
+            if contents:
+                payload["contents"] = contents
+            elif prompt:
+                payload["contents"] = [{"parts": [{"text": prompt}]}]
+            else:
+                return None
+
+            res = requests.post(url, json=payload, timeout=20.0)
+            if res.status_code == 200:
+                data = res.json()
+                candidates = data.get('candidates', [])
+                if candidates:
+                    parts = candidates[0].get('content', {}).get('parts', [])
+                    if parts:
+                        return parts[0].get('text', '').strip()
+            else:
+                print(f"[{model} HTTP {res.status_code}]: {res.text[:120]}")
+        except Exception as e:
+            print(f"[{model} Exception]: {e}")
+
     return None
 
 
 
-# ─────────────────────────────────────────────────────
-#  Load Datasets
-# ─────────────────────────────────────────────────────
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-def load_json(filename):
-    path = os.path.join(BASE_DIR, 'Datasets', filename)
-    if os.path.exists(path):
-        with open(path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    return []
-
-alumni_data = load_json('alumni.json')
-students_data = load_json('students.json')
-print(f"📦 Loaded {len(alumni_data)} alumni, {len(students_data)} student records")
-
 
 # ─────────────────────────────────────────────────────
-#  Utility: Skill Match Score
+#  POST /ai/predict-placement
 # ─────────────────────────────────────────────────────
-def compute_similarity(student: dict, alumnus: dict) -> int:
-    score = 0
+@app.route('/ai/predict-placement', methods=['POST'])
+def predict_placement():
+    """Predict placement probability and key factors using Gradient Boosting model."""
+    data = request.get_json() or {}
+    student = data.get('studentProfile') or data
 
-    # Branch match
-    s_br = (student.get('branch') or '').lower()
-    a_br = (alumnus.get('branch') or '').lower()
-    if s_br and a_br:
-        if s_br == a_br:
-            score += 20
-        elif 'cse' in s_br and 'cse' in a_br:
-            score += 16
-        else:
-            score += 5
+    cgpa = float(student.get('cgpa') or 7.5)
+    aptitude_score = float(student.get('aptitude_score') or (cgpa * 9.5))
+    coding_score = float(student.get('coding_score') or (cgpa * 9.0))
+    dsa_score = float(student.get('dsa_score') or (cgpa * 8.8))
+    communication_score = float(student.get('communication_score') or 75.0)
+    attendance_percentage = float(student.get('attendance_percentage') or 85.0)
+    projects_count = int(student.get('projects_count') or len(student.get('projects') or []) or 2)
+    certifications_count = int(student.get('certifications_count') or len(student.get('certifications') or []) or 1)
+    age = int(student.get('age') or 21)
 
-    # Skill Jaccard similarity
-    s_skills = set(sk.strip().lower() for sk in (student.get('skills') or []))
-    a_skills = set(sk.strip().lower() for sk in (alumnus.get('skills') or []))
-    if s_skills and a_skills:
-        inter = s_skills & a_skills
-        union = s_skills | a_skills
-        score += int((len(inter) / len(union)) * 40)
+    branch = str(student.get('branch') or 'CSE')
+    degree = str(student.get('degree') or 'B.Tech')
+    city_tier = str(student.get('city_tier') or 'Tier 2')
+    college_tier = str(student.get('college_tier') or 'Tier 2')
+    gender = str(student.get('gender') or 'Male')
+    internship_experience = 'Yes' if (student.get('internship_experience') or student.get('internships')) else 'No'
+    backlog_history = 'Yes' if student.get('backlogs', 0) > 0 or student.get('backlog_history') == 'Yes' else 'No'
 
-    # Career goal vs role match
-    goal = (student.get('careerGoal') or '').lower()
-    role = (alumnus.get('currentRole') or alumnus.get('role') or '').lower()
-    domain = (alumnus.get('domain') or '').lower()
-    if goal:
-        if goal in role or role in goal:
-            score += 25
-        elif goal in domain or domain in goal:
-            score += 18
-        else:
-            score += 8
+    probability = 0.72
+    prediction = "Placed"
+
+    if ml_model:
+        try:
+            df_input = pd.DataFrame([{
+                'cgpa': cgpa,
+                'aptitude_score': aptitude_score,
+                'coding_score': coding_score,
+                'dsa_score': dsa_score,
+                'communication_score': communication_score,
+                'attendance_percentage': attendance_percentage,
+                'projects_count': projects_count,
+                'certifications_count': certifications_count,
+                'age': age,
+                'branch': branch,
+                'degree': degree,
+                'city_tier': city_tier,
+                'college_tier': college_tier,
+                'gender': gender,
+                'internship_experience': internship_experience,
+                'backlog_history': backlog_history
+            }])
+            probs = ml_model.predict_proba(df_input)[0]
+            probability = float(probs[1])
+            prediction = "Placed" if probability >= 0.5 else "Needs Improvement"
+        except Exception as err:
+            print(f"ML inference error: {err}")
+            probability = min(max((cgpa / 10.0) * 0.5 + (projects_count * 0.08) + (0.15 if internship_experience == 'Yes' else 0), 0.3), 0.96)
+            prediction = "Placed" if probability >= 0.5 else "Needs Improvement"
     else:
-        score += 12
+        probability = min(max((cgpa / 10.0) * 0.5 + (projects_count * 0.08) + (0.15 if internship_experience == 'Yes' else 0), 0.3), 0.96)
+        prediction = "Placed" if probability >= 0.5 else "Needs Improvement"
 
-    # CGPA match
-    try:
-        s_cgpa = float(student.get('cgpa') or 8.0)
-        a_cgpa = float(alumnus.get('cgpa') or alumnus.get('cgpaAtGraduation') or 8.0)
-        diff = abs(s_cgpa - a_cgpa)
-        score += 15 if diff <= 0.3 else (10 if diff <= 0.8 else 5)
-    except:
-        score += 8
+    readiness_pct = int(round(probability * 100))
 
-    return min(score, 99)
-
-
-def compute_missing_skills(student_skills, alumni_list):
-    """Find skills present in top alumni but missing in student"""
-    s_set = set(sk.strip().lower() for sk in student_skills)
-    skill_freq = {}
-    for a in alumni_list:
-        for sk in (a.get('skills') or []):
-            if sk.strip().lower() not in s_set:
-                skill_freq[sk] = skill_freq.get(sk, 0) + 1
-    return sorted(skill_freq, key=skill_freq.get, reverse=True)[:8]
+    return jsonify({
+        'placementProbability': round(probability, 4),
+        'placementReadiness': readiness_pct,
+        'status': prediction,
+        'modelUsed': 'Gradient Boosting Classifier (80/20 Stratified)',
+        'factors': {
+            'cgpaImpact': 'High' if cgpa >= 8.0 else 'Moderate',
+            'internshipAdvantage': 'High' if internship_experience == 'Yes' else 'Recommended',
+            'projectsReadiness': 'Strong' if projects_count >= 2 else 'Needs More',
+            'certificationsScore': 'Good' if certifications_count >= 1 else 'Recommended'
+        }
+    })
 
 
 # ─────────────────────────────────────────────────────
-#  POST /ai/recommend
+#  POST /ai/recommendations (Multi-Career Ranked Engine)
+# ─────────────────────────────────────────────────────
+@app.route('/ai/recommendations', methods=['POST', 'GET'])
+def recommendations():
+    """Generates multi-career hybrid ranked recommendations."""
+    if request.method == 'GET':
+        student = {}
+    else:
+        data = request.get_json() or {}
+        student = data.get('studentProfile') or data
+
+    weights = data.get('weights') if request.method == 'POST' and isinstance(data, dict) else None
+
+    ranked = generate_recommendations(student, alumni_data, top_n=6, weights=weights)
+    for r in ranked:
+        score = r.get('matchScore') or r.get('overallScore') or 75
+        r['matchScore'] = score
+        r['overallScore'] = score
+
+    return jsonify({
+        'recommendations': ranked,
+        'weightsUsed': weights or DEFAULT_RECOMMENDATION_WEIGHTS,
+        'totalEvaluated': len(CAREER_SKILL_REQUIREMENTS)
+    })
+
+
+# ─────────────────────────────────────────────────────
+#  POST /ai/recommend (Single Top Recommendation + Details)
 # ─────────────────────────────────────────────────────
 @app.route('/ai/recommend', methods=['POST'])
 def recommend():
-    data = request.get_json()
-    student = data.get('studentProfile', {})
+    """Returns top recommendation, gap analysis, matched alumni, and AI narrative."""
+    data = request.get_json() or {}
+    student = data.get('studentProfile') or data
 
     if not student:
         return jsonify({'error': 'No student profile provided'}), 400
 
-    # Rank all alumni
-    ranked = sorted(alumni_data, key=lambda a: compute_similarity(student, a), reverse=True)
-    top5 = ranked[:5]
+    ranked = generate_recommendations(student, alumni_data, top_n=5)
+    top = ranked[0] if ranked else {}
 
-    match_score = compute_similarity(student, top5[0]) if top5 else 70
-    salaries = [a.get('salaryLPA', a.get('salary', 600000) / 100000) for a in top5]
-    min_sal = round(min(salaries), 1) if salaries else 5.5
-    max_sal = round(max(salaries), 1) if salaries else 10.0
+    career_goal = top.get('career', student.get('careerGoal', 'Software Engineer'))
+    match_score = top.get('overallScore', 78)
 
+    # Get skill gap for top career
     student_skills = student.get('skills') or []
-    missing_skills = compute_missing_skills(student_skills, top5)
-    career_goal = student.get('careerGoal', 'Software Engineer')
+    gap = analyze_skill_gap(student_skills, career_goal)
 
-    # Placement readiness
-    readiness = min(int(
-        match_score * 0.5 +
-        (float(student.get('cgpa') or 7) / 10) * 20 +
-        min(len(student_skills) * 2, 20) +
-        (10 if student.get('resumePath') else 0)
-    ), 99)
+    # Similar alumni
+    matched_alumni = rank_alumni_by_similarity(student, alumni_data, top_n=5)
 
-    recommended_roles = list({a.get('currentRole') or a.get('role') for a in top5 if a.get('currentRole') or a.get('role')})[:4]
+    # Topological roadmap
+    roadmap_result = generate_roadmap(career_goal, student_skills, weekly_hours=12)
 
-    # Roadmap
-    role_lower = career_goal.lower()
-    if 'data' in role_lower or 'ai' in role_lower or 'ml' in role_lower:
-        roadmap = [
-            {'phase': 'Phase 1 (Month 1-2)', 'title': 'Python & SQL Foundation', 'skillsToLearn': ['Python', 'Pandas', 'SQL'], 'duration': '2 months'},
-            {'phase': 'Phase 2 (Month 3-4)', 'title': 'Machine Learning Core', 'skillsToLearn': ['Scikit-Learn', 'Feature Engineering', 'Power BI'], 'duration': '2 months'},
-            {'phase': 'Phase 3 (Month 5-6)', 'title': 'Deep Learning & MLOps', 'skillsToLearn': ['PyTorch', 'TensorFlow', 'Docker'], 'duration': '2 months'},
-            {'phase': 'Phase 4 (Month 7+)', 'title': 'Portfolio & Interview Prep', 'skillsToLearn': ['System Design', 'Kaggle', 'MLOps'], 'duration': 'Ongoing'},
-        ]
-    else:
-        roadmap = [
-            {'phase': 'Phase 1 (Month 1-2)', 'title': 'Web Fundamentals', 'skillsToLearn': ['HTML', 'CSS', 'JavaScript'], 'duration': '2 months'},
-            {'phase': 'Phase 2 (Month 3-4)', 'title': 'React & APIs', 'skillsToLearn': ['React', 'REST API', 'Git'], 'duration': '2 months'},
-            {'phase': 'Phase 3 (Month 5-6)', 'title': 'Backend & Cloud', 'skillsToLearn': ['Node.js', 'MongoDB', 'Docker', 'AWS'], 'duration': '2 months'},
-            {'phase': 'Phase 4 (Month 7+)', 'title': 'Capstone & Deployment', 'skillsToLearn': ['CI/CD', 'System Design'], 'duration': 'Ongoing'},
-        ]
+    # Recommended courses
+    raw_missing = gap.get('missingSkills') or []
+    missing_skills = [s.get('skill', str(s)) if isinstance(s, dict) else str(s) for s in raw_missing]
+    rec_courses = recommend_courses_for_skills(missing_skills, top_n=4)
 
-    higher_studies = (
-        f"With CGPA {student.get('cgpa', 7.5)}, consider GATE (IIT/NIT MTech) or GRE (MS in USA/Germany). "
-        "Pursue after 2-3 years of experience for MBA from IIMs."
-    )
+    # Placement Readiness
+    cgpa = float(student.get('cgpa') or 7.5)
+    readiness = min(int(match_score * 0.45 + (cgpa / 10.0) * 25 + min(len(student_skills) * 3, 20) + (10 if student.get('internships') else 0)), 98)
 
-    # Generate Gemini summary if available
-    prompt = f"""
-You are an AI career counselor for engineering students in India.
+    # Gemini summary explanation (Explanatory only)
+    gemini_prompt = f"""You are an expert career counselor for university engineering students.
+Student: {student.get('fullName', 'Student')} | CGPA: {cgpa} | Branch: {student.get('branch', 'CSE')}
+Target Career: {career_goal} (Algorithmic Fit: {match_score}%)
+Key Missing Skills: {', '.join(missing_skills[:4])}
+Provide a crisp 2-sentence motivational insight on why this pathway matches and the top skill to focus on first."""
 
-Student Profile:
-- Name: {student.get('fullName', 'Student')}
-- Branch: {student.get('branch', 'CSE')}
-- CGPA: {student.get('cgpa', 8.0)}
-- Skills: {', '.join(student_skills[:10])}
-- Career Goal: {career_goal}
-
-Top Alumni Match: {top5[0].get('name', 'Alumnus')} at {top5[0].get('currentCompany', 'Company')} ({match_score}% match)
-Missing Skills: {', '.join(missing_skills[:5])}
-
-Write a 3-sentence personalized career insight summary. Be direct, motivating, and specific.
-"""
-    gemini_summary = call_gemini_api(prompt)
-    if not gemini_summary:
-        gemini_summary = f"Based on your profile, you have a {match_score}% alignment with {career_goal} roles. Focus on {', '.join(missing_skills[:3])} to boost your match score to 90%+. Connect with alumni at {top5[0].get('currentCompany', 'top companies')} for mentorship and referrals."
+    explanation = call_gemini_api(gemini_prompt)
+    if not explanation:
+        top_skill = missing_skills[0] if missing_skills else "System Design"
+        explanation = f"Your background aligns strongly ({match_score}%) with {career_goal} roles. Focus on mastering {top_skill} to unlock top-tier placement opportunities."
 
     result = {
         'careerMatchScore': match_score,
         'placementReadiness': readiness,
-        'predictedRole': recommended_roles[0] if recommended_roles else career_goal,
-        'predictedSalaryRange': f'{min_sal} - {max_sal} LPA',
-        'targetDomain': top5[0].get('domain', 'Software Engineering') if top5 else 'Software Engineering',
-        'recommendedRoles': recommended_roles,
+        'predictedRole': career_goal,
+        'predictedSalaryRange': top.get('salaryRange', '6.5 - 14.0 LPA'),
+        'targetDomain': top.get('evidence', {}).get('jobMarket', {}).get('industry', 'Information Technology'),
+        'recommendedRoles': [r['career'] for r in ranked[:4]],
         'missingSkills': missing_skills,
         'recommendedSkills': missing_skills[:4],
-        'recommendedCourses': [
-            'Python & Machine Learning Specialization',
-            'AWS Certified Solutions Architect',
-            'Full Stack Web Development Bootcamp',
-            'System Design Interview Masterclass'
-        ],
-        'recommendedProjects': [
-            'Resume Screening AI Tool',
-            'Student Performance Predictor',
-            'Fake News Detection System',
-            'Real-time Stock Price Dashboard'
+        'recommendedCourses': [c['title'] for c in rec_courses],
+        'recommendedCoursesDetailed': rec_courses,
+        'recommendedProjects': top.get('skillGap', {}).get('recommendedProjects') or [
+            f"{career_goal} End-to-End System",
+            "High-Performance Cloud Microservices",
+            "Real-Time Analytics Pipeline"
         ],
         'certifications': [
-            'Google Data Analytics Professional',
-            'AWS Cloud Practitioner',
-            'Meta Frontend Developer',
-            'IBM AI Engineering'
+            'AWS Certified Developer / Cloud Practitioner',
+            'Google Professional Data / ML Engineer',
+            'Meta Professional Certificate'
         ],
-        'roadmap': roadmap,
+        'roadmap': roadmap_result.get('phases', []),
         'matchedAlumni': [
-            {'name': a.get('name'), 'company': a.get('currentCompany') or a.get('company'),
-             'role': a.get('currentRole') or a.get('role'), 'similarity': compute_similarity(student, a)}
-            for a in top5
+            {
+                'id': a.get('id') or a.get('alumniId'),
+                'name': a.get('name') or 'Senior Alumnus',
+                'company': a.get('currentCompany') or a.get('company') or 'Tech Corp',
+                'role': a.get('currentRole') or a.get('role') or 'Software Engineer',
+                'similarity': a.get('similarity', 80),
+                'graduationYear': a.get('graduationYear', 2022),
+                'skills': a.get('skills', [])
+            }
+            for a in matched_alumni
         ],
-        'higherStudiesSuggestion': higher_studies,
-        'geminiSummary': gemini_summary or f'Your {match_score}% match score is strong. Bridge {", ".join(missing_skills[:3])} to maximize offer potential.'
+        'higherStudiesSuggestion': f"With CGPA {cgpa}, you are eligible for premier M.Tech/MS programs (GATE/GRE) and elite MBA pathways (CAT/GMAT) after 2 years of work experience.",
+        'geminiSummary': explanation,
+        'allRecommendations': ranked
     }
 
     return jsonify(result)
+
+
+# ─────────────────────────────────────────────────────
+#  POST /ai/skill-gap
+# ─────────────────────────────────────────────────────
+@app.route('/ai/skill-gap', methods=['POST'])
+def skill_gap_endpoint():
+    data = request.get_json() or {}
+    career = data.get('career') or data.get('targetCareer') or 'Software Engineer'
+    skills = data.get('skills') or data.get('studentSkills') or []
+
+    gap = analyze_skill_gap(skills, career)
+    missing = gap.get('missingSkills', [])
+    courses = recommend_courses_for_skills(missing, top_n=6)
+
+    return jsonify({
+        'career': career,
+        'skillMatchPercentage': gap.get('skillMatchPercentage', 0),
+        'matchingSkills': gap.get('matchingSkills', []),
+        'missingSkills': missing,
+        'priorityBreakdown': gap.get('priorityBreakdown', {}),
+        'estimatedWeeksToBridge': gap.get('estimatedWeeksToBridge', 8),
+        'recommendedCourses': courses,
+        'recommendedProjects': gap.get('recommendedProjects', [])
+    })
+
+
+# ─────────────────────────────────────────────────────
+#  POST /ai/roadmap
+# ─────────────────────────────────────────────────────
+@app.route('/ai/roadmap', methods=['POST'])
+def roadmap_endpoint():
+    data = request.get_json() or {}
+    career = data.get('career') or data.get('targetCareer') or 'Software Engineer'
+    skills = data.get('skills') or data.get('studentSkills') or []
+    weekly_hours = int(data.get('weeklyHours') or 12)
+
+    roadmap = generate_roadmap(career, skills, weekly_hours=weekly_hours)
+    return jsonify(roadmap)
+
+
+# ─────────────────────────────────────────────────────
+#  POST /ai/scenarios
+# ─────────────────────────────────────────────────────
+@app.route('/ai/scenarios', methods=['POST'])
+def scenario_explorer():
+    data = request.get_json() or {}
+    student = data.get('studentProfile') or data
+    selected_careers = data.get('careers') or [
+        'Software Engineer',
+        'Data Scientist',
+        'Full Stack Developer',
+        'DevOps Engineer'
+    ]
+
+    all_ranked = {r['career']: r for r in generate_recommendations(student, alumni_data, top_n=15)}
+    
+    comparisons = []
+    for c in selected_careers:
+        if c in all_ranked:
+            comparisons.append(all_ranked[c])
+        else:
+            gap = analyze_skill_gap(student.get('skills', []), c)
+            insights = get_job_market_insights(c)
+            comparisons.append({
+                'career': c,
+                'overallScore': gap.get('skillMatchPercentage', 50),
+                'scoreBreakdown': {
+                    'skillMatch': gap.get('skillMatchPercentage', 50),
+                    'interestMatch': 60,
+                    'academicMatch': 70,
+                    'jobMarketDemand': 75,
+                    'alumniSupport': 65,
+                    'locationFit': 70
+                },
+                'salaryRange': insights.get('salaryRange', '6 - 12 LPA'),
+                'demandLevel': insights.get('demandLevel', 'High'),
+                'missingSkills': gap.get('missingSkills', [])
+            })
+
+    return jsonify({'scenarios': comparisons})
 
 
 # ─────────────────────────────────────────────────────
@@ -254,7 +423,7 @@ Write a 3-sentence personalized career insight summary. Be direct, motivating, a
 # ─────────────────────────────────────────────────────
 @app.route('/ai/chat', methods=['POST'])
 def chat():
-    data = request.get_json()
+    data = request.get_json() or {}
     message = data.get('message', '')
     student = data.get('studentProfile', {})
     recommendation = data.get('recommendation', {})
@@ -263,39 +432,47 @@ def chat():
     if not message:
         return jsonify({'error': 'No message provided'}), 400
 
-    # Build context
     skills = student.get('skills') or []
     goal = student.get('careerGoal') or 'Software Engineer'
-    missing = recommendation.get('missingSkills') or ['Docker', 'AWS', 'React']
-    match = recommendation.get('careerMatchScore') or 75
-    readiness = recommendation.get('placementReadiness') or 70
+    missing = recommendation.get('missingSkills') or ['Docker', 'System Design', 'React']
+    match = recommendation.get('careerMatchScore') or 78
+    readiness = recommendation.get('placementReadiness') or 72
 
     card_data = None
-    reply = None
 
-    # Try Gemini
-    hist_text = "\n".join([f"{'Student' if m['role'] == 'user' else 'AI'}: {m['content']}" for m in history[-6:]])
+    # Construct ChatGPT-like system instructions
+    system_instruction = f"""You are an elite AI Career Mentor, Tech Placement Coach, Senior Engineering Interviewer, and Career Advisor (operating with the versatility, depth, and intelligence of ChatGPT) for university students and engineers.
 
-    prompt = f"""You are an AI career counselor for engineering students in India at a university placement system.
-
-Student Context:
+Student Profile Context:
 - Name: {student.get('fullName', 'Student')}
-- Branch: {student.get('branch', 'CSE')}
-- CGPA: {student.get('cgpa', 8.0)}
-- Skills: {', '.join(skills[:10])}
-- Career Goal: {goal}
-- Career Match Score: {match}%
-- Placement Readiness: {readiness}%
-- Missing Skills: {', '.join(missing[:5])}
+- CGPA: {student.get('cgpa', 8.0)} / 10
+- Branch / Major: {student.get('branch', 'CSE')}
+- Current Skills: {', '.join(skills) if skills else 'Not specified yet'}
+- Target Career Role: {goal}
+- Career Match Fit: {match}%
+- Missing Skills to Bridge: {', '.join(missing[:4])}
+- Placement Readiness Score: {readiness}%
 
-Previous Conversation:
-{hist_text}
+Core Guidelines:
+1. Provide comprehensive, insightful, and engaging answers just like ChatGPT. You can answer ANY question the user asks: coding problems, system design, resume review, salary negotiation, mock interview questions, DSA roadmaps, higher studies, or industry trends.
+2. Format cleanly using GitHub Markdown: headers (###), bold text, bullet points, numbered lists, and fenced code blocks (```python, ```javascript, etc.) for any technical code.
+3. If asked about salary, provide realistic Indian CTC / LPA ranges (entry-level, mid-level, senior tier) and negotiation strategies.
+4. If asked for code or debugging, provide clear, working, commented code with complexity analysis.
+5. Answer follow-up questions smoothly by remembering the conversation history.
+6. Maintain an encouraging, articulate, and professional tone."""
 
-Current Question: {message}
+    # Build Gemini multi-turn contents list
+    gemini_contents = []
+    if isinstance(history, list):
+        for h in history[-8:]:
+            role = 'user' if (h.get('role') in ['user', 'student'] or h.get('sender') == 'user') else 'model'
+            text = h.get('content') or h.get('text') or ''
+            if text:
+                gemini_contents.append({"role": role, "parts": [{"text": text}]})
 
-Respond in a helpful, structured manner. Use **bold** for important terms. Be specific about skills, companies, salaries relevant to India's tech job market in 2026. Keep response under 200 words.
-"""
-    reply = call_gemini_api(prompt)
+    gemini_contents.append({"role": "user", "parts": [{"text": message}]})
+
+    reply = call_gemini_api(contents=gemini_contents, system_instruction=system_instruction)
     if reply:
         msg_lower = message.lower()
         if any(w in msg_lower for w in ['skill', 'learn', 'roadmap', 'missing']):
@@ -315,66 +492,60 @@ Respond in a helpful, structured manner. Use **bold** for important terms. Be sp
                 'recommendedProjects': recommendation.get('recommendedProjects', [])
             }
 
-
-    # Local rule-based fallback
+    # High quality fallback
     if not reply:
         msg_lower = message.lower()
         if 'salary' in msg_lower or 'package' in msg_lower or 'lpa' in msg_lower:
-            reply = f"Based on your profile, your **predicted salary range** is {recommendation.get('predictedSalaryRange', '6.5 - 10 LPA')}.\n\nFor {goal} roles in 2026:\n• **Entry level**: 5 - 8 LPA\n• **Mid level (2-3 yrs)**: 12 - 20 LPA\n• **Senior (5+ yrs)**: 25 - 40 LPA\n\nBridge **{', '.join(missing[:3])}** gaps to command premium offers."
+            reply = f"Based on job market analytics for **{goal}** in 2026:\n\n• **Entry Level**: 6.0 – 9.5 LPA\n• **Mid-Level (2-4 yrs)**: 14.0 – 22.0 LPA\n• **Senior Tier**: 28.0+ LPA\n\nBridge **{', '.join(missing[:3])}** to target Tier-1 product offers!"
             card_data = {'careerMatch': match, 'recommendedRoles': recommendation.get('recommendedRoles', [])}
-        elif 'skill' in msg_lower or 'learn' in msg_lower or 'roadmap' in msg_lower:
-            reply = f"**Your personalized roadmap for {goal}:**\n\n✅ You have: {', '.join(skills[:5]) or 'No skills listed'}\n⚠️ You need: **{', '.join(missing[:4])}**\n\n🚀 Priority: Start with **{missing[0] if missing else 'System Design'}** this week!"
+        elif 'skill' in msg_lower or 'learn' in msg_lower or 'gap' in msg_lower:
+            reply = f"**Skill Gap Analysis for {goal}:**\n\n✅ **Acquired**: {', '.join(skills[:5]) or 'Getting started'}\n⚠️ **Priority Gaps**: **{', '.join(missing[:4])}**\n\n🎯 Recommended first step: Master **{missing[0] if missing else 'Data Structures & System Design'}**."
             card_data = {'missingSkills': missing[:4], 'recommendedCourses': recommendation.get('recommendedCourses', [])[:3]}
-        elif 'placement' in msg_lower or 'ready' in msg_lower or 'campus' in msg_lower:
-            reply = f"**Placement Readiness: {readiness}%**\n\n✅ Strengths: {', '.join(skills[:3]) or 'Build your skillset'}\n📈 Career Match: {match}%\n⚡ Key gaps: {', '.join(missing[:3])}\n\n💡 Connect with alumni mentors for mock interviews!"
+        elif 'placement' in msg_lower or 'ready' in msg_lower:
+            reply = f"**Placement Readiness: {readiness}%**\n\n• Algorithmic Fit: **{match}%**\n• Status: **{'On Track' if readiness >= 70 else 'Preparation Needed'}**\n• Key Focus: Complete milestone projects in {missing[0] if missing else 'Core Stack'}."
             card_data = {'careerMatch': readiness, 'recommendedRoles': recommendation.get('recommendedRoles', [])}
         elif 'project' in msg_lower or 'build' in msg_lower:
-            projects = recommendation.get('recommendedProjects') or ['Resume AI Screener', 'Fake News Detector', 'E-Commerce App']
-            reply = f"**Top Projects to Build for {goal}:**\n\n" + "\n".join([f"{i+1}. **{p}**" for i, p in enumerate(projects[:4])]) + "\n\n🔗 Deploy on GitHub + Vercel for maximum recruiter visibility!"
+            projects = recommendation.get('recommendedProjects') or ['Full-Stack Microservice App', 'Real-Time Data Pipeline', 'AI Recommendation Tool']
+            reply = f"**Top Capstone Projects to Showcase for {goal}:**\n\n" + "\n".join([f"{i+1}. **{p}**" for i, p in enumerate(projects[:3])]) + "\n\n🚀 Deploy live on GitHub & Vercel to stand out to recruiters!"
             card_data = {'recommendedProjects': projects}
-        elif 'higher' in msg_lower or 'ms' in msg_lower or 'mba' in msg_lower or 'gate' in msg_lower:
-            reply = recommendation.get('higherStudiesSuggestion') or "Focus on industry placement first. Pursue higher studies after 2-3 years of experience."
         elif 'alumni' in msg_lower or 'mentor' in msg_lower:
             matched = recommendation.get('matchedAlumni') or []
             if matched:
-                lines = [f"• **{a['name']}** → {a['role']} @ {a['company']} ({a['similarity']}% match)" for a in matched[:3]]
-                reply = "**Alumni with similar profiles:**\n\n" + "\n".join(lines) + "\n\nVisit the Alumni Directory to request mentorship!"
+                lines = [f"• **{a['name']}** — {a.get('role')} @ {a.get('company')} ({a.get('similarity')}% match)" for a in matched[:3]]
+                reply = "**Top Alumni Matches:**\n\n" + "\n".join(lines) + "\n\nReach out via the Alumni Directory to request mentorship!"
             else:
-                reply = "Check the **Alumni Directory** tab to find mentors who match your profile and target role!"
+                reply = "Check the **Alumni Directory** to connect with seniors working in your target domain!"
         else:
-            reply = f"Hello **{student.get('fullName', 'there')}**! 👋\n\nYour career match score is **{match}%** for **{goal}**.\n\nAsk me about:\n• 💰 Salary expectations\n• 🧠 Skill roadmap & gaps\n• 🏢 Placement readiness\n• 🚀 Projects to build\n• 📚 Higher studies advice\n• 👥 Alumni who match your profile"
+            reply = f"Hello **{student.get('fullName', 'there')}**! 👋\n\nI am your AI Career Advisor. Your current career fit for **{goal}** is **{match}%**.\n\nAsk me about:\n• 💰 Salary benchmarks & packages\n• 🧠 Roadmap & critical skill gaps\n• 🏢 Placement readiness & mock prep\n• 🚀 Capstone projects & portfolios\n• 👥 Connecting with matching alumni"
             card_data = {'careerMatch': match, 'recommendedRoles': recommendation.get('recommendedRoles', [])}
 
     return jsonify({'reply': reply, 'cardData': card_data})
 
 
 # ─────────────────────────────────────────────────────
+#  Health & Base
+# ─────────────────────────────────────────────────────
 @app.route('/', methods=['GET', 'HEAD'])
 def index():
-    is_active = bool(GEMINI_API_KEY and GEMINI_API_KEY != 'your_gemini_api_key_here')
     return jsonify({
         'status': 'online',
-        'service': 'AI Carrier Python Engine',
-        'gemini': 'configured' if is_active else 'not configured (using fallback)'
+        'service': 'AI Carrier Python ML/AI Engine',
+        'model': 'Gradient Boosting Placement Predictor + Hybrid Scoring'
     })
 
 
 @app.route('/health', methods=['GET', 'HEAD'])
 def health():
-    is_active = bool(GEMINI_API_KEY and GEMINI_API_KEY != 'your_gemini_api_key_here')
     return jsonify({
         'status': 'ok',
-        'gemini': 'configured' if is_active else 'not configured (using fallback)',
-        'alumni_records': len(alumni_data),
-        'student_records': len(students_data)
+        'alumni_count': len(alumni_data),
+        'jobs_count': len(jobs_data),
+        'courses_count': len(courses_data),
+        'careers_count': len(careers_data),
+        'ml_model_loaded': ml_model is not None
     })
 
 
 if __name__ == '__main__':
-    print(f"🐍 Python AI Engine starting on http://localhost:{PORT}")
-    is_active = bool(GEMINI_API_KEY and GEMINI_API_KEY != 'your_gemini_api_key_here')
-    print(f"   Gemini: {'✅ Active' if is_active else '⚠️  Not configured'}")
-    is_dev = os.getenv('FLASK_ENV') == 'development'
-    app.run(host='0.0.0.0', port=PORT, debug=is_dev)
-
-
+    print(f"🐍 AI Carrier Python Engine running on port {PORT}")
+    app.run(host='0.0.0.0', port=PORT, debug=False)

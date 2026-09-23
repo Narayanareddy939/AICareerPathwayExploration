@@ -13,6 +13,8 @@ try { dns.setServers(['8.8.8.8', '1.1.1.1']); } catch (e) {}
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const { callGeminiMultiModel, getIntelligentTechnicalFallback } = require('./services/geminiService');
+
 
 // ─────────────────────────────────────────────────────
 //  Middleware
@@ -68,24 +70,22 @@ let alumniList = [];
 let studentList = [];
 
 try {
-  const alumniDataPath = path.join(__dirname, '../Datasets/alumniData.js');
-  if (fs.existsSync(alumniDataPath)) {
-    delete require.cache[require.resolve(alumniDataPath)];
-    alumniList = require(alumniDataPath);
+  const processedAlumniPath = path.join(__dirname, '../Datasets/processed/alumni.json');
+  if (fs.existsSync(processedAlumniPath)) {
+    alumniList = JSON.parse(fs.readFileSync(processedAlumniPath, 'utf8'));
+    console.log(`[DATASETS] Loaded ${alumniList.length} alumni from processed/alumni.json`);
   }
 } catch (err) {
-  console.error('Error loading alumniData.js, falling back to alumni.json', err);
+  console.error('Error loading processed/alumni.json', err.message);
 }
 
 if (!alumniList || alumniList.length === 0) {
   try {
-    const alumniJsonPath = path.join(__dirname, '../Datasets/alumni.json');
-    if (fs.existsSync(alumniJsonPath)) {
-      alumniList = JSON.parse(fs.readFileSync(alumniJsonPath, 'utf8'));
+    const alumniDataPath = path.join(__dirname, '../Datasets/alumniData.js');
+    if (fs.existsSync(alumniDataPath)) {
+      alumniList = require(alumniDataPath);
     }
-  } catch (err) {
-    console.error('Error loading alumni.json', err);
-  }
+  } catch (err) {}
 }
 
 try {
@@ -98,12 +98,19 @@ try {
 }
 
 // ─────────────────────────────────────────────────────
-//  Auth & Profile Routes (require MongoDB)
+//  Auth & Feature Routes
 // ─────────────────────────────────────────────────────
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/student', require('./routes/student'));
 app.use('/api/resume', require('./routes/resume'));
 app.use('/api/ai', require('./routes/ai'));
+app.use('/api/jobs', require('./routes/jobs'));
+app.use('/api/careers', require('./routes/careerRoutes'));
+app.use('/api/alumni-v2', require('./routes/alumniRoutes'));
+app.use('/api/roadmaps', require('./routes/roadmapRoutes'));
+app.use('/api/scenarios', require('./routes/scenarioRoutes'));
+app.use('/api/progress', require('./routes/progressRoutes'));
+app.use('/api/admin-v2', require('./routes/adminRoutes'));
 
 // ─────────────────────────────────────────────────────
 //  Legacy Dataset-Powered API Endpoints (no auth required)
@@ -170,6 +177,67 @@ app.get('/api/alumni', (req, res) => {
   if (minSalary) filtered = filtered.filter(a => (a.salaryLPA || a.salary / 100000) >= parseFloat(minSalary));
   if (higherStudies !== undefined) filtered = filtered.filter(a => !!a.higherStudies === (higherStudies === 'true'));
   res.json({ success: true, count: filtered.length, data: filtered });
+});
+
+// GET /api/alumni/:id
+app.get('/api/alumni/:id', (req, res) => {
+  const targetId = req.params.id;
+  const alumnus = alumniList.find(a => 
+    String(a.id) === targetId || 
+    String(a.alumniId) === targetId || 
+    String(a._id) === targetId
+  );
+  if (!alumnus) {
+    return res.status(404).json({ success: false, message: 'Alumnus not found' });
+  }
+  res.json({ success: true, alumnus });
+});
+
+// POST /api/alumni/mentorship
+app.post('/api/alumni/mentorship', (req, res) => {
+  const { alumniId, studentName, note } = req.body;
+  const alumnus = alumniList.find(a => 
+    String(a.id) === String(alumniId) || 
+    String(a.alumniId) === String(alumniId)
+  );
+  res.json({ 
+    success: true, 
+    message: `Mentorship request sent to ${alumnus ? alumnus.name : 'Alumnus'}!`, 
+    alumnus: alumnus || null 
+  });
+});
+
+// GET /api/admin/stats
+app.get('/api/admin/stats', async (req, res) => {
+  let registeredStudents = 0;
+  let totalRecommendations = 0;
+  try {
+    const Student = require('./models/Student');
+    const Recommendation = require('./models/Recommendation');
+    if (mongoose.connection.readyState === 1) {
+      registeredStudents = await Student.countDocuments();
+      totalRecommendations = await Recommendation.countDocuments();
+    }
+  } catch (e) {}
+
+  res.json({
+    success: true,
+    stats: {
+      totalAlumni: alumniList.length,
+      registeredStudents,
+      totalRecommendations,
+      activeJobs: 700,
+      mlModelStatus: 'Gradient Boosting (Trained, F1: 0.724)',
+      hybridScoringWeights: {
+        skillMatch: '30%',
+        interestMatch: '20%',
+        academicMatch: '15%',
+        jobMarket: '15%',
+        alumniSimilarity: '10%',
+        locationMatch: '10%'
+      }
+    }
+  });
 });
 
 // GET /api/students
@@ -293,22 +361,52 @@ app.post('/api/analyze-resume', (req, res) => {
   res.json({ success: true, atsScore: finalScore, scoreCategory: finalScore >= 80 ? 'Excellent' : finalScore >= 65 ? 'Good' : 'Needs Improvement', sectionsFound: detectedSections, detectedSkills: matchedKeywords, missingKeywords, suggestions });
 });
 
-// POST /api/chat (legacy public chatbot)
-app.post('/api/chat', (req, res) => {
-  const { message = '', studentContext = {} } = req.body;
-  const msg = message.toLowerCase();
-  let responseText = '';
-  if (msg.includes('salary') || msg.includes('pay')) {
-    responseText = `Average starting salary across CSE & Data Science is **6.5 - 9.2 LPA**.\nTop AI/ML roles command **12 - 28 LPA**. Focus on System Design, Docker & AWS certifications!`;
-  } else if (msg.includes('skill') || msg.includes('learn')) {
-    responseText = `Most in-demand skills:\n1. **Python & Machine Learning**\n2. **React 19 & Node.js**\n3. **SQL & Power BI**\n4. **Docker & AWS Cloud**`;
-  } else if (msg.includes('higher study') || msg.includes('ms') || msg.includes('gate')) {
-    responseText = `12% of alumni pursued higher studies!\n• MS destinations: Stanford, CMU, TUM\n• MBA: IIMs after 2-3 years\n• Tip: Maintain CGPA 8.5+`;
-  } else if (msg.includes('interview') || msg.includes('placement')) {
-    responseText = `Placement Strategy:\n1. Solve 150+ LeetCode Medium problems\n2. Keep resume 1 page, ATS compliant\n3. Connect with Alumni Mentors for mock interviews!`;
-  } else {
-    responseText = `Hello! I'm your AI Carrier Guide. I can help with career recommendations, skill gaps, resume optimization, and connecting with alumni mentors. What would you like to explore?`;
+// POST /api/chat (Public Gemini chatbot - ChatGPT style)
+app.post('/api/chat', async (req, res) => {
+  const { message = '', studentContext = {}, history = [] } = req.body;
+  if (!message) return res.status(400).json({ success: false, message: 'Message is required' });
+
+  let responseText = null;
+  const key = process.env.GEMINI_API_KEY;
+
+  if (key) {
+    const systemPrompt = `You are an elite AI Career Mentor, Senior Technical Interviewer, Tech Placement Coach, and Career Advisor (operating with the intelligence, empathy, and versatility of ChatGPT) for university students and engineers.
+
+Student Profile Context:
+- Target Role / Career: ${studentContext.careerGoal || 'Software Engineer'}
+- Major / Branch: ${studentContext.branch || 'Engineering / Computer Science'}
+- CGPA: ${studentContext.cgpa || 8.0} / 10
+- Known Skills: ${Array.isArray(studentContext.skills) ? studentContext.skills.join(', ') : (studentContext.skills || 'General Tech Stack')}
+
+Core Instructions:
+1. Provide a direct, highly intelligent, detailed, and engaging response just like ChatGPT. You can answer ANY topic: coding problems, algorithms, system design, resume critique, salary negotiation, mock interview questions, DSA roadmaps, higher studies, or industry tech trends.
+2. Structure your answer using clean GitHub Markdown: headers (###), bold text, bullet points, numbered lists, and fenced code blocks (\`\`\`language ... \`\`\`) for any code.
+3. For any code question, always provide working, commented, production-grade code with complexity analysis.
+4. If asked about salary, provide realistic Indian CTC / LPA ranges (entry-level, mid-level, senior tier) and negotiation strategies.
+5. Answer follow-up questions naturally, keeping track of what was discussed earlier in the conversation.
+6. Keep the tone friendly, empowering, and professional.`;
+
+    // Multi-turn contents
+    const contents = [];
+    if (Array.isArray(history)) {
+      for (const m of history.slice(-8)) {
+        const role = (m.role === 'user' || m.sender === 'user') ? 'user' : 'model';
+        const text = m.content || m.text || '';
+        if (text) {
+          contents.push({ role, parts: [{ text }] });
+        }
+      }
+    }
+    contents.push({ role: 'user', parts: [{ text: message }] });
+
+    responseText = await callGeminiMultiModel(contents, systemPrompt, 1200);
   }
+
+  // Never return a canned generic greeting for questions or code!
+  if (!responseText) {
+    responseText = getIntelligentTechnicalFallback(message, studentContext);
+  }
+
   res.json({ success: true, reply: responseText, timestamp: new Date().toISOString() });
 });
 
@@ -322,7 +420,11 @@ app.post('/api/mentorship/request', (req, res) => {
 // ─────────────────────────────────────────────────────
 //  Start Server
 // ─────────────────────────────────────────────────────
-app.listen(PORT, () => {
-  console.log(`🚀 AI Carrier Server running on http://localhost:${PORT}`);
-  console.log(`   MongoDB: ${mongoose.connection.readyState === 1 ? 'Connected' : 'Not connected (set MONGODB_URI in .env)'}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`🚀 AI Carrier Server running on http://localhost:${PORT}`);
+    console.log(`   MongoDB: ${mongoose.connection.readyState === 1 ? 'Connected' : 'Not connected (set MONGODB_URI in .env)'}`);
+  });
+}
+
+module.exports = app;

@@ -105,7 +105,11 @@ export default function ChatbotAI() {
     setMessages(prev => [...prev, { role: 'user', content: msgText, cardData: null }]);
     setLoading(true);
     try {
-      const res = await axios.post('/api/ai/chat', { message: msgText, sessionId });
+      const historyPayload = messages.slice(-8).map(m => ({
+        role: m.role === 'user' ? 'user' : 'model',
+        content: m.content
+      }));
+      const res = await axios.post('/api/ai/chat', { message: msgText, sessionId, history: historyPayload });
       setSessionId(res.data.sessionId);
       setMessages(prev => [...prev, { role: 'assistant', content: res.data.reply, cardData: res.data.cardData || null }]);
       fetchHistory();

@@ -1,0 +1,1001 @@
+Alumni_ID,First_Name,Last_Name,Graduation_Year,Degree_Earned,Major_Academic_Program,Current_Company,Job_Title,Email_Address,Phone_Number,Brochure_Feature_Consent
+ALU0001,Varun,Patel,2015,MBA,Artificial Intelligence and Machine Learning,Deloitte,Full Stack Developer,varun.patel1@outlook.com,+91 7440213415,Yes
+ALU0002,Swathi,Shetty,2015,B.Tech,Computer Science (Data Science),Capgemini,Full Stack Developer,swathi.shetty2@gmail.com,+91 9410529190,Yes
+ALU0003,Anusha,Das,2021,B.E.,Civil Engineering,Cognizant Technology Solutions,DevOps Engineer,anusha.das3@gmail.com,+91 7685731524,No
+ALU0004,Nikhil,Iyer,2017,B.E.,Mechanical Engineering,Accenture,Data Analyst,nikhil.iyer4@proton.me,+91 7415393687,No
+ALU0005,Pooja,Chowdhury,2019,B.Tech,Civil Engineering,PwC,Data Scientist,pooja.chowdhury5@proton.me,+91 7338444264,No
+ALU0006,Varun,Chowdhury,2020,MCA,Electronics and Communication Engineering,Wipro,Software Developer,varun.chowdhury6@outlook.com,+91 8242911821,Yes
+ALU0007,Isha,Patel,2021,B.Sc,Civil Engineering,SAP,Systems Engineer,isha.patel7@outlook.com,+91 8589915144,No
+ALU0008,Harish,Iyer,2025,MBA,Computer Science (Data Science),Bosch,Frontend Developer,harish.iyer8@outlook.com,+91 7701808367,No
+ALU0009,Priya,Iyer,2025,MBA,Computer Engineering,Deloitte,Machine Learning Engineer,priya.iyer9@gmail.com,+91 7983753977,Yes
+ALU0010,Neha,Mehta,2019,B.Tech,Electronics and Communication Engineering,Cognizant Technology Solutions,Machine Learning Engineer,neha.mehta10@outlook.com,+91 9815087637,No
+ALU0011,Rahul,Bhat,2017,B.Sc,Information Technology,Deloitte,UI Developer,rahul.bhat11@yahoo.com,+91 9510777721,No
+ALU0012,Swathi,Mehta,2020,B.E.,Information Technology,KPMG,Senior Software Engineer,swathi.mehta12@gmail.com,+91 7202363285,Yes
+ALU0013,Bhavana,Naidu,2025,M.Tech,Business Administration,Wipro,QA Engineer,bhavana.naidu13@proton.me,+91 9559321289,No
+ALU0014,Shreya,Iyer,2023,B.Tech,Computer Science (Data Science),Walmart Global Tech,UI Developer,shreya.iyer14@yahoo.com,+91 9752909971,No
+ALU0015,Arjun,Nair,2021,B.E.,Civil Engineering,TCS,DevOps Engineer,arjun.nair15@outlook.com,+91 9180476188,Yes
+ALU0016,Varun,Nair,2025,MCA,Business Administration,Capgemini,Business Analyst,varun.nair16@yahoo.com,+91 7693847829,Yes
+ALU0017,Tarun,Gupta,2022,B.Tech,Computer Science (Data Science),Oracle,Cloud Engineer,tarun.gupta17@outlook.com,+91 7248786714,Yes
+ALU0018,Srinivas,Sharma,2016,MBA,Civil Engineering,Wipro,UI Developer,srinivas.sharma18@outlook.com,+91 7551437149,No
+ALU0019,Sneha,Naidu,2019,MCA,Business Administration,Amazon,Backend Developer,sneha.naidu19@outlook.com,+91 8338811290,No
+ALU0020,Vishal,Joshi,2022,MCA,Civil Engineering,Accenture,Full Stack Developer,vishal.joshi20@outlook.com,+91 7274989148,No
+ALU0021,Aditya,Mishra,2023,B.E.,Business Administration,Deloitte,Software Engineer,aditya.mishra21@gmail.com,+91 9710566582,Yes
+ALU0022,Isha,Sharma,2015,B.Sc,Computer Science (Data Science),KPMG,Full Stack Developer,isha.sharma22@yahoo.com,+91 9873237671,No
+ALU0023,Harish,Das,2017,MBA,Business Administration,Cognizant Technology Solutions,Senior Software Engineer,harish.das23@outlook.com,+91 9031403296,No
+ALU0024,Divya,Patel,2016,MBA,Electrical and Electronics Engineering,Oracle,Project Engineer,divya.patel24@proton.me,+91 9005855667,Yes
+ALU0025,Yash,Patel,2015,M.Tech,Mechanical Engineering,Accenture,Full Stack Developer,yash.patel25@outlook.com,+91 7816941039,No
+ALU0026,Ashwin,Shetty,2017,B.Sc,Civil Engineering,Deloitte,Data Analyst,ashwin.shetty26@proton.me,+91 9363629219,Yes
+ALU0027,Akhil,Das,2015,B.Tech,Electronics and Communication Engineering,IBM,Project Engineer,akhil.das27@proton.me,+91 9067418686,Yes
+ALU0028,Rahul,Kumar,2017,M.Tech,Computer Science and Engineering,Microsoft,DevOps Engineer,rahul.kumar28@proton.me,+91 8225136114,No
+ALU0029,Aditi,Das,2025,MBA,Civil Engineering,Cognizant,Backend Developer,aditi.das29@yahoo.com,+91 7935018220,Yes
+ALU0030,Swathi,Das,2015,MBA,Mechanical Engineering,Infosys,Software Developer,swathi.das30@proton.me,+91 9159725924,Yes
+ALU0031,Akhil,Menon,2016,B.E.,Computer Science (Data Science),Bosch,Data Analyst,akhil.menon31@outlook.com,+91 8734202799,Yes
+ALU0032,Srinivas,Verma,2024,MCA,Computer Science and Engineering,Bosch,Data Analyst,srinivas.verma32@proton.me,+91 9823396242,No
+ALU0033,Kavya,Singh,2025,MBA,Mechanical Engineering,Deloitte,DevOps Engineer,kavya.singh33@proton.me,+91 7562117925,No
+ALU0034,Rohit,Gupta,2016,B.Tech,Civil Engineering,Bosch,Database Administrator,rohit.gupta34@gmail.com,+91 7314652384,Yes
+ALU0035,Sanjay,Iyer,2017,B.Sc,Computer Science (Data Science),Deloitte,Systems Engineer,sanjay.iyer35@yahoo.com,+91 7677517496,No
+ALU0036,Siddharth,Nair,2024,MBA,Computer Engineering,TCS,UI Developer,siddharth.nair36@yahoo.com,+91 9849232839,Yes
+ALU0037,Ashwin,Iyer,2016,B.Tech,Computer Engineering,Cognizant,DevOps Engineer,ashwin.iyer37@yahoo.com,+91 9597724331,Yes
+ALU0038,Anusha,Gupta,2018,MBA,Artificial Intelligence and Machine Learning,KPMG,Senior Software Engineer,anusha.gupta38@yahoo.com,+91 7218179599,Yes
+ALU0039,Varun,Shetty,2019,B.Tech,Computer Science and Engineering,LTIMindtree,Business Analyst,varun.shetty39@yahoo.com,+91 7693989311,No
+ALU0040,Sneha,Shetty,2023,B.Tech,Computer Science (Data Science),Wipro,Business Analyst,sneha.shetty40@gmail.com,+91 8585770584,Yes
+ALU0041,Ravi,Rao,2015,B.Sc,Mechanical Engineering,Infosys,Systems Engineer,ravi.rao41@outlook.com,+91 9929454134,Yes
+ALU0042,Vishal,Patel,2020,MCA,Electrical and Electronics Engineering,Bosch,Business Analyst,vishal.patel42@outlook.com,+91 7697939765,Yes
+ALU0043,Rakesh,Reddy,2017,MBA,Mechanical Engineering,Amazon,Full Stack Developer,rakesh.reddy43@yahoo.com,+91 7683749521,Yes
+ALU0044,Priya,Kumar,2022,B.E.,Electronics and Communication Engineering,Google,Systems Engineer,priya.kumar44@yahoo.com,+91 7977515194,Yes
+ALU0045,Aditya,Singh,2021,B.Sc,Artificial Intelligence and Machine Learning,Wipro,DevOps Engineer,aditya.singh45@yahoo.com,+91 9755143093,No
+ALU0046,Yash,Das,2020,B.Tech,Computer Science (Data Science),HCLTech,Frontend Developer,yash.das46@yahoo.com,+91 7164313410,Yes
+ALU0047,Tarun,Shetty,2020,MBA,Mechanical Engineering,Amazon,Technical Consultant,tarun.shetty47@gmail.com,+91 8654401763,Yes
+ALU0048,Kavya,Kumar,2021,B.Tech,Computer Engineering,PwC,Backend Developer,kavya.kumar48@yahoo.com,+91 8852408227,Yes
+ALU0049,Vishal,Gupta,2024,B.Sc,Computer Science (Data Science),Tech Mahindra,Product Analyst,vishal.gupta49@yahoo.com,+91 9864283209,No
+ALU0050,Neha,Mehta,2019,MCA,Information Technology,Capgemini,Project Engineer,neha.mehta50@proton.me,+91 9909058412,Yes
+ALU0051,Tejas,Mishra,2019,M.Tech,Computer Engineering,TCS,Cloud Engineer,tejas.mishra51@yahoo.com,+91 7902727745,No
+ALU0052,Swathi,Chowdhury,2025,B.Sc,Civil Engineering,Google,Associate Consultant,swathi.chowdhury52@outlook.com,+91 9195475598,No
+ALU0053,Lakshmi,Naidu,2025,B.Tech,Artificial Intelligence and Machine Learning,KPMG,Technical Consultant,lakshmi.naidu53@yahoo.com,+91 7401094954,Yes
+ALU0054,Yash,Nair,2018,B.E.,Information Technology,TCS,Software Developer,yash.nair54@outlook.com,+91 9040695043,Yes
+ALU0055,Rohit,Shetty,2025,MCA,Electronics and Communication Engineering,Microsoft,Senior Software Engineer,rohit.shetty55@proton.me,+91 8047905204,Yes
+ALU0056,Vikas,Reddy,2016,M.Tech,Electronics and Communication Engineering,IBM,Product Analyst,vikas.reddy56@proton.me,+91 7215686308,Yes
+ALU0057,Arjun,Bhat,2017,M.Tech,Computer Engineering,PwC,Technical Consultant,arjun.bhat57@yahoo.com,+91 8900838388,No
+ALU0058,Sneha,Bhat,2017,MBA,Civil Engineering,Google,DevOps Engineer,sneha.bhat58@outlook.com,+91 9738735023,No
+ALU0059,Nandini,Menon,2022,MBA,Electronics and Communication Engineering,HCLTech,Associate Consultant,nandini.menon59@gmail.com,+91 8227193073,Yes
+ALU0060,Manoj,Gupta,2020,MCA,Computer Science (Data Science),Cognizant,Business Analyst,manoj.gupta60@outlook.com,+91 8645124051,Yes
+ALU0061,Anusha,Singh,2016,M.Tech,Electrical and Electronics Engineering,LTIMindtree,UI Developer,anusha.singh61@proton.me,+91 8785736751,Yes
+ALU0062,Harish,Shetty,2021,MCA,Computer Science and Engineering,Cognizant Technology Solutions,QA Engineer,harish.shetty62@proton.me,+91 7025323460,No
+ALU0063,Naveen,Mehta,2021,MCA,Computer Engineering,Bosch,Full Stack Developer,naveen.mehta63@proton.me,+91 7942408767,No
+ALU0064,Ravi,Pillai,2015,M.Tech,Mechanical Engineering,Walmart Global Tech,QA Engineer,ravi.pillai64@outlook.com,+91 9007425404,Yes
+ALU0065,Tejas,Das,2015,M.Tech,Business Administration,Cognizant Technology Solutions,Software Engineer,tejas.das65@gmail.com,+91 9760588734,No
+ALU0066,Ashwin,Bhat,2017,B.Tech,Artificial Intelligence and Machine Learning,Microsoft,Machine Learning Engineer,ashwin.bhat66@outlook.com,+91 8952918745,No
+ALU0067,Nikhil,Mehta,2019,M.Tech,Artificial Intelligence and Machine Learning,Wipro,Senior Software Engineer,nikhil.mehta67@gmail.com,+91 9316787198,Yes
+ALU0068,Pooja,Verma,2025,B.Tech,Computer Science and Engineering,TCS,Full Stack Developer,pooja.verma68@outlook.com,+91 7087531510,Yes
+ALU0069,Karthik,Rao,2022,MBA,Computer Science (Data Science),Cognizant Technology Solutions,Backend Developer,karthik.rao69@proton.me,+91 8100558303,No
+ALU0070,Charan,Chowdhury,2024,MBA,Computer Science (Data Science),IBM,Cloud Engineer,charan.chowdhury70@gmail.com,+91 9485432021,Yes
+ALU0071,Naveen,Mishra,2025,M.Tech,Electrical and Electronics Engineering,Capgemini,Data Analyst,naveen.mishra71@outlook.com,+91 7437662764,No
+ALU0072,Yash,Chowdhury,2016,MCA,Computer Science and Engineering,Oracle,UI Developer,yash.chowdhury72@proton.me,+91 9841212515,No
+ALU0073,Amar,Menon,2025,B.Sc,Computer Science and Engineering,Amazon,Senior Software Engineer,amar.menon73@gmail.com,+91 8861968817,No
+ALU0074,Varun,Bhat,2017,M.Tech,Information Technology,KPMG,DevOps Engineer,varun.bhat74@proton.me,+91 8996617659,No
+ALU0075,Keerthi,Mishra,2019,B.Sc,Electronics and Communication Engineering,Wipro,DevOps Engineer,keerthi.mishra75@proton.me,+91 8047385483,No
+ALU0076,Srinivas,Chowdhury,2025,M.Tech,Mechanical Engineering,TCS,Senior Software Engineer,srinivas.chowdhury76@yahoo.com,+91 7780996231,No
+ALU0077,Harish,Joshi,2019,B.Sc,Artificial Intelligence and Machine Learning,Bosch,DevOps Engineer,harish.joshi77@gmail.com,+91 9218897149,Yes
+ALU0078,Ananya,Verma,2021,M.Tech,Computer Engineering,Deloitte,Senior Software Engineer,ananya.verma78@proton.me,+91 8924895021,Yes
+ALU0079,Ananya,Nair,2018,M.Tech,Electronics and Communication Engineering,Tech Mahindra,Database Administrator,ananya.nair79@yahoo.com,+91 9032638323,No
+ALU0080,Ravi,Das,2020,B.Sc,Civil Engineering,HCLTech,Cloud Engineer,ravi.das80@yahoo.com,+91 7990153355,Yes
+ALU0081,Keerthi,Singh,2020,B.Tech,Computer Engineering,IBM,Backend Developer,keerthi.singh81@outlook.com,+91 9079617090,No
+ALU0082,Keerthi,Mishra,2023,MCA,Artificial Intelligence and Machine Learning,Accenture,Backend Developer,keerthi.mishra82@yahoo.com,+91 7977032766,No
+ALU0083,Deepak,Nair,2015,MBA,Computer Engineering,Cognizant,DevOps Engineer,deepak.nair83@gmail.com,+91 7234187462,No
+ALU0084,Aditi,Rao,2025,M.Tech,Computer Science (Data Science),TCS,Database Administrator,aditi.rao84@yahoo.com,+91 9016044512,No
+ALU0085,Riya,Gupta,2017,B.Tech,Artificial Intelligence and Machine Learning,EY,Data Scientist,riya.gupta85@gmail.com,+91 8721025347,No
+ALU0086,Amar,Mishra,2025,MBA,Computer Science and Engineering,Cognizant,Business Analyst,amar.mishra86@yahoo.com,+91 7365849190,Yes
+ALU0087,Arjun,Das,2021,MCA,Business Administration,Bosch,Full Stack Developer,arjun.das87@proton.me,+91 8934944879,No
+ALU0088,Naveen,Mishra,2021,B.Sc,Business Administration,Bosch,Software Developer,naveen.mishra88@gmail.com,+91 7892442253,Yes
+ALU0089,Kavya,Sharma,2017,B.E.,Information Technology,PwC,Data Analyst,kavya.sharma89@outlook.com,+91 7011492154,No
+ALU0090,Riya,Chowdhury,2022,B.Sc,Computer Science and Engineering,Deloitte,Cloud Engineer,riya.chowdhury90@yahoo.com,+91 8950049698,Yes
+ALU0091,Yash,Verma,2019,MBA,Business Administration,Walmart Global Tech,Backend Developer,yash.verma91@proton.me,+91 7492960451,Yes
+ALU0092,Vikas,Rao,2019,B.E.,Computer Science (Data Science),Infosys,Frontend Developer,vikas.rao92@yahoo.com,+91 9555694670,No
+ALU0093,Riya,Patel,2022,MBA,Artificial Intelligence and Machine Learning,Microsoft,DevOps Engineer,riya.patel93@proton.me,+91 8880160025,Yes
+ALU0094,Tarun,Kumar,2021,MBA,Mechanical Engineering,Bosch,DevOps Engineer,tarun.kumar94@gmail.com,+91 7392245997,Yes
+ALU0095,Yash,Mishra,2024,B.Tech,Artificial Intelligence and Machine Learning,Cognizant Technology Solutions,Software Developer,yash.mishra95@outlook.com,+91 9020785643,No
+ALU0096,Manoj,Naidu,2024,M.Tech,Civil Engineering,Wipro,Senior Software Engineer,manoj.naidu96@yahoo.com,+91 8753841726,No
+ALU0097,Neha,Patel,2017,B.Sc,Electrical and Electronics Engineering,EY,Cloud Engineer,neha.patel97@proton.me,+91 9362646960,Yes
+ALU0098,Rohit,Sharma,2020,B.Sc,Mechanical Engineering,Accenture,QA Engineer,rohit.sharma98@gmail.com,+91 9824629834,No
+ALU0099,Rakesh,Kumar,2018,MCA,Mechanical Engineering,Bosch,Senior Software Engineer,rakesh.kumar99@proton.me,+91 7221670908,Yes
+ALU0100,Manoj,Das,2017,B.Sc,Civil Engineering,EY,Data Scientist,manoj.das100@gmail.com,+91 9705925058,Yes
+ALU0101,Anusha,Naidu,2019,MCA,Computer Science and Engineering,PwC,Project Engineer,anusha.naidu101@gmail.com,+91 7965081954,Yes
+ALU0102,Rohit,Patel,2025,B.E.,Civil Engineering,Tech Mahindra,Product Analyst,rohit.patel102@yahoo.com,+91 8784517419,No
+ALU0103,Sahana,Verma,2022,MCA,Information Technology,Microsoft,Backend Developer,sahana.verma103@outlook.com,+91 7299832023,No
+ALU0104,Nandini,Shetty,2020,MCA,Artificial Intelligence and Machine Learning,TCS,Cloud Engineer,nandini.shetty104@yahoo.com,+91 9520878317,No
+ALU0105,Bhavana,Bhat,2023,M.Tech,Mechanical Engineering,LTIMindtree,UI Developer,bhavana.bhat105@proton.me,+91 8955690228,No
+ALU0106,Divya,Verma,2024,M.Tech,Electronics and Communication Engineering,Amazon,Software Developer,divya.verma106@yahoo.com,+91 9031417512,No
+ALU0107,Priya,Rao,2022,B.Tech,Information Technology,KPMG,Database Administrator,priya.rao107@yahoo.com,+91 7431062656,No
+ALU0108,Anil,Menon,2022,B.Tech,Information Technology,Amazon,Business Analyst,anil.menon108@gmail.com,+91 9016446768,No
+ALU0109,Nikhil,Chowdhury,2021,MBA,Computer Science (Data Science),LTIMindtree,UI Developer,nikhil.chowdhury109@proton.me,+91 8360049298,No
+ALU0110,Siddharth,Kumar,2024,B.Tech,Electronics and Communication Engineering,SAP,Cloud Engineer,siddharth.kumar110@outlook.com,+91 7388176285,No
+ALU0111,Anil,Patel,2022,B.E.,Artificial Intelligence and Machine Learning,TCS,Software Developer,anil.patel111@yahoo.com,+91 7241030242,No
+ALU0112,Pooja,Joshi,2021,B.E.,Electronics and Communication Engineering,KPMG,Project Engineer,pooja.joshi112@outlook.com,+91 7730074215,Yes
+ALU0113,Ananya,Chowdhury,2021,MCA,Electronics and Communication Engineering,EY,Database Administrator,ananya.chowdhury113@outlook.com,+91 7997241761,No
+ALU0114,Varun,Iyer,2022,B.Sc,Computer Science and Engineering,Google,Cloud Engineer,varun.iyer114@outlook.com,+91 7317234448,No
+ALU0115,Pooja,Mishra,2019,MBA,Electrical and Electronics Engineering,HCLTech,Associate Consultant,pooja.mishra115@yahoo.com,+91 7855630484,No
+ALU0116,Sahana,Patel,2018,M.Tech,Business Administration,Oracle,Database Administrator,sahana.patel116@yahoo.com,+91 8268006448,Yes
+ALU0117,Vishal,Mehta,2019,B.Tech,Business Administration,Walmart Global Tech,Software Developer,vishal.mehta117@proton.me,+91 8229194523,Yes
+ALU0118,Tarun,Joshi,2018,MBA,Electronics and Communication Engineering,Bosch,DevOps Engineer,tarun.joshi118@outlook.com,+91 9698305085,Yes
+ALU0119,Varun,Kumar,2019,M.Tech,Computer Science and Engineering,Cognizant Technology Solutions,Systems Engineer,varun.kumar119@outlook.com,+91 7387119894,No
+ALU0120,Neha,Shetty,2017,B.E.,Information Technology,PwC,Systems Engineer,neha.shetty120@yahoo.com,+91 7706712922,No
+ALU0121,Sahana,Nair,2020,B.Tech,Civil Engineering,Wipro,Business Analyst,sahana.nair121@outlook.com,+91 9904788278,No
+ALU0122,Sneha,Joshi,2016,M.Tech,Computer Science and Engineering,HCLTech,UI Developer,sneha.joshi122@gmail.com,+91 8953291127,No
+ALU0123,Yash,Iyer,2024,M.Tech,Mechanical Engineering,Accenture,Full Stack Developer,yash.iyer123@proton.me,+91 7107480046,No
+ALU0124,Tejas,Verma,2025,B.Tech,Civil Engineering,Tech Mahindra,Project Engineer,tejas.verma124@gmail.com,+91 7600337712,Yes
+ALU0125,Akash,Nair,2022,B.Tech,Computer Science (Data Science),Deloitte,UI Developer,akash.nair125@outlook.com,+91 8669221121,No
+ALU0126,Pranav,Das,2021,MCA,Information Technology,Amazon,Data Scientist,pranav.das126@proton.me,+91 9644206129,No
+ALU0127,Manoj,Kumar,2020,B.E.,Civil Engineering,Google,Full Stack Developer,manoj.kumar127@yahoo.com,+91 7426724858,No
+ALU0128,Siddharth,Joshi,2015,M.Tech,Artificial Intelligence and Machine Learning,Capgemini,Data Scientist,siddharth.joshi128@proton.me,+91 7393734347,Yes
+ALU0129,Vikas,Chowdhury,2015,B.Tech,Mechanical Engineering,Deloitte,Business Analyst,vikas.chowdhury129@outlook.com,+91 7294678352,Yes
+ALU0130,Swathi,Singh,2018,B.Sc,Information Technology,Bosch,Software Engineer,swathi.singh130@yahoo.com,+91 7621430136,Yes
+ALU0131,Siddharth,Iyer,2017,B.Tech,Computer Science and Engineering,Cognizant,Software Engineer,siddharth.iyer131@yahoo.com,+91 8021908455,No
+ALU0132,Aditya,Naidu,2019,B.Tech,Information Technology,Amazon,Product Analyst,aditya.naidu132@gmail.com,+91 7272979685,No
+ALU0133,Riya,Joshi,2023,MCA,Computer Science (Data Science),Google,Product Analyst,riya.joshi133@outlook.com,+91 9641863774,Yes
+ALU0134,Keerthi,Menon,2019,M.Tech,Computer Science and Engineering,Infosys,Senior Software Engineer,keerthi.menon134@proton.me,+91 8830831254,Yes
+ALU0135,Sai,Bhat,2016,B.Tech,Mechanical Engineering,Bosch,Business Analyst,sai.bhat135@gmail.com,+91 7541988748,No
+ALU0136,Tejas,Mishra,2023,MBA,Mechanical Engineering,Microsoft,Technical Consultant,tejas.mishra136@yahoo.com,+91 8948692883,No
+ALU0137,Anil,Patel,2025,MBA,Computer Engineering,Capgemini,Project Engineer,anil.patel137@proton.me,+91 7981372436,No
+ALU0138,Nikhil,Bhat,2021,M.Tech,Computer Science (Data Science),LTIMindtree,Project Engineer,nikhil.bhat138@yahoo.com,+91 9856616537,No
+ALU0139,Pranav,Rao,2025,M.Tech,Computer Science (Data Science),Wipro,Data Analyst,pranav.rao139@gmail.com,+91 8854895521,Yes
+ALU0140,Lakshmi,Joshi,2017,MCA,Computer Science and Engineering,Cognizant Technology Solutions,UI Developer,lakshmi.joshi140@yahoo.com,+91 9877685081,Yes
+ALU0141,Rakesh,Joshi,2025,M.Tech,Computer Science and Engineering,Tech Mahindra,Technical Consultant,rakesh.joshi141@yahoo.com,+91 8510308881,Yes
+ALU0142,Srinivas,Menon,2018,B.E.,Civil Engineering,Deloitte,Data Scientist,srinivas.menon142@yahoo.com,+91 9389142017,No
+ALU0143,Arjun,Iyer,2024,B.E.,Electrical and Electronics Engineering,PwC,Technical Consultant,arjun.iyer143@gmail.com,+91 9615613239,No
+ALU0144,Aditya,Naidu,2019,MBA,Artificial Intelligence and Machine Learning,LTIMindtree,Systems Engineer,aditya.naidu144@gmail.com,+91 7779130936,Yes
+ALU0145,Srinivas,Mehta,2016,B.E.,Computer Science and Engineering,Wipro,Product Analyst,srinivas.mehta145@outlook.com,+91 8615742667,No
+ALU0146,Rohit,Gupta,2017,B.Sc,Artificial Intelligence and Machine Learning,LTIMindtree,Database Administrator,rohit.gupta146@gmail.com,+91 7225953184,Yes
+ALU0147,Charan,Chowdhury,2015,MBA,Computer Science (Data Science),HCLTech,Associate Consultant,charan.chowdhury147@proton.me,+91 9085901151,No
+ALU0148,Rakesh,Iyer,2018,MCA,Computer Science (Data Science),Oracle,Project Engineer,rakesh.iyer148@gmail.com,+91 8216534332,No
+ALU0149,Shreya,Nair,2015,B.E.,Electrical and Electronics Engineering,Bosch,Software Developer,shreya.nair149@gmail.com,+91 7877990647,No
+ALU0150,Harish,Rao,2019,B.Sc,Mechanical Engineering,Accenture,Software Engineer,harish.rao150@proton.me,+91 8849649210,Yes
+ALU0151,Ashwin,Mehta,2023,MBA,Electronics and Communication Engineering,KPMG,UI Developer,ashwin.mehta151@yahoo.com,+91 7309561891,No
+ALU0152,Lakshmi,Kumar,2021,B.Tech,Civil Engineering,Wipro,Machine Learning Engineer,lakshmi.kumar152@proton.me,+91 9462732890,No
+ALU0153,Anusha,Shetty,2019,B.Tech,Electrical and Electronics Engineering,TCS,Machine Learning Engineer,anusha.shetty153@outlook.com,+91 9654827789,No
+ALU0154,Aditi,Joshi,2016,M.Tech,Computer Science (Data Science),Deloitte,Project Engineer,aditi.joshi154@proton.me,+91 9250402001,Yes
+ALU0155,Rahul,Nair,2020,B.E.,Mechanical Engineering,IBM,Data Analyst,rahul.nair155@gmail.com,+91 9278930366,Yes
+ALU0156,Nandini,Joshi,2020,MBA,Information Technology,Deloitte,Data Scientist,nandini.joshi156@outlook.com,+91 8099375147,Yes
+ALU0157,Deepak,Chowdhury,2017,MBA,Computer Science (Data Science),IBM,Senior Software Engineer,deepak.chowdhury157@proton.me,+91 9421225455,No
+ALU0158,Yash,Mishra,2025,MBA,Business Administration,LTIMindtree,Machine Learning Engineer,yash.mishra158@outlook.com,+91 8888766939,Yes
+ALU0159,Sahana,Bhat,2025,B.Sc,Artificial Intelligence and Machine Learning,Cognizant Technology Solutions,Software Developer,sahana.bhat159@yahoo.com,+91 9178995337,Yes
+ALU0160,Naveen,Bhat,2022,B.Tech,Computer Science and Engineering,Oracle,Cloud Engineer,naveen.bhat160@gmail.com,+91 9768821397,Yes
+ALU0161,Tejas,Chowdhury,2023,M.Tech,Civil Engineering,Cognizant Technology Solutions,UI Developer,tejas.chowdhury161@gmail.com,+91 8931591531,Yes
+ALU0162,Neha,Chowdhury,2022,MCA,Information Technology,Infosys,Associate Consultant,neha.chowdhury162@gmail.com,+91 8475054001,Yes
+ALU0163,Sanjay,Naidu,2015,B.E.,Civil Engineering,Google,Product Analyst,sanjay.naidu163@outlook.com,+91 8562929828,No
+ALU0164,Meera,Mehta,2021,B.Sc,Business Administration,Infosys,Machine Learning Engineer,meera.mehta164@gmail.com,+91 8416011033,Yes
+ALU0165,Sneha,Mehta,2019,B.Sc,Business Administration,Cognizant,Machine Learning Engineer,sneha.mehta165@gmail.com,+91 9502847163,Yes
+ALU0166,Pooja,Nair,2025,MBA,Electrical and Electronics Engineering,Cognizant,Technical Consultant,pooja.nair166@gmail.com,+91 8329644079,No
+ALU0167,Vikas,Gupta,2017,MBA,Computer Engineering,Wipro,Project Engineer,vikas.gupta167@yahoo.com,+91 7078299575,No
+ALU0168,Naveen,Naidu,2018,B.Sc,Civil Engineering,Capgemini,Full Stack Developer,naveen.naidu168@outlook.com,+91 7665484476,Yes
+ALU0169,Meera,Patel,2023,MCA,Computer Engineering,Infosys,Machine Learning Engineer,meera.patel169@outlook.com,+91 9565153945,No
+ALU0170,Bhavana,Naidu,2017,MBA,Business Administration,IBM,Associate Consultant,bhavana.naidu170@gmail.com,+91 8764624310,No
+ALU0171,Yash,Verma,2022,MCA,Artificial Intelligence and Machine Learning,Google,Full Stack Developer,yash.verma171@outlook.com,+91 8329154472,No
+ALU0172,Divya,Joshi,2025,MCA,Civil Engineering,Google,Cloud Engineer,divya.joshi172@proton.me,+91 9159967797,No
+ALU0173,Charan,Singh,2024,B.E.,Artificial Intelligence and Machine Learning,Infosys,Senior Software Engineer,charan.singh173@yahoo.com,+91 9381734362,Yes
+ALU0174,Anusha,Menon,2016,B.Sc,Computer Science (Data Science),IBM,DevOps Engineer,anusha.menon174@proton.me,+91 9204833223,Yes
+ALU0175,Ravi,Sharma,2018,M.Tech,Mechanical Engineering,TCS,Project Engineer,ravi.sharma175@gmail.com,+91 8702756809,No
+ALU0176,Karthik,Mehta,2016,B.Sc,Electronics and Communication Engineering,TCS,Machine Learning Engineer,karthik.mehta176@gmail.com,+91 9791559885,No
+ALU0177,Bhavana,Rao,2015,B.Sc,Civil Engineering,Cognizant,Senior Software Engineer,bhavana.rao177@proton.me,+91 9642900640,Yes
+ALU0178,Ananya,Reddy,2019,B.E.,Information Technology,PwC,Technical Consultant,ananya.reddy178@proton.me,+91 7477543926,No
+ALU0179,Karthik,Nair,2016,B.Tech,Electronics and Communication Engineering,Amazon,Technical Consultant,karthik.nair179@proton.me,+91 7269754673,Yes
+ALU0180,Sai,Chowdhury,2023,B.Tech,Computer Engineering,Cognizant Technology Solutions,Full Stack Developer,sai.chowdhury180@outlook.com,+91 8251003660,No
+ALU0181,Aarav,Chowdhury,2020,B.E.,Business Administration,Amazon,Frontend Developer,aarav.chowdhury181@gmail.com,+91 9248349034,No
+ALU0182,Amar,Menon,2023,MCA,Computer Engineering,PwC,Software Engineer,amar.menon182@proton.me,+91 9019214800,Yes
+ALU0183,Varun,Mehta,2020,B.Sc,Computer Science and Engineering,Oracle,Data Analyst,varun.mehta183@yahoo.com,+91 8035627944,Yes
+ALU0184,Nandini,Mishra,2020,B.E.,Computer Science and Engineering,Oracle,UI Developer,nandini.mishra184@yahoo.com,+91 9760786161,Yes
+ALU0185,Nandini,Bhat,2022,MBA,Information Technology,Cognizant,Data Analyst,nandini.bhat185@proton.me,+91 7158844179,No
+ALU0186,Divya,Kumar,2018,B.Tech,Mechanical Engineering,Tech Mahindra,Product Analyst,divya.kumar186@proton.me,+91 9332299081,No
+ALU0187,Kavya,Kumar,2025,B.E.,Artificial Intelligence and Machine Learning,Oracle,Software Developer,kavya.kumar187@yahoo.com,+91 8173456409,Yes
+ALU0188,Pranav,Shetty,2021,MBA,Civil Engineering,Microsoft,Machine Learning Engineer,pranav.shetty188@outlook.com,+91 9131176633,No
+ALU0189,Pranav,Menon,2019,B.Tech,Electrical and Electronics Engineering,Wipro,Project Engineer,pranav.menon189@outlook.com,+91 9342794700,No
+ALU0190,Neha,Patel,2016,B.Sc,Artificial Intelligence and Machine Learning,Tech Mahindra,Associate Consultant,neha.patel190@proton.me,+91 7715733827,No
+ALU0191,Pooja,Bhat,2015,MBA,Mechanical Engineering,Bosch,Project Engineer,pooja.bhat191@yahoo.com,+91 9746499773,Yes
+ALU0192,Amar,Mehta,2020,MCA,Information Technology,TCS,Business Analyst,amar.mehta192@proton.me,+91 7149460439,Yes
+ALU0193,Amar,Verma,2025,B.Sc,Mechanical Engineering,Microsoft,Database Administrator,amar.verma193@gmail.com,+91 9598862507,Yes
+ALU0194,Yash,Bhat,2020,B.Sc,Civil Engineering,Wipro,Database Administrator,yash.bhat194@outlook.com,+91 9274012889,No
+ALU0195,Rahul,Gupta,2025,B.Sc,Electronics and Communication Engineering,Accenture,Software Engineer,rahul.gupta195@outlook.com,+91 9143377496,No
+ALU0196,Sneha,Patel,2019,B.Sc,Civil Engineering,Capgemini,Technical Consultant,sneha.patel196@yahoo.com,+91 9980624159,No
+ALU0197,Divya,Patel,2017,B.Tech,Civil Engineering,IBM,Associate Consultant,divya.patel197@gmail.com,+91 9928863857,No
+ALU0198,Vishal,Joshi,2016,MCA,Computer Engineering,Tech Mahindra,Cloud Engineer,vishal.joshi198@outlook.com,+91 9738900744,Yes
+ALU0199,Pranav,Menon,2018,B.Tech,Electronics and Communication Engineering,Cognizant,Full Stack Developer,pranav.menon199@proton.me,+91 7112889043,No
+ALU0200,Sneha,Mishra,2020,M.Tech,Computer Engineering,Cognizant,Technical Consultant,sneha.mishra200@gmail.com,+91 7282385977,No
+ALU0201,Rahul,Pillai,2023,M.Tech,Electrical and Electronics Engineering,Cognizant Technology Solutions,Data Analyst,rahul.pillai201@outlook.com,+91 8361623473,Yes
+ALU0202,Riya,Bhat,2025,MCA,Mechanical Engineering,Cognizant,UI Developer,riya.bhat202@outlook.com,+91 7554192345,No
+ALU0203,Sanjay,Kumar,2016,MCA,Information Technology,Tech Mahindra,Frontend Developer,sanjay.kumar203@outlook.com,+91 8385817349,Yes
+ALU0204,Pooja,Menon,2019,B.Tech,Artificial Intelligence and Machine Learning,Capgemini,UI Developer,pooja.menon204@yahoo.com,+91 7537602307,No
+ALU0205,Tejas,Das,2016,MCA,Information Technology,Cognizant Technology Solutions,Database Administrator,tejas.das205@outlook.com,+91 7735301069,No
+ALU0206,Srinivas,Kumar,2015,B.Tech,Computer Science and Engineering,SAP,Database Administrator,srinivas.kumar206@yahoo.com,+91 9796581976,Yes
+ALU0207,Nandini,Mishra,2021,MCA,Computer Science and Engineering,EY,UI Developer,nandini.mishra207@yahoo.com,+91 9756970807,No
+ALU0208,Sahana,Verma,2025,M.Tech,Artificial Intelligence and Machine Learning,Google,Data Analyst,sahana.verma208@gmail.com,+91 7678950361,No
+ALU0209,Rakesh,Pillai,2022,B.E.,Mechanical Engineering,Bosch,Business Analyst,rakesh.pillai209@yahoo.com,+91 8371453454,No
+ALU0210,Rahul,Rao,2020,MCA,Computer Engineering,Accenture,Machine Learning Engineer,rahul.rao210@outlook.com,+91 9003484425,Yes
+ALU0211,Manoj,Bhat,2018,B.E.,Computer Science (Data Science),Infosys,Cloud Engineer,manoj.bhat211@proton.me,+91 9643025991,No
+ALU0212,Karthik,Naidu,2020,MCA,Mechanical Engineering,Capgemini,Frontend Developer,karthik.naidu212@proton.me,+91 9210726347,No
+ALU0213,Sai,Nair,2022,B.Tech,Computer Science (Data Science),Microsoft,Product Analyst,sai.nair213@proton.me,+91 8033921654,Yes
+ALU0214,Swathi,Joshi,2015,B.Tech,Artificial Intelligence and Machine Learning,EY,Technical Consultant,swathi.joshi214@proton.me,+91 8227279967,Yes
+ALU0215,Anil,Shetty,2017,B.Sc,Mechanical Engineering,Microsoft,Systems Engineer,anil.shetty215@gmail.com,+91 8720484983,Yes
+ALU0216,Srinivas,Das,2018,B.Sc,Computer Engineering,Tech Mahindra,Data Analyst,srinivas.das216@proton.me,+91 9165761020,No
+ALU0217,Madhav,Das,2019,MCA,Business Administration,Accenture,Business Analyst,madhav.das217@gmail.com,+91 8691803583,No
+ALU0218,Nikhil,Das,2020,B.E.,Electronics and Communication Engineering,Bosch,Product Analyst,nikhil.das218@proton.me,+91 9147818256,Yes
+ALU0219,Akash,Kumar,2017,MBA,Mechanical Engineering,EY,Product Analyst,akash.kumar219@proton.me,+91 7639695273,Yes
+ALU0220,Neha,Chowdhury,2020,B.E.,Electrical and Electronics Engineering,Bosch,Cloud Engineer,neha.chowdhury220@yahoo.com,+91 9178901271,No
+ALU0221,Anusha,Mishra,2019,M.Tech,Computer Science and Engineering,Oracle,Machine Learning Engineer,anusha.mishra221@gmail.com,+91 8789026838,No
+ALU0222,Keerthi,Reddy,2024,M.Tech,Artificial Intelligence and Machine Learning,SAP,Database Administrator,keerthi.reddy222@outlook.com,+91 7220568746,No
+ALU0223,Charan,Menon,2025,MBA,Business Administration,Microsoft,Business Analyst,charan.menon223@outlook.com,+91 7135594311,Yes
+ALU0224,Divya,Reddy,2022,B.Sc,Electrical and Electronics Engineering,Cognizant,Project Engineer,divya.reddy224@outlook.com,+91 8762557538,No
+ALU0225,Lakshmi,Kumar,2017,MCA,Electronics and Communication Engineering,PwC,Machine Learning Engineer,lakshmi.kumar225@proton.me,+91 9256907178,No
+ALU0226,Neha,Naidu,2022,MCA,Mechanical Engineering,PwC,Systems Engineer,neha.naidu226@yahoo.com,+91 9620258967,No
+ALU0227,Divya,Verma,2019,MCA,Artificial Intelligence and Machine Learning,Deloitte,Cloud Engineer,divya.verma227@yahoo.com,+91 7890251346,No
+ALU0228,Neha,Pillai,2020,MCA,Artificial Intelligence and Machine Learning,Tech Mahindra,Data Scientist,neha.pillai228@proton.me,+91 8694503971,No
+ALU0229,Nandini,Rao,2019,B.Tech,Artificial Intelligence and Machine Learning,Wipro,Systems Engineer,nandini.rao229@proton.me,+91 9817378520,No
+ALU0230,Lakshmi,Pillai,2018,B.E.,Computer Engineering,HCLTech,UI Developer,lakshmi.pillai230@yahoo.com,+91 7589582865,Yes
+ALU0231,Tejas,Mishra,2018,B.E.,Computer Science and Engineering,Walmart Global Tech,Product Analyst,tejas.mishra231@outlook.com,+91 9739951076,Yes
+ALU0232,Akhil,Patel,2021,B.Sc,Civil Engineering,Accenture,Business Analyst,akhil.patel232@gmail.com,+91 9363746243,Yes
+ALU0233,Rakesh,Pillai,2022,MBA,Electronics and Communication Engineering,Tech Mahindra,Machine Learning Engineer,rakesh.pillai233@yahoo.com,+91 9774110439,Yes
+ALU0234,Nandini,Sharma,2025,MCA,Electronics and Communication Engineering,PwC,Software Developer,nandini.sharma234@outlook.com,+91 8794802316,Yes
+ALU0235,Akash,Mehta,2022,B.E.,Artificial Intelligence and Machine Learning,Infosys,Software Engineer,akash.mehta235@yahoo.com,+91 9439377645,Yes
+ALU0236,Nikhil,Nair,2022,MBA,Computer Engineering,KPMG,Senior Software Engineer,nikhil.nair236@outlook.com,+91 9165576952,No
+ALU0237,Manoj,Singh,2016,B.Sc,Information Technology,Google,DevOps Engineer,manoj.singh237@outlook.com,+91 7060491148,No
+ALU0238,Meera,Mishra,2025,B.E.,Information Technology,Bosch,QA Engineer,meera.mishra238@proton.me,+91 9213113588,No
+ALU0239,Ananya,Mehta,2025,B.Tech,Information Technology,Cognizant,Senior Software Engineer,ananya.mehta239@yahoo.com,+91 8065354117,Yes
+ALU0240,Kavya,Mehta,2018,M.Tech,Artificial Intelligence and Machine Learning,LTIMindtree,Cloud Engineer,kavya.mehta240@gmail.com,+91 8123362233,No
+ALU0241,Aditi,Verma,2015,MBA,Computer Science (Data Science),Google,Cloud Engineer,aditi.verma241@outlook.com,+91 8741251076,No
+ALU0242,Aditi,Patel,2025,B.Sc,Mechanical Engineering,Bosch,Full Stack Developer,aditi.patel242@outlook.com,+91 7573673552,No
+ALU0243,Bhavana,Bhat,2024,B.Sc,Electrical and Electronics Engineering,PwC,Senior Software Engineer,bhavana.bhat243@outlook.com,+91 8062855922,Yes
+ALU0244,Shreya,Bhat,2023,MBA,Mechanical Engineering,Wipro,Database Administrator,shreya.bhat244@gmail.com,+91 7265248799,Yes
+ALU0245,Srinivas,Das,2017,B.E.,Mechanical Engineering,KPMG,Associate Consultant,srinivas.das245@gmail.com,+91 9921845810,Yes
+ALU0246,Anusha,Mishra,2022,B.Tech,Computer Engineering,Google,Software Developer,anusha.mishra246@proton.me,+91 7566696611,No
+ALU0247,Rohit,Mishra,2015,MCA,Civil Engineering,Walmart Global Tech,Cloud Engineer,rohit.mishra247@gmail.com,+91 8700586760,No
+ALU0248,Aarav,Singh,2024,B.Tech,Computer Science and Engineering,Amazon,Systems Engineer,aarav.singh248@gmail.com,+91 9324279536,Yes
+ALU0249,Amar,Pillai,2015,B.Sc,Electrical and Electronics Engineering,IBM,Business Analyst,amar.pillai249@proton.me,+91 8608297407,No
+ALU0250,Riya,Mehta,2021,B.Tech,Computer Engineering,Cognizant,Systems Engineer,riya.mehta250@gmail.com,+91 7766538381,No
+ALU0251,Shreya,Rao,2018,B.Tech,Computer Science and Engineering,Tech Mahindra,Associate Consultant,shreya.rao251@proton.me,+91 9284637470,No
+ALU0252,Isha,Verma,2022,B.Sc,Information Technology,HCLTech,Backend Developer,isha.verma252@gmail.com,+91 7138372291,No
+ALU0253,Tejas,Reddy,2018,B.E.,Computer Science (Data Science),Accenture,Technical Consultant,tejas.reddy253@gmail.com,+91 8917449772,Yes
+ALU0254,Karthik,Kumar,2021,M.Tech,Electronics and Communication Engineering,PwC,Backend Developer,karthik.kumar254@gmail.com,+91 7601877719,No
+ALU0255,Isha,Mishra,2020,MCA,Business Administration,Walmart Global Tech,Machine Learning Engineer,isha.mishra255@outlook.com,+91 8296068379,Yes
+ALU0256,Vishal,Menon,2018,M.Tech,Artificial Intelligence and Machine Learning,HCLTech,Software Developer,vishal.menon256@outlook.com,+91 9688620050,No
+ALU0257,Sneha,Pillai,2015,B.Sc,Electrical and Electronics Engineering,KPMG,Machine Learning Engineer,sneha.pillai257@proton.me,+91 8753459822,Yes
+ALU0258,Naveen,Mehta,2017,MCA,Civil Engineering,Deloitte,Full Stack Developer,naveen.mehta258@yahoo.com,+91 7619986018,No
+ALU0259,Akhil,Das,2021,M.Tech,Computer Engineering,KPMG,Business Analyst,akhil.das259@proton.me,+91 8043069385,No
+ALU0260,Harish,Gupta,2025,B.Tech,Civil Engineering,Oracle,Data Analyst,harish.gupta260@outlook.com,+91 7221348142,No
+ALU0261,Priya,Chowdhury,2024,B.Tech,Computer Science (Data Science),Capgemini,Database Administrator,priya.chowdhury261@outlook.com,+91 9058982440,Yes
+ALU0262,Nikhil,Nair,2015,B.E.,Electronics and Communication Engineering,Accenture,Senior Software Engineer,nikhil.nair262@outlook.com,+91 9987692130,Yes
+ALU0263,Rahul,Verma,2023,B.Sc,Artificial Intelligence and Machine Learning,Microsoft,Associate Consultant,rahul.verma263@yahoo.com,+91 8324663629,No
+ALU0264,Pranav,Menon,2022,M.Tech,Computer Science (Data Science),EY,Machine Learning Engineer,pranav.menon264@outlook.com,+91 8592165525,No
+ALU0265,Rakesh,Kumar,2024,B.E.,Information Technology,TCS,DevOps Engineer,rakesh.kumar265@proton.me,+91 8267841227,Yes
+ALU0266,Divya,Gupta,2018,M.Tech,Business Administration,Deloitte,Senior Software Engineer,divya.gupta266@yahoo.com,+91 8105209993,No
+ALU0267,Keerthi,Pillai,2022,B.E.,Mechanical Engineering,IBM,Business Analyst,keerthi.pillai267@proton.me,+91 7790479137,Yes
+ALU0268,Shreya,Kumar,2016,MBA,Computer Science and Engineering,TCS,Project Engineer,shreya.kumar268@outlook.com,+91 9708842947,Yes
+ALU0269,Amar,Rao,2015,B.E.,Computer Engineering,Google,Systems Engineer,amar.rao269@gmail.com,+91 9653582116,No
+ALU0270,Vishal,Pillai,2015,B.Tech,Computer Engineering,PwC,Project Engineer,vishal.pillai270@gmail.com,+91 7071838242,No
+ALU0271,Siddharth,Nair,2015,MCA,Electrical and Electronics Engineering,IBM,Data Scientist,siddharth.nair271@gmail.com,+91 9252218154,Yes
+ALU0272,Karthik,Singh,2024,MCA,Artificial Intelligence and Machine Learning,Oracle,DevOps Engineer,karthik.singh272@proton.me,+91 7339385087,No
+ALU0273,Rahul,Bhat,2024,B.E.,Electronics and Communication Engineering,Tech Mahindra,Data Analyst,rahul.bhat273@gmail.com,+91 7401581601,No
+ALU0274,Priya,Mehta,2023,M.Tech,Computer Science and Engineering,SAP,Software Engineer,priya.mehta274@outlook.com,+91 7355134188,No
+ALU0275,Ravi,Gupta,2024,B.Tech,Computer Engineering,Infosys,Full Stack Developer,ravi.gupta275@outlook.com,+91 9973353078,No
+ALU0276,Manoj,Kumar,2016,MBA,Artificial Intelligence and Machine Learning,PwC,Database Administrator,manoj.kumar276@gmail.com,+91 7770321709,No
+ALU0277,Aditya,Singh,2024,B.E.,Electrical and Electronics Engineering,Wipro,Cloud Engineer,aditya.singh277@outlook.com,+91 9422182038,Yes
+ALU0278,Srinivas,Mehta,2025,MCA,Mechanical Engineering,Microsoft,Business Analyst,srinivas.mehta278@gmail.com,+91 9150888898,No
+ALU0279,Akhil,Patel,2021,B.E.,Computer Science (Data Science),LTIMindtree,Technical Consultant,akhil.patel279@proton.me,+91 8401777036,Yes
+ALU0280,Varun,Iyer,2022,M.Tech,Electronics and Communication Engineering,Oracle,UI Developer,varun.iyer280@proton.me,+91 8854772804,Yes
+ALU0281,Yash,Mishra,2025,M.Tech,Computer Science (Data Science),Bosch,Cloud Engineer,yash.mishra281@outlook.com,+91 7315708805,Yes
+ALU0282,Manoj,Rao,2021,MBA,Information Technology,Microsoft,Machine Learning Engineer,manoj.rao282@yahoo.com,+91 7457632732,Yes
+ALU0283,Aarav,Nair,2022,B.Sc,Artificial Intelligence and Machine Learning,Accenture,Business Analyst,aarav.nair283@gmail.com,+91 7804841598,No
+ALU0284,Riya,Das,2023,MCA,Electrical and Electronics Engineering,Accenture,Software Engineer,riya.das284@gmail.com,+91 8520050282,Yes
+ALU0285,Tarun,Chowdhury,2020,M.Tech,Computer Science and Engineering,Tech Mahindra,Project Engineer,tarun.chowdhury285@proton.me,+91 7363781647,Yes
+ALU0286,Srinivas,Menon,2017,MBA,Electrical and Electronics Engineering,IBM,Business Analyst,srinivas.menon286@yahoo.com,+91 8293348937,No
+ALU0287,Sai,Rao,2016,B.E.,Electrical and Electronics Engineering,HCLTech,Project Engineer,sai.rao287@yahoo.com,+91 9079757650,Yes
+ALU0288,Pranav,Iyer,2018,MBA,Civil Engineering,Bosch,Technical Consultant,pranav.iyer288@outlook.com,+91 8966500767,Yes
+ALU0289,Ashwin,Nair,2015,M.Tech,Mechanical Engineering,Bosch,QA Engineer,ashwin.nair289@yahoo.com,+91 8890743044,No
+ALU0290,Ravi,Chowdhury,2017,B.Sc,Mechanical Engineering,Bosch,Backend Developer,ravi.chowdhury290@proton.me,+91 8349406919,Yes
+ALU0291,Rahul,Gupta,2019,MBA,Civil Engineering,Cognizant Technology Solutions,Full Stack Developer,rahul.gupta291@yahoo.com,+91 8615145225,No
+ALU0292,Rahul,Joshi,2016,MCA,Electronics and Communication Engineering,Cognizant Technology Solutions,UI Developer,rahul.joshi292@outlook.com,+91 9927933468,Yes
+ALU0293,Keerthi,Bhat,2018,M.Tech,Artificial Intelligence and Machine Learning,Wipro,Project Engineer,keerthi.bhat293@proton.me,+91 7597769760,No
+ALU0294,Karthik,Iyer,2025,B.E.,Electrical and Electronics Engineering,Microsoft,Data Analyst,karthik.iyer294@proton.me,+91 9568106346,No
+ALU0295,Swathi,Mehta,2023,MCA,Electrical and Electronics Engineering,PwC,Software Developer,swathi.mehta295@yahoo.com,+91 9305993661,Yes
+ALU0296,Anil,Verma,2025,MBA,Mechanical Engineering,IBM,Technical Consultant,anil.verma296@gmail.com,+91 9419012709,No
+ALU0297,Madhav,Gupta,2021,B.Tech,Computer Science and Engineering,Accenture,DevOps Engineer,madhav.gupta297@outlook.com,+91 9193337732,Yes
+ALU0298,Riya,Joshi,2021,M.Tech,Business Administration,KPMG,Business Analyst,riya.joshi298@yahoo.com,+91 7105495798,No
+ALU0299,Anil,Nair,2021,B.Tech,Computer Science (Data Science),Cognizant,Systems Engineer,anil.nair299@yahoo.com,+91 8473460179,No
+ALU0300,Harish,Menon,2022,B.Sc,Civil Engineering,Accenture,Associate Consultant,harish.menon300@proton.me,+91 8369705770,Yes
+ALU0301,Naveen,Kumar,2016,B.Tech,Mechanical Engineering,SAP,Data Scientist,naveen.kumar301@outlook.com,+91 8047598131,Yes
+ALU0302,Sneha,Naidu,2020,MCA,Electrical and Electronics Engineering,Google,Full Stack Developer,sneha.naidu302@proton.me,+91 9704799972,Yes
+ALU0303,Deepak,Shetty,2021,B.Tech,Business Administration,Capgemini,Associate Consultant,deepak.shetty303@proton.me,+91 8670036982,Yes
+ALU0304,Anusha,Singh,2018,B.Sc,Computer Science (Data Science),Cognizant Technology Solutions,Data Scientist,anusha.singh304@outlook.com,+91 8571069113,No
+ALU0305,Divya,Bhat,2016,B.Sc,Civil Engineering,KPMG,Machine Learning Engineer,divya.bhat305@proton.me,+91 9625549685,No
+ALU0306,Swathi,Patel,2020,B.Sc,Civil Engineering,Bosch,Frontend Developer,swathi.patel306@yahoo.com,+91 9639190897,Yes
+ALU0307,Yash,Rao,2020,B.Tech,Electronics and Communication Engineering,Tech Mahindra,Data Scientist,yash.rao307@outlook.com,+91 8603337351,Yes
+ALU0308,Sanjay,Mehta,2021,MCA,Information Technology,Cognizant Technology Solutions,QA Engineer,sanjay.mehta308@proton.me,+91 7797806061,No
+ALU0309,Varun,Das,2025,B.E.,Computer Engineering,IBM,Senior Software Engineer,varun.das309@yahoo.com,+91 7602569046,Yes
+ALU0310,Neha,Bhat,2024,B.Tech,Mechanical Engineering,TCS,Senior Software Engineer,neha.bhat310@outlook.com,+91 7838070464,No
+ALU0311,Sneha,Menon,2025,M.Tech,Electrical and Electronics Engineering,Walmart Global Tech,Senior Software Engineer,sneha.menon311@proton.me,+91 8906328733,No
+ALU0312,Charan,Sharma,2024,B.Tech,Electronics and Communication Engineering,Tech Mahindra,Software Developer,charan.sharma312@yahoo.com,+91 7965695131,No
+ALU0313,Charan,Bhat,2024,MBA,Civil Engineering,PwC,Product Analyst,charan.bhat313@gmail.com,+91 9459788151,Yes
+ALU0314,Manoj,Das,2020,MCA,Computer Science and Engineering,Google,UI Developer,manoj.das314@outlook.com,+91 8826025489,Yes
+ALU0315,Lakshmi,Verma,2019,B.Tech,Civil Engineering,HCLTech,Systems Engineer,lakshmi.verma315@gmail.com,+91 8885790857,Yes
+ALU0316,Nandini,Verma,2018,MBA,Business Administration,Oracle,Technical Consultant,nandini.verma316@proton.me,+91 7712885628,Yes
+ALU0317,Harish,Singh,2015,MCA,Mechanical Engineering,PwC,DevOps Engineer,harish.singh317@outlook.com,+91 8390081665,No
+ALU0318,Meera,Mishra,2019,MCA,Computer Science (Data Science),Cognizant,Project Engineer,meera.mishra318@gmail.com,+91 8191095508,Yes
+ALU0319,Aditi,Rao,2018,B.E.,Mechanical Engineering,Deloitte,QA Engineer,aditi.rao319@proton.me,+91 7610622521,No
+ALU0320,Varun,Shetty,2021,M.Tech,Computer Science (Data Science),SAP,Data Analyst,varun.shetty320@proton.me,+91 9214542998,No
+ALU0321,Aditi,Joshi,2022,M.Tech,Mechanical Engineering,Cognizant Technology Solutions,Software Engineer,aditi.joshi321@gmail.com,+91 8969024554,No
+ALU0322,Amar,Das,2021,B.E.,Electrical and Electronics Engineering,Capgemini,Senior Software Engineer,amar.das322@yahoo.com,+91 8386695233,No
+ALU0323,Nikhil,Das,2024,B.E.,Business Administration,EY,Machine Learning Engineer,nikhil.das323@gmail.com,+91 7197323378,Yes
+ALU0324,Varun,Bhat,2015,B.Tech,Information Technology,Google,Associate Consultant,varun.bhat324@gmail.com,+91 8837384013,Yes
+ALU0325,Aditi,Rao,2025,B.Sc,Information Technology,HCLTech,Data Analyst,aditi.rao325@yahoo.com,+91 8075413763,Yes
+ALU0326,Pranav,Naidu,2015,M.Tech,Artificial Intelligence and Machine Learning,Deloitte,Project Engineer,pranav.naidu326@gmail.com,+91 7408810792,Yes
+ALU0327,Harish,Pillai,2016,B.E.,Business Administration,Deloitte,Product Analyst,harish.pillai327@proton.me,+91 7039887139,Yes
+ALU0328,Aditi,Gupta,2016,M.Tech,Information Technology,EY,Data Analyst,aditi.gupta328@outlook.com,+91 8645272822,Yes
+ALU0329,Keerthi,Patel,2016,B.Sc,Mechanical Engineering,Tech Mahindra,Business Analyst,keerthi.patel329@proton.me,+91 7571858688,Yes
+ALU0330,Amar,Menon,2024,B.Tech,Business Administration,SAP,Frontend Developer,amar.menon330@proton.me,+91 8508339770,Yes
+ALU0331,Varun,Rao,2021,MCA,Civil Engineering,Capgemini,Data Analyst,varun.rao331@gmail.com,+91 7601351841,Yes
+ALU0332,Swathi,Mehta,2020,M.Tech,Mechanical Engineering,Cognizant,Full Stack Developer,swathi.mehta332@yahoo.com,+91 9768624284,Yes
+ALU0333,Karthik,Das,2024,MCA,Business Administration,Tech Mahindra,Software Engineer,karthik.das333@yahoo.com,+91 7882382645,Yes
+ALU0334,Lakshmi,Mehta,2019,MBA,Computer Science and Engineering,Deloitte,Senior Software Engineer,lakshmi.mehta334@proton.me,+91 7484230338,Yes
+ALU0335,Sai,Chowdhury,2016,MCA,Computer Science and Engineering,Oracle,Machine Learning Engineer,sai.chowdhury335@outlook.com,+91 8661457617,No
+ALU0336,Pranav,Das,2025,B.E.,Civil Engineering,Wipro,Software Engineer,pranav.das336@gmail.com,+91 7059242317,No
+ALU0337,Harish,Kumar,2015,M.Tech,Computer Engineering,Tech Mahindra,Product Analyst,harish.kumar337@proton.me,+91 8819241774,No
+ALU0338,Ananya,Das,2023,MCA,Information Technology,HCLTech,Data Analyst,ananya.das338@yahoo.com,+91 7339395013,Yes
+ALU0339,Bhavana,Das,2020,M.Tech,Business Administration,SAP,Data Analyst,bhavana.das339@yahoo.com,+91 8878988236,Yes
+ALU0340,Akhil,Verma,2016,M.Tech,Computer Science (Data Science),Google,Technical Consultant,akhil.verma340@gmail.com,+91 8328390707,Yes
+ALU0341,Arjun,Reddy,2017,MBA,Computer Science and Engineering,IBM,Senior Software Engineer,arjun.reddy341@yahoo.com,+91 9246290917,No
+ALU0342,Charan,Joshi,2017,MBA,Artificial Intelligence and Machine Learning,Accenture,Software Engineer,charan.joshi342@yahoo.com,+91 8843934986,No
+ALU0343,Shreya,Sharma,2019,MBA,Business Administration,SAP,Data Analyst,shreya.sharma343@proton.me,+91 8955059570,No
+ALU0344,Akhil,Pillai,2024,B.E.,Mechanical Engineering,IBM,DevOps Engineer,akhil.pillai344@gmail.com,+91 9464934576,Yes
+ALU0345,Isha,Menon,2015,B.Tech,Computer Science and Engineering,Deloitte,Software Developer,isha.menon345@proton.me,+91 8563267151,No
+ALU0346,Bhavana,Naidu,2015,MCA,Electrical and Electronics Engineering,Deloitte,Machine Learning Engineer,bhavana.naidu346@outlook.com,+91 8787808459,No
+ALU0347,Manoj,Sharma,2024,B.Sc,Computer Science (Data Science),KPMG,Software Developer,manoj.sharma347@outlook.com,+91 7958572516,Yes
+ALU0348,Rahul,Sharma,2022,B.Sc,Artificial Intelligence and Machine Learning,LTIMindtree,Data Analyst,rahul.sharma348@proton.me,+91 7034227351,No
+ALU0349,Divya,Nair,2024,B.Sc,Business Administration,Deloitte,Associate Consultant,divya.nair349@yahoo.com,+91 9541293188,No
+ALU0350,Nandini,Singh,2023,B.E.,Information Technology,TCS,Project Engineer,nandini.singh350@gmail.com,+91 8000717686,No
+ALU0351,Varun,Reddy,2020,B.Tech,Electrical and Electronics Engineering,Tech Mahindra,Data Scientist,varun.reddy351@outlook.com,+91 9275535874,Yes
+ALU0352,Rakesh,Pillai,2015,B.E.,Artificial Intelligence and Machine Learning,Wipro,Software Developer,rakesh.pillai352@outlook.com,+91 9232348845,No
+ALU0353,Aditi,Joshi,2022,MBA,Computer Science (Data Science),Cognizant Technology Solutions,Data Scientist,aditi.joshi353@outlook.com,+91 9736820502,No
+ALU0354,Amar,Mishra,2024,B.Tech,Electrical and Electronics Engineering,Walmart Global Tech,Business Analyst,amar.mishra354@outlook.com,+91 8252738994,No
+ALU0355,Neha,Mehta,2020,B.Sc,Civil Engineering,HCLTech,Full Stack Developer,neha.mehta355@gmail.com,+91 7870644102,Yes
+ALU0356,Nandini,Mishra,2016,B.E.,Computer Science (Data Science),IBM,Associate Consultant,nandini.mishra356@proton.me,+91 8348762713,No
+ALU0357,Arjun,Das,2020,B.E.,Civil Engineering,Tech Mahindra,Associate Consultant,arjun.das357@yahoo.com,+91 7515024824,Yes
+ALU0358,Charan,Nair,2024,B.Tech,Electronics and Communication Engineering,LTIMindtree,Business Analyst,charan.nair358@gmail.com,+91 8066091571,No
+ALU0359,Rahul,Menon,2015,MBA,Artificial Intelligence and Machine Learning,HCLTech,Frontend Developer,rahul.menon359@gmail.com,+91 8736851379,No
+ALU0360,Sneha,Das,2018,B.Tech,Civil Engineering,Accenture,Business Analyst,sneha.das360@gmail.com,+91 7051354601,Yes
+ALU0361,Nandini,Verma,2017,B.E.,Electrical and Electronics Engineering,Oracle,Data Analyst,nandini.verma361@yahoo.com,+91 7322067505,Yes
+ALU0362,Amar,Singh,2025,M.Tech,Information Technology,Wipro,Machine Learning Engineer,amar.singh362@gmail.com,+91 7183379287,No
+ALU0363,Akhil,Naidu,2024,M.Tech,Electrical and Electronics Engineering,EY,Software Engineer,akhil.naidu363@proton.me,+91 9934377138,No
+ALU0364,Deepak,Joshi,2018,B.E.,Artificial Intelligence and Machine Learning,HCLTech,Associate Consultant,deepak.joshi364@outlook.com,+91 7148818209,Yes
+ALU0365,Vikas,Nair,2022,M.Tech,Computer Engineering,EY,Software Developer,vikas.nair365@gmail.com,+91 8201628712,No
+ALU0366,Ashwin,Shetty,2018,MBA,Computer Engineering,Deloitte,UI Developer,ashwin.shetty366@gmail.com,+91 8642816742,No
+ALU0367,Sahana,Das,2022,B.Sc,Business Administration,KPMG,Machine Learning Engineer,sahana.das367@proton.me,+91 8161512446,Yes
+ALU0368,Aditya,Gupta,2024,B.E.,Computer Science and Engineering,HCLTech,Software Developer,aditya.gupta368@proton.me,+91 9273894381,No
+ALU0369,Nandini,Mishra,2018,B.E.,Computer Science (Data Science),Deloitte,Full Stack Developer,nandini.mishra369@yahoo.com,+91 9292179207,Yes
+ALU0370,Madhav,Verma,2024,M.Tech,Mechanical Engineering,IBM,Frontend Developer,madhav.verma370@outlook.com,+91 9544851934,No
+ALU0371,Lakshmi,Joshi,2024,B.Tech,Mechanical Engineering,Cognizant Technology Solutions,Database Administrator,lakshmi.joshi371@outlook.com,+91 9418534256,Yes
+ALU0372,Sai,Das,2019,B.E.,Civil Engineering,Infosys,Data Analyst,sai.das372@gmail.com,+91 7999109703,Yes
+ALU0373,Aditya,Menon,2022,B.Tech,Mechanical Engineering,Bosch,Backend Developer,aditya.menon373@outlook.com,+91 8463548951,Yes
+ALU0374,Neha,Kumar,2015,B.E.,Business Administration,Cognizant,Data Scientist,neha.kumar374@yahoo.com,+91 7311520864,No
+ALU0375,Anusha,Mehta,2024,B.Tech,Mechanical Engineering,Tech Mahindra,Machine Learning Engineer,anusha.mehta375@outlook.com,+91 7676474018,No
+ALU0376,Varun,Pillai,2025,B.Sc,Information Technology,PwC,Technical Consultant,varun.pillai376@yahoo.com,+91 7958796521,Yes
+ALU0377,Priya,Nair,2019,B.E.,Information Technology,TCS,Database Administrator,priya.nair377@proton.me,+91 9437319900,Yes
+ALU0378,Deepak,Chowdhury,2020,MCA,Electronics and Communication Engineering,SAP,Database Administrator,deepak.chowdhury378@gmail.com,+91 9131098613,Yes
+ALU0379,Nikhil,Sharma,2018,B.Sc,Mechanical Engineering,IBM,Data Analyst,nikhil.sharma379@yahoo.com,+91 8918260963,Yes
+ALU0380,Kavya,Singh,2018,MBA,Computer Science (Data Science),Oracle,DevOps Engineer,kavya.singh380@gmail.com,+91 7005502537,Yes
+ALU0381,Priya,Bhat,2021,B.E.,Electrical and Electronics Engineering,EY,QA Engineer,priya.bhat381@yahoo.com,+91 9345155074,No
+ALU0382,Anil,Pillai,2024,MBA,Electronics and Communication Engineering,IBM,Associate Consultant,anil.pillai382@gmail.com,+91 7143506818,No
+ALU0383,Aditya,Gupta,2019,B.Tech,Computer Science (Data Science),LTIMindtree,Frontend Developer,aditya.gupta383@proton.me,+91 7691079537,Yes
+ALU0384,Sneha,Sharma,2020,MCA,Business Administration,EY,Software Engineer,sneha.sharma384@proton.me,+91 9807341727,Yes
+ALU0385,Tarun,Shetty,2017,B.Tech,Computer Science (Data Science),LTIMindtree,Backend Developer,tarun.shetty385@outlook.com,+91 8757843634,No
+ALU0386,Vishal,Nair,2019,B.E.,Computer Science (Data Science),Infosys,QA Engineer,vishal.nair386@proton.me,+91 7659663750,Yes
+ALU0387,Pranav,Reddy,2021,B.Tech,Artificial Intelligence and Machine Learning,Walmart Global Tech,Technical Consultant,pranav.reddy387@proton.me,+91 7857596764,Yes
+ALU0388,Aditya,Singh,2017,MBA,Artificial Intelligence and Machine Learning,Wipro,Senior Software Engineer,aditya.singh388@gmail.com,+91 8324367744,No
+ALU0389,Sahana,Pillai,2025,B.Sc,Computer Science (Data Science),SAP,UI Developer,sahana.pillai389@proton.me,+91 7794058803,No
+ALU0390,Priya,Joshi,2017,M.Tech,Computer Science and Engineering,HCLTech,Associate Consultant,priya.joshi390@proton.me,+91 8131297865,Yes
+ALU0391,Manoj,Mishra,2015,B.E.,Computer Science (Data Science),Wipro,Systems Engineer,manoj.mishra391@proton.me,+91 9532855799,Yes
+ALU0392,Sneha,Kumar,2021,MCA,Electrical and Electronics Engineering,PwC,Senior Software Engineer,sneha.kumar392@outlook.com,+91 9045530940,No
+ALU0393,Ananya,Mehta,2015,MCA,Business Administration,KPMG,Database Administrator,ananya.mehta393@outlook.com,+91 7516606697,No
+ALU0394,Deepak,Naidu,2018,B.E.,Information Technology,Infosys,Project Engineer,deepak.naidu394@gmail.com,+91 9934001543,No
+ALU0395,Divya,Rao,2024,B.Sc,Mechanical Engineering,Wipro,Data Analyst,divya.rao395@proton.me,+91 9389566051,No
+ALU0396,Sneha,Gupta,2019,MCA,Civil Engineering,TCS,Technical Consultant,sneha.gupta396@proton.me,+91 7483264745,No
+ALU0397,Bhavana,Rao,2024,MCA,Business Administration,Accenture,Data Scientist,bhavana.rao397@gmail.com,+91 8228759446,No
+ALU0398,Rakesh,Iyer,2021,MBA,Civil Engineering,Cognizant Technology Solutions,Technical Consultant,rakesh.iyer398@proton.me,+91 7160913827,Yes
+ALU0399,Manoj,Mehta,2017,MCA,Business Administration,Walmart Global Tech,QA Engineer,manoj.mehta399@gmail.com,+91 8699916883,No
+ALU0400,Aditi,Verma,2015,MBA,Civil Engineering,HCLTech,Systems Engineer,aditi.verma400@gmail.com,+91 8451123758,No
+ALU0401,Naveen,Iyer,2022,MBA,Computer Science (Data Science),Deloitte,Business Analyst,naveen.iyer401@yahoo.com,+91 8903145590,No
+ALU0402,Manoj,Shetty,2024,MBA,Computer Science (Data Science),Capgemini,Associate Consultant,manoj.shetty402@outlook.com,+91 8748783374,No
+ALU0403,Madhav,Menon,2020,B.Tech,Computer Engineering,IBM,Data Analyst,madhav.menon403@yahoo.com,+91 9176669141,No
+ALU0404,Ashwin,Menon,2024,B.Tech,Information Technology,Capgemini,Backend Developer,ashwin.menon404@gmail.com,+91 8071552532,Yes
+ALU0405,Rohit,Kumar,2020,MBA,Electronics and Communication Engineering,HCLTech,Systems Engineer,rohit.kumar405@proton.me,+91 9169501271,No
+ALU0406,Varun,Patel,2025,B.Tech,Electronics and Communication Engineering,Oracle,Senior Software Engineer,varun.patel406@proton.me,+91 7762716154,No
+ALU0407,Swathi,Das,2020,B.Sc,Information Technology,HCLTech,Data Analyst,swathi.das407@yahoo.com,+91 7117898946,No
+ALU0408,Akhil,Naidu,2024,B.E.,Electronics and Communication Engineering,SAP,Full Stack Developer,akhil.naidu408@outlook.com,+91 8155705163,No
+ALU0409,Sanjay,Reddy,2025,B.Tech,Civil Engineering,Cognizant,Frontend Developer,sanjay.reddy409@gmail.com,+91 7961084962,No
+ALU0410,Tarun,Nair,2025,B.Sc,Electrical and Electronics Engineering,Microsoft,Systems Engineer,tarun.nair410@proton.me,+91 8082326234,Yes
+ALU0411,Rohit,Nair,2025,MCA,Business Administration,Microsoft,Database Administrator,rohit.nair411@gmail.com,+91 7031557592,No
+ALU0412,Sneha,Chowdhury,2024,B.Sc,Artificial Intelligence and Machine Learning,Walmart Global Tech,Data Scientist,sneha.chowdhury412@proton.me,+91 7274178050,No
+ALU0413,Manoj,Gupta,2019,B.Sc,Artificial Intelligence and Machine Learning,Capgemini,Business Analyst,manoj.gupta413@outlook.com,+91 7243845356,No
+ALU0414,Vishal,Gupta,2025,B.E.,Computer Science and Engineering,SAP,Senior Software Engineer,vishal.gupta414@yahoo.com,+91 8114227340,No
+ALU0415,Rahul,Mehta,2015,MCA,Business Administration,Capgemini,Machine Learning Engineer,rahul.mehta415@outlook.com,+91 9947713853,No
+ALU0416,Vishal,Joshi,2023,B.Sc,Information Technology,Walmart Global Tech,UI Developer,vishal.joshi416@outlook.com,+91 8261792922,Yes
+ALU0417,Sahana,Rao,2019,MBA,Computer Engineering,IBM,Machine Learning Engineer,sahana.rao417@gmail.com,+91 7954571559,No
+ALU0418,Isha,Nair,2021,B.Sc,Mechanical Engineering,HCLTech,Database Administrator,isha.nair418@yahoo.com,+91 8991836726,Yes
+ALU0419,Sahana,Kumar,2025,MCA,Business Administration,Bosch,Data Analyst,sahana.kumar419@proton.me,+91 7835559278,Yes
+ALU0420,Yash,Mehta,2023,B.Sc,Electrical and Electronics Engineering,Infosys,Business Analyst,yash.mehta420@outlook.com,+91 7860267314,No
+ALU0421,Rakesh,Mishra,2022,B.E.,Mechanical Engineering,IBM,Data Analyst,rakesh.mishra421@proton.me,+91 8428632583,Yes
+ALU0422,Neha,Kumar,2015,M.Tech,Artificial Intelligence and Machine Learning,Capgemini,Frontend Developer,neha.kumar422@outlook.com,+91 9102717570,Yes
+ALU0423,Ashwin,Chowdhury,2021,MBA,Electrical and Electronics Engineering,Microsoft,Project Engineer,ashwin.chowdhury423@proton.me,+91 8646331504,Yes
+ALU0424,Akash,Das,2018,MBA,Mechanical Engineering,TCS,Machine Learning Engineer,akash.das424@outlook.com,+91 7076949178,Yes
+ALU0425,Varun,Verma,2018,MBA,Mechanical Engineering,Tech Mahindra,Business Analyst,varun.verma425@gmail.com,+91 8647336743,No
+ALU0426,Charan,Sharma,2015,B.Sc,Artificial Intelligence and Machine Learning,Google,Product Analyst,charan.sharma426@yahoo.com,+91 8862577974,Yes
+ALU0427,Nikhil,Pillai,2020,B.E.,Information Technology,Microsoft,Software Engineer,nikhil.pillai427@outlook.com,+91 7963452923,Yes
+ALU0428,Harish,Reddy,2024,MCA,Information Technology,Accenture,Systems Engineer,harish.reddy428@gmail.com,+91 8611439217,No
+ALU0429,Nandini,Das,2024,B.Tech,Business Administration,Infosys,Data Scientist,nandini.das429@gmail.com,+91 7207167992,Yes
+ALU0430,Rakesh,Bhat,2021,B.Tech,Computer Engineering,HCLTech,Senior Software Engineer,rakesh.bhat430@outlook.com,+91 7882593929,Yes
+ALU0431,Naveen,Shetty,2025,B.Tech,Computer Engineering,HCLTech,Technical Consultant,naveen.shetty431@outlook.com,+91 8798842890,Yes
+ALU0432,Sanjay,Chowdhury,2016,B.Sc,Computer Science (Data Science),Accenture,Senior Software Engineer,sanjay.chowdhury432@outlook.com,+91 9615642860,Yes
+ALU0433,Nandini,Iyer,2023,B.E.,Mechanical Engineering,Amazon,Cloud Engineer,nandini.iyer433@outlook.com,+91 7169246232,No
+ALU0434,Harish,Pillai,2020,B.E.,Computer Science and Engineering,TCS,Data Analyst,harish.pillai434@gmail.com,+91 9465967350,No
+ALU0435,Bhavana,Sharma,2023,B.Tech,Computer Science (Data Science),HCLTech,Full Stack Developer,bhavana.sharma435@proton.me,+91 8271405590,No
+ALU0436,Rohit,Kumar,2016,B.E.,Computer Science and Engineering,Tech Mahindra,Systems Engineer,rohit.kumar436@yahoo.com,+91 8829635479,Yes
+ALU0437,Anil,Kumar,2015,B.E.,Information Technology,LTIMindtree,Systems Engineer,anil.kumar437@proton.me,+91 9670640892,No
+ALU0438,Keerthi,Sharma,2020,B.Sc,Information Technology,Accenture,QA Engineer,keerthi.sharma438@proton.me,+91 8960818751,No
+ALU0439,Priya,Pillai,2021,MBA,Information Technology,Accenture,Business Analyst,priya.pillai439@gmail.com,+91 7684598046,Yes
+ALU0440,Rakesh,Mishra,2022,MCA,Civil Engineering,IBM,Technical Consultant,rakesh.mishra440@proton.me,+91 8540170604,Yes
+ALU0441,Yash,Rao,2022,M.Tech,Computer Science (Data Science),Amazon,Associate Consultant,yash.rao441@gmail.com,+91 7272026241,No
+ALU0442,Vikas,Gupta,2015,MBA,Computer Engineering,Cognizant Technology Solutions,Database Administrator,vikas.gupta442@outlook.com,+91 9876959590,No
+ALU0443,Shreya,Menon,2024,B.Tech,Electrical and Electronics Engineering,Walmart Global Tech,Full Stack Developer,shreya.menon443@proton.me,+91 8484982750,No
+ALU0444,Bhavana,Das,2024,B.Tech,Computer Science and Engineering,SAP,Frontend Developer,bhavana.das444@proton.me,+91 9129594795,Yes
+ALU0445,Amar,Pillai,2020,B.E.,Mechanical Engineering,HCLTech,Software Developer,amar.pillai445@outlook.com,+91 9364360455,No
+ALU0446,Rahul,Verma,2016,M.Tech,Civil Engineering,Cognizant Technology Solutions,Associate Consultant,rahul.verma446@gmail.com,+91 9140852855,No
+ALU0447,Neha,Patel,2022,MBA,Computer Science and Engineering,Accenture,QA Engineer,neha.patel447@proton.me,+91 7153896961,Yes
+ALU0448,Ananya,Chowdhury,2024,MBA,Artificial Intelligence and Machine Learning,KPMG,UI Developer,ananya.chowdhury448@outlook.com,+91 9811468334,No
+ALU0449,Nikhil,Joshi,2015,B.E.,Civil Engineering,LTIMindtree,UI Developer,nikhil.joshi449@proton.me,+91 9822511659,No
+ALU0450,Anusha,Bhat,2016,B.Tech,Electronics and Communication Engineering,TCS,Machine Learning Engineer,anusha.bhat450@yahoo.com,+91 9721554031,No
+ALU0451,Sneha,Menon,2020,MBA,Computer Science (Data Science),Infosys,Frontend Developer,sneha.menon451@proton.me,+91 7603224661,No
+ALU0452,Anil,Iyer,2024,B.E.,Electronics and Communication Engineering,Accenture,QA Engineer,anil.iyer452@outlook.com,+91 8962997637,Yes
+ALU0453,Anusha,Gupta,2016,M.Tech,Computer Science and Engineering,SAP,Database Administrator,anusha.gupta453@gmail.com,+91 8934902523,No
+ALU0454,Vishal,Mishra,2023,B.E.,Civil Engineering,TCS,Product Analyst,vishal.mishra454@gmail.com,+91 9376088968,No
+ALU0455,Swathi,Pillai,2023,B.E.,Business Administration,IBM,Business Analyst,swathi.pillai455@gmail.com,+91 8663894274,No
+ALU0456,Sanjay,Mehta,2021,MCA,Electronics and Communication Engineering,HCLTech,QA Engineer,sanjay.mehta456@yahoo.com,+91 8263465731,No
+ALU0457,Ashwin,Rao,2021,MCA,Computer Engineering,Tech Mahindra,UI Developer,ashwin.rao457@yahoo.com,+91 9377614706,Yes
+ALU0458,Divya,Singh,2024,MBA,Artificial Intelligence and Machine Learning,Walmart Global Tech,Systems Engineer,divya.singh458@outlook.com,+91 9792099745,Yes
+ALU0459,Sanjay,Das,2025,B.Sc,Computer Science (Data Science),Oracle,UI Developer,sanjay.das459@proton.me,+91 9503133882,No
+ALU0460,Yash,Das,2019,M.Tech,Computer Science and Engineering,KPMG,Data Scientist,yash.das460@gmail.com,+91 8635825546,Yes
+ALU0461,Akhil,Kumar,2018,B.Sc,Information Technology,Tech Mahindra,DevOps Engineer,akhil.kumar461@outlook.com,+91 7266428954,No
+ALU0462,Harish,Das,2015,B.Sc,Civil Engineering,Accenture,Technical Consultant,harish.das462@outlook.com,+91 9779356860,No
+ALU0463,Karthik,Menon,2019,MBA,Computer Science and Engineering,Microsoft,QA Engineer,karthik.menon463@proton.me,+91 9942691532,No
+ALU0464,Sneha,Kumar,2015,MBA,Artificial Intelligence and Machine Learning,Capgemini,Technical Consultant,sneha.kumar464@proton.me,+91 7968723414,No
+ALU0465,Madhav,Mishra,2023,MBA,Business Administration,Capgemini,Backend Developer,madhav.mishra465@yahoo.com,+91 8927645417,Yes
+ALU0466,Yash,Sharma,2017,B.E.,Computer Engineering,Accenture,QA Engineer,yash.sharma466@gmail.com,+91 8840427040,No
+ALU0467,Sneha,Iyer,2017,B.E.,Business Administration,HCLTech,Software Engineer,sneha.iyer467@yahoo.com,+91 9002877824,Yes
+ALU0468,Akash,Rao,2020,MCA,Computer Science and Engineering,SAP,Technical Consultant,akash.rao468@yahoo.com,+91 9106900240,No
+ALU0469,Amar,Gupta,2023,B.E.,Information Technology,KPMG,Data Analyst,amar.gupta469@outlook.com,+91 8786411073,No
+ALU0470,Ananya,Joshi,2018,B.E.,Mechanical Engineering,LTIMindtree,Systems Engineer,ananya.joshi470@yahoo.com,+91 7938215334,No
+ALU0471,Sneha,Reddy,2016,MBA,Mechanical Engineering,Google,Full Stack Developer,sneha.reddy471@outlook.com,+91 7171271484,No
+ALU0472,Priya,Patel,2021,B.Sc,Computer Engineering,Tech Mahindra,Software Engineer,priya.patel472@yahoo.com,+91 9208940597,No
+ALU0473,Sai,Kumar,2019,MBA,Electronics and Communication Engineering,LTIMindtree,Product Analyst,sai.kumar473@gmail.com,+91 7412129737,Yes
+ALU0474,Nandini,Das,2023,B.Tech,Computer Science (Data Science),Capgemini,Backend Developer,nandini.das474@proton.me,+91 7446362270,Yes
+ALU0475,Siddharth,Shetty,2025,B.Tech,Information Technology,TCS,Associate Consultant,siddharth.shetty475@yahoo.com,+91 7162720486,Yes
+ALU0476,Amar,Kumar,2017,B.Sc,Computer Engineering,Wipro,Database Administrator,amar.kumar476@outlook.com,+91 8110884543,No
+ALU0477,Priya,Bhat,2025,M.Tech,Electrical and Electronics Engineering,LTIMindtree,Software Engineer,priya.bhat477@proton.me,+91 9891796055,Yes
+ALU0478,Siddharth,Reddy,2025,MBA,Business Administration,Wipro,Database Administrator,siddharth.reddy478@gmail.com,+91 7311769311,No
+ALU0479,Sanjay,Patel,2019,MBA,Artificial Intelligence and Machine Learning,Bosch,Data Analyst,sanjay.patel479@yahoo.com,+91 8879804739,No
+ALU0480,Rahul,Reddy,2022,B.E.,Computer Engineering,Deloitte,Business Analyst,rahul.reddy480@proton.me,+91 9343868762,No
+ALU0481,Varun,Rao,2019,MBA,Mechanical Engineering,TCS,UI Developer,varun.rao481@outlook.com,+91 7529290976,Yes
+ALU0482,Aarav,Mishra,2024,M.Tech,Computer Engineering,PwC,Data Analyst,aarav.mishra482@yahoo.com,+91 7902170293,No
+ALU0483,Harish,Shetty,2025,MCA,Information Technology,IBM,Frontend Developer,harish.shetty483@outlook.com,+91 9649500547,No
+ALU0484,Divya,Patel,2017,MBA,Business Administration,Infosys,UI Developer,divya.patel484@proton.me,+91 9768855958,Yes
+ALU0485,Meera,Sharma,2019,B.Tech,Electronics and Communication Engineering,Cognizant Technology Solutions,Senior Software Engineer,meera.sharma485@yahoo.com,+91 8533897596,Yes
+ALU0486,Vishal,Verma,2016,B.Sc,Business Administration,Wipro,Backend Developer,vishal.verma486@yahoo.com,+91 9086758111,No
+ALU0487,Nikhil,Chowdhury,2025,B.Sc,Business Administration,Cognizant,Database Administrator,nikhil.chowdhury487@yahoo.com,+91 8358640560,No
+ALU0488,Charan,Reddy,2020,B.E.,Electronics and Communication Engineering,SAP,Project Engineer,charan.reddy488@yahoo.com,+91 8543980627,Yes
+ALU0489,Yash,Gupta,2022,M.Tech,Civil Engineering,Oracle,Cloud Engineer,yash.gupta489@proton.me,+91 9369412470,Yes
+ALU0490,Deepak,Chowdhury,2016,B.Sc,Information Technology,PwC,Backend Developer,deepak.chowdhury490@yahoo.com,+91 9691307645,Yes
+ALU0491,Keerthi,Sharma,2015,MCA,Computer Science and Engineering,Cognizant Technology Solutions,Database Administrator,keerthi.sharma491@proton.me,+91 9534186676,Yes
+ALU0492,Akash,Das,2019,MCA,Computer Engineering,EY,Business Analyst,akash.das492@yahoo.com,+91 8685767569,Yes
+ALU0493,Nandini,Mishra,2019,B.E.,Civil Engineering,KPMG,Product Analyst,nandini.mishra493@gmail.com,+91 8704179289,No
+ALU0494,Sanjay,Reddy,2025,B.E.,Business Administration,Walmart Global Tech,Frontend Developer,sanjay.reddy494@outlook.com,+91 8916502228,Yes
+ALU0495,Deepak,Mishra,2024,MBA,Information Technology,EY,Systems Engineer,deepak.mishra495@gmail.com,+91 7939820934,No
+ALU0496,Isha,Sharma,2019,B.Sc,Electronics and Communication Engineering,Infosys,Backend Developer,isha.sharma496@yahoo.com,+91 8666847218,No
+ALU0497,Rohit,Kumar,2015,MBA,Mechanical Engineering,Accenture,Product Analyst,rohit.kumar497@yahoo.com,+91 8130933907,Yes
+ALU0498,Priya,Mehta,2020,MCA,Computer Science (Data Science),KPMG,DevOps Engineer,priya.mehta498@proton.me,+91 7957345013,No
+ALU0499,Pooja,Joshi,2022,M.Tech,Business Administration,TCS,Product Analyst,pooja.joshi499@outlook.com,+91 8889350539,Yes
+ALU0500,Isha,Sharma,2023,MBA,Artificial Intelligence and Machine Learning,Capgemini,Business Analyst,isha.sharma500@outlook.com,+91 7675844672,No
+ALU0501,Tarun,Patel,2025,B.E.,Electrical and Electronics Engineering,LTIMindtree,Data Scientist,tarun.patel501@proton.me,+91 9900088306,No
+ALU0502,Sahana,Singh,2024,B.E.,Electrical and Electronics Engineering,TCS,Full Stack Developer,sahana.singh502@gmail.com,+91 7549262370,Yes
+ALU0503,Ashwin,Menon,2015,MCA,Information Technology,Infosys,Frontend Developer,ashwin.menon503@yahoo.com,+91 7773255350,No
+ALU0504,Tarun,Mishra,2025,B.Tech,Artificial Intelligence and Machine Learning,Wipro,Backend Developer,tarun.mishra504@proton.me,+91 9605008864,No
+ALU0505,Sahana,Naidu,2018,M.Tech,Business Administration,Cognizant,Database Administrator,sahana.naidu505@outlook.com,+91 9676674027,No
+ALU0506,Charan,Gupta,2022,MCA,Business Administration,Wipro,Full Stack Developer,charan.gupta506@proton.me,+91 8655546199,Yes
+ALU0507,Anil,Reddy,2018,MCA,Computer Engineering,Walmart Global Tech,Project Engineer,anil.reddy507@outlook.com,+91 9600650037,Yes
+ALU0508,Deepak,Pillai,2024,MCA,Computer Science and Engineering,PwC,Product Analyst,deepak.pillai508@gmail.com,+91 7400247855,No
+ALU0509,Vishal,Rao,2024,MCA,Computer Science and Engineering,Walmart Global Tech,Project Engineer,vishal.rao509@proton.me,+91 8590759039,Yes
+ALU0510,Aditi,Menon,2021,B.E.,Civil Engineering,Microsoft,Systems Engineer,aditi.menon510@gmail.com,+91 8827463042,Yes
+ALU0511,Kavya,Pillai,2018,B.Tech,Artificial Intelligence and Machine Learning,Bosch,UI Developer,kavya.pillai511@proton.me,+91 8107263953,Yes
+ALU0512,Aarav,Reddy,2024,MCA,Computer Science (Data Science),KPMG,Software Engineer,aarav.reddy512@proton.me,+91 9811254192,Yes
+ALU0513,Aditi,Gupta,2021,B.Sc,Computer Science (Data Science),Cognizant,Project Engineer,aditi.gupta513@yahoo.com,+91 8122287361,No
+ALU0514,Srinivas,Joshi,2024,B.Sc,Electrical and Electronics Engineering,Capgemini,Project Engineer,srinivas.joshi514@proton.me,+91 7767594840,No
+ALU0515,Sneha,Das,2022,B.Sc,Artificial Intelligence and Machine Learning,Cognizant Technology Solutions,Systems Engineer,sneha.das515@proton.me,+91 7592999772,Yes
+ALU0516,Lakshmi,Verma,2022,MBA,Information Technology,Accenture,Backend Developer,lakshmi.verma516@proton.me,+91 8453579468,Yes
+ALU0517,Charan,Mehta,2025,B.Tech,Computer Science (Data Science),Cognizant,Senior Software Engineer,charan.mehta517@proton.me,+91 7378561387,Yes
+ALU0518,Kavya,Verma,2020,B.Tech,Business Administration,Infosys,QA Engineer,kavya.verma518@proton.me,+91 9636962116,No
+ALU0519,Anusha,Chowdhury,2015,B.E.,Civil Engineering,Google,Software Engineer,anusha.chowdhury519@outlook.com,+91 9821296252,No
+ALU0520,Divya,Kumar,2024,MCA,Computer Engineering,Deloitte,Technical Consultant,divya.kumar520@outlook.com,+91 9894912687,Yes
+ALU0521,Pranav,Verma,2025,B.Tech,Information Technology,Wipro,DevOps Engineer,pranav.verma521@proton.me,+91 8516671766,No
+ALU0522,Rahul,Mishra,2018,MCA,Computer Science and Engineering,Wipro,Data Analyst,rahul.mishra522@yahoo.com,+91 9401375748,No
+ALU0523,Pooja,Iyer,2018,MCA,Electronics and Communication Engineering,Google,QA Engineer,pooja.iyer523@gmail.com,+91 8121448210,Yes
+ALU0524,Rakesh,Menon,2016,MCA,Computer Science (Data Science),KPMG,Cloud Engineer,rakesh.menon524@yahoo.com,+91 7502549822,No
+ALU0525,Siddharth,Mishra,2019,MBA,Civil Engineering,Microsoft,Database Administrator,siddharth.mishra525@proton.me,+91 8044850685,No
+ALU0526,Nandini,Bhat,2025,M.Tech,Business Administration,TCS,Senior Software Engineer,nandini.bhat526@gmail.com,+91 8107327477,Yes
+ALU0527,Priya,Verma,2025,MBA,Electronics and Communication Engineering,LTIMindtree,Project Engineer,priya.verma527@yahoo.com,+91 9218368729,Yes
+ALU0528,Aditi,Iyer,2018,B.Sc,Computer Science (Data Science),Microsoft,Machine Learning Engineer,aditi.iyer528@gmail.com,+91 9381780551,Yes
+ALU0529,Sahana,Gupta,2020,B.E.,Business Administration,HCLTech,Frontend Developer,sahana.gupta529@outlook.com,+91 9143185843,Yes
+ALU0530,Karthik,Verma,2019,B.E.,Electronics and Communication Engineering,Capgemini,Full Stack Developer,karthik.verma530@yahoo.com,+91 7669995863,Yes
+ALU0531,Arjun,Sharma,2025,MBA,Civil Engineering,Bosch,Software Engineer,arjun.sharma531@gmail.com,+91 9071428721,No
+ALU0532,Tejas,Gupta,2022,MCA,Artificial Intelligence and Machine Learning,EY,Frontend Developer,tejas.gupta532@yahoo.com,+91 8708879427,Yes
+ALU0533,Madhav,Mishra,2017,B.Tech,Computer Engineering,Amazon,Senior Software Engineer,madhav.mishra533@gmail.com,+91 9158114593,No
+ALU0534,Rahul,Naidu,2022,B.Tech,Computer Engineering,Google,Machine Learning Engineer,rahul.naidu534@gmail.com,+91 7050766424,Yes
+ALU0535,Priya,Mishra,2016,B.Sc,Mechanical Engineering,Bosch,DevOps Engineer,priya.mishra535@outlook.com,+91 9356061869,No
+ALU0536,Karthik,Iyer,2022,MCA,Mechanical Engineering,Oracle,Frontend Developer,karthik.iyer536@proton.me,+91 8820820806,Yes
+ALU0537,Rakesh,Joshi,2020,M.Tech,Artificial Intelligence and Machine Learning,Google,Frontend Developer,rakesh.joshi537@outlook.com,+91 9473440423,Yes
+ALU0538,Anil,Iyer,2018,MCA,Electrical and Electronics Engineering,Microsoft,Backend Developer,anil.iyer538@outlook.com,+91 7642304025,No
+ALU0539,Aarav,Naidu,2021,M.Tech,Information Technology,SAP,Product Analyst,aarav.naidu539@yahoo.com,+91 9090017854,No
+ALU0540,Kavya,Das,2024,B.Tech,Electrical and Electronics Engineering,Accenture,Frontend Developer,kavya.das540@gmail.com,+91 7925425090,No
+ALU0541,Sahana,Patel,2022,MBA,Mechanical Engineering,HCLTech,Systems Engineer,sahana.patel541@yahoo.com,+91 9406685070,No
+ALU0542,Pooja,Reddy,2021,B.Tech,Mechanical Engineering,Walmart Global Tech,Technical Consultant,pooja.reddy542@outlook.com,+91 9477568014,Yes
+ALU0543,Nandini,Nair,2020,B.Sc,Computer Engineering,EY,Associate Consultant,nandini.nair543@gmail.com,+91 8636687473,No
+ALU0544,Rohit,Rao,2017,MBA,Mechanical Engineering,Amazon,Technical Consultant,rohit.rao544@proton.me,+91 7306420495,Yes
+ALU0545,Charan,Gupta,2018,B.Sc,Mechanical Engineering,SAP,Cloud Engineer,charan.gupta545@yahoo.com,+91 9600108647,No
+ALU0546,Manoj,Bhat,2020,MBA,Business Administration,KPMG,Associate Consultant,manoj.bhat546@proton.me,+91 7718625803,Yes
+ALU0547,Aditya,Rao,2018,MBA,Artificial Intelligence and Machine Learning,Wipro,Backend Developer,aditya.rao547@outlook.com,+91 8705297819,Yes
+ALU0548,Anil,Sharma,2022,MCA,Computer Science and Engineering,TCS,QA Engineer,anil.sharma548@gmail.com,+91 7446369090,No
+ALU0549,Tejas,Rao,2016,MBA,Electrical and Electronics Engineering,Tech Mahindra,Full Stack Developer,tejas.rao549@outlook.com,+91 8220523522,No
+ALU0550,Varun,Rao,2017,MCA,Information Technology,TCS,Software Developer,varun.rao550@yahoo.com,+91 8396729008,No
+ALU0551,Rohit,Das,2019,MCA,Civil Engineering,Cognizant,UI Developer,rohit.das551@outlook.com,+91 9537599506,No
+ALU0552,Varun,Mishra,2021,MCA,Computer Engineering,Tech Mahindra,Systems Engineer,varun.mishra552@proton.me,+91 9317856944,Yes
+ALU0553,Ananya,Bhat,2019,B.Sc,Electrical and Electronics Engineering,HCLTech,Business Analyst,ananya.bhat553@yahoo.com,+91 7045336904,Yes
+ALU0554,Shreya,Rao,2020,B.Sc,Civil Engineering,PwC,Software Engineer,shreya.rao554@proton.me,+91 9048987473,No
+ALU0555,Aarav,Shetty,2019,MCA,Electronics and Communication Engineering,TCS,UI Developer,aarav.shetty555@yahoo.com,+91 7809906184,No
+ALU0556,Sneha,Shetty,2021,B.E.,Information Technology,SAP,QA Engineer,sneha.shetty556@proton.me,+91 7947437263,No
+ALU0557,Ananya,Shetty,2025,B.E.,Computer Engineering,Bosch,DevOps Engineer,ananya.shetty557@yahoo.com,+91 9785101763,No
+ALU0558,Rakesh,Singh,2016,B.E.,Information Technology,Tech Mahindra,Data Scientist,rakesh.singh558@proton.me,+91 9653127632,No
+ALU0559,Manoj,Chowdhury,2022,B.E.,Mechanical Engineering,TCS,Business Analyst,manoj.chowdhury559@gmail.com,+91 9297681898,Yes
+ALU0560,Deepak,Patel,2019,B.Sc,Information Technology,Google,Software Engineer,deepak.patel560@outlook.com,+91 7387393108,Yes
+ALU0561,Aarav,Pillai,2018,B.Sc,Electrical and Electronics Engineering,Tech Mahindra,Senior Software Engineer,aarav.pillai561@yahoo.com,+91 8991509618,Yes
+ALU0562,Nikhil,Sharma,2017,B.Tech,Artificial Intelligence and Machine Learning,Microsoft,Data Analyst,nikhil.sharma562@proton.me,+91 7779982123,Yes
+ALU0563,Kavya,Mehta,2015,B.Tech,Electronics and Communication Engineering,Microsoft,Associate Consultant,kavya.mehta563@outlook.com,+91 7143925622,Yes
+ALU0564,Rohit,Patel,2023,MBA,Electronics and Communication Engineering,EY,QA Engineer,rohit.patel564@yahoo.com,+91 8387545832,Yes
+ALU0565,Varun,Kumar,2023,MCA,Computer Science (Data Science),HCLTech,Senior Software Engineer,varun.kumar565@yahoo.com,+91 7853511493,No
+ALU0566,Akhil,Singh,2016,B.E.,Electrical and Electronics Engineering,LTIMindtree,Software Engineer,akhil.singh566@outlook.com,+91 8185840646,Yes
+ALU0567,Rahul,Verma,2015,B.Tech,Business Administration,EY,Technical Consultant,rahul.verma567@outlook.com,+91 8595145112,Yes
+ALU0568,Karthik,Naidu,2022,B.Tech,Business Administration,LTIMindtree,Software Developer,karthik.naidu568@gmail.com,+91 8526936792,Yes
+ALU0569,Aditi,Das,2016,B.E.,Civil Engineering,Deloitte,Machine Learning Engineer,aditi.das569@yahoo.com,+91 8884283304,Yes
+ALU0570,Aditya,Mehta,2020,MBA,Information Technology,HCLTech,Software Developer,aditya.mehta570@proton.me,+91 8879048201,No
+ALU0571,Siddharth,Pillai,2018,MCA,Information Technology,PwC,Systems Engineer,siddharth.pillai571@yahoo.com,+91 9011740002,No
+ALU0572,Tarun,Das,2017,B.Tech,Computer Engineering,Cognizant,Associate Consultant,tarun.das572@yahoo.com,+91 8131076509,No
+ALU0573,Rohit,Reddy,2025,MCA,Electrical and Electronics Engineering,IBM,Software Engineer,rohit.reddy573@yahoo.com,+91 9663727197,Yes
+ALU0574,Neha,Sharma,2025,MCA,Electrical and Electronics Engineering,Capgemini,Product Analyst,neha.sharma574@proton.me,+91 9368536195,Yes
+ALU0575,Tejas,Nair,2020,M.Tech,Mechanical Engineering,Accenture,Data Scientist,tejas.nair575@gmail.com,+91 7188021892,Yes
+ALU0576,Deepak,Kumar,2018,B.Tech,Civil Engineering,Capgemini,Data Scientist,deepak.kumar576@gmail.com,+91 9452478646,No
+ALU0577,Vishal,Pillai,2023,MCA,Business Administration,HCLTech,Software Developer,vishal.pillai577@yahoo.com,+91 7947997148,Yes
+ALU0578,Aarav,Singh,2025,M.Tech,Computer Science (Data Science),Google,Software Developer,aarav.singh578@yahoo.com,+91 9396677171,No
+ALU0579,Pranav,Kumar,2024,B.Sc,Computer Engineering,Infosys,Data Analyst,pranav.kumar579@yahoo.com,+91 7334729865,Yes
+ALU0580,Shreya,Patel,2016,MBA,Electronics and Communication Engineering,PwC,QA Engineer,shreya.patel580@outlook.com,+91 7829441721,Yes
+ALU0581,Srinivas,Naidu,2023,MBA,Computer Engineering,Amazon,Data Scientist,srinivas.naidu581@yahoo.com,+91 9896923497,No
+ALU0582,Aditi,Shetty,2016,B.E.,Information Technology,PwC,QA Engineer,aditi.shetty582@yahoo.com,+91 9824077950,Yes
+ALU0583,Siddharth,Chowdhury,2022,B.Sc,Mechanical Engineering,PwC,Machine Learning Engineer,siddharth.chowdhury583@yahoo.com,+91 8771000941,No
+ALU0584,Keerthi,Gupta,2024,B.E.,Business Administration,PwC,Backend Developer,keerthi.gupta584@proton.me,+91 9363257229,No
+ALU0585,Pranav,Bhat,2022,M.Tech,Computer Science and Engineering,Infosys,Cloud Engineer,pranav.bhat585@gmail.com,+91 9223115272,Yes
+ALU0586,Naveen,Reddy,2019,B.E.,Electronics and Communication Engineering,LTIMindtree,Software Engineer,naveen.reddy586@yahoo.com,+91 9377965146,Yes
+ALU0587,Anil,Kumar,2022,B.Sc,Information Technology,Cognizant,DevOps Engineer,anil.kumar587@yahoo.com,+91 9500339713,Yes
+ALU0588,Isha,Iyer,2019,B.Tech,Business Administration,Microsoft,Database Administrator,isha.iyer588@outlook.com,+91 7331578205,No
+ALU0589,Sahana,Naidu,2022,MBA,Business Administration,Accenture,Technical Consultant,sahana.naidu589@yahoo.com,+91 7160509766,No
+ALU0590,Ananya,Kumar,2020,B.Sc,Electrical and Electronics Engineering,Amazon,Data Scientist,ananya.kumar590@outlook.com,+91 9803665224,Yes
+ALU0591,Varun,Mehta,2015,B.Sc,Computer Engineering,Infosys,Machine Learning Engineer,varun.mehta591@outlook.com,+91 8403731150,Yes
+ALU0592,Bhavana,Kumar,2025,MBA,Electrical and Electronics Engineering,Google,Technical Consultant,bhavana.kumar592@gmail.com,+91 7953850512,No
+ALU0593,Meera,Mehta,2017,B.E.,Mechanical Engineering,Wipro,Senior Software Engineer,meera.mehta593@gmail.com,+91 9354296652,No
+ALU0594,Kavya,Sharma,2021,MCA,Electrical and Electronics Engineering,Cognizant,Business Analyst,kavya.sharma594@proton.me,+91 9402158803,Yes
+ALU0595,Sai,Mehta,2025,MCA,Electronics and Communication Engineering,PwC,Technical Consultant,sai.mehta595@outlook.com,+91 8040735415,Yes
+ALU0596,Manoj,Shetty,2020,MBA,Business Administration,Wipro,Data Scientist,manoj.shetty596@proton.me,+91 8819093035,No
+ALU0597,Pooja,Singh,2020,B.Sc,Business Administration,SAP,Software Engineer,pooja.singh597@yahoo.com,+91 7726945805,No
+ALU0598,Tejas,Bhat,2024,B.E.,Civil Engineering,Infosys,Full Stack Developer,tejas.bhat598@outlook.com,+91 9943595471,No
+ALU0599,Bhavana,Sharma,2016,MBA,Computer Science and Engineering,Deloitte,Technical Consultant,bhavana.sharma599@outlook.com,+91 8235598059,Yes
+ALU0600,Nikhil,Patel,2019,M.Tech,Civil Engineering,TCS,Machine Learning Engineer,nikhil.patel600@outlook.com,+91 9310715848,Yes
+ALU0601,Harish,Das,2023,B.Sc,Computer Engineering,EY,Technical Consultant,harish.das601@outlook.com,+91 9985307816,Yes
+ALU0602,Priya,Mishra,2025,MCA,Computer Science and Engineering,HCLTech,Frontend Developer,priya.mishra602@gmail.com,+91 8219828872,Yes
+ALU0603,Aditi,Chowdhury,2019,B.Tech,Civil Engineering,SAP,Software Engineer,aditi.chowdhury603@gmail.com,+91 8669218196,No
+ALU0604,Vishal,Joshi,2016,B.Tech,Artificial Intelligence and Machine Learning,SAP,QA Engineer,vishal.joshi604@outlook.com,+91 8635099223,Yes
+ALU0605,Neha,Pillai,2024,MCA,Computer Science (Data Science),IBM,Backend Developer,neha.pillai605@proton.me,+91 9408134650,Yes
+ALU0606,Akash,Verma,2023,B.Sc,Mechanical Engineering,EY,QA Engineer,akash.verma606@outlook.com,+91 7078908105,No
+ALU0607,Yash,Joshi,2020,MBA,Artificial Intelligence and Machine Learning,Deloitte,Product Analyst,yash.joshi607@yahoo.com,+91 7266329625,No
+ALU0608,Priya,Reddy,2023,B.Sc,Electronics and Communication Engineering,Cognizant,Machine Learning Engineer,priya.reddy608@proton.me,+91 9821500440,Yes
+ALU0609,Ananya,Mehta,2023,MBA,Business Administration,SAP,Full Stack Developer,ananya.mehta609@proton.me,+91 8032341816,Yes
+ALU0610,Ravi,Nair,2024,B.Sc,Civil Engineering,PwC,Business Analyst,ravi.nair610@outlook.com,+91 9802348672,Yes
+ALU0611,Swathi,Das,2025,B.E.,Information Technology,Tech Mahindra,Product Analyst,swathi.das611@outlook.com,+91 8847112068,Yes
+ALU0612,Vikas,Mishra,2017,B.Sc,Computer Science (Data Science),PwC,UI Developer,vikas.mishra612@gmail.com,+91 7790854733,No
+ALU0613,Bhavana,Reddy,2020,M.Tech,Electrical and Electronics Engineering,Tech Mahindra,Associate Consultant,bhavana.reddy613@yahoo.com,+91 7652650570,Yes
+ALU0614,Anil,Rao,2017,B.Tech,Business Administration,Bosch,DevOps Engineer,anil.rao614@outlook.com,+91 9561349676,Yes
+ALU0615,Isha,Reddy,2020,B.Tech,Civil Engineering,Cognizant,Product Analyst,isha.reddy615@proton.me,+91 9789875688,No
+ALU0616,Deepak,Mehta,2022,M.Tech,Information Technology,IBM,Backend Developer,deepak.mehta616@outlook.com,+91 7138424884,No
+ALU0617,Madhav,Reddy,2019,M.Tech,Electronics and Communication Engineering,Walmart Global Tech,Backend Developer,madhav.reddy617@outlook.com,+91 7284053367,Yes
+ALU0618,Riya,Chowdhury,2022,MBA,Mechanical Engineering,Google,Full Stack Developer,riya.chowdhury618@proton.me,+91 8738889526,Yes
+ALU0619,Tarun,Mehta,2020,M.Tech,Business Administration,Cognizant Technology Solutions,Technical Consultant,tarun.mehta619@gmail.com,+91 9236170837,Yes
+ALU0620,Riya,Bhat,2015,B.E.,Computer Engineering,PwC,QA Engineer,riya.bhat620@gmail.com,+91 9395307335,No
+ALU0621,Shreya,Kumar,2018,B.Sc,Civil Engineering,Microsoft,Cloud Engineer,shreya.kumar621@yahoo.com,+91 8981470996,Yes
+ALU0622,Ravi,Nair,2024,B.Tech,Computer Engineering,Cognizant,Associate Consultant,ravi.nair622@proton.me,+91 7388440314,Yes
+ALU0623,Deepak,Mishra,2023,B.E.,Electrical and Electronics Engineering,Amazon,Machine Learning Engineer,deepak.mishra623@proton.me,+91 7106996713,Yes
+ALU0624,Rohit,Mishra,2018,M.Tech,Computer Science (Data Science),HCLTech,Machine Learning Engineer,rohit.mishra624@outlook.com,+91 7530618370,Yes
+ALU0625,Arjun,Bhat,2025,B.Sc,Computer Science (Data Science),KPMG,QA Engineer,arjun.bhat625@outlook.com,+91 8626412328,No
+ALU0626,Akash,Naidu,2020,MCA,Information Technology,IBM,Business Analyst,akash.naidu626@outlook.com,+91 7220376885,No
+ALU0627,Naveen,Nair,2022,B.Sc,Information Technology,Accenture,Business Analyst,naveen.nair627@outlook.com,+91 7015173668,No
+ALU0628,Aarav,Bhat,2022,M.Tech,Computer Engineering,TCS,Technical Consultant,aarav.bhat628@proton.me,+91 8021679756,Yes
+ALU0629,Swathi,Pillai,2022,M.Tech,Civil Engineering,Wipro,Technical Consultant,swathi.pillai629@gmail.com,+91 8051035049,No
+ALU0630,Tejas,Das,2018,B.Tech,Information Technology,Cognizant,Software Developer,tejas.das630@yahoo.com,+91 7157715720,Yes
+ALU0631,Akash,Mishra,2024,B.Sc,Mechanical Engineering,Wipro,Software Developer,akash.mishra631@gmail.com,+91 8790816346,Yes
+ALU0632,Charan,Nair,2024,MBA,Business Administration,Cognizant Technology Solutions,UI Developer,charan.nair632@outlook.com,+91 8955661068,No
+ALU0633,Akash,Sharma,2019,B.Sc,Mechanical Engineering,Microsoft,Data Analyst,akash.sharma633@proton.me,+91 9364255319,Yes
+ALU0634,Meera,Pillai,2017,B.Tech,Artificial Intelligence and Machine Learning,LTIMindtree,Product Analyst,meera.pillai634@proton.me,+91 9253338333,Yes
+ALU0635,Aditi,Singh,2024,B.Tech,Computer Science (Data Science),Cognizant Technology Solutions,Product Analyst,aditi.singh635@gmail.com,+91 9077316693,No
+ALU0636,Ravi,Chowdhury,2020,B.Sc,Computer Engineering,Cognizant Technology Solutions,Technical Consultant,ravi.chowdhury636@yahoo.com,+91 7557113691,No
+ALU0637,Shreya,Pillai,2022,B.E.,Business Administration,Deloitte,Cloud Engineer,shreya.pillai637@outlook.com,+91 7006789986,Yes
+ALU0638,Aditya,Bhat,2025,B.Tech,Electronics and Communication Engineering,Bosch,Project Engineer,aditya.bhat638@proton.me,+91 7195387472,No
+ALU0639,Pooja,Das,2025,B.E.,Computer Science and Engineering,SAP,Backend Developer,pooja.das639@yahoo.com,+91 8092714915,Yes
+ALU0640,Naveen,Nair,2023,MCA,Mechanical Engineering,TCS,Data Scientist,naveen.nair640@yahoo.com,+91 8466136834,No
+ALU0641,Keerthi,Mishra,2024,B.Tech,Information Technology,Capgemini,Machine Learning Engineer,keerthi.mishra641@yahoo.com,+91 9888249353,No
+ALU0642,Sahana,Kumar,2025,B.E.,Civil Engineering,Cognizant,Associate Consultant,sahana.kumar642@yahoo.com,+91 8986293827,No
+ALU0643,Lakshmi,Kumar,2023,B.Sc,Business Administration,Walmart Global Tech,Machine Learning Engineer,lakshmi.kumar643@gmail.com,+91 7894480510,No
+ALU0644,Pooja,Sharma,2017,B.Sc,Computer Science and Engineering,LTIMindtree,QA Engineer,pooja.sharma644@outlook.com,+91 9452347464,No
+ALU0645,Deepak,Chowdhury,2016,B.Sc,Mechanical Engineering,Infosys,DevOps Engineer,deepak.chowdhury645@proton.me,+91 7372793655,No
+ALU0646,Karthik,Joshi,2022,B.Sc,Electronics and Communication Engineering,KPMG,Cloud Engineer,karthik.joshi646@outlook.com,+91 7482029643,No
+ALU0647,Akash,Singh,2016,M.Tech,Computer Engineering,TCS,Senior Software Engineer,akash.singh647@outlook.com,+91 7816952955,No
+ALU0648,Sahana,Menon,2019,B.Sc,Information Technology,Accenture,Product Analyst,sahana.menon648@outlook.com,+91 7881271916,Yes
+ALU0649,Rohit,Mehta,2023,B.Tech,Computer Science and Engineering,Tech Mahindra,Software Developer,rohit.mehta649@gmail.com,+91 8431468604,No
+ALU0650,Akash,Patel,2023,MBA,Artificial Intelligence and Machine Learning,TCS,Database Administrator,akash.patel650@yahoo.com,+91 9743843492,Yes
+ALU0651,Neha,Singh,2018,B.Sc,Artificial Intelligence and Machine Learning,PwC,Machine Learning Engineer,neha.singh651@proton.me,+91 9882455823,Yes
+ALU0652,Manoj,Rao,2017,B.Sc,Computer Science (Data Science),TCS,Technical Consultant,manoj.rao652@gmail.com,+91 7887243074,No
+ALU0653,Sneha,Gupta,2019,B.E.,Artificial Intelligence and Machine Learning,Cognizant Technology Solutions,Full Stack Developer,sneha.gupta653@outlook.com,+91 7305985809,No
+ALU0654,Tejas,Gupta,2023,M.Tech,Computer Science and Engineering,Cognizant,Software Engineer,tejas.gupta654@proton.me,+91 9901232981,Yes
+ALU0655,Anil,Mehta,2015,B.Tech,Electrical and Electronics Engineering,Microsoft,Frontend Developer,anil.mehta655@proton.me,+91 9647054211,No
+ALU0656,Naveen,Gupta,2018,MBA,Computer Engineering,Wipro,Associate Consultant,naveen.gupta656@outlook.com,+91 7399071914,No
+ALU0657,Anil,Bhat,2019,MBA,Civil Engineering,EY,Full Stack Developer,anil.bhat657@outlook.com,+91 7617279928,No
+ALU0658,Pranav,Mehta,2017,MBA,Mechanical Engineering,LTIMindtree,Associate Consultant,pranav.mehta658@proton.me,+91 7129983470,Yes
+ALU0659,Sahana,Patel,2020,M.Tech,Civil Engineering,IBM,Cloud Engineer,sahana.patel659@yahoo.com,+91 9596051033,Yes
+ALU0660,Sanjay,Patel,2021,MBA,Computer Science (Data Science),LTIMindtree,UI Developer,sanjay.patel660@gmail.com,+91 8297587456,No
+ALU0661,Rahul,Mishra,2021,B.E.,Business Administration,Deloitte,UI Developer,rahul.mishra661@outlook.com,+91 9071783372,No
+ALU0662,Amar,Gupta,2018,MBA,Business Administration,Amazon,Project Engineer,amar.gupta662@yahoo.com,+91 9338725151,Yes
+ALU0663,Deepak,Sharma,2024,M.Tech,Computer Science (Data Science),Cognizant Technology Solutions,Technical Consultant,deepak.sharma663@proton.me,+91 8397488262,Yes
+ALU0664,Riya,Naidu,2019,M.Tech,Computer Science (Data Science),Bosch,Data Scientist,riya.naidu664@proton.me,+91 8406207691,No
+ALU0665,Vikas,Kumar,2016,B.E.,Information Technology,Cognizant Technology Solutions,Software Engineer,vikas.kumar665@outlook.com,+91 9838463998,Yes
+ALU0666,Riya,Das,2019,M.Tech,Business Administration,Cognizant Technology Solutions,Associate Consultant,riya.das666@outlook.com,+91 7883310198,No
+ALU0667,Naveen,Mishra,2025,B.Sc,Electrical and Electronics Engineering,Oracle,Data Analyst,naveen.mishra667@gmail.com,+91 9626332786,No
+ALU0668,Ashwin,Nair,2015,B.Sc,Computer Engineering,Infosys,Software Engineer,ashwin.nair668@yahoo.com,+91 7471150679,No
+ALU0669,Aditya,Verma,2021,MBA,Business Administration,Microsoft,Machine Learning Engineer,aditya.verma669@proton.me,+91 8743896971,No
+ALU0670,Ravi,Das,2018,MBA,Information Technology,EY,Business Analyst,ravi.das670@outlook.com,+91 9385517516,No
+ALU0671,Pranav,Shetty,2017,B.Sc,Information Technology,Cognizant,Software Engineer,pranav.shetty671@gmail.com,+91 9784810609,Yes
+ALU0672,Bhavana,Pillai,2025,M.Tech,Information Technology,Wipro,Business Analyst,bhavana.pillai672@proton.me,+91 8958628128,No
+ALU0673,Tejas,Naidu,2022,MCA,Electrical and Electronics Engineering,PwC,Associate Consultant,tejas.naidu673@proton.me,+91 8526032931,Yes
+ALU0674,Deepak,Shetty,2024,B.Tech,Business Administration,EY,Full Stack Developer,deepak.shetty674@yahoo.com,+91 8764534958,No
+ALU0675,Akash,Kumar,2024,M.Tech,Mechanical Engineering,Accenture,Database Administrator,akash.kumar675@proton.me,+91 9965663196,Yes
+ALU0676,Bhavana,Menon,2019,M.Tech,Computer Engineering,Wipro,Product Analyst,bhavana.menon676@gmail.com,+91 8053260431,No
+ALU0677,Varun,Sharma,2025,MBA,Computer Engineering,Cognizant Technology Solutions,Cloud Engineer,varun.sharma677@gmail.com,+91 8475519583,Yes
+ALU0678,Sahana,Bhat,2023,M.Tech,Business Administration,LTIMindtree,Project Engineer,sahana.bhat678@yahoo.com,+91 8265374436,No
+ALU0679,Charan,Kumar,2024,MBA,Artificial Intelligence and Machine Learning,Cognizant Technology Solutions,DevOps Engineer,charan.kumar679@gmail.com,+91 9702823150,No
+ALU0680,Swathi,Naidu,2024,B.Tech,Artificial Intelligence and Machine Learning,Bosch,Software Engineer,swathi.naidu680@yahoo.com,+91 9082029167,Yes
+ALU0681,Ashwin,Menon,2016,B.Sc,Artificial Intelligence and Machine Learning,Cognizant,Technical Consultant,ashwin.menon681@yahoo.com,+91 8182048491,No
+ALU0682,Aarav,Patel,2024,B.E.,Business Administration,Cognizant,Associate Consultant,aarav.patel682@yahoo.com,+91 7753334536,No
+ALU0683,Aditi,Verma,2022,B.E.,Computer Engineering,Infosys,Machine Learning Engineer,aditi.verma683@gmail.com,+91 7623071990,Yes
+ALU0684,Sai,Shetty,2021,B.E.,Civil Engineering,SAP,Frontend Developer,sai.shetty684@outlook.com,+91 9481449107,No
+ALU0685,Akhil,Iyer,2016,B.Tech,Information Technology,Google,QA Engineer,akhil.iyer685@proton.me,+91 8294361972,No
+ALU0686,Lakshmi,Das,2018,M.Tech,Electrical and Electronics Engineering,EY,DevOps Engineer,lakshmi.das686@outlook.com,+91 9278231594,No
+ALU0687,Aarav,Nair,2022,M.Tech,Mechanical Engineering,KPMG,Software Developer,aarav.nair687@gmail.com,+91 9281887562,No
+ALU0688,Ravi,Chowdhury,2025,B.Sc,Mechanical Engineering,HCLTech,DevOps Engineer,ravi.chowdhury688@gmail.com,+91 8096693765,No
+ALU0689,Rohit,Verma,2025,MCA,Electronics and Communication Engineering,KPMG,Machine Learning Engineer,rohit.verma689@outlook.com,+91 8345483676,Yes
+ALU0690,Yash,Reddy,2016,B.Tech,Electrical and Electronics Engineering,Accenture,Product Analyst,yash.reddy690@gmail.com,+91 9944198153,No
+ALU0691,Pooja,Verma,2019,B.Sc,Electronics and Communication Engineering,Infosys,Software Engineer,pooja.verma691@gmail.com,+91 7244305931,Yes
+ALU0692,Tarun,Patel,2016,B.Tech,Business Administration,Cognizant,QA Engineer,tarun.patel692@outlook.com,+91 7476076030,Yes
+ALU0693,Kavya,Nair,2022,MBA,Computer Science (Data Science),SAP,Associate Consultant,kavya.nair693@yahoo.com,+91 8833879716,No
+ALU0694,Kavya,Naidu,2016,B.Sc,Computer Science and Engineering,Microsoft,QA Engineer,kavya.naidu694@yahoo.com,+91 7257949939,No
+ALU0695,Kavya,Naidu,2022,B.Tech,Civil Engineering,Capgemini,Technical Consultant,kavya.naidu695@proton.me,+91 7766403264,No
+ALU0696,Anil,Rao,2023,M.Tech,Electronics and Communication Engineering,Bosch,Data Scientist,anil.rao696@proton.me,+91 8112380464,Yes
+ALU0697,Akash,Sharma,2016,MCA,Artificial Intelligence and Machine Learning,Google,Software Engineer,akash.sharma697@proton.me,+91 7639324232,Yes
+ALU0698,Akash,Mehta,2019,B.E.,Mechanical Engineering,Microsoft,Database Administrator,akash.mehta698@gmail.com,+91 9213553149,No
+ALU0699,Sahana,Shetty,2021,MBA,Computer Science (Data Science),PwC,Full Stack Developer,sahana.shetty699@gmail.com,+91 8651087940,No
+ALU0700,Arjun,Mishra,2023,B.Sc,Mechanical Engineering,Walmart Global Tech,Cloud Engineer,arjun.mishra700@proton.me,+91 7237059301,Yes
+ALU0701,Pranav,Das,2020,B.Tech,Civil Engineering,Tech Mahindra,Backend Developer,pranav.das701@outlook.com,+91 9381454037,Yes
+ALU0702,Priya,Singh,2019,MBA,Electrical and Electronics Engineering,Accenture,Systems Engineer,priya.singh702@proton.me,+91 7364481568,No
+ALU0703,Lakshmi,Singh,2017,B.Tech,Electronics and Communication Engineering,TCS,Database Administrator,lakshmi.singh703@outlook.com,+91 9101237808,No
+ALU0704,Amar,Das,2025,B.Sc,Civil Engineering,PwC,Associate Consultant,amar.das704@gmail.com,+91 7159097113,No
+ALU0705,Akhil,Gupta,2015,M.Tech,Computer Science (Data Science),Capgemini,Product Analyst,akhil.gupta705@proton.me,+91 9912322067,Yes
+ALU0706,Lakshmi,Mishra,2018,B.Tech,Computer Science and Engineering,Cognizant,Senior Software Engineer,lakshmi.mishra706@gmail.com,+91 9023872904,Yes
+ALU0707,Karthik,Rao,2015,B.E.,Computer Science and Engineering,Tech Mahindra,Data Scientist,karthik.rao707@proton.me,+91 9625195227,Yes
+ALU0708,Swathi,Sharma,2016,B.Tech,Civil Engineering,Bosch,Technical Consultant,swathi.sharma708@outlook.com,+91 7271055863,Yes
+ALU0709,Ravi,Gupta,2025,M.Tech,Mechanical Engineering,Accenture,Database Administrator,ravi.gupta709@outlook.com,+91 8381218039,Yes
+ALU0710,Madhav,Kumar,2024,B.E.,Mechanical Engineering,Wipro,Data Scientist,madhav.kumar710@yahoo.com,+91 7606607450,No
+ALU0711,Charan,Joshi,2023,B.E.,Civil Engineering,Deloitte,Database Administrator,charan.joshi711@gmail.com,+91 7572823571,Yes
+ALU0712,Varun,Chowdhury,2021,B.E.,Computer Science and Engineering,EY,Data Analyst,varun.chowdhury712@gmail.com,+91 7031026838,Yes
+ALU0713,Ananya,Mishra,2019,M.Tech,Civil Engineering,Cognizant,Backend Developer,ananya.mishra713@outlook.com,+91 9748030488,No
+ALU0714,Shreya,Bhat,2021,B.E.,Information Technology,Bosch,Software Developer,shreya.bhat714@outlook.com,+91 9147001030,Yes
+ALU0715,Varun,Nair,2020,M.Tech,Computer Science and Engineering,PwC,Full Stack Developer,varun.nair715@outlook.com,+91 7504692228,Yes
+ALU0716,Tejas,Joshi,2023,MCA,Electronics and Communication Engineering,Google,Backend Developer,tejas.joshi716@yahoo.com,+91 7227929714,Yes
+ALU0717,Arjun,Rao,2025,M.Tech,Civil Engineering,IBM,Frontend Developer,arjun.rao717@gmail.com,+91 7232046822,No
+ALU0718,Meera,Singh,2021,B.Sc,Mechanical Engineering,Bosch,Associate Consultant,meera.singh718@gmail.com,+91 7448485198,Yes
+ALU0719,Siddharth,Naidu,2017,B.Tech,Civil Engineering,KPMG,Data Scientist,siddharth.naidu719@gmail.com,+91 8010605064,No
+ALU0720,Swathi,Mishra,2020,M.Tech,Electronics and Communication Engineering,Walmart Global Tech,Machine Learning Engineer,swathi.mishra720@outlook.com,+91 7473017075,No
+ALU0721,Isha,Patel,2018,MBA,Electrical and Electronics Engineering,Capgemini,QA Engineer,isha.patel721@outlook.com,+91 7315807718,No
+ALU0722,Swathi,Pillai,2015,M.Tech,Information Technology,Capgemini,Technical Consultant,swathi.pillai722@proton.me,+91 7764765165,No
+ALU0723,Pranav,Rao,2022,MBA,Electronics and Communication Engineering,SAP,Systems Engineer,pranav.rao723@yahoo.com,+91 7868489173,No
+ALU0724,Ashwin,Kumar,2024,B.Tech,Artificial Intelligence and Machine Learning,Cognizant,Data Scientist,ashwin.kumar724@proton.me,+91 8969581487,No
+ALU0725,Charan,Gupta,2018,B.Sc,Business Administration,IBM,Technical Consultant,charan.gupta725@outlook.com,+91 9483012703,Yes
+ALU0726,Ananya,Shetty,2023,M.Tech,Electronics and Communication Engineering,Cognizant Technology Solutions,Senior Software Engineer,ananya.shetty726@proton.me,+91 8199029793,Yes
+ALU0727,Keerthi,Shetty,2018,B.E.,Mechanical Engineering,Amazon,Database Administrator,keerthi.shetty727@outlook.com,+91 9541639799,Yes
+ALU0728,Srinivas,Reddy,2021,B.Tech,Computer Science and Engineering,EY,Product Analyst,srinivas.reddy728@gmail.com,+91 8828357471,No
+ALU0729,Sahana,Patel,2022,M.Tech,Electronics and Communication Engineering,Wipro,UI Developer,sahana.patel729@gmail.com,+91 9977098835,No
+ALU0730,Harish,Rao,2020,B.Sc,Electronics and Communication Engineering,SAP,Data Analyst,harish.rao730@gmail.com,+91 9060652074,No
+ALU0731,Charan,Bhat,2024,MBA,Business Administration,TCS,Associate Consultant,charan.bhat731@proton.me,+91 7595385173,No
+ALU0732,Deepak,Joshi,2025,M.Tech,Computer Science and Engineering,SAP,Data Analyst,deepak.joshi732@proton.me,+91 9966751401,No
+ALU0733,Shreya,Kumar,2019,M.Tech,Artificial Intelligence and Machine Learning,Bosch,UI Developer,shreya.kumar733@outlook.com,+91 9940614579,Yes
+ALU0734,Tejas,Gupta,2015,MCA,Mechanical Engineering,Infosys,Data Scientist,tejas.gupta734@proton.me,+91 8570200796,No
+ALU0735,Tejas,Kumar,2020,B.Sc,Information Technology,SAP,UI Developer,tejas.kumar735@gmail.com,+91 9408438165,Yes
+ALU0736,Ashwin,Gupta,2018,MCA,Computer Science (Data Science),SAP,Senior Software Engineer,ashwin.gupta736@outlook.com,+91 7968245518,No
+ALU0737,Pooja,Iyer,2023,MBA,Electrical and Electronics Engineering,HCLTech,Software Developer,pooja.iyer737@gmail.com,+91 8601222993,No
+ALU0738,Riya,Pillai,2023,MCA,Computer Science (Data Science),EY,UI Developer,riya.pillai738@yahoo.com,+91 8941232371,No
+ALU0739,Yash,Sharma,2018,M.Tech,Computer Science (Data Science),Wipro,QA Engineer,yash.sharma739@outlook.com,+91 8238551232,Yes
+ALU0740,Anil,Naidu,2019,B.Tech,Information Technology,EY,Business Analyst,anil.naidu740@outlook.com,+91 9236336378,Yes
+ALU0741,Meera,Shetty,2025,MCA,Information Technology,EY,Systems Engineer,meera.shetty741@proton.me,+91 8906364408,Yes
+ALU0742,Meera,Singh,2016,B.Tech,Electronics and Communication Engineering,KPMG,Machine Learning Engineer,meera.singh742@proton.me,+91 9485517370,No
+ALU0743,Vikas,Gupta,2022,MCA,Computer Engineering,PwC,Associate Consultant,vikas.gupta743@proton.me,+91 8306023701,Yes
+ALU0744,Naveen,Naidu,2019,B.E.,Civil Engineering,Oracle,Cloud Engineer,naveen.naidu744@gmail.com,+91 7637108294,No
+ALU0745,Meera,Bhat,2017,MCA,Information Technology,PwC,Cloud Engineer,meera.bhat745@outlook.com,+91 7753162653,Yes
+ALU0746,Charan,Verma,2016,B.Tech,Mechanical Engineering,Cognizant Technology Solutions,Business Analyst,charan.verma746@proton.me,+91 8118440391,No
+ALU0747,Deepak,Singh,2023,MBA,Computer Science and Engineering,Walmart Global Tech,Machine Learning Engineer,deepak.singh747@yahoo.com,+91 7635415559,No
+ALU0748,Riya,Das,2017,MCA,Artificial Intelligence and Machine Learning,Accenture,Software Engineer,riya.das748@proton.me,+91 9144979311,Yes
+ALU0749,Rohit,Gupta,2017,B.Tech,Computer Engineering,KPMG,Machine Learning Engineer,rohit.gupta749@yahoo.com,+91 9035430829,No
+ALU0750,Madhav,Mishra,2025,B.E.,Business Administration,Google,Machine Learning Engineer,madhav.mishra750@gmail.com,+91 9057208724,Yes
+ALU0751,Ashwin,Das,2016,B.Sc,Computer Science and Engineering,Microsoft,Technical Consultant,ashwin.das751@outlook.com,+91 8915438137,No
+ALU0752,Ananya,Gupta,2015,MCA,Electronics and Communication Engineering,Cognizant Technology Solutions,Product Analyst,ananya.gupta752@outlook.com,+91 8193688100,Yes
+ALU0753,Aditya,Sharma,2023,M.Tech,Computer Science (Data Science),KPMG,QA Engineer,aditya.sharma753@outlook.com,+91 9106532688,No
+ALU0754,Tarun,Chowdhury,2023,B.Tech,Mechanical Engineering,Microsoft,Business Analyst,tarun.chowdhury754@proton.me,+91 8587548621,No
+ALU0755,Pranav,Reddy,2019,B.Sc,Mechanical Engineering,Tech Mahindra,Associate Consultant,pranav.reddy755@gmail.com,+91 7926403640,No
+ALU0756,Lakshmi,Shetty,2022,B.Sc,Information Technology,Amazon,Project Engineer,lakshmi.shetty756@outlook.com,+91 9521919170,Yes
+ALU0757,Bhavana,Singh,2019,M.Tech,Computer Engineering,LTIMindtree,Data Analyst,bhavana.singh757@proton.me,+91 7379882490,Yes
+ALU0758,Rakesh,Iyer,2021,B.E.,Computer Engineering,Google,Database Administrator,rakesh.iyer758@outlook.com,+91 7855804722,Yes
+ALU0759,Priya,Nair,2023,M.Tech,Computer Science and Engineering,Tech Mahindra,Database Administrator,priya.nair759@yahoo.com,+91 9122145416,No
+ALU0760,Isha,Reddy,2015,B.E.,Artificial Intelligence and Machine Learning,Tech Mahindra,Senior Software Engineer,isha.reddy760@gmail.com,+91 9808105335,No
+ALU0761,Rakesh,Naidu,2022,MBA,Electronics and Communication Engineering,TCS,Data Scientist,rakesh.naidu761@yahoo.com,+91 9117634585,Yes
+ALU0762,Tarun,Joshi,2024,M.Tech,Business Administration,Amazon,DevOps Engineer,tarun.joshi762@proton.me,+91 9981759978,Yes
+ALU0763,Pranav,Menon,2024,B.Tech,Artificial Intelligence and Machine Learning,IBM,Database Administrator,pranav.menon763@gmail.com,+91 7627654163,No
+ALU0764,Rohit,Rao,2020,B.E.,Computer Science and Engineering,HCLTech,Systems Engineer,rohit.rao764@proton.me,+91 9732660632,No
+ALU0765,Akhil,Nair,2019,MCA,Computer Science (Data Science),KPMG,Backend Developer,akhil.nair765@outlook.com,+91 7405911554,Yes
+ALU0766,Siddharth,Gupta,2020,MBA,Artificial Intelligence and Machine Learning,HCLTech,Systems Engineer,siddharth.gupta766@gmail.com,+91 9295317821,No
+ALU0767,Bhavana,Reddy,2017,MCA,Artificial Intelligence and Machine Learning,Oracle,Senior Software Engineer,bhavana.reddy767@proton.me,+91 8461633584,Yes
+ALU0768,Anil,Singh,2017,MCA,Electronics and Communication Engineering,Capgemini,UI Developer,anil.singh768@gmail.com,+91 8792488531,No
+ALU0769,Amar,Patel,2017,B.Tech,Civil Engineering,Oracle,Cloud Engineer,amar.patel769@yahoo.com,+91 7597060483,No
+ALU0770,Tarun,Menon,2020,B.E.,Artificial Intelligence and Machine Learning,TCS,Data Scientist,tarun.menon770@outlook.com,+91 7552824466,Yes
+ALU0771,Aditi,Verma,2019,B.E.,Electronics and Communication Engineering,Cognizant,Data Analyst,aditi.verma771@proton.me,+91 9967041308,Yes
+ALU0772,Amar,Reddy,2022,M.Tech,Computer Science and Engineering,Capgemini,Data Scientist,amar.reddy772@gmail.com,+91 9833771491,Yes
+ALU0773,Sahana,Patel,2019,B.Tech,Computer Science (Data Science),Tech Mahindra,Software Engineer,sahana.patel773@gmail.com,+91 7531689268,Yes
+ALU0774,Swathi,Singh,2017,MBA,Mechanical Engineering,TCS,Data Analyst,swathi.singh774@outlook.com,+91 8191319381,No
+ALU0775,Pooja,Naidu,2023,MBA,Business Administration,Deloitte,Product Analyst,pooja.naidu775@gmail.com,+91 7425655666,Yes
+ALU0776,Shreya,Singh,2018,B.Sc,Information Technology,PwC,Software Engineer,shreya.singh776@gmail.com,+91 7919189079,No
+ALU0777,Pranav,Mishra,2017,M.Tech,Computer Science (Data Science),IBM,Systems Engineer,pranav.mishra777@proton.me,+91 8821460610,Yes
+ALU0778,Sanjay,Verma,2021,B.Tech,Mechanical Engineering,Accenture,Associate Consultant,sanjay.verma778@gmail.com,+91 9232212989,Yes
+ALU0779,Sai,Joshi,2019,MCA,Computer Science and Engineering,Wipro,Machine Learning Engineer,sai.joshi779@proton.me,+91 7497024805,No
+ALU0780,Meera,Bhat,2024,MBA,Artificial Intelligence and Machine Learning,Walmart Global Tech,Associate Consultant,meera.bhat780@outlook.com,+91 9379050651,No
+ALU0781,Meera,Shetty,2018,B.Tech,Civil Engineering,Walmart Global Tech,Systems Engineer,meera.shetty781@outlook.com,+91 7054914778,No
+ALU0782,Yash,Patel,2021,M.Tech,Computer Engineering,Walmart Global Tech,Data Analyst,yash.patel782@gmail.com,+91 7615758990,No
+ALU0783,Rahul,Mishra,2016,MBA,Information Technology,Wipro,Systems Engineer,rahul.mishra783@outlook.com,+91 8454411858,Yes
+ALU0784,Tarun,Mehta,2016,B.E.,Electrical and Electronics Engineering,EY,DevOps Engineer,tarun.mehta784@yahoo.com,+91 9765233838,No
+ALU0785,Pooja,Pillai,2025,MCA,Electrical and Electronics Engineering,EY,Product Analyst,pooja.pillai785@yahoo.com,+91 7632966915,No
+ALU0786,Anil,Patel,2019,M.Tech,Civil Engineering,Deloitte,Business Analyst,anil.patel786@gmail.com,+91 7427793293,Yes
+ALU0787,Amar,Pillai,2025,B.Tech,Information Technology,Microsoft,Technical Consultant,amar.pillai787@yahoo.com,+91 7655998939,No
+ALU0788,Tejas,Chowdhury,2016,B.Tech,Computer Engineering,EY,Associate Consultant,tejas.chowdhury788@outlook.com,+91 8260843171,No
+ALU0789,Sai,Menon,2019,MCA,Mechanical Engineering,PwC,UI Developer,sai.menon789@gmail.com,+91 7135714617,No
+ALU0790,Arjun,Mehta,2022,B.Sc,Electrical and Electronics Engineering,Google,Associate Consultant,arjun.mehta790@gmail.com,+91 7141131770,Yes
+ALU0791,Sneha,Nair,2017,M.Tech,Electrical and Electronics Engineering,Cognizant,Cloud Engineer,sneha.nair791@proton.me,+91 9093602951,Yes
+ALU0792,Srinivas,Pillai,2025,MCA,Computer Engineering,Cognizant Technology Solutions,Senior Software Engineer,srinivas.pillai792@proton.me,+91 9414868603,Yes
+ALU0793,Sanjay,Kumar,2021,B.Sc,Civil Engineering,Cognizant Technology Solutions,QA Engineer,sanjay.kumar793@yahoo.com,+91 8221649922,No
+ALU0794,Akhil,Reddy,2024,B.Tech,Information Technology,Oracle,Systems Engineer,akhil.reddy794@gmail.com,+91 9685011686,No
+ALU0795,Priya,Patel,2021,B.Sc,Mechanical Engineering,Amazon,Systems Engineer,priya.patel795@gmail.com,+91 9840004195,Yes
+ALU0796,Karthik,Verma,2025,B.Sc,Business Administration,Wipro,Data Analyst,karthik.verma796@yahoo.com,+91 7491650481,No
+ALU0797,Charan,Reddy,2023,B.Sc,Computer Science and Engineering,Google,Project Engineer,charan.reddy797@proton.me,+91 8145119397,Yes
+ALU0798,Aditi,Pillai,2024,B.Tech,Mechanical Engineering,Microsoft,Database Administrator,aditi.pillai798@proton.me,+91 8384789235,Yes
+ALU0799,Sai,Patel,2025,B.E.,Mechanical Engineering,EY,Product Analyst,sai.patel799@yahoo.com,+91 7715658458,No
+ALU0800,Pranav,Shetty,2018,M.Tech,Computer Science (Data Science),PwC,Backend Developer,pranav.shetty800@yahoo.com,+91 8138832493,Yes
+ALU0801,Naveen,Mishra,2021,B.E.,Business Administration,Wipro,Database Administrator,naveen.mishra801@gmail.com,+91 9542039357,No
+ALU0802,Manoj,Sharma,2024,MCA,Civil Engineering,Amazon,Backend Developer,manoj.sharma802@yahoo.com,+91 7329259035,No
+ALU0803,Sanjay,Nair,2021,MBA,Computer Engineering,LTIMindtree,Backend Developer,sanjay.nair803@proton.me,+91 8727869461,No
+ALU0804,Tejas,Menon,2022,MBA,Computer Engineering,IBM,Software Engineer,tejas.menon804@outlook.com,+91 9477523098,No
+ALU0805,Harish,Bhat,2019,MBA,Computer Engineering,Bosch,Project Engineer,harish.bhat805@gmail.com,+91 9243130794,Yes
+ALU0806,Pranav,Bhat,2017,B.E.,Information Technology,Walmart Global Tech,Cloud Engineer,pranav.bhat806@proton.me,+91 8762054424,No
+ALU0807,Amar,Singh,2021,B.Sc,Artificial Intelligence and Machine Learning,SAP,Frontend Developer,amar.singh807@yahoo.com,+91 9950019339,Yes
+ALU0808,Rahul,Verma,2016,B.E.,Electronics and Communication Engineering,TCS,Full Stack Developer,rahul.verma808@yahoo.com,+91 8993550742,No
+ALU0809,Sneha,Shetty,2021,MBA,Computer Science and Engineering,Capgemini,Frontend Developer,sneha.shetty809@yahoo.com,+91 7585965093,Yes
+ALU0810,Kavya,Iyer,2025,MCA,Information Technology,SAP,Software Developer,kavya.iyer810@proton.me,+91 7085507405,Yes
+ALU0811,Ananya,Gupta,2024,B.Sc,Computer Science (Data Science),Amazon,Systems Engineer,ananya.gupta811@gmail.com,+91 8704651250,Yes
+ALU0812,Karthik,Patel,2024,MBA,Computer Engineering,Accenture,Product Analyst,karthik.patel812@yahoo.com,+91 9132241237,Yes
+ALU0813,Karthik,Chowdhury,2016,B.Sc,Mechanical Engineering,Cognizant Technology Solutions,QA Engineer,karthik.chowdhury813@outlook.com,+91 8816208531,Yes
+ALU0814,Bhavana,Patel,2017,B.E.,Artificial Intelligence and Machine Learning,Google,Project Engineer,bhavana.patel814@yahoo.com,+91 9531801378,Yes
+ALU0815,Sai,Das,2020,MBA,Computer Science (Data Science),LTIMindtree,UI Developer,sai.das815@proton.me,+91 9039482919,Yes
+ALU0816,Manoj,Rao,2020,M.Tech,Mechanical Engineering,Tech Mahindra,Software Engineer,manoj.rao816@gmail.com,+91 9844227995,Yes
+ALU0817,Aditi,Verma,2019,MCA,Electrical and Electronics Engineering,Tech Mahindra,Systems Engineer,aditi.verma817@gmail.com,+91 9297423915,Yes
+ALU0818,Riya,Mehta,2015,M.Tech,Artificial Intelligence and Machine Learning,Tech Mahindra,Data Analyst,riya.mehta818@outlook.com,+91 8277421636,Yes
+ALU0819,Charan,Bhat,2025,B.Sc,Electrical and Electronics Engineering,Infosys,DevOps Engineer,charan.bhat819@gmail.com,+91 9111800452,No
+ALU0820,Lakshmi,Shetty,2020,MBA,Electrical and Electronics Engineering,Accenture,Frontend Developer,lakshmi.shetty820@yahoo.com,+91 9174690195,Yes
+ALU0821,Pooja,Shetty,2024,MBA,Computer Engineering,LTIMindtree,Associate Consultant,pooja.shetty821@gmail.com,+91 7223762723,Yes
+ALU0822,Varun,Bhat,2025,B.E.,Computer Science and Engineering,Microsoft,Backend Developer,varun.bhat822@yahoo.com,+91 8347424894,Yes
+ALU0823,Arjun,Naidu,2018,MCA,Information Technology,Bosch,Project Engineer,arjun.naidu823@yahoo.com,+91 8939134358,No
+ALU0824,Lakshmi,Rao,2019,B.E.,Business Administration,LTIMindtree,Cloud Engineer,lakshmi.rao824@outlook.com,+91 7362490731,No
+ALU0825,Pranav,Naidu,2021,M.Tech,Business Administration,Deloitte,Software Engineer,pranav.naidu825@gmail.com,+91 9398868010,Yes
+ALU0826,Ananya,Bhat,2018,B.Sc,Information Technology,Infosys,QA Engineer,ananya.bhat826@proton.me,+91 9578667149,No
+ALU0827,Bhavana,Sharma,2020,B.E.,Business Administration,Accenture,Software Engineer,bhavana.sharma827@proton.me,+91 8948660439,No
+ALU0828,Arjun,Verma,2018,B.E.,Artificial Intelligence and Machine Learning,Tech Mahindra,Senior Software Engineer,arjun.verma828@proton.me,+91 7559201866,No
+ALU0829,Harish,Chowdhury,2018,B.Sc,Electronics and Communication Engineering,Amazon,Frontend Developer,harish.chowdhury829@proton.me,+91 7626819783,Yes
+ALU0830,Meera,Iyer,2018,MCA,Civil Engineering,Deloitte,Systems Engineer,meera.iyer830@proton.me,+91 7368244826,Yes
+ALU0831,Sahana,Rao,2020,MBA,Electrical and Electronics Engineering,Walmart Global Tech,Backend Developer,sahana.rao831@proton.me,+91 8818020775,No
+ALU0832,Amar,Patel,2023,B.Tech,Computer Science and Engineering,LTIMindtree,Full Stack Developer,amar.patel832@proton.me,+91 8521714121,Yes
+ALU0833,Aarav,Iyer,2023,MCA,Electrical and Electronics Engineering,Tech Mahindra,QA Engineer,aarav.iyer833@yahoo.com,+91 7567958961,Yes
+ALU0834,Swathi,Naidu,2019,B.E.,Computer Engineering,EY,Machine Learning Engineer,swathi.naidu834@proton.me,+91 7566590088,Yes
+ALU0835,Neha,Menon,2021,B.E.,Artificial Intelligence and Machine Learning,Accenture,Machine Learning Engineer,neha.menon835@gmail.com,+91 7549203872,No
+ALU0836,Manoj,Joshi,2021,B.Sc,Artificial Intelligence and Machine Learning,Bosch,DevOps Engineer,manoj.joshi836@yahoo.com,+91 8871640952,Yes
+ALU0837,Neha,Pillai,2017,MCA,Civil Engineering,Infosys,Backend Developer,neha.pillai837@outlook.com,+91 7234364203,Yes
+ALU0838,Deepak,Kumar,2022,B.Sc,Information Technology,Google,Project Engineer,deepak.kumar838@gmail.com,+91 9125625600,Yes
+ALU0839,Riya,Joshi,2023,M.Tech,Civil Engineering,EY,Data Scientist,riya.joshi839@outlook.com,+91 7531090911,No
+ALU0840,Ananya,Singh,2019,B.E.,Information Technology,KPMG,DevOps Engineer,ananya.singh840@outlook.com,+91 9506316951,Yes
+ALU0841,Shreya,Mishra,2017,M.Tech,Computer Science (Data Science),Deloitte,Senior Software Engineer,shreya.mishra841@gmail.com,+91 8411574423,Yes
+ALU0842,Meera,Patel,2021,B.Sc,Business Administration,Accenture,Machine Learning Engineer,meera.patel842@outlook.com,+91 7124015059,Yes
+ALU0843,Rohit,Pillai,2022,MBA,Artificial Intelligence and Machine Learning,Bosch,Software Engineer,rohit.pillai843@yahoo.com,+91 7188321417,No
+ALU0844,Neha,Mishra,2017,B.E.,Computer Science and Engineering,SAP,Cloud Engineer,neha.mishra844@yahoo.com,+91 7238521095,Yes
+ALU0845,Sneha,Chowdhury,2021,B.Tech,Electrical and Electronics Engineering,HCLTech,Frontend Developer,sneha.chowdhury845@outlook.com,+91 8713336599,Yes
+ALU0846,Aditya,Singh,2017,M.Tech,Electrical and Electronics Engineering,Tech Mahindra,Business Analyst,aditya.singh846@gmail.com,+91 8282248157,No
+ALU0847,Ravi,Nair,2025,MCA,Information Technology,Oracle,Data Scientist,ravi.nair847@yahoo.com,+91 9201828849,Yes
+ALU0848,Sai,Bhat,2021,M.Tech,Artificial Intelligence and Machine Learning,Cognizant Technology Solutions,Technical Consultant,sai.bhat848@proton.me,+91 7387502046,No
+ALU0849,Pranav,Chowdhury,2017,M.Tech,Electrical and Electronics Engineering,Wipro,Software Developer,pranav.chowdhury849@yahoo.com,+91 8990824177,Yes
+ALU0850,Vikas,Rao,2022,MCA,Computer Engineering,Wipro,Cloud Engineer,vikas.rao850@proton.me,+91 8878427679,Yes
+ALU0851,Sahana,Nair,2017,B.E.,Artificial Intelligence and Machine Learning,Deloitte,Product Analyst,sahana.nair851@proton.me,+91 8269083941,Yes
+ALU0852,Sneha,Sharma,2015,MCA,Computer Science (Data Science),KPMG,Project Engineer,sneha.sharma852@proton.me,+91 7405807234,No
+ALU0853,Vishal,Mishra,2019,B.Sc,Artificial Intelligence and Machine Learning,Cognizant Technology Solutions,Data Analyst,vishal.mishra853@gmail.com,+91 7489349186,No
+ALU0854,Deepak,Naidu,2021,B.Tech,Computer Science (Data Science),Amazon,Cloud Engineer,deepak.naidu854@yahoo.com,+91 9522040814,No
+ALU0855,Madhav,Bhat,2024,B.Sc,Mechanical Engineering,IBM,Backend Developer,madhav.bhat855@outlook.com,+91 7335954600,No
+ALU0856,Yash,Patel,2021,MCA,Computer Science and Engineering,TCS,QA Engineer,yash.patel856@gmail.com,+91 7057142828,Yes
+ALU0857,Vikas,Pillai,2022,MBA,Electrical and Electronics Engineering,Walmart Global Tech,Technical Consultant,vikas.pillai857@proton.me,+91 8300516022,No
+ALU0858,Aditi,Mehta,2019,B.Tech,Information Technology,Cognizant,Software Engineer,aditi.mehta858@outlook.com,+91 7480660531,Yes
+ALU0859,Aditi,Singh,2015,B.E.,Civil Engineering,SAP,Business Analyst,aditi.singh859@outlook.com,+91 8871697244,Yes
+ALU0860,Ananya,Nair,2022,B.E.,Civil Engineering,Amazon,Software Engineer,ananya.nair860@gmail.com,+91 7713417649,Yes
+ALU0861,Lakshmi,Bhat,2022,M.Tech,Computer Science and Engineering,Google,Database Administrator,lakshmi.bhat861@outlook.com,+91 7864741933,No
+ALU0862,Srinivas,Mehta,2015,B.Sc,Computer Science and Engineering,Accenture,Project Engineer,srinivas.mehta862@proton.me,+91 9129029086,No
+ALU0863,Akash,Pillai,2021,M.Tech,Computer Engineering,Cognizant Technology Solutions,Technical Consultant,akash.pillai863@proton.me,+91 7996027749,Yes
+ALU0864,Shreya,Reddy,2021,MCA,Mechanical Engineering,PwC,Data Analyst,shreya.reddy864@yahoo.com,+91 9784428542,No
+ALU0865,Sahana,Patel,2022,MCA,Mechanical Engineering,Google,Project Engineer,sahana.patel865@gmail.com,+91 7692921852,No
+ALU0866,Keerthi,Singh,2022,B.Sc,Civil Engineering,Deloitte,Product Analyst,keerthi.singh866@outlook.com,+91 9523974937,No
+ALU0867,Tarun,Bhat,2017,B.Sc,Electrical and Electronics Engineering,Amazon,Systems Engineer,tarun.bhat867@proton.me,+91 7695895299,Yes
+ALU0868,Meera,Sharma,2025,M.Tech,Information Technology,IBM,Backend Developer,meera.sharma868@outlook.com,+91 9601672187,No
+ALU0869,Anil,Shetty,2022,B.Sc,Electronics and Communication Engineering,Capgemini,UI Developer,anil.shetty869@gmail.com,+91 7077870311,No
+ALU0870,Kavya,Joshi,2025,B.E.,Information Technology,KPMG,Software Developer,kavya.joshi870@gmail.com,+91 8450559731,No
+ALU0871,Arjun,Chowdhury,2018,B.Tech,Computer Engineering,Deloitte,Senior Software Engineer,arjun.chowdhury871@yahoo.com,+91 8461681371,No
+ALU0872,Nandini,Kumar,2023,B.Sc,Information Technology,KPMG,Technical Consultant,nandini.kumar872@gmail.com,+91 7216561008,No
+ALU0873,Rohit,Patel,2016,MCA,Business Administration,Accenture,UI Developer,rohit.patel873@gmail.com,+91 9178861531,Yes
+ALU0874,Charan,Patel,2018,B.Sc,Information Technology,Tech Mahindra,Associate Consultant,charan.patel874@proton.me,+91 7426465521,Yes
+ALU0875,Vikas,Joshi,2020,B.E.,Computer Science (Data Science),Capgemini,Associate Consultant,vikas.joshi875@proton.me,+91 7028293433,Yes
+ALU0876,Sahana,Gupta,2019,MCA,Information Technology,Wipro,DevOps Engineer,sahana.gupta876@yahoo.com,+91 8782448387,No
+ALU0877,Varun,Verma,2017,MCA,Electrical and Electronics Engineering,Deloitte,Business Analyst,varun.verma877@proton.me,+91 8775579927,No
+ALU0878,Rohit,Menon,2025,B.Sc,Computer Science and Engineering,Google,Business Analyst,rohit.menon878@gmail.com,+91 9221995720,Yes
+ALU0879,Ananya,Gupta,2020,M.Tech,Information Technology,Amazon,Software Developer,ananya.gupta879@proton.me,+91 7159316365,Yes
+ALU0880,Srinivas,Kumar,2025,MBA,Computer Engineering,Tech Mahindra,Project Engineer,srinivas.kumar880@proton.me,+91 9924317209,No
+ALU0881,Keerthi,Gupta,2020,B.Tech,Artificial Intelligence and Machine Learning,KPMG,Technical Consultant,keerthi.gupta881@outlook.com,+91 8734900802,No
+ALU0882,Vikas,Singh,2023,MCA,Business Administration,SAP,Associate Consultant,vikas.singh882@yahoo.com,+91 9786390122,No
+ALU0883,Nandini,Singh,2019,B.Tech,Computer Science and Engineering,PwC,Machine Learning Engineer,nandini.singh883@proton.me,+91 7541190125,No
+ALU0884,Harish,Sharma,2023,MCA,Artificial Intelligence and Machine Learning,KPMG,Machine Learning Engineer,harish.sharma884@outlook.com,+91 7100595644,Yes
+ALU0885,Siddharth,Mishra,2019,B.E.,Artificial Intelligence and Machine Learning,Amazon,Product Analyst,siddharth.mishra885@gmail.com,+91 7257464979,No
+ALU0886,Kavya,Menon,2020,B.Tech,Computer Science and Engineering,SAP,Data Scientist,kavya.menon886@proton.me,+91 8279733229,Yes
+ALU0887,Rohit,Gupta,2018,MBA,Business Administration,Cognizant Technology Solutions,UI Developer,rohit.gupta887@outlook.com,+91 8504686545,No
+ALU0888,Meera,Mishra,2025,B.E.,Electrical and Electronics Engineering,KPMG,Full Stack Developer,meera.mishra888@gmail.com,+91 8408091983,Yes
+ALU0889,Nandini,Joshi,2022,B.Tech,Information Technology,Amazon,Project Engineer,nandini.joshi889@gmail.com,+91 7396204771,Yes
+ALU0890,Ravi,Rao,2022,B.E.,Civil Engineering,Wipro,Systems Engineer,ravi.rao890@proton.me,+91 9526469228,No
+ALU0891,Kavya,Mishra,2022,MBA,Electrical and Electronics Engineering,Google,Senior Software Engineer,kavya.mishra891@proton.me,+91 7699404386,Yes
+ALU0892,Sanjay,Rao,2022,MBA,Civil Engineering,Cognizant,Product Analyst,sanjay.rao892@gmail.com,+91 9982728970,Yes
+ALU0893,Rohit,Pillai,2015,MBA,Information Technology,PwC,Systems Engineer,rohit.pillai893@gmail.com,+91 9583853222,No
+ALU0894,Arjun,Patel,2020,MCA,Artificial Intelligence and Machine Learning,Infosys,Product Analyst,arjun.patel894@outlook.com,+91 7505698967,No
+ALU0895,Naveen,Joshi,2019,B.Sc,Civil Engineering,TCS,Business Analyst,naveen.joshi895@outlook.com,+91 9532416852,No
+ALU0896,Akhil,Nair,2019,B.E.,Information Technology,EY,Software Engineer,akhil.nair896@gmail.com,+91 9351654798,No
+ALU0897,Amar,Kumar,2021,M.Tech,Business Administration,Tech Mahindra,Database Administrator,amar.kumar897@proton.me,+91 8450939779,No
+ALU0898,Sahana,Chowdhury,2017,B.E.,Computer Engineering,SAP,Associate Consultant,sahana.chowdhury898@proton.me,+91 9865691288,No
+ALU0899,Bhavana,Gupta,2016,MCA,Business Administration,Amazon,QA Engineer,bhavana.gupta899@outlook.com,+91 8698217745,No
+ALU0900,Siddharth,Kumar,2025,M.Tech,Artificial Intelligence and Machine Learning,SAP,Data Analyst,siddharth.kumar900@outlook.com,+91 7106532739,No
+ALU0901,Sneha,Patel,2025,MCA,Computer Science (Data Science),Capgemini,Technical Consultant,sneha.patel901@gmail.com,+91 9449180965,Yes
+ALU0902,Madhav,Pillai,2023,B.Tech,Computer Science (Data Science),Walmart Global Tech,UI Developer,madhav.pillai902@outlook.com,+91 7081490931,No
+ALU0903,Harish,Verma,2024,M.Tech,Computer Science (Data Science),PwC,Technical Consultant,harish.verma903@yahoo.com,+91 8725708681,Yes
+ALU0904,Sai,Reddy,2020,M.Tech,Information Technology,Amazon,Software Engineer,sai.reddy904@yahoo.com,+91 8640724675,No
+ALU0905,Ananya,Patel,2016,MCA,Information Technology,Tech Mahindra,Business Analyst,ananya.patel905@outlook.com,+91 8097598306,Yes
+ALU0906,Bhavana,Nair,2021,MBA,Information Technology,Infosys,Technical Consultant,bhavana.nair906@yahoo.com,+91 7779355497,Yes
+ALU0907,Anusha,Kumar,2019,M.Tech,Computer Science (Data Science),LTIMindtree,Business Analyst,anusha.kumar907@proton.me,+91 8392504821,No
+ALU0908,Priya,Patel,2015,B.E.,Electronics and Communication Engineering,Bosch,Database Administrator,priya.patel908@outlook.com,+91 9117330575,No
+ALU0909,Arjun,Iyer,2015,B.Sc,Civil Engineering,PwC,Project Engineer,arjun.iyer909@gmail.com,+91 9079500806,Yes
+ALU0910,Rakesh,Verma,2015,B.Sc,Computer Engineering,Cognizant Technology Solutions,Data Scientist,rakesh.verma910@outlook.com,+91 9382450355,Yes
+ALU0911,Naveen,Mishra,2021,M.Tech,Computer Science (Data Science),SAP,Product Analyst,naveen.mishra911@outlook.com,+91 7611461750,No
+ALU0912,Siddharth,Naidu,2018,MCA,Electrical and Electronics Engineering,PwC,Associate Consultant,siddharth.naidu912@gmail.com,+91 7004299516,No
+ALU0913,Tejas,Nair,2025,B.E.,Computer Science and Engineering,Infosys,Senior Software Engineer,tejas.nair913@yahoo.com,+91 9567822451,No
+ALU0914,Yash,Mehta,2020,MBA,Electronics and Communication Engineering,Cognizant Technology Solutions,Product Analyst,yash.mehta914@yahoo.com,+91 7195355435,Yes
+ALU0915,Lakshmi,Das,2024,B.Tech,Artificial Intelligence and Machine Learning,Wipro,QA Engineer,lakshmi.das915@gmail.com,+91 7599793329,No
+ALU0916,Ravi,Singh,2024,MCA,Mechanical Engineering,Walmart Global Tech,Machine Learning Engineer,ravi.singh916@yahoo.com,+91 8944409357,No
+ALU0917,Karthik,Gupta,2020,B.E.,Civil Engineering,Bosch,Machine Learning Engineer,karthik.gupta917@gmail.com,+91 9971451918,Yes
+ALU0918,Vikas,Reddy,2024,M.Tech,Computer Science and Engineering,TCS,Frontend Developer,vikas.reddy918@proton.me,+91 9387102656,No
+ALU0919,Madhav,Mehta,2023,B.Tech,Computer Science (Data Science),PwC,Software Engineer,madhav.mehta919@proton.me,+91 9887274233,Yes
+ALU0920,Pooja,Mehta,2024,B.Sc,Electrical and Electronics Engineering,IBM,Software Engineer,pooja.mehta920@gmail.com,+91 8987249301,No
+ALU0921,Divya,Bhat,2015,B.E.,Computer Science and Engineering,HCLTech,Systems Engineer,divya.bhat921@outlook.com,+91 7386403261,No
+ALU0922,Anusha,Verma,2018,M.Tech,Mechanical Engineering,Infosys,DevOps Engineer,anusha.verma922@proton.me,+91 9602866012,Yes
+ALU0923,Aarav,Singh,2025,M.Tech,Computer Science (Data Science),HCLTech,Database Administrator,aarav.singh923@proton.me,+91 7732193544,Yes
+ALU0924,Vishal,Mishra,2025,MBA,Business Administration,Cognizant Technology Solutions,Frontend Developer,vishal.mishra924@gmail.com,+91 9526147677,Yes
+ALU0925,Lakshmi,Sharma,2017,B.Sc,Business Administration,Deloitte,Product Analyst,lakshmi.sharma925@yahoo.com,+91 7823996116,Yes
+ALU0926,Aditi,Das,2024,B.Sc,Computer Engineering,Google,Software Engineer,aditi.das926@proton.me,+91 9752929233,Yes
+ALU0927,Neha,Shetty,2021,B.Sc,Computer Science (Data Science),Walmart Global Tech,Product Analyst,neha.shetty927@proton.me,+91 9128477207,No
+ALU0928,Shreya,Kumar,2018,B.Tech,Artificial Intelligence and Machine Learning,Amazon,UI Developer,shreya.kumar928@proton.me,+91 8358248920,Yes
+ALU0929,Rahul,Singh,2020,B.Tech,Business Administration,TCS,Full Stack Developer,rahul.singh929@proton.me,+91 7319718936,Yes
+ALU0930,Divya,Naidu,2020,B.Sc,Computer Science (Data Science),SAP,Data Scientist,divya.naidu930@gmail.com,+91 9061440088,No
+ALU0931,Aditya,Mishra,2025,B.Sc,Artificial Intelligence and Machine Learning,Deloitte,Data Scientist,aditya.mishra931@proton.me,+91 8023745012,No
+ALU0932,Akhil,Gupta,2023,B.E.,Computer Science (Data Science),Bosch,Technical Consultant,akhil.gupta932@proton.me,+91 7410902725,No
+ALU0933,Swathi,Patel,2016,B.Tech,Computer Science and Engineering,Microsoft,Machine Learning Engineer,swathi.patel933@gmail.com,+91 7547762075,Yes
+ALU0934,Riya,Kumar,2019,MCA,Electrical and Electronics Engineering,Wipro,Data Scientist,riya.kumar934@gmail.com,+91 9401995051,Yes
+ALU0935,Meera,Mehta,2021,B.Tech,Business Administration,Amazon,Full Stack Developer,meera.mehta935@gmail.com,+91 8947386482,No
+ALU0936,Rohit,Shetty,2024,MCA,Computer Science (Data Science),LTIMindtree,Software Engineer,rohit.shetty936@proton.me,+91 9221412448,No
+ALU0937,Swathi,Singh,2016,B.Tech,Computer Science and Engineering,Bosch,Data Analyst,swathi.singh937@outlook.com,+91 9461927364,Yes
+ALU0938,Varun,Menon,2019,B.Sc,Electrical and Electronics Engineering,EY,Technical Consultant,varun.menon938@proton.me,+91 7798534963,Yes
+ALU0939,Ashwin,Kumar,2015,B.E.,Artificial Intelligence and Machine Learning,Cognizant Technology Solutions,Project Engineer,ashwin.kumar939@yahoo.com,+91 8336543313,Yes
+ALU0940,Bhavana,Pillai,2019,MCA,Mechanical Engineering,Tech Mahindra,Systems Engineer,bhavana.pillai940@gmail.com,+91 9223421188,Yes
+ALU0941,Akhil,Verma,2023,MCA,Computer Science and Engineering,Amazon,Systems Engineer,akhil.verma941@outlook.com,+91 7860590754,Yes
+ALU0942,Amar,Gupta,2018,MBA,Civil Engineering,Google,Technical Consultant,amar.gupta942@yahoo.com,+91 9484255247,No
+ALU0943,Tejas,Nair,2021,B.Sc,Information Technology,Accenture,Associate Consultant,tejas.nair943@gmail.com,+91 9130006033,Yes
+ALU0944,Aarav,Verma,2018,M.Tech,Business Administration,Capgemini,Full Stack Developer,aarav.verma944@proton.me,+91 8423846528,No
+ALU0945,Harish,Mehta,2017,B.Tech,Mechanical Engineering,TCS,Data Analyst,harish.mehta945@yahoo.com,+91 7128924554,Yes
+ALU0946,Bhavana,Nair,2022,B.E.,Business Administration,Oracle,Software Developer,bhavana.nair946@gmail.com,+91 7855226225,Yes
+ALU0947,Meera,Naidu,2018,B.Sc,Information Technology,LTIMindtree,UI Developer,meera.naidu947@outlook.com,+91 7766829608,Yes
+ALU0948,Aditya,Naidu,2019,B.Tech,Computer Science and Engineering,Walmart Global Tech,Business Analyst,aditya.naidu948@proton.me,+91 9812641768,Yes
+ALU0949,Nikhil,Singh,2019,M.Tech,Electronics and Communication Engineering,Oracle,Systems Engineer,nikhil.singh949@outlook.com,+91 9263133100,No
+ALU0950,Anusha,Sharma,2016,B.E.,Information Technology,Capgemini,Backend Developer,anusha.sharma950@proton.me,+91 9982227275,No
+ALU0951,Neha,Chowdhury,2021,MBA,Electronics and Communication Engineering,Infosys,Technical Consultant,neha.chowdhury951@outlook.com,+91 9299819036,No
+ALU0952,Bhavana,Gupta,2018,B.Tech,Artificial Intelligence and Machine Learning,Cognizant,Product Analyst,bhavana.gupta952@proton.me,+91 7898668512,Yes
+ALU0953,Sahana,Chowdhury,2016,B.E.,Computer Engineering,Microsoft,Product Analyst,sahana.chowdhury953@yahoo.com,+91 9141418189,No
+ALU0954,Deepak,Gupta,2020,MCA,Civil Engineering,EY,Senior Software Engineer,deepak.gupta954@yahoo.com,+91 9496177821,No
+ALU0955,Varun,Mishra,2025,B.Tech,Electronics and Communication Engineering,Deloitte,Backend Developer,varun.mishra955@proton.me,+91 8006674160,No
+ALU0956,Harish,Nair,2021,M.Tech,Business Administration,IBM,Systems Engineer,harish.nair956@yahoo.com,+91 9364602747,Yes
+ALU0957,Ashwin,Sharma,2019,M.Tech,Computer Engineering,Oracle,Full Stack Developer,ashwin.sharma957@gmail.com,+91 8998246910,No
+ALU0958,Ravi,Bhat,2022,M.Tech,Electrical and Electronics Engineering,Oracle,Senior Software Engineer,ravi.bhat958@yahoo.com,+91 8172609694,No
+ALU0959,Aditya,Naidu,2022,B.E.,Artificial Intelligence and Machine Learning,SAP,Data Analyst,aditya.naidu959@yahoo.com,+91 7353984828,No
+ALU0960,Sanjay,Menon,2023,MBA,Computer Science (Data Science),HCLTech,Full Stack Developer,sanjay.menon960@gmail.com,+91 7509331083,Yes
+ALU0961,Pranav,Kumar,2023,B.E.,Mechanical Engineering,Capgemini,Machine Learning Engineer,pranav.kumar961@yahoo.com,+91 8300153521,No
+ALU0962,Divya,Chowdhury,2017,MBA,Computer Engineering,HCLTech,Software Engineer,divya.chowdhury962@yahoo.com,+91 8210516208,No
+ALU0963,Rahul,Mehta,2024,MBA,Computer Science and Engineering,EY,Product Analyst,rahul.mehta963@outlook.com,+91 8707272205,Yes
+ALU0964,Isha,Singh,2022,B.E.,Computer Engineering,Cognizant Technology Solutions,UI Developer,isha.singh964@proton.me,+91 8981702791,No
+ALU0965,Ananya,Gupta,2018,M.Tech,Electrical and Electronics Engineering,Capgemini,Associate Consultant,ananya.gupta965@proton.me,+91 9398510824,Yes
+ALU0966,Pranav,Rao,2024,B.E.,Artificial Intelligence and Machine Learning,TCS,Senior Software Engineer,pranav.rao966@yahoo.com,+91 8459525419,Yes
+ALU0967,Rakesh,Shetty,2025,M.Tech,Computer Engineering,Tech Mahindra,Machine Learning Engineer,rakesh.shetty967@gmail.com,+91 9437726492,Yes
+ALU0968,Ashwin,Rao,2020,MCA,Business Administration,Bosch,Database Administrator,ashwin.rao968@proton.me,+91 8637750783,Yes
+ALU0969,Rahul,Sharma,2023,M.Tech,Electronics and Communication Engineering,EY,Data Scientist,rahul.sharma969@yahoo.com,+91 9446048329,No
+ALU0970,Varun,Nair,2016,B.E.,Computer Science (Data Science),Walmart Global Tech,UI Developer,varun.nair970@outlook.com,+91 7137693023,No
+ALU0971,Aditya,Naidu,2018,B.Tech,Electrical and Electronics Engineering,Tech Mahindra,Backend Developer,aditya.naidu971@outlook.com,+91 8250288707,Yes
+ALU0972,Rohit,Kumar,2020,MCA,Computer Science and Engineering,IBM,Machine Learning Engineer,rohit.kumar972@proton.me,+91 8679784362,Yes
+ALU0973,Arjun,Rao,2023,M.Tech,Civil Engineering,Wipro,QA Engineer,arjun.rao973@outlook.com,+91 7558054908,Yes
+ALU0974,Naveen,Shetty,2025,M.Tech,Information Technology,Bosch,Database Administrator,naveen.shetty974@yahoo.com,+91 9523258748,Yes
+ALU0975,Sanjay,Bhat,2019,B.E.,Computer Science and Engineering,Cognizant,Associate Consultant,sanjay.bhat975@gmail.com,+91 8714709481,Yes
+ALU0976,Shreya,Gupta,2024,M.Tech,Civil Engineering,Google,Database Administrator,shreya.gupta976@gmail.com,+91 7391283036,No
+ALU0977,Vikas,Bhat,2020,MBA,Artificial Intelligence and Machine Learning,Microsoft,Technical Consultant,vikas.bhat977@outlook.com,+91 8782638028,Yes
+ALU0978,Deepak,Chowdhury,2021,M.Tech,Electrical and Electronics Engineering,Walmart Global Tech,Frontend Developer,deepak.chowdhury978@gmail.com,+91 8690290029,Yes
+ALU0979,Karthik,Naidu,2019,MBA,Computer Engineering,Tech Mahindra,Data Analyst,karthik.naidu979@outlook.com,+91 9119513018,No
+ALU0980,Madhav,Das,2016,B.Sc,Computer Science (Data Science),Accenture,Product Analyst,madhav.das980@yahoo.com,+91 8761349189,No
+ALU0981,Charan,Iyer,2018,MCA,Computer Science and Engineering,Google,Software Engineer,charan.iyer981@gmail.com,+91 9743911263,No
+ALU0982,Priya,Gupta,2021,B.E.,Electrical and Electronics Engineering,Infosys,Software Engineer,priya.gupta982@yahoo.com,+91 7492558512,Yes
+ALU0983,Neha,Bhat,2022,M.Tech,Computer Science (Data Science),Wipro,UI Developer,neha.bhat983@outlook.com,+91 8880008770,Yes
+ALU0984,Sahana,Iyer,2017,B.E.,Computer Science and Engineering,Bosch,Data Scientist,sahana.iyer984@outlook.com,+91 8263341689,Yes
+ALU0985,Siddharth,Mehta,2017,B.Tech,Computer Science and Engineering,Walmart Global Tech,DevOps Engineer,siddharth.mehta985@outlook.com,+91 8892611654,No
+ALU0986,Deepak,Singh,2015,MBA,Computer Engineering,Capgemini,Associate Consultant,deepak.singh986@gmail.com,+91 9726404046,Yes
+ALU0987,Priya,Nair,2022,B.Tech,Business Administration,TCS,Software Developer,priya.nair987@proton.me,+91 7866458310,Yes
+ALU0988,Pranav,Verma,2018,B.Tech,Computer Science and Engineering,Amazon,Software Engineer,pranav.verma988@gmail.com,+91 8447904938,Yes
+ALU0989,Yash,Sharma,2018,B.Tech,Information Technology,IBM,Software Developer,yash.sharma989@proton.me,+91 9201171190,Yes
+ALU0990,Neha,Gupta,2023,MBA,Electronics and Communication Engineering,Bosch,Backend Developer,neha.gupta990@proton.me,+91 8837731893,Yes
+ALU0991,Isha,Singh,2016,B.Sc,Mechanical Engineering,IBM,Software Engineer,isha.singh991@proton.me,+91 9808877515,No
+ALU0992,Aarav,Mehta,2018,M.Tech,Electronics and Communication Engineering,Wipro,DevOps Engineer,aarav.mehta992@yahoo.com,+91 7188716346,Yes
+ALU0993,Harish,Shetty,2019,MCA,Civil Engineering,Accenture,UI Developer,harish.shetty993@outlook.com,+91 8082074708,Yes
+ALU0994,Tarun,Gupta,2025,MBA,Electrical and Electronics Engineering,Walmart Global Tech,Business Analyst,tarun.gupta994@yahoo.com,+91 7753041097,No
+ALU0995,Vishal,Pillai,2016,B.Sc,Computer Science and Engineering,Bosch,Database Administrator,vishal.pillai995@proton.me,+91 8642272651,Yes
+ALU0996,Sanjay,Mishra,2015,B.E.,Computer Science and Engineering,Bosch,Data Scientist,sanjay.mishra996@yahoo.com,+91 8015314465,No
+ALU0997,Madhav,Verma,2024,B.Tech,Computer Science and Engineering,Cognizant,Systems Engineer,madhav.verma997@proton.me,+91 8273950560,Yes
+ALU0998,Bhavana,Mehta,2018,MBA,Computer Science and Engineering,Deloitte,Technical Consultant,bhavana.mehta998@proton.me,+91 8411712184,Yes
+ALU0999,Manoj,Gupta,2025,B.Tech,Computer Engineering,Amazon,Cloud Engineer,manoj.gupta999@gmail.com,+91 7983590548,No
+ALU1000,Nikhil,Verma,2018,MCA,Computer Science and Engineering,Walmart Global Tech,Full Stack Developer,nikhil.verma1000@outlook.com,+91 9611611525,No
