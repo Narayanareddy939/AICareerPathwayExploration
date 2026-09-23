@@ -545,6 +545,55 @@ def health():
         'ml_model_loaded': ml_model is not None
     })
 
+# /api/ Aliases for Vercel Proxy Routing
+@app.route('/api/health', methods=['GET', 'HEAD'])
+def api_health():
+    return health()
+
+@app.route('/api/chat', methods=['POST'])
+@app.route('/api/ai/chat', methods=['POST'])
+def api_chat():
+    return chat()
+
+@app.route('/api/ai/recommendations', methods=['POST'])
+@app.route('/api/ai/recommendations/generate', methods=['POST'])
+def api_recommendations():
+    return get_recommendations()
+
+@app.route('/api/ai/predict-placement', methods=['POST'])
+def api_predict_placement():
+    return predict_placement()
+
+@app.route('/api/alumni', methods=['GET'])
+def api_alumni():
+    return jsonify({
+        'success': True,
+        'count': len(alumni_data),
+        'alumni': alumni_data
+    })
+
+@app.route('/api/careers', methods=['GET'])
+def api_careers():
+    return jsonify({
+        'success': True,
+        'careers': careers_data
+    })
+
+@app.route('/api/jobs', methods=['GET'])
+def api_jobs():
+    return jsonify({
+        'success': True,
+        'jobs': jobs_data
+    })
+
+@app.route('/api/courses', methods=['GET'])
+def api_courses():
+    return jsonify({
+        'success': True,
+        'courses': courses_data
+    })
+
+
 
 if __name__ == '__main__':
     print(f"🐍 AI Carrier Python Engine running on port {PORT}")
