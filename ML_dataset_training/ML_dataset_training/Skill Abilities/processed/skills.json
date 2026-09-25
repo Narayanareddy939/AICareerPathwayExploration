@@ -1,0 +1,683 @@
+[
+    {
+        "skill": "Arm-Hand Steadiness",
+        "normalized_skill": "arm hand steadiness",
+        "work_activities": [
+            "Controlling Machines and Processes",
+            "Handling and Moving Objects",
+            "Operating Vehicles, Mechanized Devices, or Equipment",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment"
+        ]
+    },
+    {
+        "skill": "Auditory Attention",
+        "normalized_skill": "auditory attention",
+        "work_activities": [
+            "Inspecting Equipment, Structures, or Material",
+            "Monitor Processes, Materials, or Surroundings",
+            "Operating Vehicles, Mechanized Devices, or Equipment",
+            "Performing for or Working Directly with the Public"
+        ]
+    },
+    {
+        "skill": "Category Flexibility",
+        "normalized_skill": "category flexibility",
+        "work_activities": [
+            "Analyzing Data or Information",
+            "Coordinating the Work and Activities of Others",
+            "Developing Objectives and Strategies",
+            "Documenting/Recording Information",
+            "Identifying Objects, Actions, and Events",
+            "Inspecting Equipment, Structures, or Material",
+            "Interpreting the Meaning of Information for Others",
+            "Judging the Qualities of Things, Services, or People",
+            "Making Decisions and Solving Problems",
+            "Monitor Processes, Materials, or Surroundings",
+            "Organizing, Planning, and Prioritizing Work",
+            "Performing Administrative Activities",
+            "Processing Information",
+            "Provide Consultation and Advice to Others",
+            "Resolving Conflicts and Negotiating with Others",
+            "Scheduling Work and Activities",
+            "Staffing Organizational Units",
+            "Thinking Creatively",
+            "Training and Teaching Others"
+        ]
+    },
+    {
+        "skill": "Control Precision",
+        "normalized_skill": "control precision",
+        "work_activities": [
+            "Controlling Machines and Processes",
+            "Operating Vehicles, Mechanized Devices, or Equipment",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment"
+        ]
+    },
+    {
+        "skill": "Deductive Reasoning",
+        "normalized_skill": "deductive reasoning",
+        "work_activities": [
+            "Analyzing Data or Information",
+            "Assisting and Caring for Others",
+            "Coaching and Developing Others",
+            "Coordinating the Work and Activities of Others",
+            "Developing Objectives and Strategies",
+            "Developing and Building Teams",
+            "Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment",
+            "Estimating the Quantifiable Characteristics of Products, Events, or Information",
+            "Evaluating Information to Determine Compliance with Standards",
+            "Guiding, Directing, and Motivating Subordinates",
+            "Identifying Objects, Actions, and Events",
+            "Inspecting Equipment, Structures, or Material",
+            "Interacting With Computers",
+            "Interpreting the Meaning of Information for Others",
+            "Judging the Qualities of Things, Services, or People",
+            "Making Decisions and Solving Problems",
+            "Monitor Processes, Materials, or Surroundings",
+            "Monitoring and Controlling Resources",
+            "Organizing, Planning, and Prioritizing Work",
+            "Performing Administrative Activities",
+            "Performing for or Working Directly with the Public",
+            "Processing Information",
+            "Provide Consultation and Advice to Others",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment",
+            "Resolving Conflicts and Negotiating with Others",
+            "Scheduling Work and Activities",
+            "Selling or Influencing Others",
+            "Staffing Organizational Units",
+            "Training and Teaching Others",
+            "Updating and Using Relevant Knowledge"
+        ]
+    },
+    {
+        "skill": "Depth Perception",
+        "normalized_skill": "depth perception",
+        "work_activities": [
+            "Estimating the Quantifiable Characteristics of Products, Events, or Information",
+            "Inspecting Equipment, Structures, or Material",
+            "Operating Vehicles, Mechanized Devices, or Equipment"
+        ]
+    },
+    {
+        "skill": "Dynamic Strength",
+        "normalized_skill": "dynamic strength",
+        "work_activities": [
+            "Performing General Physical Activities"
+        ]
+    },
+    {
+        "skill": "Explosive Strength",
+        "normalized_skill": "explosive strength",
+        "work_activities": [
+            "Handling and Moving Objects",
+            "Performing General Physical Activities"
+        ]
+    },
+    {
+        "skill": "Extent Flexibility",
+        "normalized_skill": "extent flexibility",
+        "work_activities": [
+            "Handling and Moving Objects",
+            "Performing General Physical Activities",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment"
+        ]
+    },
+    {
+        "skill": "Far Vision",
+        "normalized_skill": "far vision",
+        "work_activities": [
+            "Estimating the Quantifiable Characteristics of Products, Events, or Information",
+            "Getting Information",
+            "Identifying Objects, Actions, and Events",
+            "Inspecting Equipment, Structures, or Material",
+            "Monitor Processes, Materials, or Surroundings",
+            "Operating Vehicles, Mechanized Devices, or Equipment"
+        ]
+    },
+    {
+        "skill": "Finger Dexterity",
+        "normalized_skill": "finger dexterity",
+        "work_activities": [
+            "Handling and Moving Objects",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment"
+        ]
+    },
+    {
+        "skill": "Flexibility of Closure",
+        "normalized_skill": "flexibility of closure",
+        "work_activities": [
+            "Estimating the Quantifiable Characteristics of Products, Events, or Information",
+            "Getting Information",
+            "Identifying Objects, Actions, and Events",
+            "Inspecting Equipment, Structures, or Material",
+            "Making Decisions and Solving Problems",
+            "Monitor Processes, Materials, or Surroundings",
+            "Processing Information"
+        ]
+    },
+    {
+        "skill": "Fluency of Ideas",
+        "normalized_skill": "fluency of ideas",
+        "work_activities": [
+            "Coaching and Developing Others",
+            "Coordinating the Work and Activities of Others",
+            "Developing Objectives and Strategies",
+            "Developing and Building Teams",
+            "Guiding, Directing, and Motivating Subordinates",
+            "Making Decisions and Solving Problems",
+            "Provide Consultation and Advice to Others",
+            "Resolving Conflicts and Negotiating with Others",
+            "Selling or Influencing Others",
+            "Thinking Creatively",
+            "Training and Teaching Others"
+        ]
+    },
+    {
+        "skill": "Glare Sensitivity",
+        "normalized_skill": "glare sensitivity",
+        "work_activities": [
+            "Operating Vehicles, Mechanized Devices, or Equipment"
+        ]
+    },
+    {
+        "skill": "Gross Body Coordination",
+        "normalized_skill": "gross body coordination",
+        "work_activities": [
+            "Performing General Physical Activities"
+        ]
+    },
+    {
+        "skill": "Gross Body Equilibrium",
+        "normalized_skill": "gross body equilibrium",
+        "work_activities": [
+            "Performing General Physical Activities"
+        ]
+    },
+    {
+        "skill": "Hearing Sensitivity",
+        "normalized_skill": "hearing sensitivity",
+        "work_activities": [
+            "Identifying Objects, Actions, and Events",
+            "Inspecting Equipment, Structures, or Material",
+            "Monitor Processes, Materials, or Surroundings",
+            "Operating Vehicles, Mechanized Devices, or Equipment"
+        ]
+    },
+    {
+        "skill": "Inductive Reasoning",
+        "normalized_skill": "inductive reasoning",
+        "work_activities": [
+            "Analyzing Data or Information",
+            "Assisting and Caring for Others",
+            "Coaching and Developing Others",
+            "Coordinating the Work and Activities of Others",
+            "Developing Objectives and Strategies",
+            "Developing and Building Teams",
+            "Estimating the Quantifiable Characteristics of Products, Events, or Information",
+            "Evaluating Information to Determine Compliance with Standards",
+            "Getting Information",
+            "Guiding, Directing, and Motivating Subordinates",
+            "Identifying Objects, Actions, and Events",
+            "Inspecting Equipment, Structures, or Material",
+            "Interpreting the Meaning of Information for Others",
+            "Judging the Qualities of Things, Services, or People",
+            "Making Decisions and Solving Problems",
+            "Monitor Processes, Materials, or Surroundings",
+            "Organizing, Planning, and Prioritizing Work",
+            "Processing Information",
+            "Provide Consultation and Advice to Others",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment",
+            "Resolving Conflicts and Negotiating with Others",
+            "Selling or Influencing Others",
+            "Staffing Organizational Units",
+            "Thinking Creatively",
+            "Training and Teaching Others",
+            "Updating and Using Relevant Knowledge"
+        ]
+    },
+    {
+        "skill": "Information Ordering",
+        "normalized_skill": "information ordering",
+        "work_activities": [
+            "Analyzing Data or Information",
+            "Communicating with Persons Outside Organization",
+            "Communicating with Supervisors, Peers, or Subordinates",
+            "Coordinating the Work and Activities of Others",
+            "Documenting/Recording Information",
+            "Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment",
+            "Estimating the Quantifiable Characteristics of Products, Events, or Information",
+            "Evaluating Information to Determine Compliance with Standards",
+            "Identifying Objects, Actions, and Events",
+            "Interacting With Computers",
+            "Interpreting the Meaning of Information for Others",
+            "Making Decisions and Solving Problems",
+            "Monitor Processes, Materials, or Surroundings",
+            "Monitoring and Controlling Resources",
+            "Organizing, Planning, and Prioritizing Work",
+            "Performing Administrative Activities",
+            "Processing Information",
+            "Provide Consultation and Advice to Others",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment",
+            "Resolving Conflicts and Negotiating with Others",
+            "Scheduling Work and Activities",
+            "Staffing Organizational Units",
+            "Training and Teaching Others"
+        ]
+    },
+    {
+        "skill": "Manual Dexterity",
+        "normalized_skill": "manual dexterity",
+        "work_activities": [
+            "Handling and Moving Objects",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment"
+        ]
+    },
+    {
+        "skill": "Mathematical Reasoning",
+        "normalized_skill": "mathematical reasoning",
+        "work_activities": [
+            "Estimating the Quantifiable Characteristics of Products, Events, or Information",
+            "Processing Information"
+        ]
+    },
+    {
+        "skill": "Memorization",
+        "normalized_skill": "memorization",
+        "work_activities": [
+            "Performing for or Working Directly with the Public",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment",
+            "Training and Teaching Others"
+        ]
+    },
+    {
+        "skill": "Multilimb Coordination",
+        "normalized_skill": "multilimb coordination",
+        "work_activities": [
+            "Handling and Moving Objects",
+            "Operating Vehicles, Mechanized Devices, or Equipment",
+            "Performing General Physical Activities"
+        ]
+    },
+    {
+        "skill": "Near Vision",
+        "normalized_skill": "near vision",
+        "work_activities": [
+            "Controlling Machines and Processes",
+            "Documenting/Recording Information",
+            "Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment",
+            "Estimating the Quantifiable Characteristics of Products, Events, or Information",
+            "Evaluating Information to Determine Compliance with Standards",
+            "Getting Information",
+            "Identifying Objects, Actions, and Events",
+            "Inspecting Equipment, Structures, or Material",
+            "Interacting With Computers",
+            "Judging the Qualities of Things, Services, or People",
+            "Monitor Processes, Materials, or Surroundings",
+            "Operating Vehicles, Mechanized Devices, or Equipment",
+            "Performing Administrative Activities",
+            "Processing Information",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment"
+        ]
+    },
+    {
+        "skill": "Night Vision",
+        "normalized_skill": "night vision",
+        "work_activities": [
+            "Operating Vehicles, Mechanized Devices, or Equipment"
+        ]
+    },
+    {
+        "skill": "Number Facility",
+        "normalized_skill": "number facility",
+        "work_activities": [
+            "Estimating the Quantifiable Characteristics of Products, Events, or Information",
+            "Monitoring and Controlling Resources",
+            "Processing Information"
+        ]
+    },
+    {
+        "skill": "Oral Comprehension",
+        "normalized_skill": "oral comprehension",
+        "work_activities": [
+            "Assisting and Caring for Others",
+            "Coaching and Developing Others",
+            "Communicating with Persons Outside Organization",
+            "Communicating with Supervisors, Peers, or Subordinates",
+            "Coordinating the Work and Activities of Others",
+            "Developing and Building Teams",
+            "Establishing and Maintaining Interpersonal Relationships",
+            "Evaluating Information to Determine Compliance with Standards",
+            "Getting Information",
+            "Guiding, Directing, and Motivating Subordinates",
+            "Identifying Objects, Actions, and Events",
+            "Interpreting the Meaning of Information for Others",
+            "Judging the Qualities of Things, Services, or People",
+            "Monitor Processes, Materials, or Surroundings",
+            "Monitoring and Controlling Resources",
+            "Performing for or Working Directly with the Public",
+            "Processing Information",
+            "Provide Consultation and Advice to Others",
+            "Resolving Conflicts and Negotiating with Others",
+            "Selling or Influencing Others",
+            "Staffing Organizational Units",
+            "Training and Teaching Others",
+            "Updating and Using Relevant Knowledge"
+        ]
+    },
+    {
+        "skill": "Oral Expression",
+        "normalized_skill": "oral expression",
+        "work_activities": [
+            "Assisting and Caring for Others",
+            "Coaching and Developing Others",
+            "Communicating with Persons Outside Organization",
+            "Communicating with Supervisors, Peers, or Subordinates",
+            "Coordinating the Work and Activities of Others",
+            "Developing Objectives and Strategies",
+            "Developing and Building Teams",
+            "Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment",
+            "Establishing and Maintaining Interpersonal Relationships",
+            "Getting Information",
+            "Guiding, Directing, and Motivating Subordinates",
+            "Interpreting the Meaning of Information for Others",
+            "Performing for or Working Directly with the Public",
+            "Provide Consultation and Advice to Others",
+            "Resolving Conflicts and Negotiating with Others",
+            "Selling or Influencing Others",
+            "Staffing Organizational Units",
+            "Training and Teaching Others"
+        ]
+    },
+    {
+        "skill": "Originality",
+        "normalized_skill": "originality",
+        "work_activities": [
+            "Coaching and Developing Others",
+            "Coordinating the Work and Activities of Others",
+            "Developing Objectives and Strategies",
+            "Developing and Building Teams",
+            "Guiding, Directing, and Motivating Subordinates",
+            "Making Decisions and Solving Problems",
+            "Provide Consultation and Advice to Others",
+            "Resolving Conflicts and Negotiating with Others",
+            "Selling or Influencing Others",
+            "Thinking Creatively",
+            "Training and Teaching Others"
+        ]
+    },
+    {
+        "skill": "Perceptual Speed",
+        "normalized_skill": "perceptual speed",
+        "work_activities": [
+            "Identifying Objects, Actions, and Events",
+            "Inspecting Equipment, Structures, or Material",
+            "Monitor Processes, Materials, or Surroundings",
+            "Operating Vehicles, Mechanized Devices, or Equipment",
+            "Processing Information",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment"
+        ]
+    },
+    {
+        "skill": "Peripheral Vision",
+        "normalized_skill": "peripheral vision",
+        "work_activities": [
+            "Operating Vehicles, Mechanized Devices, or Equipment"
+        ]
+    },
+    {
+        "skill": "Problem Sensitivity",
+        "normalized_skill": "problem sensitivity",
+        "work_activities": [
+            "Assisting and Caring for Others",
+            "Coaching and Developing Others",
+            "Coordinating the Work and Activities of Others",
+            "Developing Objectives and Strategies",
+            "Developing and Building Teams",
+            "Establishing and Maintaining Interpersonal Relationships",
+            "Evaluating Information to Determine Compliance with Standards",
+            "Guiding, Directing, and Motivating Subordinates",
+            "Identifying Objects, Actions, and Events",
+            "Inspecting Equipment, Structures, or Material",
+            "Making Decisions and Solving Problems",
+            "Monitor Processes, Materials, or Surroundings",
+            "Monitoring and Controlling Resources",
+            "Operating Vehicles, Mechanized Devices, or Equipment",
+            "Organizing, Planning, and Prioritizing Work",
+            "Performing for or Working Directly with the Public",
+            "Provide Consultation and Advice to Others",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment",
+            "Resolving Conflicts and Negotiating with Others",
+            "Scheduling Work and Activities",
+            "Selling or Influencing Others",
+            "Staffing Organizational Units",
+            "Training and Teaching Others"
+        ]
+    },
+    {
+        "skill": "Rate Control",
+        "normalized_skill": "rate control",
+        "work_activities": [
+            "Controlling Machines and Processes",
+            "Operating Vehicles, Mechanized Devices, or Equipment"
+        ]
+    },
+    {
+        "skill": "Reaction Time",
+        "normalized_skill": "reaction time",
+        "work_activities": [
+            "Controlling Machines and Processes",
+            "Operating Vehicles, Mechanized Devices, or Equipment"
+        ]
+    },
+    {
+        "skill": "Response Orientation",
+        "normalized_skill": "response orientation",
+        "work_activities": [
+            "Operating Vehicles, Mechanized Devices, or Equipment"
+        ]
+    },
+    {
+        "skill": "Selective Attention",
+        "normalized_skill": "selective attention",
+        "work_activities": [
+            "Analyzing Data or Information",
+            "Documenting/Recording Information",
+            "Getting Information",
+            "Interacting With Computers",
+            "Making Decisions and Solving Problems",
+            "Monitor Processes, Materials, or Surroundings",
+            "Performing for or Working Directly with the Public",
+            "Thinking Creatively",
+            "Training and Teaching Others"
+        ]
+    },
+    {
+        "skill": "Sound Localization",
+        "normalized_skill": "sound localization",
+        "work_activities": [
+            "Operating Vehicles, Mechanized Devices, or Equipment"
+        ]
+    },
+    {
+        "skill": "Spatial Orientation",
+        "normalized_skill": "spatial orientation",
+        "work_activities": [
+            "Operating Vehicles, Mechanized Devices, or Equipment"
+        ]
+    },
+    {
+        "skill": "Speech Clarity",
+        "normalized_skill": "speech clarity",
+        "work_activities": [
+            "Assisting and Caring for Others",
+            "Coaching and Developing Others",
+            "Communicating with Persons Outside Organization",
+            "Communicating with Supervisors, Peers, or Subordinates",
+            "Coordinating the Work and Activities of Others",
+            "Developing and Building Teams",
+            "Establishing and Maintaining Interpersonal Relationships",
+            "Guiding, Directing, and Motivating Subordinates",
+            "Interpreting the Meaning of Information for Others",
+            "Performing for or Working Directly with the Public",
+            "Provide Consultation and Advice to Others",
+            "Resolving Conflicts and Negotiating with Others",
+            "Selling or Influencing Others",
+            "Staffing Organizational Units",
+            "Training and Teaching Others"
+        ]
+    },
+    {
+        "skill": "Speech Recognition",
+        "normalized_skill": "speech recognition",
+        "work_activities": [
+            "Assisting and Caring for Others",
+            "Coaching and Developing Others",
+            "Communicating with Persons Outside Organization",
+            "Communicating with Supervisors, Peers, or Subordinates",
+            "Coordinating the Work and Activities of Others",
+            "Developing and Building Teams",
+            "Establishing and Maintaining Interpersonal Relationships",
+            "Getting Information",
+            "Guiding, Directing, and Motivating Subordinates",
+            "Interpreting the Meaning of Information for Others",
+            "Performing for or Working Directly with the Public",
+            "Provide Consultation and Advice to Others",
+            "Resolving Conflicts and Negotiating with Others",
+            "Selling or Influencing Others",
+            "Staffing Organizational Units",
+            "Training and Teaching Others"
+        ]
+    },
+    {
+        "skill": "Speed of Closure",
+        "normalized_skill": "speed of closure",
+        "work_activities": [
+            "Identifying Objects, Actions, and Events",
+            "Resolving Conflicts and Negotiating with Others",
+            "Selling or Influencing Others"
+        ]
+    },
+    {
+        "skill": "Stamina",
+        "normalized_skill": "stamina",
+        "work_activities": [
+            "Performing General Physical Activities"
+        ]
+    },
+    {
+        "skill": "Static Strength",
+        "normalized_skill": "static strength",
+        "work_activities": [
+            "Handling and Moving Objects",
+            "Performing General Physical Activities"
+        ]
+    },
+    {
+        "skill": "Time Sharing",
+        "normalized_skill": "time sharing",
+        "work_activities": [
+            "Monitor Processes, Materials, or Surroundings",
+            "Operating Vehicles, Mechanized Devices, or Equipment",
+            "Performing for or Working Directly with the Public"
+        ]
+    },
+    {
+        "skill": "Trunk Strength",
+        "normalized_skill": "trunk strength",
+        "work_activities": [
+            "Operating Vehicles, Mechanized Devices, or Equipment",
+            "Performing General Physical Activities"
+        ]
+    },
+    {
+        "skill": "Visual Color Discrimination",
+        "normalized_skill": "visual color discrimination",
+        "work_activities": [
+            "Identifying Objects, Actions, and Events",
+            "Inspecting Equipment, Structures, or Material",
+            "Monitor Processes, Materials, or Surroundings",
+            "Repairing and Maintaining Electronic Equipment"
+        ]
+    },
+    {
+        "skill": "Visualization",
+        "normalized_skill": "visualization",
+        "work_activities": [
+            "Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment",
+            "Estimating the Quantifiable Characteristics of Products, Events, or Information",
+            "Identifying Objects, Actions, and Events",
+            "Inspecting Equipment, Structures, or Material",
+            "Operating Vehicles, Mechanized Devices, or Equipment",
+            "Repairing and Maintaining Electronic Equipment",
+            "Repairing and Maintaining Mechanical Equipment",
+            "Thinking Creatively"
+        ]
+    },
+    {
+        "skill": "Wrist-Finger Speed",
+        "normalized_skill": "wrist finger speed",
+        "work_activities": [
+            "Documenting/Recording Information"
+        ]
+    },
+    {
+        "skill": "Written Comprehension",
+        "normalized_skill": "written comprehension",
+        "work_activities": [
+            "Analyzing Data or Information",
+            "Communicating with Persons Outside Organization",
+            "Communicating with Supervisors, Peers, or Subordinates",
+            "Documenting/Recording Information",
+            "Evaluating Information to Determine Compliance with Standards",
+            "Getting Information",
+            "Guiding, Directing, and Motivating Subordinates",
+            "Identifying Objects, Actions, and Events",
+            "Interacting With Computers",
+            "Interpreting the Meaning of Information for Others",
+            "Judging the Qualities of Things, Services, or People",
+            "Making Decisions and Solving Problems",
+            "Monitor Processes, Materials, or Surroundings",
+            "Monitoring and Controlling Resources",
+            "Performing Administrative Activities",
+            "Processing Information",
+            "Provide Consultation and Advice to Others",
+            "Resolving Conflicts and Negotiating with Others",
+            "Staffing Organizational Units",
+            "Training and Teaching Others",
+            "Updating and Using Relevant Knowledge"
+        ]
+    },
+    {
+        "skill": "Written Expression",
+        "normalized_skill": "written expression",
+        "work_activities": [
+            "Communicating with Persons Outside Organization",
+            "Communicating with Supervisors, Peers, or Subordinates",
+            "Coordinating the Work and Activities of Others",
+            "Developing Objectives and Strategies",
+            "Developing and Building Teams",
+            "Documenting/Recording Information",
+            "Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment",
+            "Guiding, Directing, and Motivating Subordinates",
+            "Interpreting the Meaning of Information for Others",
+            "Performing Administrative Activities",
+            "Provide Consultation and Advice to Others",
+            "Resolving Conflicts and Negotiating with Others",
+            "Selling or Influencing Others",
+            "Staffing Organizational Units",
+            "Training and Teaching Others"
+        ]
+    }
+]

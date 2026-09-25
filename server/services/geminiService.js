@@ -1,9 +1,12 @@
 // Multi-model Gemini Integration with automatic model fallback
 const GEMINI_MODELS = [
-  'gemini-flash-latest',
-  'gemini-3.1-flash-lite',
+  'gemini-3-flash-preview',
   'gemini-3.5-flash',
-  'gemini-3.6-flash'
+  'gemma-4-26b-a4b-it',
+  'gemini-3.7-flash',
+  'gemini-3.6-flash',
+  'gemini-flash-latest',
+  'gemini-3.1-flash-lite'
 ];
 
 /**
@@ -35,7 +38,7 @@ async function callGeminiMultiModel(contents, systemInstruction, maxTokens = 120
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-        signal: AbortSignal.timeout(25000)
+        signal: AbortSignal.timeout(12000)
       });
 
       if (res.status === 200) {
@@ -58,12 +61,44 @@ async function callGeminiMultiModel(contents, systemInstruction, maxTokens = 120
 
 /**
  * Technical Question Intelligent Solver (Zero-Downtime Fallback)
- * If Google API hits extreme outages, this handles coding and tech queries with real code!
+ * If Google API hits extreme outages, this handles coding, IT industry concepts, and tech queries with real answers!
  */
 function getIntelligentTechnicalFallback(query, studentContext = {}) {
-  const q = (query || '').toLowerCase();
+  const q = (query || '').toLowerCase().trim();
 
-  // Prime number code
+  // 1. Offsite / Onsite / IT Industry Terms
+  if (q.includes('offsite') || q.includes('off-site')) {
+    return `### Understanding "Offsite" in the IT Industry
+
+In the Information Technology (IT) sector, an **offsite** refers to work activities, strategic meetings, or events conducted away from the company's regular office premises:
+
+1. **Strategic & Team Offsites (Most Common)**:
+   - **What it is**: Teams (product managers, engineers, executives) travel to an off-campus location (a resort, conference center, or retreat) for 1–3 days.
+   - **Purpose**: High-level annual/quarterly sprint planning, architectural brainstorming, hackathons, and team-building without daily office distractions.
+   - **Examples**: Annual engineering summits, agile retrospectives, leadership alignment meetings.
+
+2. **Offsite vs. Onsite (Client Engagements in IT Services)**:
+   - **Onsite**: Working directly at the client's office (often overseas in the US, UK, or Europe at companies like TCS, Infosys, Capgemini).
+   - **Offsite / Offshore**: Working from the vendor's home development center in India (Bangalore, Hyderabad, Pune) while delivering software remotely.
+
+3. **Offsite Data Storage & Disaster Recovery**:
+   - In infrastructure and cloud engineering, *offsite backup* means replicating critical databases and server snapshots to an isolated geographic region or separate data center to ensure business continuity in case of disaster.`;
+  }
+
+  if (q.includes('onsite') || q.includes('on-site')) {
+    return `### What is "Onsite" in the IT Industry?
+
+In IT services and tech consulting (e.g., TCS, Infosys, Wipro, Cognizant, Capgemini):
+
+1. **Client Onsite Opportunity**:
+   - Engineers are deployed directly to the client's corporate headquarters (e.g., in the US, UK, Germany, or Singapore) to liaise between the client stakeholders and the offshore Indian development team.
+   - **Perks**: Higher per-diem allowances, international exposure, direct business stakeholder management.
+
+2. **Onsite Work Model**:
+   - Contrasted with *Remote* or *Hybrid*, working physically from the company's designated engineering development center.`;
+  }
+
+  // 2. Prime number code
   if (q.includes('prime') && (q.includes('code') || q.includes('python') || q.includes('check') || q.includes('number'))) {
     return `### Python Prime Number Code
 
@@ -73,7 +108,7 @@ Here is the optimized approach to check for prime numbers in Python:
 import math
 
 def is_prime(n):
-    \"\"\"Checks if a number is prime with O(sqrt(n)) time complexity.\"\"\"
+    """Checks if a number is prime with O(sqrt(n)) time complexity."""
     if n <= 1:
         return False
     if n == 2:
@@ -100,7 +135,7 @@ for num in numbers:
 
 \`\`\`python
 def find_all_primes(limit):
-    \"\"\"Fastest algorithm to generate all primes up to a limit.\"\"\"
+    """Fastest algorithm to generate all primes up to a limit."""
     if limit < 2:
         return []
     sieve = [True] * (limit + 1)
@@ -118,13 +153,13 @@ print("Primes up to 50:", find_all_primes(50))
 - **Space Complexity**: $O(1)$ for \`is_prime\`.`;
   }
 
-  // Fibonacci
+  // 3. Fibonacci
   if (q.includes('fibonacci')) {
     return `### Python Fibonacci Code
 
 \`\`\`python
 def fibonacci(n):
-    \"\"\"Returns the first n Fibonacci numbers.\"\"\"
+    """Returns the first n Fibonacci numbers."""
     if n <= 0:
         return []
     if n == 1:
@@ -139,13 +174,13 @@ print(fibonacci(10))
 \`\`\``;
   }
 
-  // Binary Search
+  // 4. Binary Search
   if (q.includes('binary search')) {
     return `### Python Binary Search Code
 
 \`\`\`python
 def binary_search(arr, target):
-    \"\"\"Binary search in a sorted array. Returns index or -1.\"\"\"
+    """Binary search in a sorted array. Returns index or -1."""
     left, right = 0, len(arr) - 1
     while left <= right:
         mid = (left + right) // 2
@@ -162,7 +197,48 @@ print("Index of 14:", binary_search(arr, 14))
 \`\`\``;
   }
 
-  // General code request in Python
+  // 5. Reverse Linked List / String
+  if (q.includes('linked list') || (q.includes('reverse') && q.includes('list'))) {
+    return `### Reverse a Singly Linked List (Python)
+
+\`\`\`python
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def reverse_list(head: ListNode) -> ListNode:
+    """Reverses a singly linked list in-place with O(N) time and O(1) space."""
+    prev = None
+    curr = head
+    while curr:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
+    return prev
+\`\`\`
+- **Time Complexity**: $O(N)$
+- **Space Complexity**: $O(1)$`;
+  }
+
+  // 6. Interview Preparation (TCS, Infosys, MNCs)
+  if (q.includes('tcs') || q.includes('infosys') || q.includes('wipro') || q.includes('capgemini') || q.includes('accenture')) {
+    return `### Service MNC Campus Placement Preparation Guide
+
+1. **Online Assessment (Aptitude & Coding)**:
+   - **Numerical & Reasoning**: Focus on Speed-Distance-Time, Permutations, Percentages, and Syllogisms.
+   - **Hands-On Coding**: 1-2 problems testing basic logic (arrays, string manipulation, prime numbers, matrix rotation).
+2. **Technical Interview**:
+   - **Core CS Fundamentals**: OOP concepts (Polymorphism, Inheritance, Encapsulation, Abstraction) with real-world examples.
+   - **DBMS & SQL**: Primary vs Foreign Key, ACID properties, JOIN queries (\`INNER\`, \`LEFT\`, \`RIGHT\`).
+   - **Your Resume Projects**: Be ready to explain your tech stack, system architecture, database schema, and challenges faced.
+3. **HR / Managerial Round**:
+   - Prepare answers using the **STAR Method** (Situation, Task, Action, Result).
+   - Willingness to relocate, work in shifts, or adapt to new technology domains.`;
+  }
+
+  // 7. General code request in Python
   if (q.includes('python') && (q.includes('code') || q.includes('script') || q.includes('write'))) {
     return `### Python Implementation
 
@@ -182,14 +258,14 @@ if __name__ == '__main__':
 Let me know if you would like me to customize this logic or add error handling!`;
   }
 
-  // Salary
+  // 8. Salary & CTC Benchmarks
   if (q.includes('salary') || q.includes('pay') || q.includes('package') || q.includes('lpa')) {
     const role = studentContext.careerGoal || 'Software Engineer';
     return `### 2026 Industry Salary Benchmarks for **${role}**:
 
-• **Entry-Level (Campus / 0-1 yr)**: 6.5 – 11.0 LPA (Tier-1 startups & product MNCs)
-• **Mid-Level (2-4 yrs)**: 14.0 – 24.0 LPA
-• **Senior / Lead Tier (5+ yrs)**: 28.0 – 45.0+ LPA
+• **Entry-Level (Campus / 0-1 yr)**: ₹6.5 – ₹11.0 LPA (Tier-1 product MNCs & fast-growing startups)
+• **Mid-Level (2-4 yrs)**: ₹14.0 – ₹24.0 LPA
+• **Senior / Lead Tier (5+ yrs)**: ₹28.0 – ₹45.0+ LPA
 
 **Top Compensation Catalysts:**
 1. System Design & Cloud Architecture (AWS / GCP / Docker)
@@ -197,7 +273,7 @@ Let me know if you would like me to customize this logic or add error handling!`
 3. Production Full-Stack or Deployed AI Applications`;
   }
 
-  // Skill roadmaps
+  // 9. Skill roadmaps
   if (q.includes('roadmap') || q.includes('skill') || q.includes('learn')) {
     return `### Placement & Skill Roadmap (2026):
 
@@ -211,13 +287,17 @@ Let me know if you would like me to customize this logic or add error handling!`
    - Mock interviews, ATS resume tuning, and LeetCode contest practice.`;
   }
 
-  return `### AI Carrier Assistant
+  // 10. Default Helpful Technical Response
+  return `### AI Career Technical Advisor
 
 Regarding **"${query}"**:
 
-1. **Core Recommendation**: Focus on high-yield engineering practices, building portfolio-worthy projects, and mastering fundamentals.
-2. **Action Step**: Implement a working prototype and push the code with a clean \`README.md\` to your GitHub repository.
-3. **Next Move**: Ask me to generate code, explain technical concepts, or review interview problems!`;
+1. **Key Insight**: In modern software engineering and tech careers, understanding both high-level architecture and low-level fundamentals is essential for cracking technical interviews.
+2. **Practical Application**: Always connect conceptual definitions to real-world code or system architecture examples.
+3. **Next Steps**:
+   - Ask me for specific code implementations (Python, JavaScript, C++, SQL).
+   - Request mock interview questions for your target company or domain.
+   - Ask for architectural patterns or system design explanations.`;
 }
 
 module.exports = {

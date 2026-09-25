@@ -7,7 +7,7 @@ import {
   Award, 
   Zap, 
   Briefcase, 
-  DollarSign, 
+  IndianRupee, 
   ArrowUpRight 
 } from 'lucide-react';
 import { 
@@ -95,7 +95,7 @@ export default function Dashboard({ setActiveTab }) {
               </span>
             </div>
             <div style={{ background: 'rgba(99, 102, 241, 0.15)', padding: '0.75rem', borderRadius: '12px' }}>
-              <DollarSign color="#818cf8" size={24} />
+              <IndianRupee color="#818cf8" size={24} />
             </div>
           </div>
         </div>

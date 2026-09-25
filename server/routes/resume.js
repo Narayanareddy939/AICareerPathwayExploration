@@ -22,16 +22,44 @@ const storage = multer.diskStorage({
   }
 });
 
+async function extractTextFromFile(filePath, ext) {
+  try {
+    if (ext === '.txt') {
+      return fs.readFileSync(filePath, 'utf8');
+    }
+    if (ext === '.pdf') {
+      const dataBuffer = fs.readFileSync(filePath);
+      const pdfModule = require('pdf-parse');
+      if (typeof pdfModule === 'function') {
+        const parsed = await pdfModule(dataBuffer);
+        if (parsed?.text) return parsed.text;
+      }
+      if (pdfModule.PDFParse) {
+        const parser = new pdfModule.PDFParse({ data: dataBuffer });
+        await parser.load();
+        const res = await parser.getText();
+        if (typeof res === 'string' && res.trim()) return res;
+        if (res?.text) return res.text;
+      }
+    }
+  } catch (err) {
+    console.warn('PDF/File text extraction warning:', err.message);
+  }
+  return '';
+}
+
 const fileFilter = (req, file, cb) => {
   const allowedTypes = [
     'application/pdf',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'application/msword'
+    'application/msword',
+    'text/plain'
   ];
-  if (allowedTypes.includes(file.mimetype)) {
+  const ext = path.extname(file.originalname).toLowerCase();
+  if (allowedTypes.includes(file.mimetype) || ['.pdf', '.txt', '.doc', '.docx'].includes(ext)) {
     cb(null, true);
   } else {
-    cb(new Error('Only PDF and DOCX files are allowed'), false);
+    cb(new Error('Only PDF, DOCX, and TXT files are allowed'), false);
   }
 };
 
@@ -47,6 +75,12 @@ router.post('/upload', protect, upload.single('resume'), async (req, res) => {
     if (!req.file) {
       return res.status(400).json({ success: false, message: 'No file uploaded' });
     }
+
+    let extractedText = '';
+    const filePath = req.file.path;
+    const ext = path.extname(req.file.originalname).toLowerCase();
+
+    extractedText = await extractTextFromFile(filePath, ext);
 
     // Update student profile with resume path
     const student = await Student.findOneAndUpdate(
@@ -64,11 +98,41 @@ router.post('/upload', protect, upload.single('resume'), async (req, res) => {
       message: 'Resume uploaded successfully',
       filename: req.file.filename,
       originalName: req.file.originalname,
-      size: req.file.size
+      size: req.file.size,
+      extractedText
     });
   } catch (err) {
     console.error('Resume upload error:', err);
     res.status(500).json({ success: false, message: err.message || 'Upload failed' });
+  }
+});
+
+// GET /api/resume/my-resume (Fetches saved resume text from file or profile)
+router.get('/my-resume', protect, async (req, res) => {
+  try {
+    const student = await Student.findOne({ userId: req.user._id });
+    if (!student) {
+      return res.status(404).json({ success: false, message: 'Profile not found' });
+    }
+
+    let extractedText = '';
+    if (student.resumePath) {
+      const filePath = path.join(uploadDir, student.resumePath);
+      if (fs.existsSync(filePath)) {
+        const ext = path.extname(student.resumePath).toLowerCase();
+        extractedText = await extractTextFromFile(filePath, ext);
+      }
+    }
+
+    res.json({
+      success: true,
+      hasUploadedResume: !!student.resumePath,
+      resumeOriginalName: student.resumeOriginalName,
+      extractedText,
+      studentProfile: student
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
   }
 });
 

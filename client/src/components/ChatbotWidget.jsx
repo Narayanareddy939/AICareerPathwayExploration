@@ -5,7 +5,7 @@ import {
   Bot, 
   User, 
   Sparkles, 
-  DollarSign, 
+  IndianRupee, 
   GraduationCap, 
   Briefcase,
   RefreshCw,
@@ -86,7 +86,7 @@ function CodeBlock({ code, language }) {
   );
 }
 
-// ── Rich Markdown Parser (ChatGPT Style) ──────────────
+// ── Rich Markdown Parser ──────────────────────────────
 function FormattedMarkdown({ text }) {
   if (!text) return null;
 
@@ -331,7 +331,15 @@ export default function ChatbotWidget({ activeStudent }) {
     const targetCareer = profile?.careerGoal || 'Software Engineering';
     return {
       sender: 'bot',
-      text: `Hello **${studentName}**! 👋 I am your **AI Career Counselor** powered by **Google Gemini 3.6 Flash**.\n\nOperating like **ChatGPT**, I can answer **any** question you have:\n• 💻 **Coding & Algorithms**: Solve DSA questions, explain concepts, or review code\n• 💰 **Salary Insights**: Realistic CTC/LPA benchmarks across Indian companies\n• 🧠 **Skill Gaps & Roadmaps**: Customized action plan for **${targetCareer}**\n• 📄 **Resume & Interview Prep**: Bullet point reviews and mock technical questions\n\nHow can I help you accelerate your career today?`,
+      text: `Hello **${studentName}**! 👋 I'm your **AI Career Advisor**.
+
+I can help you with:
+• 💻 **Coding & Algorithms**: Solve DSA questions, explain concepts, or review code
+• 💰 **Salary Insights**: Realistic CTC/LPA benchmarks across Indian companies
+• 🧠 **Skill Gaps & Roadmaps**: Customized action plan for **${targetCareer}**
+• 📄 **Resume & Interview Prep**: Bullet point reviews and mock technical questions
+
+How can I help you accelerate your career today?`,
       cardData: null,
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
@@ -362,7 +370,7 @@ export default function ChatbotWidget({ activeStudent }) {
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
 
-    // Prepare multi-turn history for ChatGPT style memory
+    // Prepare multi-turn history for conversation memory
     const historyPayload = messages.slice(-8).map(m => ({
       role: m.sender === 'user' ? 'user' : 'model',
       content: m.text
@@ -410,7 +418,7 @@ export default function ChatbotWidget({ activeStudent }) {
       } catch (fErr) {
         setMessages(prev => [...prev, {
           sender: 'bot',
-          text: "I encountered a network issue reaching Gemini AI. Please check your connection and try again.",
+          text: "I'm having trouble connecting to the AI service. Please check your connection and try again.",
           cardData: null,
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         }]);
@@ -451,9 +459,9 @@ export default function ChatbotWidget({ activeStudent }) {
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem' }}>
             <span className="badge badge-indigo" style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-              <Zap size={12} color="#a5b4fc" /> Gemini 3.6 Flash
+              <Zap size={12} color="#a5b4fc" /> AI Career Advisor
             </span>
-            <span className="badge badge-emerald">ChatGPT Mode</span>
+            <span className="badge badge-emerald">Powered by AI</span>
           </div>
           <h1 style={{ fontSize: '1.3rem', fontWeight: 800, margin: 0 }}>
             AI Career Advisor <span className="gradient-text">& Tech Mentor</span>
@@ -504,7 +512,7 @@ export default function ChatbotWidget({ activeStudent }) {
           onClick={() => handleSend("What salary can I expect in my target career role in India for 2026?")}
           style={{ fontSize: '0.74rem', padding: '0.3rem 0.65rem', whiteSpace: 'nowrap' }}
         >
-          <DollarSign size={13} color="#34d399" /> Expected Salaries
+          <IndianRupee size={13} color="#34d399" /> Expected Salaries
         </button>
 
         <button 
@@ -638,7 +646,7 @@ export default function ChatbotWidget({ activeStudent }) {
                 gap: '0.5rem'
               }}>
                 <RefreshCw size={14} className="spin" color="#818cf8" />
-                Gemini 3.6 Flash is thinking...
+                AI Advisor is thinking...
               </div>
             </div>
           )}

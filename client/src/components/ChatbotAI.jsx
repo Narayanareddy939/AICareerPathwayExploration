@@ -209,7 +209,7 @@ export default function ChatbotAI() {
                 </div>
                 <div>
                   <p style={{ fontWeight: 700, color: '#fff', fontSize: '0.9rem' }}>AI Career Counselor</p>
-                  <p style={{ fontSize: '0.65rem', color: '#34d399' }}>● Online • Powered by Gemini</p>
+                  <p style={{ fontSize: '0.65rem', color: '#34d399' }}>● Online • AI Powered</p>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '0.5rem' }}>

@@ -12,7 +12,8 @@ import {
   Send, 
   ExternalLink, 
   CheckCircle, 
-  DollarSign 
+  IndianRupee,
+  Sparkles
 } from 'lucide-react';
 
 export default function AlumniNetwork({ onRequestMentorship }) {
@@ -20,6 +21,7 @@ export default function AlumniNetwork({ onRequestMentorship }) {
   const [filteredList, setFilteredList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedAlumni, setSelectedAlumni] = useState(null);
+  const [matchedMentors, setMatchedMentors] = useState([]);
 
   // Filters State
   const [search, setSearch] = useState('');
@@ -36,11 +38,16 @@ export default function AlumniNetwork({ onRequestMentorship }) {
   const fetchAlumni = async () => {
     try {
       setLoading(true);
-      const res = await axios.get('/api/alumni');
-      const data = res.data;
-      if (data.success) {
-        setAlumniList(data.data || []);
-        setFilteredList(data.data || []);
+      const [res, recRes] = await Promise.allSettled([
+        axios.get('/api/alumni'),
+        axios.get('/api/ai/recommend')
+      ]);
+      if (res.status === 'fulfilled' && res.value.data.success) {
+        setAlumniList(res.value.data.data || []);
+        setFilteredList(res.value.data.data || []);
+      }
+      if (recRes.status === 'fulfilled' && recRes.value.data?.recommendation?.matchedAlumni?.length) {
+        setMatchedMentors(recRes.value.data.recommendation.matchedAlumni.slice(0, 3));
       }
     } catch (err) {
       console.error("Error fetching alumni list:", err);
@@ -125,6 +132,48 @@ export default function AlumniNetwork({ onRequestMentorship }) {
           </div>
         </div>
       </div>
+
+      {/* Matched Alumni Mentors for Student */}
+      {matchedMentors.length > 0 && (
+        <div className="glass-card" style={{
+          background: 'linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(16,185,129,0.08) 100%)',
+          border: '1px solid rgba(99,102,241,0.3)',
+          padding: '1.25rem'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.85rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Sparkles size={16} color="#fbbf24" />
+              <h3 style={{ fontSize: '1rem', fontWeight: 700 }}>Recommended Mentors For You</h3>
+            </div>
+            <span className="badge badge-emerald" style={{ fontSize: '0.72rem' }}>
+              Profile & Career Goal Aligned
+            </span>
+          </div>
+          <div className="grid-3" style={{ gap: '0.85rem' }}>
+            {matchedMentors.map((m, idx) => (
+              <div key={idx} style={{
+                background: 'rgba(255,255,255,0.04)',
+                borderRadius: '10px',
+                padding: '0.85rem',
+                border: '1px solid rgba(255,255,255,0.08)',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+              }}>
+                <div>
+                  <p style={{ fontWeight: 700, fontSize: '0.9rem', color: '#fff' }}>{m.name}</p>
+                  <p style={{ fontSize: '0.75rem', color: '#818cf8', marginTop: '2px' }}>
+                    {m.currentRole || m.role} @ {m.currentCompany || m.company}
+                  </p>
+                </div>
+                <span className="badge badge-emerald" style={{ fontSize: '0.75rem', fontWeight: 700 }}>
+                  {m.similarity}% Match
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Search & Filter Bar */}
       <div className="glass-card" style={{ padding: '1.25rem' }}>
@@ -213,7 +262,7 @@ export default function AlumniNetwork({ onRequestMentorship }) {
                       </p>
                     </div>
                     <span className="badge badge-emerald" style={{ fontSize: '0.8rem' }}>
-                      {salary} LPA
+                      ₹{salary} LPA
                     </span>
                   </div>
 

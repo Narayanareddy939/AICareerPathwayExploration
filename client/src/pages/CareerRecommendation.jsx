@@ -292,7 +292,7 @@ export default function CareerRecommendation() {
         <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
           <strong style={{ color: '#22d3ee' }}>Scoring methodology:</strong> Recommendations ranked by hybrid algorithm:
           30% skill match + 20% interest alignment + 15% academic fit + 15% job market demand + 10% alumni similarity + 10% location match.
-          Scores are deterministic — AI (Gemini) provides explanations only, not rankings.
+          Scores are deterministic — the AI advisor provides natural language explanations only, not rankings.
         </p>
       </div>
     </div>

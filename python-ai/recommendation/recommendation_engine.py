@@ -293,10 +293,12 @@ def generate_recommendations(
             "locationMatch": round(location_score * 100, 1),
         }
         
-        sal_str = "7.5 - 16.0 LPA"
+        sal_str = "₹7.5 - ₹16.0 LPA"
         if job_insights.get("salaryRange") and isinstance(job_insights["salaryRange"], dict):
             s = job_insights["salaryRange"]
-            sal_str = f"${s.get('min_usd', 60000)//1000}k - ${s.get('max_usd', 120000)//1000}k"
+            min_lpa = round((s.get('min_usd', 60000) * 83) / 100000, 1)
+            max_lpa = round((s.get('max_usd', 120000) * 83) / 100000, 1)
+            sal_str = f"₹{min_lpa} - ₹{max_lpa} LPA"
 
         results.append({
             "career": career_name,

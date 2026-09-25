@@ -3,7 +3,7 @@ import axios from 'axios';
 import { 
   Sparkles, 
   Target, 
-  DollarSign, 
+  IndianRupee, 
   Award, 
   BookOpen, 
   CheckCircle2, 
@@ -15,47 +15,87 @@ import {
   Send 
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { useAuth } from '../context/AuthContext';
 
 export default function CareerPredictor({ activeStudent, studentList, onRequestMentorship }) {
+  const { user } = useAuth();
   const [formData, setFormData] = useState({
-    name: activeStudent?.name || 'Ananya Sharma',
-    branch: activeStudent?.branch || 'Computer Science Engineering (CSE)',
-    cgpa: activeStudent?.cgpa || '8.7',
-    targetRole: activeStudent?.targetRole || 'Full Stack Engineer',
-    skills: activeStudent?.skills ? activeStudent.skills.join(', ') : 'React, Node.js, JavaScript, Python, SQL, Git',
-    certifications: activeStudent?.certifications ? activeStudent.certifications.join(', ') : 'Google Data Analytics'
+    name: user?.fullName || 'Student User',
+    branch: 'Computer Science & Engineering',
+    cgpa: '8.0',
+    targetRole: 'Full Stack Engineer',
+    skills: 'React, Node.js, JavaScript, Python, SQL, Git',
+    certifications: 'Google Data Analytics'
   });
 
   const [recommendation, setRecommendation] = useState(null);
   const [roadmap, setRoadmap] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // Sync state when activeStudent changes from Navbar selector
+  // Sync state when activeStudent or logged-in user profile is loaded
   useEffect(() => {
-    if (activeStudent) {
-      setFormData({
-        name: activeStudent.name,
-        branch: activeStudent.branch,
-        cgpa: activeStudent.cgpa,
-        targetRole: activeStudent.careerGoal || 'Software Engineer',
-        skills: activeStudent.skills ? activeStudent.skills.join(', ') : '',
-        certifications: activeStudent.certifications ? activeStudent.certifications.join(', ') : ''
-      });
-    }
-  }, [activeStudent]);
+    const loadProfileData = async () => {
+      if (activeStudent) {
+        const studentData = {
+          name: activeStudent.name || 'Student User',
+          branch: activeStudent.branch || 'Computer Science & Engineering',
+          cgpa: String(activeStudent.cgpa || '8.0'),
+          targetRole: activeStudent.careerGoal || activeStudent.targetRole || 'Full Stack Engineer',
+          skills: activeStudent.skills ? activeStudent.skills.join(', ') : '',
+          certifications: activeStudent.certifications ? activeStudent.certifications.join(', ') : ''
+        };
+        setFormData(studentData);
+        handleRunPredictor(null, studentData);
+        return;
+      }
 
-  const handleRunPredictor = async (e) => {
-    if (e) e.preventDefault();
+      // Load logged-in user profile from database
+      try {
+        const res = await axios.get('/api/student/profile');
+        const p = res.data?.student || res.data?.data;
+        if (p) {
+          const userForm = {
+            name: p.fullName || user?.fullName || 'Student User',
+            branch: p.branch || 'Computer Science & Engineering',
+            cgpa: p.cgpa ? String(p.cgpa) : '8.0',
+            targetRole: p.careerGoal || p.targetRole || 'Full Stack Engineer',
+            skills: Array.isArray(p.skills) && p.skills.length ? p.skills.join(', ') : (user?.skills?.join(', ') || 'React, Node.js, JavaScript, Python, SQL, Git'),
+            certifications: Array.isArray(p.certifications) && p.certifications.length ? p.certifications.join(', ') : ''
+          };
+          setFormData(userForm);
+          handleRunPredictor(null, userForm);
+          return;
+        }
+      } catch (err) {
+        console.warn('Could not load profile in CareerPredictor, using auth context fallback:', err.message);
+      }
+
+      // If profile not yet filled, use auth user
+      if (user?.fullName) {
+        setFormData(prev => ({
+          ...prev,
+          name: user.fullName
+        }));
+      }
+      handleRunPredictor();
+    };
+
+    loadProfileData();
+  }, [activeStudent, user]);
+
+  const handleRunPredictor = async (e, customData) => {
+    if (e && e.preventDefault) e.preventDefault();
     setLoading(true);
 
-    const skillsArray = formData.skills.split(',').map(s => s.trim()).filter(Boolean);
-    const certsArray = formData.certifications.split(',').map(c => c.trim()).filter(Boolean);
+    const activeForm = customData || formData;
+    const skillsArray = (activeForm.skills || '').split(',').map(s => s.trim()).filter(Boolean);
+    const certsArray = (activeForm.certifications || '').split(',').map(c => c.trim()).filter(Boolean);
 
     const payload = {
-      name: formData.name,
-      branch: formData.branch,
-      cgpa: parseFloat(formData.cgpa),
-      targetRole: formData.targetRole,
+      name: activeForm.name,
+      branch: activeForm.branch,
+      cgpa: parseFloat(activeForm.cgpa) || 8.0,
+      targetRole: activeForm.targetRole,
       skills: skillsArray,
       certifications: certsArray
     };
@@ -66,7 +106,7 @@ export default function CareerPredictor({ activeStudent, studentList, onRequestM
       const dataRec = resRec.data;
 
       // 2. Fetch Personalised Roadmap
-      const resRoadmap = await axios.post('/api/roadmap', { targetRole: formData.targetRole, currentSkills: skillsArray });
+      const resRoadmap = await axios.post('/api/roadmap', { targetRole: activeForm.targetRole, currentSkills: skillsArray });
       const dataRoadmap = resRoadmap.data;
 
       if (dataRec.success) {
@@ -88,11 +128,6 @@ export default function CareerPredictor({ activeStudent, studentList, onRequestM
       setLoading(false);
     }
   };
-
-  // Run initial prediction on load
-  useEffect(() => {
-    handleRunPredictor();
-  }, [activeStudent]);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>

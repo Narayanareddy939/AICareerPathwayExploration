@@ -6,7 +6,7 @@ import {
   BrainCircuit, LayoutDashboard, Sparkles, Users, FileText,
   MessageSquareCode, LogOut, UserCircle2, ChevronRight,
   Target, BookOpen, BarChart2, Briefcase, GraduationCap,
-  Shuffle, TrendingUp, UserCog, Shield, ChevronDown, ChevronUp,
+  TrendingUp, UserCog, Shield, ChevronDown, ChevronUp,
   Map
 } from 'lucide-react';
 
@@ -27,7 +27,6 @@ const NAV_SECTIONS = [
       { to: '/predictor',              icon: Target,           label: 'AI Career Predictor' },
       { to: '/skill-gap',              icon: TrendingUp,       label: 'Skill Gap Analysis' },
       { to: '/roadmap',                icon: Map,              label: 'Learning Roadmap' },
-      { to: '/scenarios',              icon: Shuffle,          label: 'Scenario Explorer' },
     ],
   },
   {

@@ -7,7 +7,7 @@ import {
 } from 'recharts';
 import {
   BarChart2, Users, TrendingUp, Award, Briefcase, Target,
-  RefreshCw, DollarSign, MapPin
+  RefreshCw, IndianRupee, MapPin
 } from 'lucide-react';
 
 const COLORS = ['#6366f1', '#8b5cf6', '#d946ef', '#06b6d4', '#10b981', '#f59e0b', '#fb7185', '#22d3ee'];
@@ -92,7 +92,7 @@ export default function Analytics() {
       <div className="grid-4">
         {[
           { label: 'Total Alumni', value: summary?.totalAlumni?.toLocaleString() || '—', icon: Users, color: '#818cf8' },
-          { label: 'Avg Salary', value: summary?.avgSalaryOverall || '—', icon: DollarSign, color: '#34d399' },
+          { label: 'Avg Salary', value: summary?.avgSalaryOverall ? `₹${summary.avgSalaryOverall.replace('₹', '')}` : '—', icon: IndianRupee, color: '#34d399' },
           { label: 'Placement Rate', value: summary?.placementRate || '—', icon: TrendingUp, color: '#22d3ee' },
           { label: 'Higher Studies', value: summary?.higherStudiesRate || '—', icon: Award, color: '#fbbf24' },
         ].map((kpi, i) => (
@@ -118,7 +118,7 @@ export default function Analytics() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
             className="glass-card">
             <h3 style={{ fontSize: '1.05rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <DollarSign size={17} color="#34d399" /> Average Salary by Domain (LPA)
+              <IndianRupee size={17} color="#34d399" /> Average Salary by Domain (LPA)
             </h3>
             <ResponsiveContainer width="100%" height={280}>
               <BarChart data={domainStats.slice(0, 7)} margin={{ top: 5, right: 10, left: -20, bottom: 45 }}>
@@ -137,15 +137,20 @@ export default function Analytics() {
         {topSkills?.length > 0 && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}
             className="glass-card">
-            <h3 style={{ fontSize: '1.05rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Award size={17} color="#818cf8" /> Top In-Demand Skills
-            </h3>
-            <ResponsiveContainer width="100%" height={280}>
+            <div style={{ marginBottom: '0.75rem' }}>
+              <h3 style={{ fontSize: '1.05rem', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem' }}>
+                <Award size={17} color="#818cf8" /> Most Learned Skills by Students
+              </h3>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                Skills most frequently acquired and mastered by students & alumni
+              </p>
+            </div>
+            <ResponsiveContainer width="100%" height={260}>
               <BarChart data={topSkills.slice(0, 10)} layout="vertical" margin={{ top: 5, right: 30, left: 5, bottom: 5 }}>
                 <XAxis type="number" tick={{ fontSize: 10, fill: '#6b7280' }} />
                 <YAxis type="category" dataKey="name" tick={{ fontSize: 10, fill: '#d1d5db' }} width={90} />
                 <Tooltip content={<CustomTooltip />} />
-                <Bar dataKey="count" radius={[0, 6, 6, 0]} name="Alumni with Skill">
+                <Bar dataKey="count" radius={[0, 6, 6, 0]} name="Students / Alumni with Skill">
                   {topSkills.slice(0, 10).map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
                 </Bar>
               </BarChart>

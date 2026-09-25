@@ -5,6 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
 const dns = require('dns');
+const axios = require('axios');
 
 // DNS configuration to prevent querySrv ECONNREFUSED on Windows
 try { dns.setDefaultResultOrder('ipv4first'); } catch (e) {}
@@ -21,13 +22,15 @@ const { callGeminiMultiModel, getIntelligentTechnicalFallback } = require('./ser
 // ─────────────────────────────────────────────────────
 const allowedOrigins = [
   'http://localhost:5173',
+  'http://127.0.0.1:5173',
   'http://localhost:3000',
+  'http://127.0.0.1:3000',
   process.env.CLIENT_URL
 ].filter(Boolean);
 
 app.use(cors({
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+    if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app') || process.env.NODE_ENV !== 'production') {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
@@ -108,7 +111,6 @@ app.use('/api/jobs', require('./routes/jobs'));
 app.use('/api/careers', require('./routes/careerRoutes'));
 app.use('/api/alumni-v2', require('./routes/alumniRoutes'));
 app.use('/api/roadmaps', require('./routes/roadmapRoutes'));
-app.use('/api/scenarios', require('./routes/scenarioRoutes'));
 app.use('/api/progress', require('./routes/progressRoutes'));
 app.use('/api/admin-v2', require('./routes/adminRoutes'));
 
@@ -281,9 +283,42 @@ app.get('/api/analytics', (req, res) => {
 });
 
 // POST /api/recommend
-app.post('/api/recommend', (req, res) => {
+app.post('/api/recommend', async (req, res) => {
   const student = req.body;
   if (!student) return res.status(400).json({ success: false, message: 'Student data required' });
+
+  const PYTHON_URL = process.env.PYTHON_AI_URL || 'http://127.0.0.1:8000';
+  try {
+    const pyRes = await axios.post(`${PYTHON_URL}/ai/recommend`, {
+      studentProfile: student
+    }, { timeout: 6000 });
+    if (pyRes.data && pyRes.data.recommendation) {
+      const rec = pyRes.data.recommendation;
+      return res.json({
+        success: true,
+        overallMatchScore: rec.careerMatchScore || 85,
+        targetDomain: rec.targetDomain || 'Software Engineering',
+        predictedRole: rec.predictedRole || student.targetRole || 'Full Stack Engineer',
+        predictedSalaryRange: rec.predictedSalaryRange ? (rec.predictedSalaryRange.startsWith('₹') ? rec.predictedSalaryRange : `₹${rec.predictedSalaryRange}`) : '₹8.0 - ₹18.0 LPA',
+        averageSalary: '₹12.5 LPA',
+        missingSkills: rec.missingSkills || [],
+        recommendedCertifications: rec.certifications || ['AWS Certified Cloud Practitioner'],
+        topMentors: (rec.matchedAlumni || []).map(a => ({
+          alumniId: a.alumniId || a.id,
+          name: a.name,
+          currentCompany: a.currentCompany || a.company,
+          currentRole: a.currentRole || a.role,
+          similarity: a.similarity,
+          skills: a.matchedSkills || [],
+          location: a.location || 'India',
+          linkedIn: '#'
+        }))
+      });
+    }
+  } catch (pyErr) {
+    // Fallback to local calculation
+  }
+
   const studentSkills = (student.skills || []).map(s => s.trim().toLowerCase());
   const matches = alumniList.map(alumnus => ({ alumnus, similarity: calculateSimilarity(student, alumnus) })).sort((a, b) => b.similarity - a.similarity);
   const topMatches = matches.slice(0, 5);
@@ -299,8 +334,8 @@ app.post('/api/recommend', (req, res) => {
     success: true, overallMatchScore: topMatches[0]?.similarity || 85,
     targetDomain: topMatches[0]?.alumnus.domain || 'Software Engineering',
     predictedRole: topMatches[0]?.alumnus.currentRole || 'Full Stack Engineer',
-    predictedSalaryRange: `${Math.min(...topSals)} - ${Math.max(...topSals)} LPA`,
-    averageSalary: `${(topSals.reduce((a,b)=>a+b,0)/topSals.length).toFixed(1)} LPA`,
+    predictedSalaryRange: `₹${Math.min(...topSals)} - ₹${Math.max(...topSals)} LPA`,
+    averageSalary: `₹${(topSals.reduce((a,b)=>a+b,0)/topSals.length).toFixed(1)} LPA`,
     missingSkills,
     recommendedCertifications: [...new Set(topMatches.flatMap(m => m.alumnus.certifications || []))].slice(0, 4),
     topMentors: topMatches.map(m => ({
@@ -336,32 +371,50 @@ app.post('/api/roadmap', (req, res) => {
   res.json({ success: true, targetRole, milestones });
 });
 
-// POST /api/analyze-resume
-app.post('/api/analyze-resume', (req, res) => {
-  const { resumeText = '', targetRole = 'Software Engineer' } = req.body;
-  const text = resumeText.toLowerCase();
-  let score = 50;
-  const criticalSections = ['education', 'experience', 'projects', 'skills', 'certifications'];
-  const detectedSections = criticalSections.filter(sec => text.includes(sec));
-  score += detectedSections.length * 5;
-  const techKeywords = ['python', 'java', 'react', 'node', 'sql', 'aws', 'docker', 'machine learning', 'api', 'git', 'javascript', 'c++', 'data'];
-  const matchedKeywords = techKeywords.filter(kw => text.includes(kw));
-  score += Math.min(matchedKeywords.length * 3, 20);
-  const actionVerbs = ['developed', 'designed', 'built', 'implemented', 'optimized', 'led', 'created', 'achieved', 'increased', 'reduced'];
-  const matchedVerbs = actionVerbs.filter(v => text.includes(v));
-  score += Math.min(matchedVerbs.length * 2, 10);
-  const finalScore = Math.min(Math.max(score, 45), 98);
-  const missingKeywords = techKeywords.filter(kw => !matchedKeywords.includes(kw)).slice(0, 5);
-  const suggestions = [];
-  const missingSecs = criticalSections.filter(s => !detectedSections.includes(s));
-  if (missingSecs.length) suggestions.push(`Add explicit section headers for: ${missingSecs.join(', ').toUpperCase()}`);
-  if (matchedVerbs.length < 3) suggestions.push('Use strong action verbs (Developed, Optimized, Engineered) at bullet start.');
-  if (missingKeywords.length) suggestions.push(`Add industry terms: ${missingKeywords.join(', ')}.`);
-  suggestions.push('Quantify achievements with metrics (e.g., "Improved query performance by 35%").');
-  res.json({ success: true, atsScore: finalScore, scoreCategory: finalScore >= 80 ? 'Excellent' : finalScore >= 65 ? 'Good' : 'Needs Improvement', sectionsFound: detectedSections, detectedSkills: matchedKeywords, missingKeywords, suggestions });
+// POST /api/analyze-resume  — pure proxy to Python ATS engine (source of truth)
+app.post('/api/analyze-resume', async (req, res) => {
+  const {
+    resumeText = '',
+    targetRole = '',
+    jobDescription = '',
+  } = req.body;
+
+  if (!resumeText || resumeText.trim().length < 20) {
+    return res.status(400).json({ success: false, message: 'Resume text is too short to analyze.' });
+  }
+
+  const PYTHON_URL = process.env.PYTHON_AI_URL || 'http://127.0.0.1:8000';
+
+  try {
+    const pyRes = await axios.post(`${PYTHON_URL}/analyze-resume`, {
+      resume_text:     resumeText,
+      target_role:     targetRole  || undefined,
+      job_description: jobDescription || undefined,
+    }, { timeout: 20000 });
+
+    // Pass Python response through unchanged — Python is the single source of truth
+    return res.json({ success: true, ...pyRes.data });
+
+  } catch (pyErr) {
+    const isConnErr = pyErr.code === 'ECONNREFUSED' || pyErr.code === 'ENOTFOUND';
+    console.error('[analyze-resume] Python engine error:', pyErr.message);
+
+    if (isConnErr) {
+      return res.status(503).json({
+        success: false,
+        message: 'ATS analysis service is currently unavailable. Please ensure the Python AI engine is running.',
+        serviceUnavailable: true,
+      });
+    }
+    return res.status(500).json({
+      success: false,
+      message: `ATS analysis failed: ${pyErr.response?.data?.message || pyErr.message}`,
+    });
+  }
 });
 
-// POST /api/chat (Public Gemini chatbot - ChatGPT style)
+
+// POST /api/chat (Public AI Career Advisor chatbot)
 app.post('/api/chat', async (req, res) => {
   const { message = '', studentContext = {}, history = [] } = req.body;
   if (!message) return res.status(400).json({ success: false, message: 'Message is required' });
@@ -370,21 +423,22 @@ app.post('/api/chat', async (req, res) => {
   const key = process.env.GEMINI_API_KEY;
 
   if (key) {
-    const systemPrompt = `You are an elite AI Career Mentor, Senior Technical Interviewer, Tech Placement Coach, and Career Advisor (operating with the intelligence, empathy, and versatility of ChatGPT) for university students and engineers.
+    const systemPrompt = `You are an expert AI Career Counselor and Technical Advisor for university engineering students and recent graduates.
 
 Student Profile Context:
 - Target Role / Career: ${studentContext.careerGoal || 'Software Engineer'}
 - Major / Branch: ${studentContext.branch || 'Engineering / Computer Science'}
-- CGPA: ${studentContext.cgpa || 8.0} / 10
-- Known Skills: ${Array.isArray(studentContext.skills) ? studentContext.skills.join(', ') : (studentContext.skills || 'General Tech Stack')}
+- CGPA: ${studentContext.cgpa || 'Not provided'} / 10
+- Known Skills: ${Array.isArray(studentContext.skills) ? studentContext.skills.join(', ') : (studentContext.skills || 'Not specified')}
 
 Core Instructions:
-1. Provide a direct, highly intelligent, detailed, and engaging response just like ChatGPT. You can answer ANY topic: coding problems, algorithms, system design, resume critique, salary negotiation, mock interview questions, DSA roadmaps, higher studies, or industry tech trends.
-2. Structure your answer using clean GitHub Markdown: headers (###), bold text, bullet points, numbered lists, and fenced code blocks (\`\`\`language ... \`\`\`) for any code.
-3. For any code question, always provide working, commented, production-grade code with complexity analysis.
-4. If asked about salary, provide realistic Indian CTC / LPA ranges (entry-level, mid-level, senior tier) and negotiation strategies.
-5. Answer follow-up questions naturally, keeping track of what was discussed earlier in the conversation.
-6. Keep the tone friendly, empowering, and professional.`;
+1. Provide intelligent, detailed, and actionable responses tailored to the student's career context.
+2. You can answer any career-related question: coding problems, algorithms, system design, resume guidance, salary negotiation, mock interview prep, DSA roadmaps, higher studies, or industry trends.
+3. Structure your answer using clean Markdown: headers (###), bold text, bullet points, numbered lists, and fenced code blocks for any code.
+4. For any code question, always provide working, commented, production-grade code with complexity analysis.
+5. If asked about salary, provide realistic Indian CTC / LPA ranges (entry-level, mid-level, senior tier).
+6. Answer follow-up questions naturally, keeping context from earlier in the conversation.
+7. Keep the tone professional, encouraging, and concise.`;
 
     // Multi-turn contents
     const contents = [];

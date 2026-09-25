@@ -93,10 +93,13 @@ except Exception as e:
 #  Gemini Explanation Helper
 # ─────────────────────────────────────────────────────
 GEMINI_MODELS = [
-    'gemini-flash-latest',
-    'gemini-3.1-flash-lite',
+    'gemini-3-flash-preview',
     'gemini-3.5-flash',
-    'gemini-3.6-flash'
+    'gemma-4-26b-a4b-it',
+    'gemini-3.7-flash',
+    'gemini-3.6-flash',
+    'gemini-flash-latest',
+    'gemini-3.1-flash-lite'
 ]
 
 def call_gemini_api(prompt: str = None, contents: list = None, system_instruction: str = None) -> str:
@@ -124,7 +127,7 @@ def call_gemini_api(prompt: str = None, contents: list = None, system_instructio
             else:
                 return None
 
-            res = requests.post(url, json=payload, timeout=20.0)
+            res = requests.post(url, json=payload, timeout=12.0)
             if res.status_code == 200:
                 data = res.json()
                 candidates = data.get('candidates', [])
@@ -268,8 +271,8 @@ def recommend():
     student_skills = student.get('skills') or []
     gap = analyze_skill_gap(student_skills, career_goal)
 
-    # Similar alumni
-    matched_alumni = rank_alumni_by_similarity(student, alumni_data, top_n=5)
+    # Similar alumni — must match top recommended career's similarAlumni for exact cross-page consistency
+    matched_alumni = top.get('similarAlumni') or rank_alumni_by_similarity(student, alumni_data, top_n=5)
 
     # Topological roadmap
     roadmap_result = generate_roadmap(career_goal, student_skills, weekly_hours=12)
@@ -334,7 +337,7 @@ Provide a crisp 2-sentence motivational insight on why this pathway matches and 
         'allRecommendations': ranked
     }
 
-    return jsonify(result)
+    return jsonify({'success': True, 'recommendation': result, **result})
 
 
 # ─────────────────────────────────────────────────────
@@ -377,48 +380,6 @@ def roadmap_endpoint():
 
 
 # ─────────────────────────────────────────────────────
-#  POST /ai/scenarios
-# ─────────────────────────────────────────────────────
-@app.route('/ai/scenarios', methods=['POST'])
-def scenario_explorer():
-    data = request.get_json() or {}
-    student = data.get('studentProfile') or data
-    selected_careers = data.get('careers') or [
-        'Software Engineer',
-        'Data Scientist',
-        'Full Stack Developer',
-        'DevOps Engineer'
-    ]
-
-    all_ranked = {r['career']: r for r in generate_recommendations(student, alumni_data, top_n=15)}
-    
-    comparisons = []
-    for c in selected_careers:
-        if c in all_ranked:
-            comparisons.append(all_ranked[c])
-        else:
-            gap = analyze_skill_gap(student.get('skills', []), c)
-            insights = get_job_market_insights(c)
-            comparisons.append({
-                'career': c,
-                'overallScore': gap.get('skillMatchPercentage', 50),
-                'scoreBreakdown': {
-                    'skillMatch': gap.get('skillMatchPercentage', 50),
-                    'interestMatch': 60,
-                    'academicMatch': 70,
-                    'jobMarketDemand': 75,
-                    'alumniSupport': 65,
-                    'locationFit': 70
-                },
-                'salaryRange': insights.get('salaryRange', '6 - 12 LPA'),
-                'demandLevel': insights.get('demandLevel', 'High'),
-                'missingSkills': gap.get('missingSkills', [])
-            })
-
-    return jsonify({'scenarios': comparisons})
-
-
-# ─────────────────────────────────────────────────────
 #  POST /ai/chat
 # ─────────────────────────────────────────────────────
 @app.route('/ai/chat', methods=['POST'])
@@ -440,13 +401,13 @@ def chat():
 
     card_data = None
 
-    # Construct ChatGPT-like system instructions
-    system_instruction = f"""You are an elite AI Career Mentor, Tech Placement Coach, Senior Engineering Interviewer, and Career Advisor (operating with the versatility, depth, and intelligence of ChatGPT) for university students and engineers.
+    # Construct AI Career Advisor system instructions (no third-party AI branding in UI)
+    system_instruction = f"""You are an expert AI Career Counselor and Technical Advisor, specializing in engineering students and recent graduates.
 
 Student Profile Context:
 - Name: {student.get('fullName', 'Student')}
-- CGPA: {student.get('cgpa', 8.0)} / 10
-- Branch / Major: {student.get('branch', 'CSE')}
+- CGPA: {student.get('cgpa', 'Not provided')} / 10
+- Branch / Major: {student.get('branch', 'Engineering')}
 - Current Skills: {', '.join(skills) if skills else 'Not specified yet'}
 - Target Career Role: {goal}
 - Career Match Fit: {match}%
@@ -454,12 +415,12 @@ Student Profile Context:
 - Placement Readiness Score: {readiness}%
 
 Core Guidelines:
-1. Provide comprehensive, insightful, and engaging answers just like ChatGPT. You can answer ANY question the user asks: coding problems, system design, resume review, salary negotiation, mock interview questions, DSA roadmaps, higher studies, or industry trends.
-2. Format cleanly using GitHub Markdown: headers (###), bold text, bullet points, numbered lists, and fenced code blocks (```python, ```javascript, etc.) for any technical code.
-3. If asked about salary, provide realistic Indian CTC / LPA ranges (entry-level, mid-level, senior tier) and negotiation strategies.
-4. If asked for code or debugging, provide clear, working, commented code with complexity analysis.
-5. Answer follow-up questions smoothly by remembering the conversation history.
-6. Maintain an encouraging, articulate, and professional tone."""
+1. Provide comprehensive, insightful, and actionable answers. You can answer ANY question the user asks: coding problems, system design, resume review, salary negotiation, mock interview questions, DSA roadmaps, higher studies, or industry trends.
+2. Format cleanly using Markdown: headers (###), bold text, bullet points, numbered lists, and fenced code blocks (```python, ```javascript, etc.) for any technical code.
+3. If asked about salary, provide realistic Indian CTC / LPA ranges (entry-level, mid-level, senior tier).
+4. If asked for code, provide clear, working, commented code with complexity analysis.
+5. Answer follow-up questions smoothly by referencing the conversation history.
+6. Maintain an encouraging, professional, and precise tone."""
 
     # Build Gemini multi-turn contents list
     gemini_contents = []
@@ -495,8 +456,24 @@ Core Guidelines:
     # High quality fallback
     if not reply:
         msg_lower = message.lower()
-        if 'salary' in msg_lower or 'package' in msg_lower or 'lpa' in msg_lower:
-            reply = f"Based on job market analytics for **{goal}** in 2026:\n\n• **Entry Level**: 6.0 – 9.5 LPA\n• **Mid-Level (2-4 yrs)**: 14.0 – 22.0 LPA\n• **Senior Tier**: 28.0+ LPA\n\nBridge **{', '.join(missing[:3])}** to target Tier-1 product offers!"
+        if 'offsite' in msg_lower or 'off-site' in msg_lower:
+            reply = """### What is "Offsite" in the IT Industry?
+
+In the IT industry, an **offsite** refers to work, strategic planning, or events held outside the primary office premises:
+
+1. **Strategic & Team Retreats**: Cross-functional engineering and product teams meet at an offsite location (conference venue or retreat) for annual sprint planning, architectural brainstorming, and hackathons away from routine office interruptions.
+2. **Client Offsite / Offshore**: Delivering software from Indian development centers (Bangalore, Hyderabad, Pune) remotely for international clients (in US/UK).
+3. **Disaster Recovery Backup**: Storing database backups and secondary cloud replicas in an offsite physical data center."""
+            card_data = {'careerMatch': match, 'recommendedRoles': recommendation.get('recommendedRoles', [])}
+        elif 'onsite' in msg_lower or 'on-site' in msg_lower:
+            reply = """### What is "Onsite" in the IT Industry?
+
+In IT consulting & product companies:
+• **Client Onsite Opportunity**: Deputing software engineers directly to a client's international headquarters (e.g. in US, UK, Europe) for client liaison and architecture delivery.
+• **Onsite Working**: Working physically from company development centers rather than remotely."""
+            card_data = {'careerMatch': match, 'recommendedRoles': recommendation.get('recommendedRoles', [])}
+        elif 'salary' in msg_lower or 'package' in msg_lower or 'lpa' in msg_lower:
+            reply = f"Based on job market analytics for **{goal}** in 2026:\n\n• **Entry Level**: ₹6.0 – ₹9.5 LPA\n• **Mid-Level (2-4 yrs)**: ₹14.0 – ₹22.0 LPA\n• **Senior Tier**: ₹28.0+ LPA\n\nBridge **{', '.join(missing[:3])}** to target Tier-1 product offers!"
             card_data = {'careerMatch': match, 'recommendedRoles': recommendation.get('recommendedRoles', [])}
         elif 'skill' in msg_lower or 'learn' in msg_lower or 'gap' in msg_lower:
             reply = f"**Skill Gap Analysis for {goal}:**\n\n✅ **Acquired**: {', '.join(skills[:5]) or 'Getting started'}\n⚠️ **Priority Gaps**: **{', '.join(missing[:4])}**\n\n🎯 Recommended first step: Master **{missing[0] if missing else 'Data Structures & System Design'}**."
@@ -515,8 +492,11 @@ Core Guidelines:
                 reply = "**Top Alumni Matches:**\n\n" + "\n".join(lines) + "\n\nReach out via the Alumni Directory to request mentorship!"
             else:
                 reply = "Check the **Alumni Directory** to connect with seniors working in your target domain!"
+        elif any(w in msg_lower for w in ['hi', 'hello', 'hey', 'start']):
+            reply = f"Hello **{student.get('fullName', 'there')}**! 👋\n\nI am your AI Career Advisor. Your current career fit for **{goal}** is **{match}%**.\n\nAsk me about:\n• 💼 Career concepts (e.g., *What is offsite in IT?*)\n• 💰 Salary benchmarks & packages (INR / LPA)\n• 🧠 Skill gaps & placement roadmaps\n• 💻 Coding questions, algorithms & interview prep\n• 👥 Connecting with matching alumni"
+            card_data = {'careerMatch': match, 'recommendedRoles': recommendation.get('recommendedRoles', [])}
         else:
-            reply = f"Hello **{student.get('fullName', 'there')}**! 👋\n\nI am your AI Career Advisor. Your current career fit for **{goal}** is **{match}%**.\n\nAsk me about:\n• 💰 Salary benchmarks & packages\n• 🧠 Roadmap & critical skill gaps\n• 🏢 Placement readiness & mock prep\n• 🚀 Capstone projects & portfolios\n• 👥 Connecting with matching alumni"
+            reply = f"### AI Technical Advisor\n\nRegarding **\"{message}\"**:\n\n1. In modern tech careers, deep technical fundamentals and hands-on implementation are the key to succeeding in placements and technical rounds.\n2. Practice writing clean, modular code with clear time and space complexity.\n3. Feel free to ask me for code snippets, system architecture breakdowns, or interview mock questions!"
             card_data = {'careerMatch': match, 'recommendedRoles': recommendation.get('recommendedRoles', [])}
 
     return jsonify({'reply': reply, 'cardData': card_data})
@@ -632,45 +612,41 @@ def api_student_profile():
 
 @app.route('/api/ai/recommend', methods=['GET', 'POST'])
 def api_ai_recommend():
+    """Proxy to the actual /ai/recommend algorithm — no hardcoded data."""
+    data = request.get_json(silent=True) or {}
+    student = data.get('studentProfile') or current_student_profile
+
+    ranked = generate_recommendations(student, alumni_data, top_n=5)
+    top = ranked[0] if ranked else {}
+    career_goal = top.get('career', student.get('careerGoal', 'Software Engineer'))
+    match_score = top.get('overallScore', 0)
+
+    student_skills = student.get('skills') or []
+    gap = analyze_skill_gap(student_skills, career_goal)
+    missing_skills_raw = gap.get('missingSkills') or []
+    missing_skills = [s.get('skill', str(s)) if isinstance(s, dict) else str(s) for s in missing_skills_raw]
+    rec_courses = recommend_courses_for_skills(missing_skills, top_n=4)
+
     return jsonify({
         'success': True,
         'recommendation': {
-            'topCareer': 'AI & Machine Learning Engineer',
-            'careerMatchScore': 94,
-            'placementReadiness': 88,
+            'topCareer': career_goal,
+            'careerMatchScore': match_score,
+            'placementReadiness': int(round(match_score * 0.85)),
             'recommendedCareers': [
                 {
-                    'title': 'AI & Machine Learning Engineer',
-                    'matchScore': 94,
-                    'growth': 'High (32% YoY)',
-                    'salaryRange': '$120,000 - $185,000',
-                    'description': 'Design, train, and deploy advanced neural networks and generative AI pipelines.'
-                },
-                {
-                    'title': 'Data Scientist & ML Specialist',
-                    'matchScore': 89,
-                    'growth': 'Very High',
-                    'salaryRange': '$110,000 - $160,000',
-                    'description': 'Extract actionable intelligence from large datasets and predictive models.'
-                },
-                {
-                    'title': 'Full Stack AI Solutions Architect',
-                    'matchScore': 83,
-                    'growth': 'High',
-                    'salaryRange': '$115,000 - $170,000',
-                    'description': 'Integrate LLMs, backend microservices, and reactive user interfaces.'
+                    'title': r.get('career', ''),
+                    'matchScore': r.get('overallScore', 0),
+                    'salaryRange': r.get('salaryRange', 'N/A'),
+                    'demandLevel': r.get('evidence', {}).get('jobMarket', {}).get('demandLevel', 'N/A'),
                 }
+                for r in ranked[:3]
             ],
             'skillGaps': [
-                {'skill': 'Docker & Kubernetes', 'importance': 'High'},
-                {'skill': 'MLOps & CI/CD Pipelines', 'importance': 'Medium'},
-                {'skill': 'Distributed Systems', 'importance': 'Medium'}
+                {'skill': s, 'importance': 'High' if i < 2 else 'Medium'}
+                for i, s in enumerate(missing_skills[:5])
             ],
-            'actionPlan': [
-                'Complete practical project containerizing a PyTorch/FastAPI model with Docker.',
-                'Practice system design mock interviews focusing on low-latency inference.',
-                'Deploy an end-to-end model on AWS SageMaker or GCP Vertex AI.'
-            ]
+            'recommendedCourses': [c.get('title', '') for c in rec_courses],
         }
     })
 
@@ -706,6 +682,50 @@ def api_auth_me():
             'profileCompleted': True
         }
     })
+
+
+# ─────────────────────────────────────────────────────
+#  POST /analyze-resume  — ATS-Style Resume Analyzer
+# ─────────────────────────────────────────────────────
+@app.route('/analyze-resume', methods=['POST'])
+def analyze_resume():
+    """
+    ATS-Style Resume Compatibility Analyzer.
+
+    Request body:
+      {
+        "resume_text":      str,           # required
+        "target_role":      str,           # optional
+        "job_description":  str            # optional — if provided, JD keywords are used
+      }
+
+    Priority:
+      1. job_description → JD keyword matching (most accurate)
+      2. target_role     → role knowledge-base fallback
+      3. neither         → general quality analysis only
+
+    Returns full ATS breakdown; never silently fabricates a job-specific score.
+    """
+    from resume_parser import parse_resume_text
+
+    data = request.get_json() or {}
+    resume_text    = (data.get('resume_text',    '') or data.get('resumeText',    '')).strip()
+    target_role    = (data.get('target_role',    '') or data.get('targetRole',    '')).strip() or None
+    job_description = (data.get('job_description', '') or data.get('jobDescription', '')).strip() or None
+
+    if not resume_text or len(resume_text) < 20:
+        return jsonify({'success': False, 'message': 'Resume text is too short to analyze.'}), 400
+
+    try:
+        result = parse_resume_text(resume_text, target_role, job_description)
+        # Safe log — never log full resume or PII
+        print(f"[ATS] role={target_role!r} jd={'yes' if job_description else 'no'} "
+              f"score={result.get('atsScore')} words={result.get('wordCount')}")
+        return jsonify({'success': True, **result})
+    except Exception as e:
+        import traceback
+        print(f"[ATS ERROR] {e}\n{traceback.format_exc()}")
+        return jsonify({'success': False, 'message': f'Analysis failed: {str(e)}'}), 500
 
 
 if __name__ == '__main__':

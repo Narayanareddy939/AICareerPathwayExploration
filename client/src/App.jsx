@@ -17,7 +17,6 @@ import Roadmap from './pages/Roadmap';
 import Analytics from './pages/Analytics';
 import Jobs from './pages/Jobs';
 import HigherStudies from './pages/HigherStudies';
-import ScenarioExplorer from './pages/ScenarioExplorer';
 import Progress from './pages/Progress';
 import Profile from './pages/Profile';
 import AlumniDetails from './pages/AlumniDetails';
@@ -121,7 +120,6 @@ export default function App() {
       <Route path="/analytics"           element={<Protected><Analytics /></Protected>} />
       <Route path="/jobs"                element={<Protected><Jobs /></Protected>} />
       <Route path="/higher-studies"      element={<Protected><HigherStudies /></Protected>} />
-      <Route path="/scenarios"           element={<Protected><ScenarioExplorer /></Protected>} />
       <Route path="/progress"            element={<Protected><Progress /></Protected>} />
       <Route path="/profile"             element={<Protected><Profile /></Protected>} />
       <Route path="/admin"               element={<Protected adminOnly><AdminDashboard /></Protected>} />
