@@ -50,7 +50,7 @@ app.use('/uploads', express.static(uploadsDir));
 //  MongoDB Connection
 // ─────────────────────────────────────────────────────
 const connectDB = async () => {
-  const uri = process.env.MONGODB_URI;
+  const uri = process.env.MONGODB_URI || process.env.MONGO_URI;
   if (!uri || uri.includes('<username>')) {
     console.warn('⚠️  MongoDB URI not configured. Auth & Profile features require MongoDB Atlas.');
     console.warn('    Set MONGODB_URI in server/.env to enable full functionality.');
