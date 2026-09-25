@@ -164,7 +164,7 @@ def normalize_skill(raw_skill: str) -> str:
                 best_ratio = ratio
                 best_match = canonical
         
-        if best_ratio >= 0.85:  # High confidence threshold
+        if best_ratio >= 0.82:  # Canonical threshold from specification
             return best_match
     
     # Step 4: Return original with proper casing

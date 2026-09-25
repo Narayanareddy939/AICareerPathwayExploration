@@ -147,16 +147,12 @@ def _academic_match(student_cgpa: float, alumni_cgpa: float, student_branch: str
         s_gpa = float(student_cgpa or 7.0)
         a_gpa = float(alumni_cgpa or 7.0)
         diff = abs(s_gpa - a_gpa)
-        if diff <= 0.2:
+        if diff <= 0.3:
             gpa_score = 1.0
-        elif diff <= 0.5:
-            gpa_score = 0.8
-        elif diff <= 1.0:
-            gpa_score = 0.6
-        elif diff <= 1.5:
-            gpa_score = 0.4
+        elif diff <= 0.8:
+            gpa_score = 0.75
         else:
-            gpa_score = 0.2
+            gpa_score = 0.40
     except:
         gpa_score = 0.5
     

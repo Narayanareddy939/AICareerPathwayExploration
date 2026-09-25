@@ -950,8 +950,23 @@ def calculate_ats_score(
         }
     }
 
+    # 4-Pillar ATS Formula (Master Specification):
+    # ATS Score = 0.25 * Sections + 0.35 * Keywords + 0.20 * Action Verbs + 0.20 * Metrics
+    sections_ratio = min(section_score / max(weights["sections"], 1), 1.0)
+    keywords_ratio = min(kw_score / max(weights["keyword_match"], 1), 1.0)
+    action_verbs_ratio = min(verb_count / 8.0, 1.0)
+    metrics_ratio = min(quant_count / 4.0, 1.0)
+    four_pillar_score = round(
+        0.25 * (sections_ratio * 100) +
+        0.35 * (keywords_ratio * 100) +
+        0.20 * (action_verbs_ratio * 100) +
+        0.20 * (metrics_ratio * 100),
+        1
+    )
+
     return {
         "atsScore":          final_score,
+        "fourPillarScore":   four_pillar_score,
         "scoreCategory":     _score_category(final_score),
         "disclaimer":        "ATS-Style Compatibility Score — simulates common ATS factors. "
                              "Not a guarantee of interview success or a company's actual ATS.",
