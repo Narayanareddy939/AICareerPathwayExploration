@@ -349,6 +349,18 @@ def skill_gap_endpoint():
     career = data.get('career') or data.get('targetCareer') or 'Software Engineer'
     skills = data.get('skills') or data.get('studentSkills') or []
 
+    if not skills:
+        return jsonify({
+            'career': career,
+            'skillMatchPercentage': 0,
+            'matchingSkills': [],
+            'missingSkills': [],
+            'priorityBreakdown': {},
+            'estimatedWeeksToBridge': 0,
+            'recommendedCourses': [],
+            'recommendedProjects': []
+        })
+
     gap = analyze_skill_gap(skills, career)
     missing = gap.get('missingSkills', [])
     courses = recommend_courses_for_skills(missing, top_n=6)

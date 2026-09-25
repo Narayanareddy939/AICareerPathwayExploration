@@ -96,6 +96,29 @@ export default function CompleteProfile() {
   };
 
   const handleNext = () => {
+    if (step === 0) {
+      if (!form.fullName?.trim()) { toast.error('Full Name is required'); return; }
+      if (!form.email?.trim()) { toast.error('Email is required'); return; }
+      if (!form.phone?.trim()) { toast.error('Phone Number is required'); return; }
+    } else if (step === 1) {
+      if (!form.university?.trim()) { toast.error('University/College name is required'); return; }
+      if (!form.branch) { toast.error('Please select your Engineering Branch'); return; }
+      if (!form.semester) { toast.error('Please select your current Semester'); return; }
+      if (!form.cgpa || Number(form.cgpa) < 1 || Number(form.cgpa) > 10) {
+        toast.error('Valid CGPA between 1.0 and 10.0 is required');
+        return;
+      }
+    } else if (step === 2) {
+      if (!form.skills || form.skills.length === 0) {
+        toast.error('Required: Please select at least 1 technical skill to proceed.');
+        return;
+      }
+    } else if (step === 3) {
+      if (!form.careerGoal) {
+        toast.error('Required: Please select your Target Career Goal.');
+        return;
+      }
+    }
     if (step < STEPS.length - 1) setStep(s => s + 1);
   };
 
@@ -104,6 +127,27 @@ export default function CompleteProfile() {
   };
 
   const handleSubmit = async () => {
+    if (!form.fullName?.trim() || !form.email?.trim() || !form.phone?.trim()) {
+      toast.error('Personal details are incomplete. Please review Step 1.');
+      setStep(0);
+      return;
+    }
+    if (!form.university?.trim() || !form.branch || !form.cgpa) {
+      toast.error('Academic details are incomplete. Please review Step 2.');
+      setStep(1);
+      return;
+    }
+    if (!form.skills || form.skills.length === 0) {
+      toast.error('Required: You must select at least 1 technical skill.');
+      setStep(2);
+      return;
+    }
+    if (!form.careerGoal) {
+      toast.error('Required: You must select your Career Goal.');
+      setStep(3);
+      return;
+    }
+
     setLoading(true);
     try {
       // Clean form object to omit empty fields and cast numeric values
@@ -218,18 +262,24 @@ export default function CompleteProfile() {
                   <h3 style={{ fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}><User size={20} color="#818cf8" /> Personal Information</h3>
                   <div className="grid-2">
                     <div>
-                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>FULL NAME</label>
-                      <input type="text" value={form.fullName} onChange={e => setForm({ ...form, fullName: e.target.value })} placeholder="Ananya Sharma" />
+                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+                        FULL NAME <span style={{ color: '#f43f5e' }}>* (Required)</span>
+                      </label>
+                      <input type="text" value={form.fullName} onChange={e => setForm({ ...form, fullName: e.target.value })} placeholder="Ananya Sharma" required />
                     </div>
                     <div>
-                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>EMAIL</label>
-                      <input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} placeholder="your@email.com" />
+                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+                        EMAIL <span style={{ color: '#f43f5e' }}>* (Required)</span>
+                      </label>
+                      <input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} placeholder="your@email.com" required />
                     </div>
                   </div>
                   <div className="grid-2">
                     <div>
-                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>PHONE NUMBER</label>
-                      <input type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} placeholder="+91 9876543210" />
+                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+                        PHONE NUMBER <span style={{ color: '#f43f5e' }}>* (Required)</span>
+                      </label>
+                      <input type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} placeholder="+91 9876543210" required />
                     </div>
                     <div>
                       <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>GENDER</label>
@@ -257,13 +307,17 @@ export default function CompleteProfile() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                   <h3 style={{ fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}><GraduationCap size={20} color="#34d399" /> Academic Information</h3>
                   <div>
-                    <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>UNIVERSITY / COLLEGE</label>
-                    <input type="text" value={form.university} onChange={e => setForm({ ...form, university: e.target.value })} placeholder="JNTUH, VIT, NIT Warangal..." />
+                    <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+                      UNIVERSITY / COLLEGE <span style={{ color: '#f43f5e' }}>* (Required)</span>
+                    </label>
+                    <input type="text" value={form.university} onChange={e => setForm({ ...form, university: e.target.value })} placeholder="JNTUH, VIT, NIT Warangal..." required />
                   </div>
                   <div className="grid-2">
                     <div>
-                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>BRANCH</label>
-                      <select value={form.branch} onChange={e => setForm({ ...form, branch: e.target.value })}>
+                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+                        BRANCH <span style={{ color: '#f43f5e' }}>* (Required)</span>
+                      </label>
+                      <select value={form.branch} onChange={e => setForm({ ...form, branch: e.target.value })} required>
                         <option value="">Select branch</option>
                         {['Computer Science & Engineering', 'CSE (Data Science)', 'CSE (AI & ML)', 'Information Technology', 'Electronics & Communication', 'Electrical Engineering', 'Mechanical Engineering', 'Data Science'].map(b => <option key={b} value={b}>{b}</option>)}
                       </select>
@@ -275,8 +329,10 @@ export default function CompleteProfile() {
                   </div>
                   <div className="grid-3">
                     <div>
-                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>SEMESTER</label>
-                      <select value={form.semester} onChange={e => setForm({ ...form, semester: e.target.value })}>
+                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+                        SEMESTER <span style={{ color: '#f43f5e' }}>*</span>
+                      </label>
+                      <select value={form.semester} onChange={e => setForm({ ...form, semester: e.target.value })} required>
                         <option value="">Sem</option>
                         {[1,2,3,4,5,6,7,8].map(s => <option key={s} value={s}>Sem {s}</option>)}
                       </select>
@@ -289,8 +345,10 @@ export default function CompleteProfile() {
                       </select>
                     </div>
                     <div>
-                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>CGPA</label>
-                      <input type="number" step="0.1" min="4" max="10" value={form.cgpa} onChange={e => setForm({ ...form, cgpa: e.target.value })} placeholder="8.7" />
+                      <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+                        CGPA <span style={{ color: '#f43f5e' }}>* (1.0 - 10.0)</span>
+                      </label>
+                      <input type="number" step="0.1" min="1" max="10" value={form.cgpa} onChange={e => setForm({ ...form, cgpa: e.target.value })} placeholder="8.7" required />
                     </div>
                   </div>
                 </div>
@@ -299,8 +357,17 @@ export default function CompleteProfile() {
               {/* ── STEP 2: Skills ── */}
               {step === 2 && (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                  <h3 style={{ fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}><Code2 size={20} color="#f59e0b" /> Technical Skills</h3>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '-0.75rem' }}>Select all skills you know. The AI will find your gaps.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <h3 style={{ fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem', margin: 0 }}>
+                      <Code2 size={20} color="#f59e0b" /> Technical Skills
+                    </h3>
+                    <span className="badge badge-rose" style={{ fontSize: '0.72rem' }}>
+                      * At least 1 skill required
+                    </span>
+                  </div>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '-0.5rem' }}>
+                    Select all technical skills you know. The AI uses these required skills to compute your match and gap.
+                  </p>
 
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                     {ALL_SKILLS.map(sk => (
@@ -322,9 +389,11 @@ export default function CompleteProfile() {
                     <button type="button" onClick={addCustomSkill} className="btn-secondary" style={{ whiteSpace: 'nowrap' }}>Add</button>
                   </div>
 
-                  {form.skills.length > 0 && (
+                  {form.skills.length > 0 ? (
                     <div>
-                      <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600, marginBottom: '0.5rem' }}>SELECTED ({form.skills.length})</p>
+                      <p style={{ fontSize: '0.78rem', color: '#34d399', fontWeight: 600, marginBottom: '0.5rem' }}>
+                        SELECTED SKILLS ({form.skills.length})
+                      </p>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
                         {form.skills.map(sk => (
                           <span key={sk} className="badge badge-emerald" style={{ cursor: 'pointer' }} onClick={() => toggleSkill(sk)}>
@@ -332,6 +401,12 @@ export default function CompleteProfile() {
                           </span>
                         ))}
                       </div>
+                    </div>
+                  ) : (
+                    <div style={{ padding: '0.75rem', background: 'rgba(244,63,94,0.08)', border: '1px solid rgba(244,63,94,0.25)', borderRadius: '8px' }}>
+                      <p style={{ fontSize: '0.8rem', color: '#fb7185', margin: 0 }}>
+                        ⚠️ You haven't selected any skills yet. Please select at least one skill above to continue.
+                      </p>
                     </div>
                   )}
                 </div>
@@ -359,8 +434,10 @@ export default function CompleteProfile() {
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>CAREER GOAL</label>
-                    <select value={form.careerGoal} onChange={e => setForm({ ...form, careerGoal: e.target.value })}>
+                    <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>
+                      CAREER GOAL (TARGET ROLE) <span style={{ color: '#f43f5e' }}>* (Required)</span>
+                    </label>
+                    <select value={form.careerGoal} onChange={e => setForm({ ...form, careerGoal: e.target.value })} required>
                       <option value="">Select your target role</option>
                       {CAREER_GOALS.map(g => <option key={g} value={g}>{g}</option>)}
                     </select>

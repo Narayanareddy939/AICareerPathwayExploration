@@ -259,12 +259,25 @@ router.post('/skill-gap', protect, async (req, res) => {
 
     // Local fallback
     const target = career || 'Software Engineer';
+    const userSkills = (skills && Array.isArray(skills)) ? skills : [];
+    if (userSkills.length === 0) {
+      return res.json({
+        success: true,
+        career: target,
+        skillMatchPercentage: 0,
+        matchingSkills: [],
+        missingSkills: [],
+        estimatedWeeksToBridge: 0,
+        recommendedCourses: []
+      });
+    }
+
     const missing = ['System Design', 'Docker', 'AWS', 'Redis'];
     res.json({
       success: true,
       career: target,
       skillMatchPercentage: 72,
-      matchingSkills: skills || ['Python', 'SQL'],
+      matchingSkills: userSkills,
       missingSkills: missing,
       estimatedWeeksToBridge: 8,
       recommendedCourses: [

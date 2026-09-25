@@ -1,0 +1,41 @@
+services:
+  # ─────────────────────────────────────────────────────────
+  # 1. Python AI / ML Microservice (Flask + Gunicorn)
+  # ─────────────────────────────────────────────────────────
+  - type: web
+    name: aicarrier-python
+    env: python
+    rootDir: python-ai
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 2 -b 0.0.0.0:$PORT main:app
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8000
+
+  # ─────────────────────────────────────────────────────────
+  # 2. Node.js Express Backend API
+  # ─────────────────────────────────────────────────────────
+  - type: web
+    name: aicarrier-backend
+    env: node
+    rootDir: server
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PYTHON_AI_URL
+        fromService:
+          type: web
+          name: aicarrier-python
+          property: host
