@@ -400,11 +400,9 @@ app.post('/api/analyze-resume', async (req, res) => {
     console.error('[analyze-resume] Python engine error:', pyErr.message);
 
     if (isConnErr) {
-      return res.status(503).json({
-        success: false,
-        message: 'ATS analysis service is currently unavailable. Please ensure the Python AI engine is running.',
-        serviceUnavailable: true,
-      });
+      console.warn('[analyze-resume] Python service offline, using built-in resilient ATS analyzer fallback.');
+      const fallbackResult = generateFallbackATS(resumeText, targetRole, jobDescription);
+      return res.json({ success: true, ...fallbackResult });
     }
     return res.status(500).json({
       success: false,
@@ -412,6 +410,142 @@ app.post('/api/analyze-resume', async (req, res) => {
     });
   }
 });
+
+function generateFallbackATS(resumeText, targetRole = 'Software Engineer', jobDescription = '') {
+  const text = (resumeText || '').toLowerCase();
+  const wordCount = (resumeText.match(/\S+/g) || []).length;
+
+  const COMMON_SKILLS = [
+    'python', 'java', 'javascript', 'typescript', 'react', 'node.js', 'sql', 'mongodb',
+    'docker', 'aws', 'kubernetes', 'git', 'c++', 'c#', 'machine learning', 'deep learning',
+    'html', 'css', 'rest api', 'graphql', 'ci/cd', 'linux', 'azure', 'pandas', 'numpy',
+    'scikit-learn', 'tensorflow', 'pytorch', 'statistics', 'data analysis', 'tableau',
+    'power bi', 'agile', 'scrum', 'spring boot', 'express', 'flask', 'django'
+  ];
+
+  const ROLE_SKILLS = {
+    'data scientist': {
+      required: ['Python', 'SQL', 'Machine Learning', 'Statistics', 'Pandas', 'NumPy'],
+      preferred: ['Scikit-Learn', 'TensorFlow', 'PyTorch', 'Data Visualization', 'Deep Learning']
+    },
+    'software engineer': {
+      required: ['Data Structures', 'Algorithms', 'Git', 'OOP', 'SQL', 'Problem Solving'],
+      preferred: ['System Design', 'Docker', 'CI/CD', 'REST APIs', 'Cloud']
+    },
+    'full stack developer': {
+      required: ['JavaScript', 'React', 'Node.js', 'HTML', 'CSS', 'SQL'],
+      preferred: ['TypeScript', 'MongoDB', 'Docker', 'AWS', 'GraphQL']
+    },
+    'machine learning engineer': {
+      required: ['Python', 'Machine Learning', 'Deep Learning', 'PyTorch', 'TensorFlow', 'Git'],
+      preferred: ['MLOps', 'Docker', 'Kubernetes', 'AWS', 'Computer Vision']
+    }
+  };
+
+  const roleKey = Object.keys(ROLE_SKILLS).find(r => targetRole.toLowerCase().includes(r)) || 'software engineer';
+  const roleCfg = ROLE_SKILLS[roleKey];
+
+  const detectedSkills = [];
+  COMMON_SKILLS.forEach(sk => {
+    if (text.includes(sk)) {
+      detectedSkills.push({ name: sk.charAt(0).toUpperCase() + sk.slice(1), sections: ['content'], evidence: 'moderate' });
+    }
+  });
+
+  const matchedRequired = roleCfg.required.filter(s => text.includes(s.toLowerCase()));
+  const missingRequired = roleCfg.required.filter(s => !text.includes(s.toLowerCase()));
+  const matchedPreferred = roleCfg.preferred.filter(s => text.includes(s.toLowerCase()));
+  const missingPreferred = roleCfg.preferred.filter(s => !text.includes(s.toLowerCase()));
+
+  const hasEmail = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(resumeText);
+  const hasPhone = /(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/.test(resumeText);
+  const hasLinkedin = /linkedin\.com/i.test(resumeText);
+  const hasGithub = /github\.com/i.test(resumeText);
+
+  const hasEducation = /education|university|college|b\.?tech|degree/i.test(resumeText);
+  const hasExperience = /experience|work history|employment|internship/i.test(resumeText);
+  const hasProjects = /project|built|developed/i.test(resumeText);
+  const hasSkills = /skill|technologies|proficiencies/i.test(resumeText);
+  const hasCertifications = /certification|certificate|certified/i.test(resumeText);
+
+  const reqPct = Math.round((matchedRequired.length / (roleCfg.required.length || 1)) * 100);
+  const prefPct = Math.round((matchedPreferred.length / (roleCfg.preferred.length || 1)) * 100);
+  const kwScore = Math.min(40, Math.round((reqPct * 0.6 + prefPct * 0.4) * 0.4));
+  
+  let sectionScore = 0;
+  if (hasEducation) sectionScore += 3;
+  if (hasExperience) sectionScore += 3;
+  if (hasProjects) sectionScore += 3;
+  if (hasSkills) sectionScore += 3;
+  if (hasCertifications) sectionScore += 3;
+
+  let contactScore = 0;
+  if (hasEmail) contactScore += 2;
+  if (hasPhone) contactScore += 1;
+  if (hasLinkedin) contactScore += 1;
+  if (hasGithub) contactScore += 1;
+
+  const expScore = hasExperience ? 10 : 3;
+  const projScore = hasProjects ? 8 : 2;
+  const readScore = wordCount > 100 ? 5 : 2;
+  const eduScore = hasEducation ? 5 : 2;
+  const achScore = /\b(\d+%|\d+\+|\$\d+|reduced|improved|increased|achieved)\b/i.test(resumeText) ? 4 : 1;
+
+  const atsScore = Math.min(100, Math.max(15, kwScore + sectionScore + expScore + projScore + contactScore + readScore + eduScore + achScore));
+  const scoreCategory = atsScore >= 80 ? 'Strong Match' : atsScore >= 60 ? 'Moderate Match' : atsScore >= 40 ? 'Needs Improvement' : 'Low Match';
+
+  return {
+    atsScore,
+    scoreCategory,
+    wordCount,
+    breakdown: {
+      keywordMatch: { score: kwScore, maxScore: 40 },
+      sections: {
+        score: sectionScore,
+        maxScore: 15,
+        status: { education: hasEducation, experience: hasExperience, skills: hasSkills, projects: hasProjects, certifications: hasCertifications }
+      },
+      experience: { score: expScore, maxScore: 15 },
+      projects: { score: projScore, maxScore: 10 },
+      contact: {
+        score: contactScore,
+        maxScore: 5,
+        fields: { email: hasEmail, phone: hasPhone, linkedin: hasLinkedin, github: hasGithub }
+      },
+      achievements: { score: achScore, maxScore: 5 },
+      readability: { score: readScore, maxScore: 5, issues: wordCount < 100 ? ['Resume is very brief. Expand content to 250+ words.'] : [] },
+      educationCertifications: { score: eduScore, maxScore: 5, hasDegree: hasEducation }
+    },
+    keywordAnalysis: {
+      requiredMatchPercentage: reqPct,
+      preferredMatchPercentage: prefPct,
+      overallMatchPercentage: Math.round((reqPct + prefPct) / 2),
+      matchedRequired,
+      matchedPreferred,
+      missingRequired,
+      missingPreferred,
+      allMatched: [...matchedRequired, ...matchedPreferred]
+    },
+    detectedSkills,
+    strengths: [
+      hasEmail && hasPhone ? 'Includes complete contact information' : null,
+      matchedRequired.length > 0 ? `Matches key role requirements: ${matchedRequired.join(', ')}` : null,
+      hasProjects ? 'Includes demonstrable project portfolio' : null
+    ].filter(Boolean),
+    recommendations: [
+      missingRequired.length > 0 ? `Incorporate required skills: ${missingRequired.join(', ')}` : null,
+      !hasLinkedin ? 'Add a link to your LinkedIn profile in the header' : null,
+      !hasGithub ? 'Add a link to your GitHub profile for technical verification' : null,
+      wordCount < 150 ? 'Expand your project descriptions and use action verbs with metrics' : null
+    ].filter(Boolean),
+    actionableImprovements: {
+      isBadResume: atsScore < 50,
+      criticalIssues: missingRequired.length > 0 ? [`Missing ${missingRequired.length} core skills for ${targetRole}: ${missingRequired.join(', ')}`] : [],
+      pointsToChange: missingRequired.map(s => `Add practical evidence of ${s} under your projects or skills section.`)
+    },
+    isFallback: true
+  };
+}
 
 
 // POST /api/chat (Public AI Career Advisor chatbot)
