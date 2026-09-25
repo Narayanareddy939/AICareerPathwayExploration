@@ -1,16 +1,17 @@
 // Multi-model Gemini Integration with automatic model fallback
 const GEMINI_MODELS = [
+  'gemini-3.1-flash-lite',
+  'gemini-flash-lite-latest',
+  'gemini-3.1-flash-lite-preview',
   'gemini-2.5-flash',
-  'gemini-2.0-flash',
-  'gemini-1.5-flash',
-  'gemini-1.5-pro'
+  'gemini-2.0-flash'
 ];
 
 /**
  * Call Gemini AI with automatic model fallback
  * If a model returns 429 (quota exceeded) or 503 (high demand), it tries the next model immediately.
  */
-async function callGeminiMultiModel(contents, systemInstruction, maxTokens = 1200) {
+async function callGeminiMultiModel(contents, systemInstruction, maxTokens = 1400) {
   const key = process.env.GEMINI_API_KEY;
   if (!key || key === 'your_gemini_api_key_here') return null;
 
@@ -35,7 +36,7 @@ async function callGeminiMultiModel(contents, systemInstruction, maxTokens = 120
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-        signal: AbortSignal.timeout(3000)
+        signal: AbortSignal.timeout(12000)
       });
 
       if (res.status === 200) {
@@ -287,7 +288,7 @@ Let me know if you would like me to customize this logic or add error handling!`
    - Mock interviews, ATS resume tuning, and LeetCode contest practice.`;
   }
 
-  // 10. Default Helpful Technical Response
+// 10. Default Helpful Technical Response
   return `### AI Career Technical Advisor
 
 Regarding **"${query}"**:
@@ -300,7 +301,133 @@ Regarding **"${query}"**:
    - Ask for architectural patterns or system design explanations.`;
 }
 
+/**
+ * Perform in-depth ATS Resume Analysis using Google Gemini AI
+ */
+async function analyzeResumeWithGemini(resumeText, targetRole = 'Software Engineer', jobDescription = '') {
+  const key = process.env.GEMINI_API_KEY;
+  if (!key || key === 'your_gemini_api_key_here') return null;
+
+  const role = targetRole || 'Software Engineer';
+  const prompt = `You are a world-class ATS (Applicant Tracking System) and Senior Technical Hiring Manager.
+Analyze the following resume thoroughly against the target role and optional job description.
+
+Target Role: ${role}
+${jobDescription ? `Target Job Description:\n${jobDescription.slice(0, 1500)}` : ''}
+
+Candidate Resume Text:
+"""
+${resumeText.slice(0, 4500)}
+"""
+
+Evaluate with strict, realistic ATS standards. Return a valid JSON object matching this exact structure:
+{
+  "atsScore": <integer 0-100 realistic score>,
+  "scoreCategory": <"High Compatibility" if score >= 75, "Moderate Compatibility" if >= 55, else "Needs Improvement">,
+  "disclaimer": "Evaluated by Google Gemini ATS Intelligence",
+  "targetRole": "${role}",
+  "jobDescriptionProvided": ${Boolean(jobDescription)},
+  "keywordSource": "${jobDescription ? 'job_description' : 'role_knowledge_base'}",
+  "breakdown": {
+    "keywordMatch": <0-40>,
+    "sections": <0-15>,
+    "experience": <0-15>,
+    "projects": <0-10>,
+    "contact": <0-5>,
+    "achievements": <0-5>,
+    "readability": <0-5>,
+    "educationCertifications": <0-5>
+  },
+  "keywordAnalysis": {
+    "requiredMatchPercentage": <0-100>,
+    "preferredMatchPercentage": <0-100>,
+    "matchedRequired": [<array of matched required skill strings>],
+    "missingRequired": [<array of missing required skill strings>],
+    "matchedPreferred": [<array of matched preferred skill strings>],
+    "missingPreferred": [<array of missing preferred skill strings>]
+  },
+  "detectedSkills": [
+    { "name": "<Skill Name>", "evidence": "<high|medium|low>" }
+  ],
+  "sections": {
+    "education": <boolean>,
+    "experience": <boolean>,
+    "projects": <boolean>,
+    "skills": <boolean>,
+    "certifications": <boolean>
+  },
+  "contact": {
+    "email": <boolean>,
+    "phone": <boolean>,
+    "linkedin": <boolean>,
+    "github": <boolean>
+  },
+  "achievements": {
+    "actionVerbCount": <integer count of strong action verbs detected>,
+    "quantifiedAchievementCount": <integer count of metrics/numbers/percentages in accomplishments>
+  },
+  "strengths": [
+    "<3-5 specific, high-impact strengths found in the resume>"
+  ],
+  "recommendations": [
+    "<3-5 high-priority ATS improvements with exact actionable steps>"
+  ],
+  "actionableImprovements": {
+    "criticalIssues": [
+      "<specific critical gaps lowering the ATS score>"
+    ],
+    "pointsToChange": [
+      "<concrete, numbered action items to rewrite or add>"
+    ],
+    "exampleTemplate": {
+      "before": "<a weak, generic bullet point based on candidate text>",
+      "after": "<an ATS-optimized version with action verb, technical scope, and quantified metric>"
+    }
+  },
+  "limitations": [
+    "Simulated ATS match based on modern semantic parsing & LLM heuristics.",
+    "Different corporate ATS software (Workday, Greenhouse, Taleo) may parse custom column formatting differently."
+  ]
+}
+
+Ensure all numbers are realistic and the breakdown sums approximately to atsScore. Return ONLY the JSON object.`;
+
+  for (const model of GEMINI_MODELS) {
+    try {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`;
+      const payload = {
+        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+        generationConfig: {
+          temperature: 0.2,
+          maxOutputTokens: 2500,
+          responseMimeType: 'application/json'
+        }
+      };
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(12000)
+      });
+      if (res.status === 200) {
+        const data = await res.json();
+        const raw = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && typeof parsed.atsScore === 'number') {
+            return parsed;
+          }
+        }
+      }
+    } catch (err) {
+      console.warn(`[Gemini ATS] Model ${model} failed:`, err.message);
+    }
+  }
+  return null;
+}
+
 module.exports = {
   callGeminiMultiModel,
+  analyzeResumeWithGemini,
   getIntelligentTechnicalFallback
 };

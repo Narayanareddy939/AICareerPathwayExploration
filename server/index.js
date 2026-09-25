@@ -14,7 +14,7 @@ try { dns.setServers(['8.8.8.8', '1.1.1.1']); } catch (e) {}
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const { callGeminiMultiModel, getIntelligentTechnicalFallback } = require('./services/geminiService');
+const { callGeminiMultiModel, getIntelligentTechnicalFallback, analyzeResumeWithGemini } = require('./services/geminiService');
 
 
 // ─────────────────────────────────────────────────────
@@ -398,7 +398,7 @@ app.post('/api/roadmap', (req, res) => {
   res.json({ success: true, targetRole, milestones });
 });
 
-// POST /api/analyze-resume  — pure proxy to Python ATS engine (source of truth)
+// POST /api/analyze-resume  — Gemini-Powered ATS Engine with Python & Resilient fallback
 app.post('/api/analyze-resume', async (req, res) => {
   const {
     resumeText = '',
@@ -410,32 +410,35 @@ app.post('/api/analyze-resume', async (req, res) => {
     return res.status(400).json({ success: false, message: 'Resume text is too short to analyze.' });
   }
 
-  const PYTHON_URL = process.env.PYTHON_AI_URL || 'http://127.0.0.1:8000';
+  // 1. Primary: Use Google Gemini AI for deep, intelligent ATS analysis
+  try {
+    const geminiResult = await analyzeResumeWithGemini(resumeText, targetRole, jobDescription);
+    if (geminiResult && typeof geminiResult.atsScore === 'number') {
+      return res.json({ success: true, ...geminiResult });
+    }
+  } catch (geminiErr) {
+    console.warn('[analyze-resume] Gemini ATS analysis error:', geminiErr.message);
+  }
 
+  // 2. Secondary: Forward to Python ATS Engine
+  const PYTHON_URL = process.env.PYTHON_AI_URL || 'http://127.0.0.1:8000';
   try {
     const pyRes = await axios.post(`${PYTHON_URL}/analyze-resume`, {
       resume_text:     resumeText,
       target_role:     targetRole  || undefined,
       job_description: jobDescription || undefined,
-    }, { timeout: 20000 });
+    }, { timeout: 15000 });
 
-    // Pass Python response through unchanged — Python is the single source of truth
-    return res.json({ success: true, ...pyRes.data });
-
-  } catch (pyErr) {
-    const isConnErr = pyErr.code === 'ECONNREFUSED' || pyErr.code === 'ENOTFOUND';
-    console.error('[analyze-resume] Python engine error:', pyErr.message);
-
-    if (isConnErr) {
-      console.warn('[analyze-resume] Python service offline, using built-in resilient ATS analyzer fallback.');
-      const fallbackResult = generateFallbackATS(resumeText, targetRole, jobDescription);
-      return res.json({ success: true, ...fallbackResult });
+    if (pyRes.data && (pyRes.data.atsScore != null || pyRes.data.success)) {
+      return res.json({ success: true, ...pyRes.data });
     }
-    return res.status(500).json({
-      success: false,
-      message: `ATS analysis failed: ${pyErr.response?.data?.message || pyErr.message}`,
-    });
+  } catch (pyErr) {
+    console.warn('[analyze-resume] Python engine unavailable or timed out, using built-in resilient ATS analyzer fallback.');
   }
+
+  // 3. Fallback: Deterministic local ATS rule-based analyzer
+  const fallbackResult = generateFallbackATS(resumeText, targetRole, jobDescription);
+  return res.json({ success: true, ...fallbackResult });
 });
 
 function generateFallbackATS(resumeText, targetRole = 'Software Engineer', jobDescription = '') {

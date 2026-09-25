@@ -38,12 +38,18 @@ function RecommendationCard({ rec, index, expanded, onToggle }) {
             <h3 style={{ fontSize: '1.2rem', fontWeight: 800 }}>{rec.career}</h3>
           </div>
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
-            <span className="badge badge-indigo" style={{ fontSize: '0.72rem' }}>
+            <span className={`badge ${
+              rec.confidence?.toLowerCase() === 'high' ? 'badge-emerald' :
+              rec.confidence?.toLowerCase() === 'medium' ? 'badge-amber' : 'badge-rose'
+            }`} style={{ fontSize: '0.72rem' }}>
               {rec.confidence?.toUpperCase() || 'MEDIUM'} confidence
             </span>
-            {rec.jobMarketInsights?.demandLevel && (
-              <span className="badge badge-emerald" style={{ fontSize: '0.72rem' }}>
-                {rec.jobMarketInsights.demandLevel} Demand
+            {(rec.jobMarketInsights?.demandLevel || rec.demandLevel) && (
+              <span className={`badge ${
+                (rec.jobMarketInsights?.demandLevel || rec.demandLevel || '').toLowerCase().includes('high') ? 'badge-emerald' :
+                (rec.jobMarketInsights?.demandLevel || rec.demandLevel || '').toLowerCase().includes('medium') ? 'badge-indigo' : 'badge-amber'
+              }`} style={{ fontSize: '0.72rem' }}>
+                {(rec.jobMarketInsights?.demandLevel || rec.demandLevel).replace(/\s*demand\s*/i, '')} Demand
               </span>
             )}
           </div>

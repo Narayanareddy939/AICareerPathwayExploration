@@ -93,13 +93,11 @@ except Exception as e:
 #  Gemini Explanation Helper
 # ─────────────────────────────────────────────────────
 GEMINI_MODELS = [
-    'gemini-3-flash-preview',
+    'gemini-3.1-flash-lite',
+    'gemini-flash-lite-latest',
+    'gemini-3.1-flash-lite-preview',
     'gemini-3.5-flash',
-    'gemma-4-26b-a4b-it',
-    'gemini-3.7-flash',
-    'gemini-3.6-flash',
-    'gemini-flash-latest',
-    'gemini-3.1-flash-lite'
+    'gemini-flash-latest'
 ]
 
 def call_gemini_api(prompt: str = None, contents: list = None, system_instruction: str = None) -> str:

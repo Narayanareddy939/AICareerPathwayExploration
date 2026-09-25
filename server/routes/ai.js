@@ -249,12 +249,27 @@ const handleRecommendations = async (req, res) => {
       const matched = c.required.filter(r => stuSkills.some(s => s.includes(r) || r.includes(s)));
       const missing = c.required.filter(r => !stuSkills.some(s => s.includes(r) || r.includes(s)));
       const score = Math.min(Math.max(Math.round(55 + (matched.length / c.required.length) * 40), 50), 96);
+      const skillPct = Math.round((matched.length / c.required.length) * 100);
+      const confidence = (score >= 70 && skillPct >= 40) ? 'high' : (score >= 55 && skillPct >= 20) ? 'medium' : 'low';
       return {
         career: c.career,
         matchScore: score,
         overallScore: score,
+        confidence,
+        scores: {
+          skillMatch: skillPct,
+          interestMatch: 60,
+          academicMatch: 82,
+          jobMarket: 75,
+          alumniSimilarity: 72,
+          locationMatch: 70
+        },
         salaryRange: c.salaryRange,
         demandLevel: c.demandLevel,
+        jobMarketInsights: {
+          demandLevel: c.demandLevel,
+          jobCount: 45
+        },
         matchedSkills: matched,
         missingSkills: missing
       };

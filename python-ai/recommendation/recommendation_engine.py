@@ -280,9 +280,14 @@ def generate_recommendations(
         
         match_score_pct = round(min(final_score * 100, 99), 1)
         
-        # Confidence based on data quality
-        confidence = "high" if len(similar_alumni) >= 3 and job_insights["jobCount"] > 0 else \
-                     "medium" if len(similar_alumni) >= 1 or job_insights["jobCount"] > 0 else "low"
+        skill_pct = round(skill_score * 100, 1)
+        # Confidence dynamically evaluated from candidate's skills, role alignment, and match score
+        if match_score_pct >= 68.0 and skill_pct >= 35.0:
+            confidence = "high"
+        elif match_score_pct >= 48.0 and skill_pct >= 20.0:
+            confidence = "medium"
+        else:
+            confidence = "low"
         
         score_dict = {
             "skillMatch": round(skill_score * 100, 1),

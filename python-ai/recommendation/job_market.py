@@ -257,7 +257,7 @@ def get_job_market_insights(career_name: str) -> Dict[str, Any]:
     
     # Demand level based on job count relative to dataset
     demand_pct = (total_matched / total_jobs_in_db) * 100
-    demand_level = "Very High" if demand_pct > 15 else "High" if demand_pct > 8 else "Medium" if demand_pct > 4 else "Growing"
+    demand_level = "High" if demand_pct > 8 else "Medium" if demand_pct > 3 else "Low"
     
     return {
         "career": career_name,
