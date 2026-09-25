@@ -203,19 +203,21 @@ export default function ResumeAnalyzer({ activeStudent }) {
     setLoading(true);
     setServiceError(null);
     try {
+      const token = localStorage.getItem('token');
+      const headers = token ? { Authorization: `Bearer ${token}` } : {};
       const res = await axios.post('/api/analyze-resume', {
         resumeText:     text,
         targetRole:     role || targetRole || '',
         jobDescription: jd   || jobDescription || '',
-      });
+      }, { headers, timeout: 25000 });
       if (res.data?.success) {
         setAnalysis(res.data);
       }
     } catch (err) {
       if (err.response?.data?.serviceUnavailable) {
-        setServiceError('ATS analysis service is offline. Please start the Python engine.');
+        setServiceError('ATS analysis service is temporarily offline. Retrying with local analyzer...');
       } else {
-        toast.error(err.response?.data?.message || 'Analysis failed');
+        toast.error(err.response?.data?.message || 'Analysis failed. Please retry.');
       }
       console.error('[ResumeAnalyzer] error:', err);
     } finally {
@@ -227,7 +229,9 @@ export default function ResumeAnalyzer({ activeStudent }) {
   useEffect(() => {
     const load = async () => {
       try {
-        const res = await axios.get('/api/resume/my-resume');
+        const token = localStorage.getItem('token');
+        const headers = token ? { Authorization: `Bearer ${token}` } : {};
+        const res = await axios.get('/api/resume/my-resume', { headers });
         const p = res.data?.studentProfile;
         if (p) setProfileData(p);
 
@@ -281,18 +285,19 @@ export default function ResumeAnalyzer({ activeStudent }) {
     formData.append('resume', file);
     setUploading(true);
     try {
-      const res = await axios.post('/api/resume/upload', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
+      const token = localStorage.getItem('token');
+      const headers = token ? { Authorization: `Bearer ${token}` } : {};
+      // Browser automatically sets Content-Type with boundary for FormData
+      const res = await axios.post('/api/resume/upload', formData, { headers, timeout: 20000 });
       if (res.data?.extractedText?.trim().length > 30) {
         setResumeText(res.data.extractedText);
         toast.success(`Extracted text from ${file.name}`);
         triggerAnalysis(res.data.extractedText, targetRole, jobDescription);
       } else {
-        toast.success(`Uploaded ${file.name}`);
+        toast.success(`Uploaded ${file.name}. Review resume text below.`);
       }
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Failed to parse file');
+      toast.error(err.response?.data?.message || 'Failed to upload file');
     } finally {
       setUploading(false);
       if (fileInputRef.current) fileInputRef.current.value = '';

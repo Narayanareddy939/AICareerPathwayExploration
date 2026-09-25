@@ -24,8 +24,19 @@ const storage = multer.diskStorage({
 
 async function extractTextFromFile(filePath, ext) {
   try {
-    if (ext === '.txt') {
+    if (ext === '.txt' || ext === '.md' || ext === '.text') {
       return fs.readFileSync(filePath, 'utf8');
+    }
+    if (ext === '.docx' || ext === '.doc') {
+      try {
+        const mammoth = require('mammoth');
+        const res = await mammoth.extractRawText({ path: filePath });
+        if (res && res.value && res.value.trim()) {
+          return res.value.trim();
+        }
+      } catch (docErr) {
+        console.warn('DOCX extraction warning:', docErr.message);
+      }
     }
     if (ext === '.pdf') {
       const dataBuffer = fs.readFileSync(filePath);

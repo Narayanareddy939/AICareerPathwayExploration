@@ -389,7 +389,7 @@ How can I help you accelerate your career today?`,
         message: textToSend,
         history: historyPayload,
         studentProfile: profile || {}
-      }, { headers, timeout: 30000 });
+      }, { headers, timeout: 50000 });
 
       if (res.data?.reply) {
         setMessages(prev => [...prev, {
@@ -406,7 +406,7 @@ How can I help you accelerate your career today?`,
           message: textToSend,
           history: historyPayload,
           studentContext: profile || {}
-        }, { timeout: 30000 });
+        }, { timeout: 45000 });
         if (fallbackRes.data?.reply) {
           setMessages(prev => [...prev, {
             sender: 'bot',

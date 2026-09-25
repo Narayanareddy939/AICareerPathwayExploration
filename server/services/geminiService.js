@@ -2,9 +2,7 @@
 const GEMINI_MODELS = [
   'gemini-3.1-flash-lite',
   'gemini-flash-lite-latest',
-  'gemini-3.1-flash-lite-preview',
-  'gemini-2.5-flash',
-  'gemini-2.0-flash'
+  'gemini-3.1-flash-lite-preview'
 ];
 
 /**
@@ -15,7 +13,7 @@ async function callGeminiMultiModel(contents, systemInstruction, maxTokens = 140
   const key = process.env.GEMINI_API_KEY;
   if (!key || key === 'your_gemini_api_key_here') return null;
 
-  for (const model of GEMINI_MODELS) {
+  for (const model of GEMINI_MODELS.slice(0, 2)) {
     try {
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`;
       const payload = {
@@ -36,7 +34,7 @@ async function callGeminiMultiModel(contents, systemInstruction, maxTokens = 140
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-        signal: AbortSignal.timeout(12000)
+        signal: AbortSignal.timeout(6000)
       });
 
       if (res.status === 200) {
@@ -392,7 +390,7 @@ Evaluate with strict, realistic ATS standards. Return a valid JSON object matchi
 
 Ensure all numbers are realistic and the breakdown sums approximately to atsScore. Return ONLY the JSON object.`;
 
-  for (const model of GEMINI_MODELS) {
+  for (const model of GEMINI_MODELS.slice(0, 2)) {
     try {
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`;
       const payload = {
@@ -407,7 +405,7 @@ Ensure all numbers are realistic and the breakdown sums approximately to atsScor
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-        signal: AbortSignal.timeout(12000)
+        signal: AbortSignal.timeout(6000)
       });
       if (res.status === 200) {
         const data = await res.json();
