@@ -38,7 +38,7 @@ async function callGeminiMultiModel(contents, systemInstruction, maxTokens = 120
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-        signal: AbortSignal.timeout(12000)
+        signal: AbortSignal.timeout(4000)
       });
 
       if (res.status === 200) {

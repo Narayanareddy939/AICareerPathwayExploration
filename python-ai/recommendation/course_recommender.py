@@ -95,6 +95,41 @@ def _load_coursera_and_index():
     return _coursera_cache, _inverted_index
 
 
+STATIC_RECOMMENDATIONS = {
+    "Python": [
+        {"title": "Python for Everybody", "provider": "Coursera / University of Michigan", "url": "https://www.coursera.org/specializations/python", "rating": "4.8", "difficulty": "Beginner", "duration": "5 months", "course_rank": 35.0},
+        {"title": "Complete Python Bootcamp", "provider": "Udemy", "url": "https://www.udemy.com/course/complete-python-bootcamp", "rating": "4.7", "difficulty": "Beginner", "duration": "22 hours", "course_rank": 30.0},
+    ],
+    "Machine Learning": [
+        {"title": "Machine Learning Specialization", "provider": "Coursera / DeepLearning.AI", "url": "https://www.coursera.org/specializations/machine-learning-introduction", "rating": "4.9", "difficulty": "Intermediate", "duration": "3 months", "course_rank": 40.0},
+    ],
+    "Deep Learning": [
+        {"title": "Deep Learning Specialization", "provider": "Coursera / DeepLearning.AI", "url": "https://www.coursera.org/specializations/deep-learning", "rating": "4.9", "difficulty": "Advanced", "duration": "5 months", "course_rank": 42.0},
+    ],
+    "React": [
+        {"title": "React - The Complete Guide", "provider": "Udemy", "url": "https://www.udemy.com/course/react-the-complete-guide-incl-redux", "rating": "4.8", "difficulty": "Intermediate", "duration": "48 hours", "course_rank": 36.0},
+    ],
+    "SQL": [
+        {"title": "SQL for Data Science", "provider": "Coursera / UC Davis", "url": "https://www.coursera.org/learn/sql-for-data-science", "rating": "4.7", "difficulty": "Beginner", "duration": "4 weeks", "course_rank": 32.0},
+    ],
+    "Docker": [
+        {"title": "Docker and Kubernetes Complete Guide", "provider": "Udemy", "url": "https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide", "rating": "4.6", "difficulty": "Intermediate", "duration": "22 hours", "course_rank": 34.0},
+    ],
+    "AWS": [
+        {"title": "AWS Certified Solutions Architect", "provider": "Udemy", "url": "https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03", "rating": "4.7", "difficulty": "Intermediate", "duration": "13 hours", "course_rank": 33.0},
+    ],
+    "Data Structures": [
+        {"title": "Data Structures and Algorithms", "provider": "Coursera / UCSD", "url": "https://www.coursera.org/specializations/data-structures-algorithms", "rating": "4.6", "difficulty": "Intermediate", "duration": "6 months", "course_rank": 35.0},
+    ],
+    "Node.js": [
+        {"title": "The Complete Node.js Developer Course", "provider": "Udemy", "url": "https://www.udemy.com/course/the-complete-nodejs-developer-course-2", "rating": "4.7", "difficulty": "Intermediate", "duration": "35 hours", "course_rank": 31.0},
+    ],
+    "MLOps": [
+        {"title": "Machine Learning Engineering for Production (MLOps)", "provider": "Coursera / DeepLearning.AI", "url": "https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops", "rating": "4.7", "difficulty": "Advanced", "duration": "3 months", "course_rank": 38.0},
+    ],
+}
+
+
 def get_courses_for_skills(skills: List[str], max_per_skill: int = 2) -> Dict[str, List[Dict]]:
     r"""
     Get course recommendations for missing skills using:
