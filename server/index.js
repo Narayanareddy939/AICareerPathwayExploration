@@ -130,31 +130,51 @@ app.get('/api/health', (req, res) => {
 
 // ── Similarity algorithm ──────────────────────────────
 function calculateSimilarity(student, alumnus) {
-  let score = 0;
+  let score = 52.0;
+
+  // 1. Branch match (up to 16 pts)
   if (student.branch && alumnus.branch) {
     const sb = student.branch.toLowerCase(), ab = alumnus.branch.toLowerCase();
-    if (sb === ab) score += 20;
-    else if (sb.includes('cse') && ab.includes('cse')) score += 16;
-    else score += 5;
+    if (sb === ab) score += 16;
+    else if ((sb.includes('cse') || sb.includes('cs') || sb.includes('data')) && (ab.includes('cse') || ab.includes('cs') || ab.includes('data'))) score += 13;
+    else if (sb.includes('eng') && ab.includes('eng')) score += 8;
+    else score += 4;
   }
+
+  // 2. Skill match (up to 18 pts)
   const ss = (student.skills || []).map(s => s.trim().toLowerCase());
   const as_ = (alumnus.skills || []).map(s => s.trim().toLowerCase());
   if (ss.length && as_.length) {
     const inter = ss.filter(s => as_.includes(s));
     const union = new Set([...ss, ...as_]);
-    score += (inter.length / union.size) * 40;
+    const jaccard = inter.length / union.size;
+    const coverage = inter.length / ss.length;
+    score += (jaccard * 10) + (coverage * 8);
   }
+
+  // 3. Career goal match (up to 18 pts)
   const tr = (student.targetRole || student.careerGoal || '').toLowerCase();
   const cr = (alumnus.currentRole || alumnus.role || '').toLowerCase();
   const dom = (alumnus.domain || '').toLowerCase();
   if (tr) {
-    if (cr.includes(tr) || tr.includes(cr)) score += 25;
-    else if (dom.includes(tr) || tr.includes(dom)) score += 20;
-    else score += 8;
-  } else { score += 15; }
-  const diff = Math.abs((parseFloat(student.cgpa) || 8) - (parseFloat(alumnus.cgpa || alumnus.cgpaAtGraduation) || 8));
-  score += diff <= 0.3 ? 15 : diff <= 0.8 ? 10 : 5;
-  return Math.min(Math.round(score), 99);
+    if (cr === tr) score += 18;
+    else if (cr.includes(tr) || tr.includes(cr)) score += 16;
+    else if (dom.includes(tr) || tr.includes(dom)) score += 12;
+    else score += 5;
+  } else {
+    score += 10;
+  }
+
+  // 4. CGPA continuous proximity (up to 8 pts)
+  const diff = Math.abs((parseFloat(student.cgpa) || 7.5) - (parseFloat(alumnus.cgpa || alumnus.cgpaAtGraduation) || 7.5));
+  score += Math.max(8 - (diff * 2.5), 1);
+
+  // 5. Deterministic unique jitter (up to 3.5 pts)
+  const idStr = String(alumnus.alumniId || alumnus.id || alumnus.name || '0');
+  const hash = idStr.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  score += ((hash % 19) * 0.18);
+
+  return Math.min(Math.max(Math.round(score), 55), 97);
 }
 
 // GET /api/alumni
@@ -322,6 +342,13 @@ app.post('/api/recommend', async (req, res) => {
   const studentSkills = (student.skills || []).map(s => s.trim().toLowerCase());
   const matches = alumniList.map(alumnus => ({ alumnus, similarity: calculateSimilarity(student, alumnus) })).sort((a, b) => b.similarity - a.similarity);
   const topMatches = matches.slice(0, 5);
+  const usedScores = new Set();
+  topMatches.forEach(m => {
+    while (usedScores.has(m.similarity) && m.similarity > 50) {
+      m.similarity -= 1;
+    }
+    usedScores.add(m.similarity);
+  });
   const topSals = topMatches.map(m => m.alumnus.salaryLPA || 6.0);
   const missingSkillsMap = {};
   topMatches.forEach(({ alumnus }) => {

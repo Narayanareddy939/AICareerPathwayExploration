@@ -134,6 +134,21 @@ async function runTests() {
         console.log(`     -> Salary Projection: ${rec.predictedSalaryRange}`);
         console.log(`     -> Missing Skills: ${rec.missingSkills?.join(', ')}`);
         console.log(`     -> Recommended Roles: ${rec.recommendedRoles?.join(', ')}`);
+
+        // Check Matched Alumni Mentors and their percentages
+        const mentors = rec.matchedAlumni || [];
+        console.log(`     -> Matched Mentors (${mentors.length} found):`);
+        const simScores = [];
+        mentors.forEach((m, idx) => {
+          simScores.push(m.similarity);
+          console.log(`        [Mentor ${idx + 1}] ${m.name} (${m.role || m.currentRole} @ ${m.company || m.currentCompany}) -> ${m.similarity}% Match | Skills: ${(m.skills || []).slice(0, 3).join(', ')}`);
+        });
+        const allSame = simScores.length > 1 && simScores.every(s => s === simScores[0]);
+        if (allSame) {
+          console.log(`        ❌ WARNING: All mentors returned identical percentage: ${simScores[0]}%`);
+        } else {
+          console.log(`        ✅ PASS: Mentors have diverse, realistic percentages: [${simScores.join('%, ')}%]`);
+        }
       } else {
         console.log(`  ⚠️ 4. AI Recommendation response:`, recRes.data);
       }
@@ -147,20 +162,28 @@ async function runTests() {
       const jobList = jobsRes.data.jobs || jobsRes.data.data || [];
       console.log(`  ✅ 6. Job Market Query: SUCCESS (${jobList.length} vacancies fetched)`);
 
-      // Step G: Generate Phased Career Roadmap
-      console.log(`  ⏳ 7. Querying Topological Sort Roadmap for '${u.profile.careerGoal}'...`);
-      const roadmapRes = await axios.get(
-        `${BASE_URL}/api/roadmaps?role=${encodeURIComponent(u.profile.careerGoal)}&skills=${encodeURIComponent(u.profile.skills.join(','))}`,
-        authHeaders
-      );
-      if (roadmapRes.data.success && roadmapRes.data.data) {
-        const phases = roadmapRes.data.data.phases || [];
-        console.log(`  ✅ 7. Dynamic Roadmap: SUCCESS (${phases.length} Phases generated with structured milestones)`);
-        phases.forEach((p, idx) => {
-          console.log(`     -> Phase ${idx + 1}: ${p.title} (${p.duration || '4-6 weeks'}) - ${(p.skills || []).join(', ')}`);
-        });
+      // Step G: Skill Gap Analysis
+      const gapRes = await axios.post(`${BASE_URL}/api/ai/skill-gap`, {
+        career: u.profile.careerGoal,
+        skills: u.profile.skills
+      }, authHeaders);
+      if (gapRes.data.success || gapRes.data.skillMatchPercentage !== undefined) {
+        const gap = gapRes.data.gapAnalysis || gapRes.data;
+        console.log(`  ✅ 7. Skill Gap Analysis: SUCCESS (Match: ${gap.skillMatchPercentage}%, Missing: ${gap.missingSkills?.length || 0} skills)`);
+      }
+
+      // Step H: AI Advisor Chatbot
+      console.log(`  ⏳ 8. Testing AI Advisor Chatbot for ${u.fullName}...`);
+      const chatRes = await axios.post(`${BASE_URL}/api/ai/chat`, {
+        message: `How can I transition into a top ${u.profile.careerGoal} role from ${u.profile.branch}?`,
+        studentProfile: u.profile
+      }, authHeaders);
+      if (chatRes.data.success && chatRes.data.reply) {
+        const replySnippet = chatRes.data.reply.replace(/\n/g, ' ').slice(0, 110);
+        console.log(`  ✅ 8. AI Advisor: SUCCESS`);
+        console.log(`     -> AI Response: "${replySnippet}..."`);
       } else {
-        console.log(`  ℹ️ Roadmap endpoint note: ${roadmapRes.data.message || 'ok'}`);
+        console.log(`  ⚠️ 8. AI Advisor response:`, chatRes.data);
       }
 
     } catch (err) {

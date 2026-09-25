@@ -1,12 +1,9 @@
 // Multi-model Gemini Integration with automatic model fallback
 const GEMINI_MODELS = [
-  'gemini-3-flash-preview',
-  'gemini-3.5-flash',
-  'gemma-4-26b-a4b-it',
-  'gemini-3.7-flash',
-  'gemini-3.6-flash',
-  'gemini-flash-latest',
-  'gemini-3.1-flash-lite'
+  'gemini-2.5-flash',
+  'gemini-2.0-flash',
+  'gemini-1.5-flash',
+  'gemini-1.5-pro'
 ];
 
 /**
@@ -38,7 +35,7 @@ async function callGeminiMultiModel(contents, systemInstruction, maxTokens = 120
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-        signal: AbortSignal.timeout(4000)
+        signal: AbortSignal.timeout(3000)
       });
 
       if (res.status === 200) {
@@ -47,6 +44,9 @@ async function callGeminiMultiModel(contents, systemInstruction, maxTokens = 120
         if (text && text.trim()) {
           return text.trim();
         }
+      } else if (res.status === 400 || res.status === 401 || res.status === 403) {
+        // Invalid key or forbidden — don't waste time retrying other models
+        break;
       } else {
         const errData = await res.text().catch(() => '');
         console.warn(`[Gemini ${model} HTTP ${res.status}]:`, errData.slice(0, 140));

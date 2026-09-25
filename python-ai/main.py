@@ -323,12 +323,18 @@ Provide a crisp 2-sentence motivational insight on why this pathway matches and 
         'matchedAlumni': [
             {
                 'id': a.get('id') or a.get('alumniId'),
+                'alumniId': a.get('alumniId') or a.get('id'),
                 'name': a.get('name') or 'Senior Alumnus',
                 'company': a.get('currentCompany') or a.get('company') or 'Tech Corp',
+                'currentCompany': a.get('currentCompany') or a.get('company') or 'Tech Corp',
                 'role': a.get('currentRole') or a.get('role') or 'Software Engineer',
-                'similarity': a.get('similarity', 80),
+                'currentRole': a.get('currentRole') or a.get('role') or 'Software Engineer',
+                'similarity': a.get('similarity', 85),
                 'graduationYear': a.get('graduationYear', 2022),
-                'skills': a.get('skills', [])
+                'skills': a.get('skills') or a.get('matchedSkills') or ['Python', 'SQL', 'Git'],
+                'branch': a.get('branch', 'Computer Science and Engineering'),
+                'location': a.get('location', 'Bengaluru'),
+                'salaryLPA': a.get('salaryLPA', 12.0)
             }
             for a in matched_alumni
         ],

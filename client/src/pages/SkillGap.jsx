@@ -43,13 +43,10 @@ export default function SkillGapPage() {
       setProfile(p);
       const career = p?.careerGoal || 'Full Stack Developer';
       setSelectedCareer(career);
-      if (p?.skills && p.skills.length > 0) {
-        await analyzeGap(career, p.skills);
-      } else {
-        setGapData(null);
-      }
+      await analyzeGap(career, p?.skills || []);
     } catch (err) {
       console.error('Profile load error:', err);
+      await analyzeGap('Full Stack Developer', []);
     } finally {
       setLoading(false);
     }
@@ -57,11 +54,7 @@ export default function SkillGapPage() {
 
   const analyzeGap = async (career, skills) => {
     if (!career) return;
-    const userSkills = (skills && skills.length > 0) ? skills : (profile?.skills || []);
-    if (!userSkills || userSkills.length === 0) {
-      setGapData(null);
-      return;
-    }
+    const userSkills = (skills !== undefined && skills !== null) ? skills : (profile?.skills || []);
     setAnalyzing(true);
     try {
       const res = await axios.post('/api/ai/skill-gap', {
@@ -79,11 +72,7 @@ export default function SkillGapPage() {
 
   const handleCareerChange = async (career) => {
     setSelectedCareer(career);
-    if (profile?.skills && profile.skills.length > 0) {
-      await analyzeGap(career, profile.skills);
-    } else {
-      setGapData(null);
-    }
+    await analyzeGap(career, profile?.skills || []);
   };
 
   const filteredSkills = gapData?.missingSkills?.filter(s => {
@@ -155,37 +144,22 @@ export default function SkillGapPage() {
         </div>
       </motion.div>
 
-      {/* If user has not entered required skills, show empty state prompt and nothing else */}
-      {(!profile?.skills || profile.skills.length === 0) ? (
+      {/* KPI Row */}
+      {gapData && (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
-          className="glass-card" style={{ textAlign: 'center', padding: '3.5rem 1.5rem', border: '1px dashed rgba(245,158,11,0.35)' }}>
-          <AlertCircle size={44} color="#f59e0b" style={{ margin: '0 auto 1rem', opacity: 0.85 }} />
-          <h2 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '0.5rem', color: '#fff' }}>No Required Skills Entered</h2>
-          <p style={{ color: 'var(--text-muted)', maxWidth: '480px', margin: '0 auto 1.5rem', fontSize: '0.9rem', lineHeight: 1.6 }}>
-            You haven't entered any technical skills in your profile yet. Please complete your profile with your skills so our AI can calculate your skill match and identify skill gaps for <strong>{selectedCareer}</strong>.
-          </p>
-          <Link to="/complete-profile" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Target size={16} /> Complete Profile & Add Skills
-          </Link>
+          className="grid-2">
+          {[
+            { label: 'Skill Match', value: `${gapData.skillMatchPercentage || 0}%`, color: '#34d399', sub: 'Skills you have' },
+            { label: 'Skills to Learn', value: gapData.missingSkills?.length || 0, color: '#fbbf24', sub: 'Need to acquire' },
+          ].map((kpi, i) => (
+            <div key={i} className="glass-card" style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.4rem' }}>{kpi.label}</p>
+              <p style={{ fontSize: '2.2rem', fontWeight: 800, color: kpi.color, lineHeight: 1 }}>{kpi.value}</p>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>{kpi.sub}</p>
+            </div>
+          ))}
         </motion.div>
-      ) : (
-        <>
-          {/* KPI Row */}
-          {gapData && (
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
-              className="grid-2">
-              {[
-                { label: 'Skill Match', value: `${gapData.skillMatchPercentage || 0}%`, color: '#34d399', sub: 'Skills you have' },
-                { label: 'Skills to Learn', value: gapData.missingSkills?.length || 0, color: '#fbbf24', sub: 'Need to acquire' },
-              ].map((kpi, i) => (
-                <div key={i} className="glass-card" style={{ textAlign: 'center' }}>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.4rem' }}>{kpi.label}</p>
-                  <p style={{ fontSize: '2.2rem', fontWeight: 800, color: kpi.color, lineHeight: 1 }}>{kpi.value}</p>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>{kpi.sub}</p>
-                </div>
-              ))}
-            </motion.div>
-          )}
+      )}
 
       {/* Matched Skills */}
       {((gapData?.matchedSkills || gapData?.matchingSkills) || []).length > 0 && (
@@ -305,8 +279,6 @@ export default function SkillGapPage() {
               </p>
             </div>
           )}
-        </>
-      )}
     </div>
   );
 }
