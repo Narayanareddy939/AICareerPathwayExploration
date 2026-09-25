@@ -160,11 +160,9 @@ export default function SkillGapPage() {
       {/* KPI Row */}
       {gapData && (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}
-          className="grid-4">
+          className="grid-2">
           {[
             { label: 'Skill Match', value: `${gapData.skillMatchPercentage || 0}%`, color: '#34d399', sub: 'Skills you have' },
-            { label: 'Skill Gap', value: `${gapData.skillGapPercentage || 0}%`, color: '#fb7185', sub: 'Skills needed' },
-            { label: 'Matched Skills', value: gapData.matchedSkills?.length || 0, color: '#818cf8', sub: 'Already have' },
             { label: 'Skills to Learn', value: gapData.missingSkills?.length || 0, color: '#fbbf24', sub: 'Need to acquire' },
           ].map((kpi, i) => (
             <div key={i} className="glass-card" style={{ textAlign: 'center' }}>
@@ -177,13 +175,13 @@ export default function SkillGapPage() {
       )}
 
       {/* Matched Skills */}
-      {gapData?.matchedSkills?.length > 0 && (
+      {((gapData?.matchedSkills || gapData?.matchingSkills) || []).length > 0 && (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="glass-card">
           <h3 style={{ fontSize: '1.05rem', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#34d399' }}>
             <CheckCircle2 size={18} /> Skills You Already Have
           </h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-            {gapData.matchedSkills.map((s, i) => (
+            {(gapData.matchedSkills || gapData.matchingSkills || []).map((s, i) => (
               <span key={i} style={{
                 background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.3)',
                 color: '#34d399', padding: '0.35rem 0.75rem', borderRadius: '9999px', fontSize: '0.82rem', fontWeight: 600,

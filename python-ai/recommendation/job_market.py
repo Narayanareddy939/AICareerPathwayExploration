@@ -139,25 +139,47 @@ def _match_jobs_to_career(career_name: str, all_jobs: List[Dict]) -> List[Dict]:
         "frontend developer": ["frontend", "front-end", "front end", "ui developer", "react developer"],
         "backend developer": ["backend", "back-end", "back end"],
         "data scientist": ["data scientist", "data science", "ml scientist"],
-        "data analyst": ["data analyst", "business analyst", "analytics"],
+        "data analyst": ["data analyst", "analytics"],
+        "business analyst": ["business analyst", "bi analyst", "business intelligence"],
+        "marketing analyst": ["marketing analyst", "market research", "marketing"],
+        "ai researcher": ["ai researcher", "ai research", "artificial intelligence"],
         "machine learning engineer": ["machine learning", "ml engineer", "ai engineer", "deep learning"],
         "devops engineer": ["devops", "dev ops", "sre", "site reliability", "platform engineer"],
         "cloud engineer": ["cloud engineer", "cloud architect", "aws", "azure engineer"],
         "data engineer": ["data engineer", "data engineering", "etl"],
+        "ui/ux designer": ["ux designer", "ui designer", "product designer", "ux", "ui"],
         "product manager": ["product manager", "product management", "pm"],
-        "cybersecurity engineer": ["security", "cybersecurity", "infosec"],
+        "cybersecurity engineer": ["security", "cybersecurity", "infosec", "cyber security"],
         "mobile developer": ["mobile developer", "android developer", "ios developer", "flutter"],
+        "blockchain developer": ["blockchain", "web3", "smart contract"],
+        "game developer": ["game developer", "game design", "unity", "unreal"],
+        # Domains / Industries
+        "technology": ["technology", "tech", "software", "it services"],
+        "healthcare": ["healthcare", "health", "medical", "hospital", "clinical"],
+        "finance": ["finance", "fintech", "banking", "investment", "financial"],
+        "e-commerce": ["e-commerce", "ecommerce", "retail", "online shopping"],
+        "education": ["education", "edtech", "university", "academic", "teaching"],
+        "business": ["business", "management", "consulting", "corporate"],
+        "science and research": ["science", "research", "scientific", "laboratory"],
+        "arts and media": ["arts", "media", "design", "content", "creative", "journalism"],
+        "human resources and operations": ["human resources", "hr", "recruiting", "talent", "operations"],
+        "retail and sales": ["retail", "sales", "merchandising"],
+        "construction and engineering": ["construction", "civil engineering", "infrastructure"],
+        "travel, hospitality and tourism": ["travel", "hospitality", "tourism", "hotel"],
+        "environmental and sustainability": ["environmental", "sustainability", "green energy", "ecology"],
+        "transportation and logistics": ["transportation", "logistics", "supply chain", "freight"],
+        "law and government": ["law", "government", "legal", "public policy"],
     }
     
     keywords = []
     for career_key, kws in career_keyword_map.items():
-        if career_lower in career_key or any(kw in career_lower for kw in career_key.split()):
+        if career_lower == career_key or career_lower in career_key or any(kw in career_lower for kw in career_key.split()):
             keywords = kws
             break
     
     if not keywords:
         # Generic fallback: use career name words
-        keywords = [w for w in career_lower.split() if len(w) > 3]
+        keywords = [w for w in re.split(r'[\s,/-]+', career_lower) if len(w) > 2]
     
     matched = []
     for job in all_jobs:

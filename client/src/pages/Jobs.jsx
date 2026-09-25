@@ -6,8 +6,7 @@ import {
   RefreshCw, Clock, BarChart2, Zap, Info, ChevronDown
 } from 'lucide-react';
 
-const CAREER_OPTIONS = [
-  '', // All
+const CAREER_ROLES = [
   'Software Engineer',
   'Data Scientist',
   'Machine Learning Engineer',
@@ -18,10 +17,36 @@ const CAREER_OPTIONS = [
   'Cloud Engineer',
   'Data Engineer',
   'Data Analyst',
+  'Business Analyst',
+  'Marketing Analyst',
+  'AI Researcher',
   'Product Manager',
+  'UI/UX Designer',
   'Cybersecurity Engineer',
   'Mobile Developer',
+  'Blockchain Developer',
+  'Game Developer',
 ];
+
+const DOMAIN_OPTIONS = [
+  'Technology',
+  'Healthcare',
+  'Finance',
+  'E-commerce',
+  'Education',
+  'Business',
+  'Science and Research',
+  'Arts and Media',
+  'Human Resources and Operations',
+  'Retail and Sales',
+  'Construction and Engineering',
+  'Travel, Hospitality and Tourism',
+  'Environmental and Sustainability',
+  'Transportation and Logistics',
+  'Law and Government',
+];
+
+const CAREER_OPTIONS = ['', ...CAREER_ROLES, ...DOMAIN_OPTIONS];
 
 export default function Jobs() {
   const [insights, setInsights]         = useState(null);
@@ -129,10 +154,17 @@ export default function Jobs() {
                 cursor: 'pointer',
               }}
             >
-              <option value="">All Careers — Full Market Overview</option>
-              {CAREER_OPTIONS.filter(Boolean).map(c => (
-                <option key={c} value={c}>{c}</option>
-              ))}
+              <option value="" style={{ background: '#111827', color: '#fff' }}>All Careers & Domains — Full Market Overview</option>
+              <optgroup label="── 💼 Career Roles ──" style={{ background: '#111827', color: '#818cf8', fontWeight: 700 }}>
+                {CAREER_ROLES.map(c => (
+                  <option key={c} value={c} style={{ background: '#111827', color: '#fff', fontWeight: 400 }}>{c}</option>
+                ))}
+              </optgroup>
+              <optgroup label="── 🌐 Industry Domains ──" style={{ background: '#111827', color: '#34d399', fontWeight: 700 }}>
+                {DOMAIN_OPTIONS.map(d => (
+                  <option key={d} value={d} style={{ background: '#111827', color: '#fff', fontWeight: 400 }}>{d}</option>
+                ))}
+              </optgroup>
             </select>
             <ChevronDown size={14} color="var(--text-muted)" />
           </div>

@@ -94,23 +94,45 @@ router.get('/market-insights', (req, res) => {
       'devops engineer': ['devops', 'sre', 'platform engineer', 'site reliability'],
       'cloud engineer': ['cloud engineer', 'cloud architect', 'aws engineer', 'azure engineer'],
       'data engineer': ['data engineer', 'etl developer', 'data pipeline'],
-      'data analyst': ['data analyst', 'business analyst', 'analytics'],
+      'data analyst': ['data analyst', 'analytics'],
+      'business analyst': ['business analyst', 'bi analyst', 'business intelligence'],
+      'marketing analyst': ['marketing analyst', 'market research', 'marketing'],
+      'ai researcher': ['ai researcher', 'ai research', 'artificial intelligence'],
+      'ui/ux designer': ['ux designer', 'ui designer', 'product designer', 'ux', 'ui'],
       'product manager': ['product manager', 'product management', 'program manager'],
-      'cybersecurity engineer': ['security engineer', 'cybersecurity', 'infosec', 'security analyst'],
-      'mobile developer': ['mobile developer', 'android developer', 'ios developer', 'flutter developer'],
+      'cybersecurity engineer': ['security engineer', 'cybersecurity', 'infosec', 'security analyst', 'cyber security'],
+      'mobile developer': ['mobile developer', 'android developer', 'ios developer', 'flutter developer', 'mobile app'],
+      'blockchain developer': ['blockchain', 'web3', 'smart contract'],
+      'game developer': ['game developer', 'game design', 'unity', 'unreal'],
+      // Industry / Domains
+      'technology': ['technology', 'tech', 'software', 'it services'],
+      'healthcare': ['healthcare', 'health', 'medical', 'hospital', 'clinical'],
+      'finance': ['finance', 'fintech', 'banking', 'investment', 'financial'],
+      'e-commerce': ['e-commerce', 'ecommerce', 'retail', 'online shopping'],
+      'education': ['education', 'edtech', 'university', 'academic', 'teaching'],
+      'business': ['business', 'management', 'consulting', 'corporate'],
+      'science and research': ['science', 'research', 'scientific', 'laboratory'],
+      'arts and media': ['arts', 'media', 'design', 'content', 'creative', 'journalism'],
+      'human resources and operations': ['human resources', 'hr', 'recruiting', 'talent', 'operations'],
+      'retail and sales': ['retail', 'sales', 'merchandising'],
+      'construction and engineering': ['construction', 'civil engineering', 'infrastructure'],
+      'travel, hospitality and tourism': ['travel', 'hospitality', 'tourism', 'hotel'],
+      'environmental and sustainability': ['environmental', 'sustainability', 'green energy', 'ecology'],
+      'transportation and logistics': ['transportation', 'logistics', 'supply chain', 'freight'],
+      'law and government': ['law', 'government', 'legal', 'public policy'],
     };
 
     let keywords = [];
     for (const [key, kws] of Object.entries(CAREER_KEYWORD_MAP)) {
-      if (careerLower.includes(key) || key.includes(careerLower) ||
+      if (careerLower === key || careerLower.includes(key) || key.includes(careerLower) ||
           kws.some(kw => careerLower.includes(kw))) {
         keywords = kws;
         break;
       }
     }
-    // Generic fallback: use words longer than 3 chars from career name
+    // Generic fallback: use words longer than 2 chars from career name
     if (!keywords.length) {
-      keywords = careerLower.split(/\s+/).filter(w => w.length > 3);
+      keywords = careerLower.split(/[\s,/-]+/).filter(w => w.length > 2);
     }
 
     if (keywords.length > 0) {
