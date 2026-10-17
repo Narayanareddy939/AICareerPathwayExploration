@@ -71,8 +71,8 @@ function RecommendationCard({ rec, index, expanded, onToggle }) {
             { label: 'Alumni', val: rec.scores.alumniSimilarity, color: '#d946ef' },
             { label: 'Location', val: rec.scores.locationMatch, color: '#fb7185' },
           ].map((s, i) => (
-            <div key={i} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '8px', padding: '0.4rem 0.5rem', textAlign: 'center' }}>
-              <p style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '0.1rem' }}>{s.label}</p>
+            <div key={i} style={{ background: 'var(--bg-card-subtle)', border: '1px solid var(--border-color)', borderRadius: '8px', padding: '0.4rem 0.5rem', textAlign: 'center' }}>
+              <p style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '0.1rem', fontWeight: 600 }}>{s.label}</p>
               <p style={{ fontSize: '0.95rem', fontWeight: 700, color: s.color }}>{s.val}%</p>
             </div>
           ))}
@@ -83,24 +83,24 @@ function RecommendationCard({ rec, index, expanded, onToggle }) {
       <div style={{ display: 'flex', gap: '1rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
         {rec.matchedSkills?.length > 0 && (
           <div style={{ flex: 1 }}>
-            <p style={{ fontSize: '0.72rem', color: '#34d399', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+            <p style={{ fontSize: '0.72rem', color: '#10b981', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.35rem' }}>
               <CheckCircle2 size={11} style={{ display: 'inline', marginRight: '0.25rem' }} /> Have ({rec.matchedSkills.length})
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
               {rec.matchedSkills.slice(0, 5).map((s, i) => (
-                <span key={i} style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.25)', color: '#34d399', padding: '0.15rem 0.55rem', borderRadius: '9999px', fontSize: '0.72rem' }}>{s}</span>
+                <span key={i} style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.25)', color: '#10b981', padding: '0.15rem 0.55rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 600 }}>{s}</span>
               ))}
             </div>
           </div>
         )}
         {rec.missingSkills?.length > 0 && (
           <div style={{ flex: 1 }}>
-            <p style={{ fontSize: '0.72rem', color: '#fb7185', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+            <p style={{ fontSize: '0.72rem', color: '#ef4444', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.35rem' }}>
               <AlertCircle size={11} style={{ display: 'inline', marginRight: '0.25rem' }} /> Need ({rec.missingSkills.length})
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
               {rec.missingSkills.slice(0, 5).map((s, i) => (
-                <span key={i} style={{ background: 'rgba(244,63,94,0.1)', border: '1px solid rgba(244,63,94,0.25)', color: '#fb7185', padding: '0.15rem 0.55rem', borderRadius: '9999px', fontSize: '0.72rem' }}>+ {s}</span>
+                <span key={i} style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.25)', color: '#ef4444', padding: '0.15rem 0.55rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 600 }}>+ {s}</span>
               ))}
             </div>
           </div>
@@ -109,7 +109,7 @@ function RecommendationCard({ rec, index, expanded, onToggle }) {
 
       {/* Expand button */}
       <button onClick={onToggle}
-        style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '8px', width: '100%', padding: '0.4rem', color: 'var(--text-muted)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.35rem', fontSize: '0.78rem' }}>
+        style={{ background: 'var(--bg-card-subtle)', border: '1px solid var(--border-color)', borderRadius: '8px', width: '100%', padding: '0.45rem', color: 'var(--text-main)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.35rem', fontSize: '0.78rem', fontWeight: 600 }}>
         {expanded ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
         {expanded ? 'Less Details' : 'Evidence & Reasons'}
       </button>
@@ -120,7 +120,7 @@ function RecommendationCard({ rec, index, expanded, onToggle }) {
             <div style={{ marginBottom: '0.75rem' }}>
               <p style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Why This Career:</p>
               {rec.reasons.map((r, i) => (
-                <p key={i} style={{ fontSize: '0.82rem', color: '#d1d5db', marginBottom: '0.25rem' }}>• {r}</p>
+                <p key={i} style={{ fontSize: '0.82rem', color: 'var(--text-main)', marginBottom: '0.25rem' }}>• {r}</p>
               ))}
             </div>
           )}
@@ -128,10 +128,10 @@ function RecommendationCard({ rec, index, expanded, onToggle }) {
             <div style={{ marginBottom: '0.75rem' }}>
               <p style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Similar Alumni:</p>
               {rec.similarAlumni.map((a, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', marginBottom: '0.3rem' }}>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5rem', background: 'var(--bg-card-subtle)', border: '1px solid var(--border-color)', borderRadius: '8px', marginBottom: '0.3rem' }}>
                   <div>
-                    <p style={{ fontSize: '0.82rem', fontWeight: 600 }}>{a.name}</p>
-                    <p style={{ fontSize: '0.72rem', color: '#818cf8' }}>{a.currentRole} @ {a.currentCompany}</p>
+                    <p style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-main)' }}>{a.name}</p>
+                    <p style={{ fontSize: '0.72rem', color: '#6366f1' }}>{a.currentRole} @ {a.currentCompany}</p>
                   </div>
                   <span className="badge badge-emerald" style={{ fontSize: '0.72rem' }}>{a.similarity}%</span>
                 </div>

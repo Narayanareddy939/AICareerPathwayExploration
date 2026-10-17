@@ -16,6 +16,7 @@ import SkillGap from './pages/SkillGap';
 import Roadmap from './pages/Roadmap';
 import Analytics from './pages/Analytics';
 import Jobs from './pages/Jobs';
+import CompaniesCareers from './pages/CompaniesCareers';
 import HigherStudies from './pages/HigherStudies';
 import Progress from './pages/Progress';
 import Profile from './pages/Profile';
@@ -118,7 +119,8 @@ export default function App() {
       <Route path="/skill-gap"           element={<Protected><SkillGap /></Protected>} />
       <Route path="/roadmap"             element={<Protected><Roadmap /></Protected>} />
       <Route path="/analytics"           element={<Protected><Analytics /></Protected>} />
-      <Route path="/jobs"                element={<Protected><Jobs /></Protected>} />
+      <Route path="/companies-careers"   element={<Protected><CompaniesCareers /></Protected>} />
+      <Route path="/jobs"                element={<Protected><CompaniesCareers /></Protected>} />
       <Route path="/higher-studies"      element={<Protected><HigherStudies /></Protected>} />
       <Route path="/progress"            element={<Protected><Progress /></Protected>} />
       <Route path="/profile"             element={<Protected><Profile /></Protected>} />

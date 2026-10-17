@@ -49,3 +49,8 @@ env/
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
 
+# AI Agent Skills & Cache
+.agents/
+.claude/
+agent/
+skills-lock.json

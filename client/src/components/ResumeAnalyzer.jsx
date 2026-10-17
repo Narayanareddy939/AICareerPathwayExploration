@@ -82,7 +82,7 @@ function ScoreArc({ score }) {
 
   return (
     <svg width="140" height="140" viewBox="0 0 140 140">
-      <circle cx="70" cy="70" r={radius} fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="12" />
+      <circle cx="70" cy="70" r={radius} fill="none" stroke="var(--border-color)" strokeWidth="12" />
       <circle
         cx="70" cy="70" r={radius}
         fill="none"
@@ -94,12 +94,12 @@ function ScoreArc({ score }) {
         transform="rotate(-90 70 70)"
         style={{ transition: 'stroke-dashoffset 1s ease' }}
       />
-      <text x="70" y="68" textAnchor="middle" dominantBaseline="middle"
-        style={{ fill: color, fontSize: '28px', fontWeight: 800 }}>
+      <text x="70" y="66" textAnchor="middle" dominantBaseline="middle"
+        style={{ fill: 'var(--text-main)', fontSize: '28px', fontWeight: 800 }}>
         {score}
       </text>
       <text x="70" y="90" textAnchor="middle"
-        style={{ fill: 'rgba(255,255,255,0.5)', fontSize: '11px' }}>
+        style={{ fill: 'var(--text-dim)', fontSize: '12px', fontWeight: 700 }}>
         / 100
       </text>
     </svg>
@@ -112,12 +112,12 @@ function Bar({ label, value, max, color }) {
   return (
     <div style={{ marginBottom: '0.6rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between',
-        fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '0.2rem' }}>
+        fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '0.2rem', fontWeight: 600 }}>
         <span>{label}</span>
-        <span style={{ color: color || '#60a5fa', fontWeight: 700 }}>{value}/{max}</span>
+        <span style={{ color: color || '#60a5fa', fontWeight: 800 }}>{value}/{max}</span>
       </div>
-      <div style={{ height: '6px', borderRadius: '4px',
-        background: 'rgba(255,255,255,0.08)', overflow: 'hidden' }}>
+      <div style={{ height: '7px', borderRadius: '4px',
+        background: 'var(--bg-card-subtle)', border: '1px solid var(--border-color)', overflow: 'hidden' }}>
         <div style={{
           width: `${pct}%`, height: '100%',
           background: color || '#60a5fa',
@@ -133,19 +133,19 @@ function Bar({ label, value, max, color }) {
 function Collapsible({ title, icon, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="glass-card" style={{ padding: '1rem' }}>
+    <div className="glass-card" style={{ padding: '1rem', border: '1px solid var(--border-color)' }}>
       <button
         onClick={() => setOpen(!open)}
         style={{
           background: 'none', border: 'none', cursor: 'pointer',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          width: '100%', color: 'var(--text-primary)', padding: 0,
+          width: '100%', color: 'var(--text-main)', padding: 0,
         }}
       >
-        <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, fontSize: '0.95rem' }}>
+        <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 800, fontSize: '0.95rem' }}>
           {icon} {title}
         </span>
-        {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        {open ? <ChevronUp size={16} color="var(--text-dim)" /> : <ChevronDown size={16} color="var(--text-dim)" />}
       </button>
       {open && <div style={{ marginTop: '0.75rem' }}>{children}</div>}
     </div>
@@ -155,20 +155,20 @@ function Collapsible({ title, icon, children, defaultOpen = false }) {
 // ─── Keyword chip ─────────────────────────────────────────────────────────────
 function Chip({ label, variant = 'neutral' }) {
   const colors = {
-    green:  { bg: 'rgba(16,185,129,0.15)', border: 'rgba(16,185,129,0.4)', text: '#34d399' },
-    red:    { bg: 'rgba(244,63,94,0.15)',  border: 'rgba(244,63,94,0.4)',  text: '#f87171' },
-    amber:  { bg: 'rgba(251,191,36,0.15)', border: 'rgba(251,191,36,0.4)', text: '#fbbf24' },
-    blue:   { bg: 'rgba(96,165,250,0.15)', border: 'rgba(96,165,250,0.4)', text: '#60a5fa' },
-    purple: { bg: 'rgba(167,139,250,0.15)', border: 'rgba(167,139,250,0.4)', text: '#a78bfa' },
-    neutral:{ bg: 'rgba(255,255,255,0.06)', border: 'rgba(255,255,255,0.15)', text: 'var(--text-secondary)' },
+    green:  { bg: 'rgba(16,185,129,0.12)', border: 'rgba(16,185,129,0.35)', text: 'var(--accent-emerald)' },
+    red:    { bg: 'rgba(239,68,68,0.12)',  border: 'rgba(239,68,68,0.35)',  text: 'var(--accent-rose)' },
+    amber:  { bg: 'rgba(245,158,11,0.12)', border: 'rgba(245,158,11,0.35)', text: 'var(--accent-amber)' },
+    blue:   { bg: 'rgba(2,132,199,0.12)', border: 'rgba(2,132,199,0.35)', text: 'var(--accent-cyan)' },
+    purple: { bg: 'rgba(79,70,229,0.12)', border: 'rgba(79,70,229,0.35)', text: 'var(--primary)' },
+    neutral:{ bg: 'var(--bg-card-subtle)', border: 'var(--border-color)', text: 'var(--text-main)' },
   };
   const c = colors[variant] || colors.neutral;
   return (
     <span style={{
       background: c.bg, border: `1px solid ${c.border}`, color: c.text,
-      borderRadius: '6px', padding: '0.2rem 0.55rem',
-      fontSize: '0.75rem', fontWeight: 600, display: 'inline-block',
-      margin: '0.2rem 0.2rem 0 0',
+      borderRadius: '6px', padding: '0.25rem 0.6rem',
+      fontSize: '0.76rem', fontWeight: 700, display: 'inline-block',
+      margin: '0.2rem 0.25rem 0.2rem 0',
     }}>
       {label}
     </span>
@@ -464,23 +464,23 @@ export default function ResumeAnalyzer({ activeStudent }) {
             <>
               {/* Score card */}
               <div className="glass-card" style={{
-                background: 'linear-gradient(135deg, rgba(17,24,39,0.95) 0%, rgba(30,27,75,0.7) 100%)',
-                border: `1px solid ${scoreColor(a.atsScore)}44`,
-                textAlign: 'center', padding: '1.5rem',
+                background: 'var(--bg-card)',
+                border: `1px solid ${scoreColor(a.atsScore)}55`,
+                textAlign: 'center', padding: '1.75rem',
+                boxShadow: 'var(--shadow-card)'
               }}>
-                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.75rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.85rem' }}>
                   <ScoreArc score={a.atsScore} />
                 </div>
-                <div style={{ fontWeight: 800, fontSize: '1.1rem', color: scoreColor(a.atsScore) }}>
+                <div style={{ fontWeight: 800, fontSize: '1.25rem', color: scoreColor(a.atsScore) }}>
                   {a.scoreCategory}
                 </div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                  {a.disclaimer || 'ATS-Style score — not a real company ATS'}
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.45rem', maxWidth: '420px', margin: '0.45rem auto 0', lineHeight: 1.5, fontWeight: 500 }}>
+                  {a.disclaimer || 'ATS-Style Compatibility Score — simulates common ATS factors. Not a guarantee of interview success.'}
                 </div>
                 {a.keywordSource && (
-                  <div style={{ marginTop: '0.5rem' }}>
-                    <span className={`badge ${a.keywordSource === 'job_description' ? 'badge-emerald' : a.keywordSource === 'role_knowledge_base' ? 'badge-indigo' : 'badge-amber'}`}
-                      style={{ fontSize: '0.72rem' }}>
+                  <div style={{ marginTop: '0.75rem' }}>
+                    <span className={`badge ${a.keywordSource === 'job_description' ? 'badge-emerald' : a.keywordSource === 'role_knowledge_base' ? 'badge-indigo' : 'badge-amber'}`}>
                       {a.keywordSource === 'job_description'   ? '✓ Matched against actual Job Description'
                         : a.keywordSource === 'role_knowledge_base' ? '⚡ Matched using role knowledge base'
                         : '⚠ No role/JD — general quality only'}
@@ -489,32 +489,39 @@ export default function ResumeAnalyzer({ activeStudent }) {
                 )}
               </div>
 
-              {/* Actionable Improvement Plan (Points to Change) — shown prominently if resume is bad/suboptimal */}
+              {/* Actionable Improvement Plan (Points to Change) */}
               {(a.isBadResume || a.atsScore < 65 || a.actionableImprovements?.pointsToChange?.length > 0) && (
                 <div className="glass-card" style={{
-                  background: 'linear-gradient(135deg, rgba(239,68,68,0.12) 0%, rgba(245,158,11,0.08) 100%)',
+                  background: 'var(--bg-card)',
                   border: '1px solid rgba(239,68,68,0.35)',
-                  padding: '1.25rem'
+                  padding: '1.5rem',
+                  boxShadow: 'var(--shadow-card)'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                    <AlertTriangle size={18} color="#f87171" />
-                    <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#f87171' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.5rem' }}>
+                    <AlertTriangle size={20} color="#dc2626" />
+                    <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: 'var(--text-main)', margin: 0 }}>
                       Points to Change (Actionable Improvement Plan)
                     </h4>
                   </div>
-                  <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '0.85rem' }}>
-                    Your ATS score is currently {a.atsScore}/100 ({a.scoreCategory}). Follow these exact points to optimize your resume for applicant tracking systems:
+                  <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.1rem', lineHeight: 1.5, fontWeight: 500 }}>
+                    Your ATS score is currently <strong style={{ color: 'var(--text-main)' }}>{a.atsScore}/100 ({a.scoreCategory})</strong>. Follow these exact points to optimize your resume for applicant tracking systems:
                   </p>
 
                   {/* Diagnostic: What lowered the score */}
                   {a.actionableImprovements?.criticalIssues?.length > 0 && (
-                    <div style={{ marginBottom: '0.85rem', background: 'rgba(0,0,0,0.3)', padding: '0.75rem', borderRadius: '8px' }}>
-                      <p style={{ fontSize: '0.72rem', fontWeight: 700, color: '#fb7185', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
-                        Diagnostic: What Is Lowering Your Score
+                    <div style={{
+                      marginBottom: '1rem',
+                      background: 'rgba(239, 68, 68, 0.08)',
+                      border: '1px solid rgba(239, 68, 68, 0.25)',
+                      padding: '0.9rem 1rem',
+                      borderRadius: '10px'
+                    }}>
+                      <p style={{ fontSize: '0.76rem', fontWeight: 800, color: '#dc2626', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.45rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <AlertTriangle size={14} /> Diagnostic: What Is Lowering Your Score
                       </p>
-                      <ul style={{ paddingLeft: '1.1rem', fontSize: '0.78rem', color: '#fda4af', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                      <ul style={{ paddingLeft: '1.25rem', fontSize: '0.82rem', color: 'var(--text-main)', display: 'flex', flexDirection: 'column', gap: '0.35rem', fontWeight: 600, lineHeight: 1.5 }}>
                         {a.actionableImprovements.criticalIssues.map((issue, idx) => (
-                          <li key={idx}>{issue}</li>
+                          <li key={idx} style={{ color: 'var(--text-main)' }}>{issue}</li>
                         ))}
                       </ul>
                     </div>
@@ -522,19 +529,22 @@ export default function ResumeAnalyzer({ activeStudent }) {
 
                   {/* Step by step fixes */}
                   {a.actionableImprovements?.pointsToChange?.length > 0 && (
-                    <div style={{ marginBottom: '0.85rem' }}>
-                      <p style={{ fontSize: '0.72rem', fontWeight: 700, color: '#fbbf24', textTransform: 'uppercase', marginBottom: '0.45rem' }}>
+                    <div style={{ marginBottom: '1rem' }}>
+                      <p style={{ fontSize: '0.76rem', fontWeight: 800, color: '#d97706', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.55rem' }}>
                         Exact Points to Fix & Rewrite
                       </p>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.55rem' }}>
                         {a.actionableImprovements.pointsToChange.map((pt, idx) => (
                           <div key={idx} style={{
-                            display: 'flex', gap: '0.5rem', alignItems: 'flex-start',
-                            background: 'rgba(255,255,255,0.03)', padding: '0.5rem 0.65rem', borderRadius: '6px',
-                            borderLeft: '3px solid #fbbf24'
+                            display: 'flex', gap: '0.65rem', alignItems: 'flex-start',
+                            background: 'var(--bg-card-subtle)',
+                            padding: '0.65rem 0.85rem',
+                            borderRadius: '8px',
+                            border: '1px solid var(--border-color)',
+                            borderLeft: '4px solid #f59e0b'
                           }}>
-                            <span style={{ fontWeight: 800, fontSize: '0.78rem', color: '#fbbf24' }}>{idx + 1}.</span>
-                            <span style={{ fontSize: '0.78rem', color: '#f3f4f6', lineHeight: 1.4 }}>{pt}</span>
+                            <span style={{ fontWeight: 800, fontSize: '0.82rem', color: '#d97706' }}>{idx + 1}.</span>
+                            <span style={{ fontSize: '0.82rem', color: 'var(--text-main)', lineHeight: 1.5, fontWeight: 500 }}>{pt}</span>
                           </div>
                         ))}
                       </div>
@@ -543,14 +553,20 @@ export default function ResumeAnalyzer({ activeStudent }) {
 
                   {/* Before / After Example */}
                   {a.actionableImprovements?.exampleTemplate && (
-                    <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '8px', padding: '0.75rem', border: '1px dashed rgba(255,255,255,0.15)' }}>
-                      <p style={{ fontSize: '0.7rem', fontWeight: 700, color: '#818cf8', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
+                    <div style={{
+                      background: 'var(--bg-card-subtle)',
+                      borderRadius: '10px',
+                      padding: '0.85rem 1rem',
+                      border: '1px dashed var(--border-color)',
+                      marginTop: '0.75rem'
+                    }}>
+                      <p style={{ fontSize: '0.74rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.4rem' }}>
                         Bullet Point Rewrite Example
                       </p>
-                      <p style={{ fontSize: '0.74rem', color: '#f87171', marginBottom: '0.25rem' }}>
+                      <p style={{ fontSize: '0.82rem', color: '#dc2626', marginBottom: '0.35rem', fontWeight: 600 }}>
                         <strong>✗ Weak:</strong> "{a.actionableImprovements.exampleTemplate.before}"
                       </p>
-                      <p style={{ fontSize: '0.74rem', color: '#34d399' }}>
+                      <p style={{ fontSize: '0.82rem', color: '#059669', fontWeight: 600 }}>
                         <strong>✓ ATS-Optimized:</strong> "{a.actionableImprovements.exampleTemplate.after}"
                       </p>
                     </div>
@@ -590,12 +606,13 @@ export default function ResumeAnalyzer({ activeStudent }) {
                         { label: 'Preferred Skills', pct: kw.preferredMatchPercentage ?? 0, color: '#60a5fa' },
                       ].map(({ label, pct, color }) => (
                         <div key={label} style={{
-                          background: 'rgba(255,255,255,0.04)', borderRadius: '10px',
-                          padding: '0.65rem', textAlign: 'center',
+                          background: 'var(--bg-card-subtle)', borderRadius: '10px',
+                          border: '1px solid var(--border-color)',
+                          padding: '0.75rem', textAlign: 'center',
                         }}>
                           <div style={{ fontSize: '1.4rem', fontWeight: 800, color }}>{pct}%</div>
                           <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>{label}</div>
-                          <div style={{ height: '4px', borderRadius: '3px', background: 'rgba(255,255,255,0.08)', marginTop: '0.4rem' }}>
+                          <div style={{ height: '6px', borderRadius: '3px', background: 'var(--border-color)', marginTop: '0.4rem', overflow: 'hidden' }}>
                             <div style={{ width: `${pct}%`, height: '100%', background: color, borderRadius: '3px', transition: 'width 0.8s ease' }} />
                           </div>
                         </div>
@@ -665,7 +682,7 @@ export default function ResumeAnalyzer({ activeStudent }) {
                       border: `1px solid ${present ? 'rgba(16,185,129,0.3)' : 'rgba(244,63,94,0.25)'}`,
                       borderRadius: '8px', padding: '0.35rem 0.5rem',
                       fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.3rem',
-                      color: present ? '#34d399' : '#f87171', textTransform: 'capitalize',
+                      color: present ? '#10b981' : '#f43f5e', textTransform: 'capitalize', fontWeight: 600
                     }}>
                       {present ? <CheckCircle2 size={12} /> : <XCircle size={12} />} {sec}
                     </div>
@@ -678,11 +695,11 @@ export default function ResumeAnalyzer({ activeStudent }) {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '0.4rem' }}>
                   {a.contact && Object.entries(a.contact).map(([field, present]) => (
                     <div key={field} style={{
-                      background: present ? 'rgba(16,185,129,0.1)' : 'rgba(255,255,255,0.04)',
-                      border: `1px solid ${present ? 'rgba(16,185,129,0.3)' : 'rgba(255,255,255,0.1)'}`,
+                      background: present ? 'rgba(16,185,129,0.1)' : 'var(--bg-card-subtle)',
+                      border: `1px solid ${present ? 'rgba(16,185,129,0.3)' : 'var(--border-color)'}`,
                       borderRadius: '8px', padding: '0.35rem 0.6rem',
                       fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.3rem',
-                      color: present ? '#34d399' : 'var(--text-muted)', textTransform: 'capitalize',
+                      color: present ? '#10b981' : 'var(--text-muted)', textTransform: 'capitalize', fontWeight: 600
                     }}>
                       {present ? <CheckCircle2 size={12} /> : <XCircle size={12} />} {field}
                     </div>
@@ -694,15 +711,16 @@ export default function ResumeAnalyzer({ activeStudent }) {
               <Collapsible title="Achievements & Action" icon={<TrendingUp size={15} color="#fb923c" />}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
                   {[
-                    { label: 'Action Verbs', value: a.achievements?.actionVerbCount ?? 0, color: '#fb923c' },
-                    { label: 'Quantified Metrics', value: a.achievements?.quantifiedAchievementCount ?? 0, color: '#34d399' },
+                    { label: 'Action Verbs', value: a.achievements?.actionVerbCount ?? 0, color: '#f97316' },
+                    { label: 'Quantified Metrics', value: a.achievements?.quantifiedAchievementCount ?? 0, color: '#10b981' },
                   ].map(({ label, value, color }) => (
                     <div key={label} style={{
-                      background: 'rgba(255,255,255,0.04)', borderRadius: '10px',
-                      padding: '0.65rem', textAlign: 'center',
+                      background: 'var(--bg-card-subtle)', borderRadius: '10px',
+                      border: '1px solid var(--border-color)',
+                      padding: '0.75rem', textAlign: 'center',
                     }}>
                       <div style={{ fontSize: '1.6rem', fontWeight: 800, color }}>{value}</div>
-                      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>{label}</div>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 600 }}>{label}</div>
                     </div>
                   ))}
                 </div>
@@ -720,7 +738,7 @@ export default function ResumeAnalyzer({ activeStudent }) {
                     {a.recommendations.map((r, i) => <li key={i}>{r}</li>)}
                   </ul>
                   <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.5rem',
-                    fontStyle: 'italic', borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '0.5rem' }}>
+                    fontStyle: 'italic', borderTop: '1px solid var(--border-color)', paddingTop: '0.5rem' }}>
                     ⚠ Only add skills you genuinely possess. Never fabricate experience, metrics, or certifications.
                   </p>
                 </Collapsible>

@@ -223,7 +223,7 @@ export default function SkillGapPage() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                         <AlertCircle size={16} color={colors.text} />
-                        <span style={{ fontWeight: 700, color: '#fff', fontSize: '0.95rem' }}>{item.skill}</span>
+                        <span style={{ fontWeight: 700, color: 'var(--text-main)', fontSize: '0.95rem' }}>{item.skill}</span>
                         <span className={`badge ${colors.badge}`} style={{ fontSize: '0.7rem', textTransform: 'uppercase' }}>
                           {item.priority}
                         </span>
@@ -247,11 +247,11 @@ export default function SkillGapPage() {
                                 onClick={e => e.stopPropagation()}
                                 style={{
                                   display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                                  background: 'rgba(255,255,255,0.05)', borderRadius: '8px', padding: '0.6rem 0.9rem',
+                                  background: 'var(--bg-card-subtle)', border: '1px solid var(--border-color)', borderRadius: '8px', padding: '0.6rem 0.9rem',
                                   textDecoration: 'none', transition: 'background 0.2s',
                                 }}>
                                 <div>
-                                  <p style={{ fontSize: '0.82rem', fontWeight: 600, color: '#e2e8f0' }}>{c.title}</p>
+                                  <p style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-main)' }}>{c.title}</p>
                                   <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>{c.provider} • {c.duration}</p>
                                 </div>
                                 <span style={{ fontSize: '0.7rem', color: '#22d3ee' }}>→ Open</span>

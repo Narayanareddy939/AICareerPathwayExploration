@@ -34,6 +34,7 @@ npm run dev
 
 # Terminal 3: Python AI (Port 5001 - Optional)
 cd python-ai
+# .\.venv\Scripts\Activate.ps1
 python main.py
 ```
 

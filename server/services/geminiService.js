@@ -286,7 +286,7 @@ Let me know if you would like me to customize this logic or add error handling!`
    - Mock interviews, ATS resume tuning, and LeetCode contest practice.`;
   }
 
-// 10. Default Helpful Technical Response
+  // 10. Default Helpful Technical Response
   return `### AI Career Technical Advisor
 
 Regarding **"${query}"**:
@@ -322,7 +322,7 @@ Evaluate with strict, realistic ATS standards. Return a valid JSON object matchi
 {
   "atsScore": <integer 0-100 realistic score>,
   "scoreCategory": <"High Compatibility" if score >= 75, "Moderate Compatibility" if >= 55, else "Needs Improvement">,
-  "disclaimer": "Evaluated by Google Gemini ATS Intelligence",
+  "disclaimer": "AI-Powered Resume Analysis",
   "targetRole": "${role}",
   "jobDescriptionProvided": ${Boolean(jobDescription)},
   "keywordSource": "${jobDescription ? 'job_description' : 'role_knowledge_base'}",

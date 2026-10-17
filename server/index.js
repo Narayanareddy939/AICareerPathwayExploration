@@ -113,6 +113,7 @@ app.use('/api/alumni-v2', require('./routes/alumniRoutes'));
 app.use('/api/roadmaps', require('./routes/roadmapRoutes'));
 app.use('/api/progress', require('./routes/progressRoutes'));
 app.use('/api/admin-v2', require('./routes/adminRoutes'));
+app.use('/api/portal', require('./routes/portalRoutes'));
 
 // ─────────────────────────────────────────────────────
 //  Legacy Dataset-Powered API Endpoints (no auth required)

@@ -176,7 +176,7 @@ export default function DashboardPage() {
             </div>
 
             {recommendation.geminiSummary && (
-              <p style={{ fontSize: '0.88rem', color: '#d1d5db', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border-color)', borderRadius: '10px', padding: '0.85rem', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', background: 'var(--bg-card-subtle)', border: '1px solid var(--border-color)', borderRadius: '10px', padding: '0.85rem', lineHeight: 1.6 }}>
                 {recommendation.geminiSummary}
               </p>
             )}
@@ -246,12 +246,12 @@ export default function DashboardPage() {
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {recommendation.roadmap.map((phase, i) => (
-                <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-color)', borderLeft: '3px solid #6366f1', borderRadius: '10px', padding: '0.9rem' }}>
+                <div key={i} style={{ background: 'var(--bg-card-subtle)', border: '1px solid var(--border-color)', borderLeft: '3px solid #6366f1', borderRadius: '10px', padding: '0.9rem' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
                     <span className="badge badge-indigo" style={{ fontSize: '0.7rem' }}>{phase.phase}</span>
                     <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>{phase.duration}</span>
                   </div>
-                  <p style={{ fontWeight: 700, fontSize: '0.92rem', color: '#fff' }}>{phase.title}</p>
+                  <p style={{ fontWeight: 700, fontSize: '0.92rem', color: 'var(--text-main)' }}>{phase.title}</p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem', marginTop: '0.35rem' }}>
                     {(phase.skillsToLearn || []).map((s, j) => <span key={j} className="skill-chip">{s}</span>)}
                   </div>
@@ -269,9 +269,9 @@ export default function DashboardPage() {
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {recommendation.matchedAlumni.slice(0, 4).map((a, i) => (
-                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-color)', borderRadius: '10px', padding: '0.85rem' }}>
+                <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg-card-subtle)', border: '1px solid var(--border-color)', borderRadius: '10px', padding: '0.85rem' }}>
                   <div>
-                    <p style={{ fontWeight: 700, color: '#fff', fontSize: '0.92rem' }}>{a.name}</p>
+                    <p style={{ fontWeight: 700, color: 'var(--text-main)', fontSize: '0.92rem' }}>{a.name}</p>
                     <p style={{ fontSize: '0.78rem', color: '#818cf8' }}>{a.role} @ {a.company}</p>
                   </div>
                   <span className="badge badge-emerald">{a.similarity}%</span>
@@ -295,7 +295,7 @@ export default function DashboardPage() {
               <FileText size={20} color={student.resumePath ? '#34d399' : '#f59e0b'} />
             </div>
             <div>
-              <p style={{ fontWeight: 700, color: '#fff', fontSize: '0.92rem' }}>
+              <p style={{ fontWeight: 700, color: 'var(--text-main)', fontSize: '0.92rem' }}>
                 Resume Status: {student.resumePath ? '✅ Uploaded' : '⚠️ Not Uploaded'}
               </p>
               <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
