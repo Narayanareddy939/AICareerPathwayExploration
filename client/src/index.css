@@ -144,6 +144,46 @@ body {
   padding: 2rem 1.5rem;
 }
 
+/* Responsive Grid Utilities (Clean, compact box & column layouts) */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 1200px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-4, .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Glass Card Utility (Water Bubble Glassmorphism in Light, Luxury OLED Glass in Dark) */
 .glass-card {
   background: var(--bg-card);
@@ -337,8 +377,38 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.18);
 }
 
+input:disabled, select:disabled, textarea:disabled {
+  background: var(--bg-card-subtle);
+  color: var(--text-main);
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
 input::placeholder, textarea::placeholder {
   color: var(--text-dim);
+}
+
+/* Skill Chip Utility */
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+[data-theme="light"] .skill-chip {
+  background: #f1f5f9;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+[data-theme="dark"] .skill-chip {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Spin animation */

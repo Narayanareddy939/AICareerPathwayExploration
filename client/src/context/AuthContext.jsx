@@ -7,23 +7,41 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // On mount, restore session from localStorage
+  // On mount, restore session from localStorage and refresh from /api/auth/me
   useEffect(() => {
-    const token = localStorage.getItem('ai_carrier_token') || localStorage.getItem('token');
-    const savedUser = localStorage.getItem('ai_carrier_user');
-    if (token) {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      localStorage.setItem('ai_carrier_token', token);
-      localStorage.setItem('token', token);
-      if (savedUser) {
+    const initAuth = async () => {
+      const token = localStorage.getItem('ai_carrier_token') || localStorage.getItem('token');
+      const savedUser = localStorage.getItem('ai_carrier_user');
+
+      if (token) {
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        localStorage.setItem('ai_carrier_token', token);
+        localStorage.setItem('token', token);
+
+        if (savedUser) {
+          try {
+            setUser(JSON.parse(savedUser));
+          } catch {
+            setUser({ fullName: 'User', email: '', role: 'student' });
+          }
+        }
+
+        // Silent refresh from server to ensure fresh role and company data
         try {
-          setUser(JSON.parse(savedUser));
+          const res = await axios.get('/api/auth/me');
+          if (res.data?.success && res.data?.user) {
+            setUser(res.data.user);
+            localStorage.setItem('ai_carrier_user', JSON.stringify(res.data.user));
+          }
         } catch {
-          setUser({ fullName: 'Student', email: 'student@example.com' });
+          // If token expired/invalid, clear session
+          // We don't force logout immediately if offline, but user has cached session
         }
       }
-    }
-    setLoading(false);
+      setLoading(false);
+    };
+
+    initAuth();
   }, []);
 
   const login = (token, userData) => {
@@ -48,8 +66,36 @@ export function AuthProvider({ children }) {
     localStorage.setItem('ai_carrier_user', JSON.stringify(updated));
   };
 
+  const refreshUser = async () => {
+    try {
+      const res = await axios.get('/api/auth/me');
+      if (res.data?.success && res.data?.user) {
+        setUser(res.data.user);
+        localStorage.setItem('ai_carrier_user', JSON.stringify(res.data.user));
+        return res.data.user;
+      }
+    } catch (e) {
+      console.warn('Failed to refresh user:', e.message);
+    }
+    return user;
+  };
+
+  const isStudent = !user?.role || user?.role === 'student';
+  const isRecruiter = user?.role === 'recruiter' || user?.role === 'company';
+  const isAdmin = user?.role === 'admin';
+
   return (
-    <AuthContext.Provider value={{ user, login, logout, updateUser, loading }}>
+    <AuthContext.Provider value={{
+      user,
+      login,
+      logout,
+      updateUser,
+      refreshUser,
+      loading,
+      isStudent,
+      isRecruiter,
+      isAdmin
+    }}>
       {children}
     </AuthContext.Provider>
   );

@@ -23,6 +23,7 @@ const SKILL_ALIASES = {
   'py': 'python',
   'reactjs': 'react',
   'react.js': 'react',
+  'react native': 'react',
   'nodejs': 'node.js',
   'node': 'node.js',
   'express': 'express.js',
@@ -39,7 +40,13 @@ const SKILL_ALIASES = {
   'azure': 'cloud computing',
   'cpp': 'c++',
   'c#': 'csharp',
-  'golang': 'go'
+  'golang': 'go',
+  'frontend': 'front end',
+  'frontend developer': 'front end',
+  'front-end': 'front end',
+  'html5': 'html',
+  'css3': 'css',
+  'github': 'git'
 };
 
 function normalizeSkill(s) {
@@ -55,11 +62,13 @@ function skillsOverlap(jobSkills, studentSkills) {
 
   (jobSkills || []).forEach(reqSkill => {
     const normReq = normalizeSkill(reqSkill);
-    const hasMatch = normStudentSkills.some(stSkill => 
-      stSkill === normReq || 
-      stSkill.includes(normReq) || 
-      normReq.includes(stSkill)
-    );
+    const hasMatch = normStudentSkills.some(stSkill => {
+      if (stSkill === normReq) return true;
+      if (normReq.length > 3 && stSkill.length > 3) {
+        if (stSkill.includes(normReq) || normReq.includes(stSkill)) return true;
+      }
+      return false;
+    });
     if (hasMatch) {
       matching.push(reqSkill);
     } else {
@@ -87,44 +96,48 @@ function scoreJob(job, student) {
   const studentSkills = student.skills || [];
   const explanationParts = [];
 
-  // 1. Required-skill compatibility (35%)
+  const hasPreferred = Array.isArray(job.preferredSkills) && job.preferredSkills.length > 0;
+  const reqWeight = hasPreferred ? 55 : 70;
+  const prefWeight = hasPreferred ? 15 : 0;
+
+  // 1. Required-skill compatibility (55% or 70%)
   if (job.requiredSkills && job.requiredSkills.length > 0) {
     const { matching, missing } = skillsOverlap(job.requiredSkills, studentSkills);
     score.matchingSkills = matching;
     score.missingSkills = missing;
     const ratio = matching.length / job.requiredSkills.length;
-    const pts = Math.round(ratio * 35);
+    const pts = Math.round(ratio * reqWeight);
     score.total += pts;
     score.factors.push({
       factor: 'Required Skills',
-      weight: 35,
+      weight: reqWeight,
       points: pts,
-      detail: `${matching.length}/${job.requiredSkills.length} required skills matched`
+      detail: `${matching.length}/${job.requiredSkills.length} required skills matched (${Math.round(ratio * 100)}%)`
     });
     if (matching.length > 0) {
       explanationParts.push(`your profile includes ${matching.slice(0, 3).join(', ')}`);
     }
   } else {
-    // If no required skills specified, award neutral partial credit (15 pts)
-    score.total += 15;
+    const pts = Math.round(reqWeight * 0.7);
+    score.total += pts;
     score.factors.push({
       factor: 'Required Skills',
-      weight: 35,
-      points: 15,
+      weight: reqWeight,
+      points: pts,
       detail: 'No specific required skills listed by employer'
     });
   }
 
-  // 2. Preferred-skill compatibility (15%)
-  if (job.preferredSkills && job.preferredSkills.length > 0) {
+  // 2. Preferred-skill compatibility (15% if present)
+  if (hasPreferred) {
     const { matching } = skillsOverlap(job.preferredSkills, studentSkills);
     const ratio = matching.length / job.preferredSkills.length;
-    const pts = Math.round(ratio * 15);
+    const pts = Math.round(ratio * prefWeight);
     score.total += pts;
     if (pts > 0) {
       score.factors.push({
         factor: 'Preferred Skills',
-        weight: 15,
+        weight: prefWeight,
         points: pts,
         detail: `${matching.length}/${job.preferredSkills.length} bonus skills matched`
       });
@@ -132,11 +145,9 @@ function scoreJob(job, student) {
         explanationParts.push(`matches preferred skills (${matching.slice(0, 2).join(', ')})`);
       }
     }
-  } else {
-    score.total += 7; // neutral baseline
   }
 
-  // 3. Career-interest and target-role alignment (15%)
+  // 3. Career-interest and target-role alignment (10%)
   let careerMatch = false;
   const targetRole = student.careerGoal || student.targetRole || '';
   if (targetRole && job.title) {
@@ -144,25 +155,25 @@ function scoreJob(job, student) {
     const titleTokens = job.title.toLowerCase();
     careerMatch = roleTokens.some(tok => titleTokens.includes(tok));
     if (careerMatch) {
-      score.total += 15;
+      score.total += 10;
       score.factors.push({
         factor: 'Career Goal Alignment',
-        weight: 15,
-        points: 15,
+        weight: 10,
+        points: 10,
         detail: `Matches your career goal "${targetRole}"`
       });
       explanationParts.push(`your career goal matches this role`);
     } else {
       score.factors.push({
         factor: 'Career Goal Alignment',
-        weight: 15,
+        weight: 10,
         points: 4,
         detail: `Adjacent to your target career goal`
       });
       score.total += 4;
     }
   } else {
-    score.total += 7;
+    score.total += 6;
   }
 
   // 4. Location compatibility (10%)
@@ -192,41 +203,20 @@ function scoreJob(job, student) {
       });
       explanationParts.push(`the location (${job.location}) matches your preference`);
     } else {
-      score.total += 3;
+      score.total += 4;
       score.factors.push({
         factor: 'Location Compatibility',
         weight: 10,
-        points: 3,
+        points: 4,
         detail: `Job in ${job.location} is outside selected preferred cities`
       });
     }
   } else {
-    score.total += 6;
+    score.total += 8;
   }
 
-  // 5. Experience and employment-type compatibility (10%)
-  let expPts = 0;
-  const isFresherRole = job.experienceLevel === 'fresher' || job.experienceLevel === 'entry';
-  if (student.graduationYear && student.graduationYear >= new Date().getFullYear()) {
-    // Current student / upcoming graduate
-    if (job.employmentType === 'internship' || isFresherRole) {
-      expPts = 10;
-      score.factors.push({
-        factor: 'Experience & Type',
-        weight: 10,
-        points: 10,
-        detail: 'Directly tailored for fresh graduates & student interns'
-      });
-    } else {
-      expPts = 5;
-    }
-  } else {
-    expPts = 7;
-  }
-  score.total += expPts;
-
-  // 6. Academic eligibility compatibility (15%)
-  let acadPts = 15;
+  // 5. Academic eligibility & Criteria (10%)
+  let acadPts = 10;
   const acadReasons = [];
 
   // Minimum CGPA check
@@ -236,7 +226,7 @@ function scoreJob(job, student) {
         acadReasons.push(`CGPA ${student.cgpa} meets minimum requirement (${job.minimumCGPA})`);
       } else {
         score.isEligible = false;
-        acadPts -= 8;
+        acadPts -= 6;
         acadReasons.push(`CGPA ${student.cgpa} is below stated minimum (${job.minimumCGPA})`);
       }
     } else {
@@ -260,21 +250,8 @@ function scoreJob(job, student) {
         acadReasons.push(`Branch ${student.branch} is in eligible disciplines`);
       } else {
         score.isEligible = false;
-        acadPts -= 7;
+        acadPts -= 4;
         acadReasons.push(`Branch ${student.branch} is not listed in eligible branches (${job.eligibleBranches.join(', ')})`);
-      }
-    }
-  }
-
-  // Eligible graduation year check
-  if (job.eligibleGraduationYears && job.eligibleGraduationYears.length > 0) {
-    if (student.graduationYear) {
-      if (job.eligibleGraduationYears.includes(student.graduationYear)) {
-        acadReasons.push(`Graduation year ${student.graduationYear} is eligible`);
-      } else {
-        score.isEligible = false;
-        acadPts -= 5;
-        acadReasons.push(`Graduation year ${student.graduationYear} outside target batches (${job.eligibleGraduationYears.join(', ')})`);
       }
     }
   }
@@ -283,7 +260,7 @@ function scoreJob(job, student) {
   score.eligibilityReasons = acadReasons;
   score.factors.push({
     factor: 'Academic Criteria',
-    weight: 15,
+    weight: 10,
     points: Math.max(0, acadPts),
     detail: acadReasons.length > 0 ? acadReasons.join('; ') : 'No restrictive academic gates specified'
   });

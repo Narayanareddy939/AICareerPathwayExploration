@@ -12,10 +12,13 @@ const mongoose = require('mongoose');
 const Company = require('../models/Company');
 const PortalJob = require('../models/PortalJob');
 const StudentApplication = require('../models/StudentApplication');
+const Student = require('../models/Student');
+const User = require('../models/User');
 const AuditLog = require('../models/AuditLog');
 const { protect } = require('../middleware/auth');
 const { requireAuth } = require('../middleware/authMiddleware');
 const { requireRole } = require('../middleware/roleMiddleware');
+const upload = require('../middleware/uploadMiddleware');
 const { successResponse, errorResponse, paginatedResponse } = require('../utils/response');
 const { syncFromAdzuna, getSyncStatus, markStaleJobs, findOrCreateCompany, validateApplicationUrl } = require('../services/jobSyncService');
 const { getRecommendedJobs } = require('../services/portalRecommendationService');
@@ -113,25 +116,46 @@ router.get('/jobs', async (req, res) => {
     const limitNum = Math.min(50, Math.max(1, parseInt(limit, 10) || 20));
 
     const filter = {};
+    const conditions = [];
+
     if (statusFilter === 'closed') {
-      filter.status = { $in: ['closed', 'expired'] };
+      conditions.push({
+        $or: [
+          { status: { $in: ['closed', 'expired'] } },
+          { applicationDeadline: { $lt: new Date() } }
+        ]
+      });
     } else if (statusFilter === 'all') {
       // no status filter, return all
     } else {
       filter.status = statusFilter || 'active';
+      conditions.push({
+        $or: [
+          { applicationDeadline: { $exists: false } },
+          { applicationDeadline: null },
+          { applicationDeadline: { $gte: new Date() } }
+        ]
+      });
     }
 
-    if (search && search.trim()) {
-      const escaped = search.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (search && String(search).trim()) {
+      const cleanSearch = String(search).replace(/\+/g, ' ').trim();
+      const escaped = cleanSearch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       const searchRegex = new RegExp(escaped, 'i');
-      filter.$or = [
-        { title: searchRegex },
-        { companyName: searchRegex },
-        { location: searchRegex },
-        { description: searchRegex },
-        { requiredSkills: searchRegex },
-        { preferredSkills: searchRegex },
-      ];
+      conditions.push({
+        $or: [
+          { title: searchRegex },
+          { companyName: searchRegex },
+          { location: searchRegex },
+          { description: searchRegex },
+          { requiredSkills: searchRegex },
+          { preferredSkills: searchRegex },
+        ]
+      });
+    }
+
+    if (conditions.length > 0) {
+      filter.$and = conditions;
     }
     if (company && company.trim()) {
       filter.companyName = new RegExp(company.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
@@ -153,7 +177,12 @@ router.get('/jobs', async (req, res) => {
     if (fresherOnly === 'true') filter.experienceLevel = { $in: ['fresher', 'entry'] };
     if (internshipOnly === 'true') filter.employmentType = 'internship';
     if (graduationYear) filter.eligibleGraduationYears = parseInt(graduationYear, 10);
-    if (verificationStatus && verificationStatus !== 'all') filter.verificationStatus = verificationStatus;
+    if (verificationStatus && verificationStatus !== 'all') {
+      filter.verificationStatus = verificationStatus;
+    } else {
+      // By default, hide unapproved pending_review and rejected jobs from public student feed
+      filter.verificationStatus = { $nin: ['pending_review', 'rejected'] };
+    }
 
     // Sort
     let sort = { postedAt: -1 }; // default: newest first
@@ -378,7 +407,187 @@ router.get('/applications', protect, async (req, res) => {
   }
 });
 
-// POST /api/portal/jobs/:id/application-tracking — Start tracking an application
+// POST /api/portal/jobs/:id/apply — Direct job application with profile + resume
+router.post('/jobs/:id/apply', protect, upload.single('resume'), async (req, res) => {
+  try {
+    const userId = req.user._id || req.user.id;
+    const jobId = req.params.id;
+    const { coverNote, useProfileResume } = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(jobId)) {
+      return errorResponse(res, 'Invalid job ID', 400);
+    }
+
+    const job = await PortalJob.findById(jobId);
+    if (!job) return errorResponse(res, 'Job opening not found', 404);
+
+    if (job.status !== 'active') {
+      return errorResponse(res, 'This job opening is no longer active or accepting applications.', 400);
+    }
+
+    // Check duplicate application
+    let application = await StudentApplication.findOne({ studentId: userId, jobId });
+    if (application && application.status !== 'interested') {
+      return errorResponse(res, 'You have already submitted an application for this position.', 400);
+    }
+
+    // Load student profile for snapshot
+    const student = await Student.findOne({ userId });
+
+    // Determine resume
+    let resumePath = null;
+    let resumeOriginalName = null;
+
+    if (req.file) {
+      resumePath = req.file.filename;
+      resumeOriginalName = req.file.originalname;
+    } else if (student?.resumePath) {
+      resumePath = student.resumePath;
+      resumeOriginalName = student.resumeOriginalName || 'Student_Resume.pdf';
+    }
+
+    // Applicant data snapshot
+    const applicantData = {
+      fullName: student?.fullName || req.user.fullName || 'Student Applicant',
+      email: student?.email || req.user.email,
+      phone: student?.phone || null,
+      university: student?.university || null,
+      branch: student?.branch || null,
+      cgpa: student?.cgpa !== undefined && student?.cgpa !== null ? Number(student.cgpa) : null,
+      graduationYear: student?.graduationYear ? Number(student.graduationYear) : null,
+      skills: Array.isArray(student?.skills) ? student.skills : []
+    };
+
+    if (application) {
+      // Transition from bookmarked 'interested' to 'applied'
+      application.status = 'applied';
+      application.companyId = job.companyId || null;
+      application.appliedAt = new Date();
+      application.coverNote = coverNote ? coverNote.trim().substring(0, 3000) : null;
+      if (resumePath) {
+        application.resumePath = resumePath;
+        application.resumeOriginalName = resumeOriginalName;
+      }
+      application.applicantData = applicantData;
+      application.statusHistory.push({
+        status: 'applied',
+        changedAt: new Date(),
+        changedBy: userId,
+        note: 'Application submitted by candidate'
+      });
+      await application.save();
+    } else {
+      application = await StudentApplication.create({
+        studentId: userId,
+        jobId: job._id,
+        companyId: job.companyId || null,
+        status: 'applied',
+        appliedAt: new Date(),
+        coverNote: coverNote ? coverNote.trim().substring(0, 3000) : null,
+        resumePath,
+        resumeOriginalName,
+        applicantData,
+        statusHistory: [
+          { status: 'applied', changedAt: new Date(), changedBy: userId, note: 'Application submitted by candidate' }
+        ]
+      });
+    }
+
+    return successResponse(res, application, 'Application submitted successfully! You can track its progress in My Applications.', 201);
+  } catch (err) {
+    if (err.code === 11000) {
+      return errorResponse(res, 'You have already applied for this job opening.', 400);
+    }
+    return errorResponse(res, err.message);
+  }
+});
+
+// GET /api/portal/my-applications — Retrieve authenticated student's applications & tracker stats
+router.get('/my-applications', protect, async (req, res) => {
+  try {
+    const userId = req.user._id || req.user.id;
+    const { status, search } = req.query;
+
+    const filter = {
+      studentId: userId,
+      status: { $ne: 'interested' } // Exclude simple bookmarks
+    };
+
+    if (status && status !== 'all') {
+      filter.status = status;
+    }
+
+    const applications = await StudentApplication.find(filter)
+      .sort({ updatedAt: -1 })
+      .populate({
+        path: 'jobId',
+        select: 'title companyName location employmentType workMode experienceLevel salaryMin salaryMax salaryCurrency status applicationDeadline isDemonstration sourceType hiringStages'
+      })
+      .populate({
+        path: 'companyId',
+        select: 'name logoUrl industry officialWebsite verificationStatus headquarters'
+      })
+      .lean();
+
+    // Summary statistics for student dashboard
+    const allUserApps = await StudentApplication.find({ studentId: userId, status: { $ne: 'interested' } }).lean();
+    const stats = {
+      total: allUserApps.length,
+      underReview: allUserApps.filter(a => ['applied', 'under_review'].includes(a.status)).length,
+      shortlisted: allUserApps.filter(a => a.status === 'shortlisted').length,
+      interviewScheduled: allUserApps.filter(a => ['interview_scheduled', 'interview', 'assessment'].includes(a.status)).length,
+      selected: allUserApps.filter(a => ['selected', 'offered'].includes(a.status)).length,
+      rejected: allUserApps.filter(a => a.status === 'rejected').length,
+      withdrawn: allUserApps.filter(a => a.status === 'withdrawn').length
+    };
+
+    return successResponse(res, { applications, stats }, 'My applications retrieved successfully');
+  } catch (err) {
+    return errorResponse(res, err.message);
+  }
+});
+
+// PATCH /api/portal/my-applications/:id/withdraw — Student withdraws an active application
+router.patch('/my-applications/:id/withdraw', protect, async (req, res) => {
+  try {
+    const userId = req.user._id || req.user.id;
+    const { reason } = req.body;
+
+    const application = await StudentApplication.findById(req.params.id);
+    if (!application) {
+      return errorResponse(res, 'Application not found', 404);
+    }
+
+    // Ownership check
+    if (application.studentId.toString() !== userId.toString()) {
+      return errorResponse(res, 'Unauthorized to withdraw this application', 403);
+    }
+
+    if (['selected', 'offered'].includes(application.status)) {
+      return errorResponse(res, 'Cannot withdraw an application that has already received an offer. Please contact the company directly.', 400);
+    }
+
+    if (['rejected', 'withdrawn'].includes(application.status)) {
+      return errorResponse(res, `Application is already marked as ${application.status}`, 400);
+    }
+
+    application.status = 'withdrawn';
+    application.statusHistory.push({
+      status: 'withdrawn',
+      changedAt: new Date(),
+      changedBy: userId,
+      note: reason ? reason.trim() : 'Candidate voluntarily withdrew application'
+    });
+
+    await application.save();
+
+    return successResponse(res, application, 'Application withdrawn successfully');
+  } catch (err) {
+    return errorResponse(res, err.message);
+  }
+});
+
+// POST /api/portal/jobs/:id/application-tracking — Start tracking an application (legacy preserved)
 router.post('/jobs/:id/application-tracking', protect, async (req, res) => {
   try {
     const userId = req.user._id || req.user.id;
@@ -389,25 +598,27 @@ router.post('/jobs/:id/application-tracking', protect, async (req, res) => {
       return errorResponse(res, 'Invalid job ID', 400);
     }
 
+    const job = await PortalJob.findById(jobId);
     let application = await StudentApplication.findOne({ studentId: userId, jobId });
 
     if (application) {
-      // Update existing
       application.status = 'applied';
       application.appliedAt = new Date();
+      if (job?.companyId) application.companyId = job.companyId;
       if (notes) application.notes = notes.substring(0, 2000);
-      application.statusHistory.push({ status: 'applied', changedAt: new Date(), note: 'Marked as applied' });
+      application.statusHistory.push({ status: 'applied', changedAt: new Date(), changedBy: userId, note: 'Marked as applied' });
       await application.save();
     } else {
       application = await StudentApplication.create({
         studentId: userId,
         jobId,
+        companyId: job?.companyId || null,
         status: 'applied',
         appliedAt: new Date(),
         notes: notes?.substring(0, 2000) || null,
         statusHistory: [
           { status: 'interested', changedAt: new Date() },
-          { status: 'applied', changedAt: new Date() },
+          { status: 'applied', changedAt: new Date(), changedBy: userId, note: 'Marked as applied' },
         ],
       });
     }
@@ -427,7 +638,7 @@ router.patch('/applications/:id', protect, async (req, res) => {
     const userId = req.user._id || req.user.id;
     const { status, notes } = req.body;
 
-    const validStatuses = ['interested', 'applied', 'assessment', 'interview', 'offered', 'rejected', 'withdrawn'];
+    const validStatuses = ['interested', 'applied', 'under_review', 'shortlisted', 'interview_scheduled', 'selected', 'rejected', 'withdrawn', 'assessment', 'interview', 'offered'];
     if (status && !validStatuses.includes(status)) {
       return errorResponse(res, `Invalid status. Must be one of: ${validStatuses.join(', ')}`, 400);
     }
@@ -442,7 +653,7 @@ router.patch('/applications/:id', protect, async (req, res) => {
 
     if (status) {
       application.status = status;
-      application.statusHistory.push({ status, changedAt: new Date(), note: notes || null });
+      application.statusHistory.push({ status, changedAt: new Date(), changedBy: userId, note: notes || null });
     }
     if (notes !== undefined) application.notes = notes?.substring(0, 2000) || null;
     await application.save();

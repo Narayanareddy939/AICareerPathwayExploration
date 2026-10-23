@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useAuth } from '../context/AuthContext';
 import {
-  Target, AlertCircle, CheckCircle2, BookOpen, TrendingUp,
-  BarChart2, Zap, Award, RefreshCw, Info, Filter
+  Target, AlertCircle, CheckCircle2, BookOpen, Award, RefreshCw, Filter
 } from 'lucide-react';
 
 const PRIORITY_COLORS = {
@@ -15,10 +14,12 @@ const PRIORITY_COLORS = {
 };
 
 export default function SkillGapPage() {
-  const { user } = useAuth();
+  const [searchParams] = useSearchParams();
+  const queryRole = searchParams.get('targetRole');
+
   const [profile, setProfile] = useState(null);
   const [gapData, setGapData] = useState(null);
-  const [selectedCareer, setSelectedCareer] = useState('');
+  const [selectedCareer, setSelectedCareer] = useState(queryRole || '');
   const [loading, setLoading] = useState(true);
   const [analyzing, setAnalyzing] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
@@ -41,12 +42,14 @@ export default function SkillGapPage() {
       const res = await axios.get('/api/student/profile');
       const p = res.data?.student;
       setProfile(p);
-      const career = p?.careerGoal || 'Full Stack Developer';
+      const career = queryRole || p?.careerGoal || 'Full Stack Developer';
       setSelectedCareer(career);
       await analyzeGap(career, p?.skills || []);
     } catch (err) {
       console.error('Profile load error:', err);
-      await analyzeGap('Full Stack Developer', []);
+      const fallbackCareer = queryRole || 'Full Stack Developer';
+      setSelectedCareer(fallbackCareer);
+      await analyzeGap(fallbackCareer, []);
     } finally {
       setLoading(false);
     }
@@ -62,7 +65,7 @@ export default function SkillGapPage() {
         skills: userSkills,
       });
       setGapData(res.data.gapAnalysis || res.data);
-    } catch (err) {
+    } catch {
       setGapData(null);
     } finally {
       setAnalyzing(false);
@@ -174,7 +177,7 @@ export default function SkillGapPage() {
                 color: '#34d399', padding: '0.35rem 0.75rem', borderRadius: '9999px', fontSize: '0.82rem', fontWeight: 600,
                 display: 'flex', alignItems: 'center', gap: '0.35rem',
               }}>
-                <CheckCircle2 size={12} /> {s}
+                <CheckCircle2 size={12} /> {typeof s === 'string' ? s : (s?.skill || s?.name || '')}
               </span>
             ))}
           </div>
@@ -211,6 +214,7 @@ export default function SkillGapPage() {
               {filteredSkills.map((item, idx) => {
                 const colors = PRIORITY_COLORS[item.priority] || PRIORITY_COLORS.medium;
                 const isExpanded = expandedSkill === idx;
+                const skillName = typeof item === 'string' ? item : (item?.skill || item?.name || 'Skill');
                 return (
                   <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.04 }}
@@ -223,7 +227,7 @@ export default function SkillGapPage() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                         <AlertCircle size={16} color={colors.text} />
-                        <span style={{ fontWeight: 700, color: 'var(--text-main)', fontSize: '0.95rem' }}>{item.skill}</span>
+                        <span style={{ fontWeight: 700, color: 'var(--text-main)', fontSize: '0.95rem' }}>{skillName}</span>
                         <span className={`badge ${colors.badge}`} style={{ fontSize: '0.7rem', textTransform: 'uppercase' }}>
                           {item.priority}
                         </span>

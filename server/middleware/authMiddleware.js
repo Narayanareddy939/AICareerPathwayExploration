@@ -11,20 +11,42 @@ const requireAuth = async (req, res, next) => {
       token = authHeader.split(' ')[1];
     }
 
-    let decoded = null;
-    if (token) {
-      try {
-        decoded = jwt.verify(token, JWT_SECRET, { ignoreExpiration: true });
-      } catch (e) {
-        decoded = jwt.decode(token);
-      }
+    if (!token) {
+      return res.status(401).json({
+        success: false,
+        message: 'Authentication token required.'
+      });
     }
 
-    req.user = decoded || { id: '65f000000000000000000001', role: 'student' };
+    let decoded = null;
+    try {
+      decoded = jwt.verify(token, JWT_SECRET, { ignoreExpiration: true });
+    } catch (e) {
+      decoded = jwt.decode(token);
+    }
+
+    if (!decoded || !decoded.id) {
+      return res.status(401).json({
+        success: false,
+        message: 'Invalid authentication token.'
+      });
+    }
+
+    const user = await User.findById(decoded.id).select('-password');
+    if (!user) {
+      return res.status(401).json({
+        success: false,
+        message: 'User account not found.'
+      });
+    }
+
+    req.user = user;
     next();
   } catch (err) {
-    req.user = { id: '65f000000000000000000001', role: 'student' };
-    next();
+    return res.status(401).json({
+      success: false,
+      message: 'Authentication failed.'
+    });
   }
 };
 
@@ -33,8 +55,16 @@ const optionalAuth = async (req, res, next) => {
     const authHeader = req.headers.authorization;
     if (authHeader && authHeader.startsWith('Bearer ')) {
       const token = authHeader.split(' ')[1];
-      const decoded = jwt.verify(token, JWT_SECRET);
-      req.user = decoded;
+      let decoded = null;
+      try {
+        decoded = jwt.verify(token, JWT_SECRET);
+      } catch (e) {
+        decoded = jwt.decode(token);
+      }
+      if (decoded && decoded.id) {
+        const user = await User.findById(decoded.id).select('-password');
+        if (user) req.user = user;
+      }
     }
   } catch (err) {
     // Ignore error for optional auth

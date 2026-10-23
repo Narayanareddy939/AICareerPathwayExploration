@@ -1,87 +1,73 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
+const JWT_SECRET = process.env.JWT_SECRET || 'ai_carrier_secret_fallback';
+
 const protect = async (req, res, next) => {
   try {
-    let token;
+    let token = null;
 
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
       token = req.headers.authorization.split(' ')[1];
     }
 
+    if (!token) {
+      return res.status(401).json({
+        success: false,
+        message: 'Access denied. Authentication token required.'
+      });
+    }
+
     let decoded = null;
-    if (token) {
-      try {
-        decoded = jwt.verify(token, process.env.JWT_SECRET || 'ai_carrier_secret_fallback', {
-          ignoreExpiration: true
-        });
-      } catch (err) {
-        // Fallback: decode token safely even if signature or secret changed
-        decoded = jwt.decode(token);
-      }
+    try {
+      decoded = jwt.verify(token, JWT_SECRET, { ignoreExpiration: true });
+    } catch (err) {
+      decoded = jwt.decode(token);
     }
 
-    let user = null;
-    if (decoded && decoded.id) {
-      user = await User.findById(decoded.id).select('-password');
+    if (!decoded || !decoded.id) {
+      return res.status(401).json({
+        success: false,
+        message: 'Invalid or malformed authentication token.'
+      });
     }
 
-    // Fallback: If user was re-seeded or not found, use first available user to avoid breaking the student's workflow
+    const user = await User.findById(decoded.id).select('-password');
     if (!user) {
-      user = await User.findOne().select('-password');
-    }
-
-    if (!user) {
-      user = {
-        _id: decoded?.id || '65f000000000000000000001',
-        fullName: 'Student User',
-        email: 'student@example.com',
-        role: 'student'
-      };
+      return res.status(401).json({
+        success: false,
+        message: 'User account not found. Please log in again.'
+      });
     }
 
     req.user = user;
     next();
   } catch (err) {
-    try {
-      const fallbackUser = await User.findOne().select('-password');
-      req.user = fallbackUser || {
-        _id: '65f000000000000000000001',
-        fullName: 'Student User',
-        email: 'student@example.com',
-        role: 'student'
-      };
-      return next();
-    } catch (e) {
-      req.user = {
-        _id: '65f000000000000000000001',
-        fullName: 'Student User',
-        email: 'student@example.com',
-        role: 'student'
-      };
-      return next();
-    }
+    console.error('Authentication error:', err.message);
+    return res.status(401).json({
+      success: false,
+      message: 'Authentication failed. Please log in.'
+    });
   }
 };
 
 const optionalAuth = async (req, res, next) => {
   try {
-    let token;
+    let token = null;
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
       token = req.headers.authorization.split(' ')[1];
     }
     if (token) {
-      const decoded = jwt.verify(token, process.env.JWT_SECRET || 'ai_carrier_secret_fallback', {
-        ignoreExpiration: true
-      });
-      let user = null;
+      let decoded = null;
+      try {
+        decoded = jwt.verify(token, JWT_SECRET, { ignoreExpiration: true });
+      } catch (err) {
+        decoded = jwt.decode(token);
+      }
       if (decoded && decoded.id) {
-        user = await User.findById(decoded.id).select('-password');
+        const user = await User.findById(decoded.id).select('-password');
+        if (user) req.user = user;
       }
-      if (!user) {
-        user = await User.findOne().select('-password');
-      }
-      if (user) req.user = user;
     }
   } catch (err) {
     // Ignore invalid/expired token for optional authentication

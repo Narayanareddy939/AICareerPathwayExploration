@@ -109,7 +109,26 @@ setTimeout(async () => {
   // 7. Resume ATS Analyzer
   await test('POST /api/analyze-resume - ATS Keyword & Strength Extraction', async () => {
     const payload = {
-      resumeText: 'Experienced developer in Python, React, and SQL. Developed high throughput web APIs with Docker and AWS.',
+      resumeText: `John Doe | Software Engineer
+john.doe@example.com | +1 555-0199 | github.com/johndoe | linkedin.com/in/johndoe
+
+SUMMARY
+Experienced Software Engineer with 3+ years in full-stack development, distributed systems, and cloud solutions.
+
+TECHNICAL SKILLS
+Python, JavaScript, TypeScript, SQL, React, Node.js, Docker, AWS, Git, Data Structures, Algorithms, OOP
+
+EXPERIENCE
+Software Engineer | Acme Tech (2022 - Present)
+- Designed and built high-throughput REST APIs with Python and Docker, improving latency by 35%.
+- Maintained SQL and MongoDB databases serving 100,000 active users.
+
+EDUCATION
+Bachelor of Technology in Computer Science and Engineering
+CGPA: 8.8 / 10.0
+
+PROJECTS
+Cloud Microservice Engine: Built scalable services with AWS, Docker, and CI/CD pipelines.`,
       targetRole: 'Software Engineer'
     };
     const res = await request('POST', '/api/analyze-resume', payload);

@@ -273,8 +273,8 @@ export default function AlumniNetwork({ onRequestMentorship }) {
                   {/* Top Card Header */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div>
-                      <h3 style={{ fontSize: '1.15rem', color: '#ffffff' }}>{alumni.name}</h3>
-                      <p style={{ fontSize: '0.85rem', color: '#818cf8', fontWeight: 600, marginTop: '2px' }}>
+                      <h3 style={{ fontSize: '1.15rem', color: 'var(--text-main)', fontWeight: 800 }}>{alumni.name}</h3>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--primary)', fontWeight: 700, marginTop: '2px' }}>
                         {alumni.currentRole || alumni.role || 'Software Engineer'}
                       </p>
                     </div>

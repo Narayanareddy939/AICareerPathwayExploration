@@ -1,13 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Briefcase, Search, Filter, MapPin, Building2, Sparkles,
-  ExternalLink, Bookmark, BookmarkCheck, CheckCircle2,
-  AlertCircle, Clock, ShieldCheck, ChevronRight, X,
-  GraduationCap, Award, HelpCircle, FileText, Send,
-  TrendingUp, RefreshCw, Info, Calendar, DollarSign,
-  Layers, Check, Eye, Trash2, ListChecks, CheckCircle
+  Briefcase, Search, MapPin, Building2, Sparkles, ExternalLink, Bookmark,
+  CheckCircle2, AlertCircle, Clock, X, GraduationCap, Award, FileText, Send,
+  RefreshCw, Eye, Trash2, CheckCircle, Upload
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
@@ -15,6 +12,7 @@ import portalService from '../services/portalService';
 
 export default function CompaniesCareers() {
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   // Active Main Tab: 'portal' | 'companies' | 'saved' | 'applications'
   const [activeTab, setActiveTab] = useState('portal');
@@ -41,13 +39,17 @@ export default function CompaniesCareers() {
   // Loading & Error states
   const [loadingRecs, setLoadingRecs] = useState(true);
   const [loadingJobs, setLoadingJobs] = useState(true);
-  const [loadingCompanies, setLoadingCompanies] = useState(true);
   const [errorJobs, setErrorJobs] = useState('');
 
   // Modals
   const [selectedJobForModal, setSelectedJobForModal] = useState(null);
   const [trackingModalJob, setTrackingModalJob] = useState(null);
   const [trackingNotes, setTrackingNotes] = useState('');
+  const [applyModalJob, setApplyModalJob] = useState(null);
+  const [applyCoverNote, setApplyCoverNote] = useState('');
+  const [applyResumeFile, setApplyResumeFile] = useState(null);
+  const [useProfileResume, setUseProfileResume] = useState(true);
+  const [isApplying, setIsApplying] = useState(false);
 
   // Pagination for All Jobs
   const [jobsPage, setJobsPage] = useState(1);
@@ -133,26 +135,27 @@ export default function CompaniesCareers() {
 
   const fetchCompanies = async () => {
     try {
-      setLoadingCompanies(true);
       const res = await portalService.getCompanies();
       if (res.success) {
         setCompanies(res.data || []);
       }
     } catch (err) {
       console.warn('Failed to load companies:', err.message);
-    } finally {
-      setLoadingCompanies(false);
     }
   };
 
   const fetchSavedAndApplications = async () => {
     try {
       const [savedRes, appsRes] = await Promise.all([
-        portalService.getSavedJobs(),
+        portalService.getSavedJobs({ status: 'interested' }),
         portalService.getApplications()
       ]);
-      if (savedRes.success) setSavedJobs(savedRes.data || []);
-      if (appsRes.success) setApplications(appsRes.data || []);
+      if (savedRes.success) {
+        setSavedJobs((savedRes.data || []).filter(application => application.status === 'interested'));
+      }
+      if (appsRes.success) {
+        setApplications((appsRes.data || []).filter(application => application.status !== 'interested'));
+      }
     } catch (err) {
       console.warn('Failed to load saved jobs or tracker:', err.message);
     }
@@ -168,6 +171,7 @@ export default function CompaniesCareers() {
 
   const handleToggleSave = async (job) => {
     const jobId = job._id;
+    if (isJobApplied(jobId)) return;
     const alreadySaved = isJobSaved(jobId);
 
     try {
@@ -181,7 +185,7 @@ export default function CompaniesCareers() {
         fetchSavedAndApplications();
       }
     } catch (err) {
-      toast.error('Unable to update saved jobs. Please log in.');
+      toast.error(err.response?.data?.message || 'Unable to update saved jobs. Please log in.');
     }
   };
 
@@ -205,7 +209,53 @@ export default function CompaniesCareers() {
       setTrackingNotes('');
       fetchSavedAndApplications();
     } catch (err) {
-      toast.error('Failed to record application. Please retry.');
+      toast.error(err.response?.data?.message || 'Failed to record application. Please retry.');
+    }
+  };
+
+  const isJobApplied = (jobId) => {
+    return applications.some(item => (item.jobId?._id || item.jobId) === jobId);
+  };
+
+  const handleOpenApplyModal = (job) => {
+    if (!user) {
+      toast.error('Please log in as a student to apply for this opening');
+      navigate('/login');
+      return;
+    }
+    setApplyModalJob(job);
+    setApplyCoverNote('');
+    setApplyResumeFile(null);
+    setUseProfileResume(true);
+  };
+
+  const handleSubmitDirectApplication = async (e) => {
+    e?.preventDefault();
+    if (!applyModalJob) return;
+
+    try {
+      setIsApplying(true);
+      const formData = new FormData();
+      formData.append('coverNote', applyCoverNote || '');
+      formData.append('useProfileResume', useProfileResume ? 'true' : 'false');
+      if (applyResumeFile && !useProfileResume) {
+        formData.append('resume', applyResumeFile);
+      }
+
+      const res = await portalService.applyForJob(applyModalJob._id, formData);
+      if (res.success) {
+        toast.success(`Successfully applied to ${applyModalJob.title} at ${applyModalJob.companyName}!`);
+        setApplyModalJob(null);
+        setApplyCoverNote('');
+        setApplyResumeFile(null);
+        fetchSavedAndApplications();
+      } else {
+        toast.error(res.message || 'Application could not be submitted');
+      }
+    } catch (err) {
+      toast.error(err.response?.data?.message || err.message || 'Failed to submit application');
+    } finally {
+      setIsApplying(false);
     }
   };
 
@@ -215,7 +265,7 @@ export default function CompaniesCareers() {
       toast.success(`Status updated to ${newStatus}`);
       fetchSavedAndApplications();
     } catch (err) {
-      toast.error('Failed to update application status');
+      toast.error(err.response?.data?.message || 'Failed to update application status');
     }
   };
 
@@ -237,6 +287,15 @@ export default function CompaniesCareers() {
   // ─────────────────────────────────────────────────────────────
 
   const renderVerificationBadge = (status) => {
+    const verified = status === 'officially_verified';
+    const rejected = status === 'rejected';
+    const label = verified ? 'Verified' : rejected ? 'Rejected' : 'Pending review';
+    const colors = verified
+      ? { background: '#ecfdf5', color: '#065f46', border: '1px solid #a7f3d0', icon: CheckCircle2, iconColor: '#059669' }
+      : rejected
+        ? { background: '#fff2ef', color: '#9a493e', border: '1px solid #efcfca', icon: AlertCircle, iconColor: '#9a493e' }
+        : { background: '#fff8e9', color: '#80591d', border: '1px solid #f0dfbd', icon: AlertCircle, iconColor: '#a16b1f' };
+    const Icon = colors.icon;
     return (
       <span style={{
         display: 'inline-flex',
@@ -246,11 +305,11 @@ export default function CompaniesCareers() {
         borderRadius: '999px',
         fontSize: '0.72rem',
         fontWeight: 700,
-        background: '#ecfdf5',
-        color: '#065f46',
-        border: '1px solid #a7f3d0'
+        background: colors.background,
+        color: colors.color,
+        border: colors.border
       }}>
-        <CheckCircle2 size={12} color="#059669" /> Verified
+        <Icon size={12} color={colors.iconColor} /> {label}
       </span>
     );
   };
@@ -827,6 +886,7 @@ export default function CompaniesCareers() {
                   const scoreBg = matchScore >= 60 ? '#ecfdf5' : matchScore >= 40 ? '#eff6ff' : '#fef3c7';
                   const scoreBorder = matchScore >= 60 ? '#a7f3d0' : matchScore >= 40 ? '#bfdbfe' : '#fde68a';
                   const saved = isJobSaved(job._id);
+                  const applied = isJobApplied(job._id);
 
                   return (
                     <motion.div
@@ -1000,7 +1060,9 @@ export default function CompaniesCareers() {
 
                         <button
                           onClick={() => handleToggleSave(job)}
-                          title={saved ? 'Remove from saved' : 'Save job'}
+                          title={applied ? 'Already applied' : saved ? 'Remove from saved' : 'Save job'}
+                          aria-label={applied ? `Already applied to ${job.title}` : saved ? `Remove ${job.title} from saved jobs` : `Save ${job.title}`}
+                          disabled={applied}
                           style={{
                             padding: '0.55rem 0.75rem',
                             borderRadius: '8px',
@@ -1009,34 +1071,59 @@ export default function CompaniesCareers() {
                             color: saved ? 'var(--primary)' : 'var(--text-dim)',
                             fontSize: '0.82rem',
                             fontWeight: 600,
-                            cursor: 'pointer',
+                            cursor: applied ? 'not-allowed' : 'pointer',
+                            opacity: applied ? 0.55 : 1,
                             transition: 'all 0.15s ease'
                           }}
                         >
                           <Bookmark size={14} fill={saved ? 'currentColor' : 'none'} />
                         </button>
 
-                        <button
-                          onClick={() => handleOpenApplicationLink(job)}
-                          style={{
-                            flex: 1.2,
-                            padding: '0.55rem',
-                            borderRadius: '8px',
-                            background: 'var(--primary-gradient)',
-                            border: 'none',
-                            color: '#ffffff',
-                            fontSize: '0.82rem',
-                            fontWeight: 700,
-                            cursor: 'pointer',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '4px',
-                            boxShadow: '0 2px 8px rgba(79, 70, 229, 0.2)'
-                          }}
-                        >
-                          Apply <ExternalLink size={13} />
-                        </button>
+                        {isJobApplied(job._id) ? (
+                          <Link
+                            to="/my-applications"
+                            style={{
+                              flex: 1.2,
+                              padding: '0.55rem',
+                              borderRadius: '8px',
+                              background: '#ecfdf5',
+                              border: '1px solid #a7f3d0',
+                              color: '#065f46',
+                              fontSize: '0.82rem',
+                              fontWeight: 700,
+                              textDecoration: 'none',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              gap: '4px'
+                            }}
+                          >
+                            <CheckCircle size={13} color="#059669" /> Applied
+                          </Link>
+                        ) : (
+                          <button
+                            onClick={() => job.companyId ? handleOpenApplyModal(job) : handleOpenApplicationLink(job)}
+                            style={{
+                              flex: 1.2,
+                              padding: '0.55rem',
+                              borderRadius: '8px',
+                              background: 'var(--primary-gradient)',
+                              border: 'none',
+                              color: '#ffffff',
+                              fontSize: '0.82rem',
+                              fontWeight: 700,
+                              cursor: 'pointer',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              gap: '4px',
+                              boxShadow: '0 2px 8px rgba(79, 70, 229, 0.2)'
+                            }}
+                          >
+                            {job.companyId ? <Send size={13} /> : <ExternalLink size={13} />}
+                            {job.companyId ? 'Apply Now' : 'Apply'}
+                          </button>
+                        )}
                       </div>
                     </motion.div>
                   );
@@ -1101,6 +1188,7 @@ export default function CompaniesCareers() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '1.25rem' }}>
                 {allJobs.map((job) => {
                   const saved = isJobSaved(job._id);
+                  const applied = isJobApplied(job._id);
                   return (
                     <motion.div
                       key={job._id}
@@ -1229,39 +1317,67 @@ export default function CompaniesCareers() {
                         </button>
                         <button
                           onClick={() => handleToggleSave(job)}
+                          title={applied ? 'Already applied' : saved ? 'Remove from saved' : 'Save job'}
+                          aria-label={applied ? `Already applied to ${job.title}` : saved ? `Remove ${job.title} from saved jobs` : `Save ${job.title}`}
+                          disabled={applied}
                           style={{
                             padding: '0.55rem 0.75rem',
                             borderRadius: '8px',
                             background: saved ? 'var(--bg-card-subtle)' : 'var(--bg-input)',
                             border: saved ? '1px solid var(--primary)' : '1px solid var(--border-color)',
                             color: saved ? 'var(--primary)' : 'var(--text-dim)',
-                            cursor: 'pointer',
+                            cursor: applied ? 'not-allowed' : 'pointer',
+                            opacity: applied ? 0.55 : 1,
                             transition: 'all 0.15s ease'
                           }}
                         >
                           <Bookmark size={14} fill={saved ? 'currentColor' : 'none'} />
                         </button>
-                        <button
-                          onClick={() => handleOpenApplicationLink(job)}
-                          style={{
-                            flex: 1.2,
-                            padding: '0.55rem',
-                            borderRadius: '8px',
-                            background: 'var(--primary-gradient)',
-                            border: 'none',
-                            color: '#ffffff',
-                            fontSize: '0.82rem',
-                            fontWeight: 700,
-                            cursor: 'pointer',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '4px',
-                            boxShadow: '0 2px 8px rgba(79, 70, 229, 0.2)'
-                          }}
-                        >
-                          Apply <ExternalLink size={13} />
-                        </button>
+                        {isJobApplied(job._id) ? (
+                          <Link
+                            to="/my-applications"
+                            style={{
+                              flex: 1.2,
+                              padding: '0.55rem',
+                              borderRadius: '8px',
+                              background: '#ecfdf5',
+                              border: '1px solid #a7f3d0',
+                              color: '#065f46',
+                              fontSize: '0.82rem',
+                              fontWeight: 700,
+                              textDecoration: 'none',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              gap: '4px'
+                            }}
+                          >
+                            <CheckCircle size={13} color="#059669" /> Applied
+                          </Link>
+                        ) : (
+                          <button
+                            onClick={() => job.companyId ? handleOpenApplyModal(job) : handleOpenApplicationLink(job)}
+                            style={{
+                              flex: 1.2,
+                              padding: '0.55rem',
+                              borderRadius: '8px',
+                              background: 'var(--primary-gradient)',
+                              border: 'none',
+                              color: '#ffffff',
+                              fontSize: '0.82rem',
+                              fontWeight: 700,
+                              cursor: 'pointer',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              gap: '4px',
+                              boxShadow: '0 2px 8px rgba(79, 70, 229, 0.2)'
+                            }}
+                          >
+                            {job.companyId ? <Send size={13} /> : <ExternalLink size={13} />}
+                            {job.companyId ? 'Apply Now' : 'Apply'}
+                          </button>
+                        )}
                       </div>
                     </motion.div>
                   );
@@ -1659,7 +1775,6 @@ export default function CompaniesCareers() {
                           boxShadow: '0 1px 3px rgba(15, 23, 42, 0.05)'
                         }}
                       >
-                        <option value="interested">Interested</option>
                         <option value="applied">Applied</option>
                         <option value="assessment">Online Assessment</option>
                         <option value="interview">Interview Stage</option>
@@ -1893,27 +2008,73 @@ export default function CompaniesCareers() {
                   {isJobSaved(selectedJobForModal._id) ? 'Saved' : 'Save Job'}
                 </button>
 
-                <button
-                  onClick={() => handleOpenApplicationLink(selectedJobForModal)}
-                  style={{
-                    flex: 1,
-                    padding: '0.75rem 1.5rem',
-                    borderRadius: '8px',
-                    background: 'var(--primary-gradient)',
-                    border: 'none',
-                    color: '#ffffff',
-                    fontWeight: 700,
-                    fontSize: '0.95rem',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px',
-                    boxShadow: '0 4px 14px rgba(79, 70, 229, 0.3)'
-                  }}
-                >
-                  Open Official Application Link <ExternalLink size={16} />
-                </button>
+                {isJobApplied(selectedJobForModal._id) ? (
+                  <Link
+                    to="/my-applications"
+                    style={{
+                      flex: 1,
+                      padding: '0.75rem 1.5rem',
+                      borderRadius: '8px',
+                      background: '#ecfdf5',
+                      border: '1px solid #a7f3d0',
+                      color: '#065f46',
+                      fontWeight: 700,
+                      fontSize: '0.95rem',
+                      textDecoration: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '8px'
+                    }}
+                  >
+                    <CheckCircle size={16} color="#059669" /> View In My Applications
+                  </Link>
+                ) : (
+                  <div style={{ flex: 1, display: 'flex', gap: '0.5rem' }}>
+                    <button
+                      onClick={() => handleOpenApplyModal(selectedJobForModal)}
+                      style={{
+                        flex: 1,
+                        padding: '0.75rem 1.25rem',
+                        borderRadius: '8px',
+                        background: 'var(--primary-gradient)',
+                        border: 'none',
+                        color: '#ffffff',
+                        fontWeight: 700,
+                        fontSize: '0.95rem',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        boxShadow: '0 4px 14px rgba(79, 70, 229, 0.3)'
+                      }}
+                    >
+                      <Send size={16} /> Apply in Portal
+                    </button>
+                    {selectedJobForModal.applicationUrl && (
+                      <button
+                        onClick={() => handleOpenApplicationLink(selectedJobForModal)}
+                        style={{
+                          padding: '0.75rem 1rem',
+                          borderRadius: '8px',
+                          background: '#ffffff',
+                          border: '1px solid #cbd5e1',
+                          color: '#334155',
+                          fontWeight: 600,
+                          fontSize: '0.88rem',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '6px'
+                        }}
+                        title="Open external link"
+                      >
+                        External <ExternalLink size={14} />
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
             </motion.div>
           </div>
@@ -2026,6 +2187,260 @@ export default function CompaniesCareers() {
                   Save to My Applications
                 </button>
               </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* ─────────────────────────────────────────────────────────────
+          DIRECT IN-PORTAL APPLICATION MODAL
+      ───────────────────────────────────────────────────────────── */}
+      <AnimatePresence>
+        {applyModalJob && (
+          <div style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(15, 23, 42, 0.55)',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
+            zIndex: 1200,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1.5rem',
+            overflowY: 'auto'
+          }}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              className="glass-card"
+              style={{
+                width: '100%',
+                maxWidth: '600px',
+                background: 'rgba(255, 255, 255, 0.98)',
+                border: '1px solid rgba(255, 255, 255, 0.95)',
+                borderRadius: '16px',
+                padding: '2rem',
+                boxShadow: '0 25px 60px -15px rgba(15, 23, 42, 0.3)',
+                color: '#0f172a'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+                  <div style={{
+                    width: '46px',
+                    height: '46px',
+                    borderRadius: '12px',
+                    background: 'var(--primary-gradient)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#ffffff',
+                    fontWeight: 800,
+                    fontSize: '1.25rem',
+                    boxShadow: '0 4px 12px rgba(79, 70, 229, 0.25)'
+                  }}>
+                    {applyModalJob.companyName?.charAt(0) || 'J'}
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: '1.25rem', fontWeight: 800, margin: 0, color: '#0f172a' }}>
+                      Apply for {applyModalJob.title}
+                    </h3>
+                    <div style={{ fontSize: '0.85rem', color: '#64748b', display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '2px' }}>
+                      <span>{applyModalJob.companyName}</span>
+                      <span>•</span>
+                      <span>{applyModalJob.location}</span>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setApplyModalJob(null)}
+                  style={{
+                    background: '#f1f5f9',
+                    border: 'none',
+                    borderRadius: '8px',
+                    width: '32px',
+                    height: '32px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    color: '#64748b'
+                  }}
+                >
+                  <X size={18} />
+                </button>
+              </div>
+
+              {/* Student Candidate Snapshot Notice */}
+              <div style={{
+                background: '#f8fafc',
+                border: '1px solid #e2e8f0',
+                borderRadius: '10px',
+                padding: '1rem',
+                marginBottom: '1.25rem'
+              }}>
+                <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#475569', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.5rem' }}>
+                  Candidate Snapshot (From Your Profile)
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.5rem', fontSize: '0.85rem' }}>
+                  <div><strong style={{ color: '#0f172a' }}>Name:</strong> {user?.name || 'Logged-in Student'}</div>
+                  <div><strong style={{ color: '#0f172a' }}>Email:</strong> {user?.email || 'N/A'}</div>
+                  {user?.degree && <div><strong style={{ color: '#0f172a' }}>Degree:</strong> {user.degree} {user.branch ? `(${user.branch})` : ''}</div>}
+                  {user?.cgpa && <div><strong style={{ color: '#0f172a' }}>CGPA:</strong> {user.cgpa}</div>}
+                </div>
+              </div>
+
+              <form onSubmit={handleSubmitDirectApplication}>
+                {/* Resume Selection */}
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.5rem' }}>
+                    Resume Document <span style={{ color: '#ef4444' }}>*</span>
+                  </label>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                    <label style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.6rem',
+                      padding: '0.75rem 1rem',
+                      borderRadius: '8px',
+                      border: useProfileResume ? '1.5px solid var(--primary)' : '1px solid #cbd5e1',
+                      background: useProfileResume ? 'rgba(99, 102, 241, 0.04)' : '#ffffff',
+                      cursor: 'pointer',
+                      fontSize: '0.85rem'
+                    }}>
+                      <input
+                        type="radio"
+                        name="resumeChoice"
+                        checked={useProfileResume}
+                        onChange={() => setUseProfileResume(true)}
+                        style={{ accentColor: 'var(--primary)' }}
+                      />
+                      <FileText size={16} color="var(--primary)" />
+                      <span>Use my existing profile resume / uploaded credentials</span>
+                    </label>
+
+                    <label style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.6rem',
+                      padding: '0.75rem 1rem',
+                      borderRadius: '8px',
+                      border: !useProfileResume ? '1.5px solid var(--primary)' : '1px solid #cbd5e1',
+                      background: !useProfileResume ? 'rgba(99, 102, 241, 0.04)' : '#ffffff',
+                      cursor: 'pointer',
+                      fontSize: '0.85rem'
+                    }}>
+                      <input
+                        type="radio"
+                        name="resumeChoice"
+                        checked={!useProfileResume}
+                        onChange={() => setUseProfileResume(false)}
+                        style={{ accentColor: 'var(--primary)' }}
+                      />
+                      <Upload size={16} color="var(--primary)" />
+                      <span>Upload a custom resume for this specific role (.pdf, .docx)</span>
+                    </label>
+                  </div>
+
+                  {!useProfileResume && (
+                    <div style={{ marginTop: '0.75rem' }}>
+                      <input
+                        type="file"
+                        accept=".pdf,.docx,.doc"
+                        onChange={(e) => setApplyResumeFile(e.target.files[0] || null)}
+                        style={{
+                          width: '100%',
+                          fontSize: '0.85rem',
+                          padding: '0.6rem',
+                          border: '1px dashed #94a3b8',
+                          borderRadius: '8px',
+                          background: '#f8fafc'
+                        }}
+                      />
+                      <div style={{ fontSize: '0.72rem', color: '#64748b', marginTop: '4px' }}>
+                        Maximum size: 10MB. Accepted formats: PDF, DOCX, DOC.
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Pitch / Cover Note */}
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 700, color: '#1e293b', marginBottom: '0.4rem' }}>
+                    Note to Recruiter / Pitch (Optional)
+                  </label>
+                  <textarea
+                    rows={3}
+                    value={applyCoverNote}
+                    onChange={(e) => setApplyCoverNote(e.target.value)}
+                    placeholder="Highlight your strongest technical project or why you're a great fit for this role..."
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      borderRadius: '8px',
+                      border: '1px solid #cbd5e1',
+                      background: '#ffffff',
+                      color: '#0f172a',
+                      fontSize: '0.85rem',
+                      resize: 'none',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                {/* Modal Footer */}
+                <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'flex-end', borderTop: '1px solid #e2e8f0', paddingTop: '1.25rem' }}>
+                  <button
+                    type="button"
+                    onClick={() => setApplyModalJob(null)}
+                    disabled={isApplying}
+                    style={{
+                      padding: '0.65rem 1.25rem',
+                      borderRadius: '8px',
+                      background: '#ffffff',
+                      border: '1px solid #cbd5e1',
+                      color: '#64748b',
+                      fontSize: '0.88rem',
+                      fontWeight: 600,
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isApplying}
+                    style={{
+                      padding: '0.65rem 1.5rem',
+                      borderRadius: '8px',
+                      background: 'var(--primary-gradient)',
+                      border: 'none',
+                      color: '#ffffff',
+                      fontSize: '0.88rem',
+                      fontWeight: 700,
+                      cursor: isApplying ? 'not-allowed' : 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      boxShadow: '0 4px 12px rgba(79, 70, 229, 0.25)',
+                      opacity: isApplying ? 0.7 : 1
+                    }}
+                  >
+                    {isApplying ? (
+                      <>
+                        <RefreshCw size={15} className="spin" /> Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={15} /> Submit Application
+                      </>
+                    )}
+                  </button>
+                </div>
+              </form>
             </motion.div>
           </div>
         )}

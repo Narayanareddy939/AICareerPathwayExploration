@@ -23,8 +23,13 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['student', 'admin', 'placement_cell'],
+    enum: ['student', 'admin', 'placement_cell', 'recruiter', 'company'],
     default: 'student'
+  },
+  companyId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Company',
+    default: null
   },
   profileCompleted: {
     type: Boolean,

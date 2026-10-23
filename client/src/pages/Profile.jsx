@@ -144,12 +144,12 @@ export default function Profile() {
             { label: 'GitHub', field: 'githubUrl', icon: null, placeholder: 'github.com/username' },
           ].map(({ label, field, icon: Icon, disabled, placeholder }) => (
             <div key={field}>
-              <label style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600, display: 'block', marginBottom: '0.35rem' }}>{label}</label>
+              <label style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', fontWeight: 700, display: 'block', marginBottom: '0.35rem' }}>{label}</label>
               {editing && !disabled ? (
                 <input type="text" value={form[field] || ''} onChange={e => handleChange(field, e.target.value)}
                   placeholder={placeholder || label} style={{ fontSize: '0.9rem' }} />
               ) : (
-                <p style={{ fontSize: '0.92rem', color: form[field] ? '#e2e8f0' : 'var(--text-dim)', padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-color)', borderRadius: '10px' }}>
+                <p style={{ fontSize: '0.92rem', color: form[field] ? 'var(--text-main)' : 'var(--text-dim)', padding: '0.75rem 1rem', background: 'var(--bg-input)', border: '1px solid var(--border-color)', borderRadius: '10px', fontWeight: 600 }}>
                   {form[field] || '—'}
                 </p>
               )}
@@ -158,7 +158,7 @@ export default function Profile() {
         </div>
         {editing && (
           <div style={{ marginTop: '1rem' }}>
-            <label style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600, display: 'block', marginBottom: '0.35rem' }}>Bio / About</label>
+            <label style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', fontWeight: 700, display: 'block', marginBottom: '0.35rem' }}>Bio / About</label>
             <textarea value={form.bio || ''} onChange={e => handleChange('bio', e.target.value)} rows={3}
               placeholder="Brief description about yourself, goals, and achievements" style={{ fontSize: '0.9rem', resize: 'vertical' }} />
           </div>
@@ -179,7 +179,7 @@ export default function Profile() {
             { label: 'CGPA', field: 'cgpa', type: 'number', min: '0', max: '10', step: '0.01' },
           ].map(({ label, field, options, type, min, max, step }) => (
             <div key={field}>
-              <label style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600, display: 'block', marginBottom: '0.35rem' }}>{label}</label>
+              <label style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', fontWeight: 700, display: 'block', marginBottom: '0.35rem' }}>{label}</label>
               {editing ? (
                 options ? (
                   <select value={form[field] || ''} onChange={e => handleChange(field, e.target.value)} style={{ fontSize: '0.9rem' }}>
@@ -191,21 +191,21 @@ export default function Profile() {
                     placeholder={label} min={min} max={max} step={step} style={{ fontSize: '0.9rem' }} />
                 )
               ) : (
-                <p style={{ fontSize: '0.92rem', color: form[field] ? '#e2e8f0' : 'var(--text-dim)', padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-color)', borderRadius: '10px' }}>
+                <p style={{ fontSize: '0.92rem', color: form[field] ? 'var(--text-main)' : 'var(--text-dim)', padding: '0.75rem 1rem', background: 'var(--bg-input)', border: '1px solid var(--border-color)', borderRadius: '10px', fontWeight: 600 }}>
                   {form[field] || '—'}
                 </p>
               )}
             </div>
           ))}
           <div>
-            <label style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600, display: 'block', marginBottom: '0.35rem' }}>Career Goal</label>
+            <label style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', fontWeight: 700, display: 'block', marginBottom: '0.35rem' }}>Career Goal</label>
             {editing ? (
               <select value={form.careerGoal || ''} onChange={e => handleChange('careerGoal', e.target.value)} style={{ fontSize: '0.9rem' }}>
                 <option value="">Select Target Career</option>
                 {CAREER_GOALS.map(g => <option key={g} value={g}>{g}</option>)}
               </select>
             ) : (
-              <p style={{ fontSize: '0.92rem', color: form.careerGoal ? '#818cf8' : 'var(--text-dim)', padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-color)', borderRadius: '10px', fontWeight: form.careerGoal ? 700 : 400 }}>
+              <p style={{ fontSize: '0.92rem', color: form.careerGoal ? 'var(--primary)' : 'var(--text-dim)', padding: '0.75rem 1rem', background: 'var(--bg-input)', border: '1px solid var(--border-color)', borderRadius: '10px', fontWeight: form.careerGoal ? 700 : 400 }}>
                 {form.careerGoal || '—'}
               </p>
             )}

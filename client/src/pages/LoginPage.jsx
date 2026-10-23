@@ -25,8 +25,13 @@ export default function LoginPage() {
       const { token, user } = res.data;
       login(token, user);
       toast.success(`Welcome back, ${user.fullName}!`);
-      // Redirect based on profile completion
-      if (!user.profileCompleted) {
+
+      // Smart role-based redirection
+      if (user.role === 'admin') {
+        navigate('/admin');
+      } else if (user.role === 'recruiter' || user.role === 'company') {
+        navigate('/company/dashboard');
+      } else if (!user.profileCompleted) {
         navigate('/complete-profile');
       } else {
         navigate('/dashboard');
@@ -109,11 +114,7 @@ export default function LoginPage() {
             <div style={{ flex: 1, height: '1px', background: 'var(--border-color)' }} />
           </div>
 
-          {/* Demo login hint */}
-          <div style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '10px', padding: '0.75rem 1rem', marginBottom: '1rem' }}>
-            <p style={{ fontSize: '0.8rem', color: '#a5b4fc', fontWeight: 600, marginBottom: '0.25rem' }}>💡 Demo Mode</p>
-            <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Register first, then login. MongoDB required for authentication.</p>
-          </div>
+
 
           <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
             New here?{' '}

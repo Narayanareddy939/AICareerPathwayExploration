@@ -18,6 +18,31 @@ export const portalService = {
     return res.data;
   },
 
+  // Direct Job Application
+  applyForJob: async (jobId, data) => {
+    // If FormData (file upload included), send multipart/form-data
+    if (data instanceof FormData) {
+      const res = await api.post(`/portal/jobs/${jobId}/apply`, data, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+      return res.data;
+    }
+    const res = await api.post(`/portal/jobs/${jobId}/apply`, data);
+    return res.data;
+  },
+
+  // My Applications (Student view)
+  getMyApplications: async (params = {}) => {
+    const res = await api.get('/portal/my-applications', { params });
+    return res.data;
+  },
+
+  // Withdraw Application
+  withdrawApplication: async (applicationId, reason = '') => {
+    const res = await api.patch(`/portal/my-applications/${applicationId}/withdraw`, { reason });
+    return res.data;
+  },
+
   // Companies
   getCompanies: async (params = {}) => {
     const res = await api.get('/portal/companies', { params });
@@ -29,7 +54,7 @@ export const portalService = {
     return res.data;
   },
 
-  // Saved Jobs & Tracking
+  // Saved Jobs & Tracking (Bookmarks)
   getSavedJobs: async (params = {}) => {
     const res = await api.get('/portal/saved-jobs', { params });
     return res.data;

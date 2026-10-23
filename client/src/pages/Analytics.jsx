@@ -194,7 +194,7 @@ export default function Analytics() {
                   <span style={{ width: '24px', height: '24px', borderRadius: '50%', background: `${COLORS[i % COLORS.length]}30`, color: COLORS[i % COLORS.length], display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.7rem', fontWeight: 700, flexShrink: 0 }}>{i + 1}</span>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.2rem' }}>
-                      <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#e2e8f0' }}>{c.name}</span>
+                      <span style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--text-main)' }}>{c.name}</span>
                       <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{c.count} alumni</span>
                     </div>
                     <div style={{ height: '4px', background: 'rgba(255,255,255,0.06)', borderRadius: '2px', overflow: 'hidden' }}>

@@ -149,6 +149,15 @@ const portalJobSchema = new mongoose.Schema({
     trim: true,
     default: null
   },
+  vacancies: {
+    type: Number,
+    default: 1
+  },
+  applicationInstructions: {
+    type: String,
+    trim: true,
+    default: null
+  },
   // Source tracking
   sourceType: {
     type: String,

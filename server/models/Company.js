@@ -71,6 +71,21 @@ const companySchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     default: null
+  },
+  status: {
+    type: String,
+    enum: ['active', 'suspended', 'pending'],
+    default: 'active'
+  },
+  contactEmail: {
+    type: String,
+    trim: true,
+    default: null
+  },
+  contactPhone: {
+    type: String,
+    trim: true,
+    default: null
   }
 }, {
   timestamps: true
