@@ -66,16 +66,20 @@ export default function AdminDashboard() {
         setOverview(ovRes.value.data);
       }
       if (compRes.status === 'fulfilled' && compRes.value?.success) {
-        setCompanies(compRes.value.data.companies || []);
+        const raw = compRes.value.data?.data ?? compRes.value.data;
+        setCompanies(Array.isArray(raw) ? raw : (compRes.value.data?.companies || []));
       }
       if (jobsRes.status === 'fulfilled' && jobsRes.value?.success) {
-        setJobs(jobsRes.value.data.jobs || []);
+        const raw = jobsRes.value.data?.data ?? jobsRes.value.data;
+        setJobs(Array.isArray(raw) ? raw : (jobsRes.value.data?.jobs || []));
       }
       if (studRes.status === 'fulfilled' && studRes.value?.success) {
-        setStudents(studRes.value.data.students || []);
+        const raw = studRes.value.data?.data ?? studRes.value.data;
+        setStudents(Array.isArray(raw) ? raw : (studRes.value.data?.students || []));
       }
       if (appsRes.status === 'fulfilled' && appsRes.value?.success) {
-        setApplications(appsRes.value.data.applications || []);
+        const raw = appsRes.value.data?.data ?? appsRes.value.data;
+        setApplications(Array.isArray(raw) ? raw : (appsRes.value.data?.applications || []));
       }
       if (logsRes.status === 'fulfilled' && logsRes.value?.success) {
         setAuditLogs(logsRes.value.data || []);
@@ -154,10 +158,12 @@ export default function AdminDashboard() {
 
   // Filtered lists
   const filteredCompanies = companies.filter(c => {
+    const cName = c.name || c.companyName || '';
+    const cEmail = c.createdBy?.email || c.contactEmail || c.ownerId?.email || '';
     const matchSearch = !companySearch ||
-      c.companyName?.toLowerCase().includes(companySearch.toLowerCase()) ||
+      cName.toLowerCase().includes(companySearch.toLowerCase()) ||
       c.industry?.toLowerCase().includes(companySearch.toLowerCase()) ||
-      c.ownerId?.email?.toLowerCase().includes(companySearch.toLowerCase());
+      cEmail.toLowerCase().includes(companySearch.toLowerCase());
     const matchStatus = !companyStatusFilter || c.status === companyStatusFilter;
     const matchVerify = !companyVerifyFilter || c.verificationStatus === companyVerifyFilter;
     return matchSearch && matchStatus && matchVerify;

@@ -1,3 +1,4 @@
+const { getRecommendedCertifications, BRANCHES } = require('./constants/academic');
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -122,6 +123,8 @@ app.use('/api/scenarios', require('./routes/scenarioRoutes'));
 // ─────────────────────────────────────────────────────
 
 // Health check
+app.get('/', (req, res) => res.json({ message: '🚀 AI Carrier Backend API is running successfully!', frontendUrl: 'http://localhost:5173', status: 'online' }));
+
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
@@ -311,21 +314,26 @@ app.post('/api/recommend', async (req, res) => {
   if (!student) return res.status(400).json({ success: false, message: 'Student data required' });
 
   const PYTHON_URL = process.env.PYTHON_AI_URL || 'http://127.0.0.1:8000';
+  const roleName = student.targetRole || student.careerGoal || 'Software Engineer';
+  const branchName = student.branch || 'Computer Science & Engineering';
+  const standardCertifications = getRecommendedCertifications(roleName, branchName);
+
   try {
     const pyRes = await axios.post(`${PYTHON_URL}/ai/recommend`, {
       studentProfile: student
     }, { timeout: 6000 });
-    if (pyRes.data && pyRes.data.recommendation) {
-      const rec = pyRes.data.recommendation;
+    const rec = (pyRes.data && pyRes.data.recommendation) ? pyRes.data.recommendation : (pyRes.data && pyRes.data.careerMatchScore ? pyRes.data : null);
+    if (rec) {
+      const certs = (rec.certifications && rec.certifications.length > 0) ? rec.certifications : standardCertifications;
       return res.json({
         success: true,
         overallMatchScore: rec.careerMatchScore || 85,
         targetDomain: rec.targetDomain || 'Software Engineering',
-        predictedRole: rec.predictedRole || student.targetRole || 'Full Stack Engineer',
+        predictedRole: rec.predictedRole || roleName,
         predictedSalaryRange: rec.predictedSalaryRange ? (rec.predictedSalaryRange.startsWith('₹') ? rec.predictedSalaryRange : `₹${rec.predictedSalaryRange}`) : '₹8.0 - ₹18.0 LPA',
         averageSalary: '₹12.5 LPA',
         missingSkills: rec.missingSkills || [],
-        recommendedCertifications: rec.certifications || ['AWS Certified Cloud Practitioner'],
+        recommendedCertifications: certs,
         topMentors: (rec.matchedAlumni || []).map(a => ({
           alumniId: a.alumniId || a.id,
           name: a.name,
@@ -367,7 +375,7 @@ app.post('/api/recommend', async (req, res) => {
     predictedSalaryRange: `₹${Math.min(...topSals)} - ₹${Math.max(...topSals)} LPA`,
     averageSalary: `₹${(topSals.reduce((a,b)=>a+b,0)/topSals.length).toFixed(1)} LPA`,
     missingSkills,
-    recommendedCertifications: [...new Set(topMatches.flatMap(m => m.alumnus.certifications || []))].slice(0, 4),
+    recommendedCertifications: standardCertifications,
     topMentors: topMatches.map(m => ({
       alumniId: m.alumnus.alumniId, name: m.alumnus.name,
       currentCompany: m.alumnus.currentCompany || m.alumnus.company,

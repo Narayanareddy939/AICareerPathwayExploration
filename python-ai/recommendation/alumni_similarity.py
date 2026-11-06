@@ -51,14 +51,20 @@ def _branch_match_score(student_branch: str, alumni_branch: str) -> float:
     ece_variants = {"ece","electronics","electronics and communication"}
     
     def get_group(b):
-        if any(v in b for v in ["computer science","cse","cs "]):
+        if any(v in b for v in ["computer science", "cse", "cs ", "cs(", "cs (", "cyber", "cloud", "iot"]):
             return "cse"
-        if any(v in b for v in ["information tech","it "]):
+        if any(v in b for v in ["information tech", "it "]):
             return "it"
-        if any(v in b for v in ["data science","artificial intel","machine learn"]):
+        if any(v in b for v in ["data science", "artificial intel", "machine learn", "ai & ds", "aiml", "ai/ml"]):
             return "ds"
-        if any(v in b for v in ["electronics","ece","electrical"]):
+        if any(v in b for v in ["electronics", "ece", "electrical", "eee", "communication"]):
             return "ece"
+        if any(v in b for v in ["mechanical", "mech"]):
+            return "mech"
+        if any(v in b for v in ["civil"]):
+            return "civil"
+        if any(v in b for v in ["robot"]):
+            return "robotics"
         return "other"
     
     sg, ag = get_group(sb), get_group(ab)

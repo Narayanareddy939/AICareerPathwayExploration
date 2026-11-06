@@ -4,8 +4,7 @@ import {
   Activity, ArrowUpRight, Ban, BriefcaseBusiness, Building2,
   Check, CheckCircle2, ChevronLeft, ChevronRight, ClipboardList, ExternalLink,
   FileCheck2, FileText, GraduationCap, LayoutDashboard, LogOut, MapPin, RefreshCw,
-  Search, ShieldCheck, ShieldX, Users, X
-} from 'lucide-react';
+  Search, ShieldCheck, ShieldX, Users, X, Plus, Trash2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 import adminService from '../services/adminService';
@@ -53,7 +52,16 @@ const STATUS_LABELS = {
 };
 
 function unwrapList(response) {
-  const items = Array.isArray(response?.data) ? response.data : [];
+  const raw = response?.data;
+  const items = Array.isArray(raw)
+    ? raw
+    : (Array.isArray(raw?.companies)
+      ? raw.companies
+      : (Array.isArray(raw?.jobs)
+        ? raw.jobs
+        : (Array.isArray(raw?.students)
+          ? raw.students
+          : (Array.isArray(raw?.applications) ? raw.applications : []))));
   return {
     items,
     pagination: response?.pagination || { page: 1, totalPages: 1, total: items.length, limit: PAGE_SIZE }
@@ -129,6 +137,72 @@ function AdminConsole() {
   const [selectedCompany, setSelectedCompany] = useState(null);
   const [reviewReason, setReviewReason] = useState('');
   const [actionLoading, setActionLoading] = useState(false);
+  const [showAddCompanyModal, setShowAddCompanyModal] = useState(false);
+  const [creatingCompany, setCreatingCompany] = useState(false);
+  const [newCompanyForm, setNewCompanyForm] = useState({
+    name: '',
+    email: '',
+    password: '',
+    industry: 'Technology & Software',
+    headquarters: 'Bengaluru, India',
+    officialWebsite: '',
+    description: '',
+    verificationStatus: 'officially_verified'
+  });
+
+  const handleCreateCompany = async (e) => {
+    e.preventDefault();
+    if (!newCompanyForm.name.trim() || !newCompanyForm.email.trim() || !newCompanyForm.password.trim()) {
+      toast.error('Company Name, Email, and Password are required');
+      return;
+    }
+    setCreatingCompany(true);
+    try {
+      const res = await adminService.createCompany(newCompanyForm);
+      if (res?.success) {
+        toast.success(`Company "${newCompanyForm.name}" & recruiter credentials created!`);
+        setShowAddCompanyModal(false);
+        setNewCompanyForm({
+          name: '',
+          email: '',
+          password: '',
+          industry: 'Technology & Software',
+          headquarters: 'Bengaluru, India',
+          officialWebsite: '',
+          description: '',
+          verificationStatus: 'officially_verified'
+        });
+        await refreshCurrentView();
+      } else {
+        toast.error(res?.message || 'Failed to create company');
+      }
+    } catch (err) {
+      toast.error(err.response?.data?.message || err.message || 'Failed to create company');
+    } finally {
+      setCreatingCompany(false);
+    }
+  };
+
+  const handleDeleteCompany = async (companyId, compName) => {
+    if (!window.confirm(`Are you sure you want to permanently delete "${compName}" and its job listings?`)) {
+      return;
+    }
+    setActionLoading(true);
+    try {
+      const res = await adminService.deleteCompany(companyId);
+      if (res?.success) {
+        toast.success(`Company "${compName}" deleted`);
+        setSelectedCompany(null);
+        await refreshCurrentView();
+      } else {
+        toast.error(res?.message || 'Failed to delete company');
+      }
+    } catch (err) {
+      toast.error(err.response?.data?.message || err.message || 'Failed to delete company');
+    } finally {
+      setActionLoading(false);
+    }
+  };
 
   const loadOverview = async () => {
     setLoadingOverview(true);
@@ -159,16 +233,22 @@ function AdminConsole() {
     setLoadingOverview(false);
   };
 
-  const loadSection = async (section, page = 1) => {
+  const loadSection = async (section, page = 1, filterOverride = null, searchOverride = null) => {
     const service = LIST_SERVICES[section];
     if (!service) return;
 
     setLoadingSection(true);
     const params = { page, limit: PAGE_SIZE };
-    const search = searchValues[section]?.trim();
-    const status = statusFilters[section];
+    const search = searchOverride !== null ? searchOverride : (searchValues[section]?.trim() || '');
+    const status = filterOverride !== null ? filterOverride : (statusFilters[section] || '');
     if (search) params.search = search;
-    if (section === 'companies' && status) params.verificationStatus = status;
+    if (section === 'companies' && status) {
+      if (status === 'suspended') {
+        params.status = 'suspended';
+      } else {
+        params.verificationStatus = status;
+      }
+    }
     if (section === 'jobs' && status) params.status = status;
     if (section === 'applications' && status) params.status = status;
 
@@ -424,7 +504,29 @@ function AdminConsole() {
                   <h1>{sectionTitle}</h1>
                   <p>{activeView === 'companies' ? 'Inspect employer details and decide whether to verify their organization.' : `Search and review ${sectionTitle.toLowerCase()} stored in the platform database.`}</p>
                 </div>
-                <div className="ac-result-total">{activePage.total ?? currentRows.length} records</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  {activeView === 'companies' && (
+                    <button
+                      type="button"
+                      className="ac-button"
+                      style={{
+                        background: 'linear-gradient(135deg, #10b981, #059669)',
+                        color: '#fff',
+                        border: 'none',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.4rem',
+                        fontWeight: 700,
+                        padding: '0.55rem 1rem',
+                        boxShadow: '0 4px 12px rgba(16,185,129,0.3)'
+                      }}
+                      onClick={() => setShowAddCompanyModal(true)}
+                    >
+                      <Plus size={16} /> Add Company Credentials
+                    </button>
+                  )}
+                  <div className="ac-result-total">{activePage.total ?? currentRows.length} records</div>
+                </div>
               </section>
 
               <section className="ac-panel ac-directory-panel">
@@ -436,14 +538,28 @@ function AdminConsole() {
                         type="search"
                         placeholder={`Search ${activeView}...`}
                         value={searchValues[activeView] || ''}
-                        onChange={event => setSearchValues(current => ({ ...current, [activeView]: event.target.value }))}
+                        onChange={event => {
+                          const val = event.target.value;
+                          setSearchValues(current => ({ ...current, [activeView]: val }));
+                          if (val === '') {
+                            loadSection(activeView, 1, null, '');
+                          }
+                        }}
                       />
                     </label>
                   )}
                   {['companies', 'jobs', 'applications'].includes(activeView) && (
-                    <select className="ac-filter-select" value={statusFilters[activeView] || ''} onChange={event => setStatusFilters(current => ({ ...current, [activeView]: event.target.value }))}>
+                    <select
+                      className="ac-filter-select"
+                      value={statusFilters[activeView] || ''}
+                      onChange={event => {
+                        const newFilter = event.target.value;
+                        setStatusFilters(current => ({ ...current, [activeView]: newFilter }));
+                        loadSection(activeView, 1, newFilter);
+                      }}
+                    >
                       {activeView === 'companies' ? <>
-                        <option value="">All verification states</option><option value="pending_review">Pending review</option><option value="officially_verified">Verified</option><option value="rejected">Rejected</option><option value="imported">Imported</option>
+                        <option value="">All verification states</option><option value="pending_review">Pending review</option><option value="officially_verified">Verified</option><option value="rejected">Rejected</option><option value="suspended">Suspended</option>
                       </> : activeView === 'jobs' ? <>
                         <option value="">All job states</option><option value="active">Active</option><option value="draft">Draft</option><option value="closed">Closed</option>
                       </> : <>
@@ -477,6 +593,154 @@ function AdminConsole() {
         </div>
       </main>
 
+      
+      {/* Modal: Add New Company & Recruiter Credentials */}
+      {showAddCompanyModal && (
+        <div className="ac-modal-backdrop" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) setShowAddCompanyModal(false); }}>
+          <section className="ac-company-drawer" style={{ maxWidth: '520px', width: '100%', padding: '1.75rem' }} role="dialog" aria-modal="true">
+            <header className="ac-drawer-header" style={{ marginBottom: '1.25rem' }}>
+              <div>
+                <div className="ac-eyebrow" style={{ color: '#10b981' }}>Platform Admin Onboarding</div>
+                <h2>Add Company & Credentials</h2>
+              </div>
+              <button type="button" className="ac-icon-button" onClick={() => setShowAddCompanyModal(false)}><X size={18} /></button>
+            </header>
+
+            <form onSubmit={handleCreateCompany} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div>
+                <label style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.3rem' }}>
+                  COMPANY / ORGANIZATION NAME *
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. Google India, Infosys, Tech Mahindra"
+                  value={newCompanyForm.name}
+                  onChange={e => setNewCompanyForm({ ...newCompanyForm, name: e.target.value })}
+                  required
+                  style={{ width: '100%', padding: '0.6rem 0.85rem', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-dark)', color: '#fff' }}
+                />
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                <div>
+                  <label style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.3rem' }}>
+                    RECRUITER LOGIN EMAIL *
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="recruiter@company.com"
+                    value={newCompanyForm.email}
+                    onChange={e => setNewCompanyForm({ ...newCompanyForm, email: e.target.value })}
+                    required
+                    style={{ width: '100%', padding: '0.6rem 0.85rem', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-dark)', color: '#fff' }}
+                  />
+                </div>
+                <div>
+                  <label style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.3rem' }}>
+                    INITIAL PASSWORD *
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Min. 6 chars"
+                    value={newCompanyForm.password}
+                    onChange={e => setNewCompanyForm({ ...newCompanyForm, password: e.target.value })}
+                    required
+                    style={{ width: '100%', padding: '0.6rem 0.85rem', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-dark)', color: '#fff' }}
+                  />
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                <div>
+                  <label style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.3rem' }}>
+                    INDUSTRY
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Technology & Cloud"
+                    value={newCompanyForm.industry}
+                    onChange={e => setNewCompanyForm({ ...newCompanyForm, industry: e.target.value })}
+                    style={{ width: '100%', padding: '0.6rem 0.85rem', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-dark)', color: '#fff' }}
+                  />
+                </div>
+                <div>
+                  <label style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.3rem' }}>
+                    HEADQUARTERS / LOCATION
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Bengaluru, India"
+                    value={newCompanyForm.headquarters}
+                    onChange={e => setNewCompanyForm({ ...newCompanyForm, headquarters: e.target.value })}
+                    style={{ width: '100%', padding: '0.6rem 0.85rem', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-dark)', color: '#fff' }}
+                  />
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '0.75rem' }}>
+                <div>
+                  <label style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.3rem' }}>
+                    OFFICIAL WEBSITE
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="https://company.com"
+                    value={newCompanyForm.officialWebsite}
+                    onChange={e => setNewCompanyForm({ ...newCompanyForm, officialWebsite: e.target.value })}
+                    style={{ width: '100%', padding: '0.6rem 0.85rem', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-dark)', color: '#fff' }}
+                  />
+                </div>
+                <div>
+                  <label style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.3rem' }}>
+                    VERIFICATION STATUS
+                  </label>
+                  <select
+                    value={newCompanyForm.verificationStatus}
+                    onChange={e => setNewCompanyForm({ ...newCompanyForm, verificationStatus: e.target.value })}
+                    style={{ width: '100%', padding: '0.6rem 0.85rem', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-dark)', color: '#fff' }}
+                  >
+                    <option value="officially_verified">Verified (Recommended)</option>
+                    <option value="pending_review">Pending Review</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.3rem' }}>
+                  DESCRIPTION / RECRUITMENT SCOPE
+                </label>
+                <textarea
+                  rows="3"
+                  placeholder="Official recruitment profile created by administrator..."
+                  value={newCompanyForm.description}
+                  onChange={e => setNewCompanyForm({ ...newCompanyForm, description: e.target.value })}
+                  style={{ width: '100%', padding: '0.6rem 0.85rem', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-dark)', color: '#fff' }}
+                />
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.75rem', marginTop: '0.5rem' }}>
+                <button
+                  type="button"
+                  className="ac-button"
+                  onClick={() => setShowAddCompanyModal(false)}
+                  style={{ background: 'transparent', border: '1px solid var(--border-color)', color: 'var(--text-muted)' }}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={creatingCompany}
+                  className="ac-button ac-button-primary"
+                  style={{ background: 'linear-gradient(135deg, #10b981, #059669)', color: '#fff', border: 'none' }}
+                >
+                  {creatingCompany ? 'Creating Account...' : 'Create Company & Credentials'}
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+      )}
+
       {selectedCompany && (
         <div className="ac-modal-backdrop" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) setSelectedCompany(null); }}>
           <section className="ac-company-drawer" role="dialog" aria-modal="true" aria-labelledby="ac-company-title">
@@ -505,6 +769,15 @@ function AdminConsole() {
             </div>
             <button className="ac-suspend-button" type="button" disabled={actionLoading} onClick={() => runCompanyStatusAction(selectedCompany)}>
               {selectedCompany.status === 'suspended' ? <><CheckCircle2 size={15} /> Reactivate company</> : <><Ban size={15} /> Suspend company account</>}
+            </button>
+            <button
+              className="ac-button"
+              type="button"
+              disabled={actionLoading}
+              style={{ background: '#fee2e2', color: '#b91c1c', border: '1px solid #fca5a5', marginTop: '0.6rem', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', cursor: 'pointer', padding: '0.6rem 1rem', borderRadius: '8px', fontWeight: 600 }}
+              onClick={() => handleDeleteCompany(selectedCompany._id, companyName(selectedCompany))}
+            >
+              <Trash2 size={15} /> Delete Company & Associated Data
             </button>
           </section>
         </div>

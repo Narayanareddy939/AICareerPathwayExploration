@@ -232,7 +232,13 @@ export default function ResumeAnalyzer({ activeStudent }) {
         const token = localStorage.getItem('token');
         const headers = token ? { Authorization: `Bearer ${token}` } : {};
         const res = await axios.get('/api/resume/my-resume', { headers });
-        const p = res.data?.studentProfile;
+        let p = res.data?.studentProfile;
+        if (!p) {
+          try {
+            const profRes = await axios.get('/api/student/profile', { headers });
+            p = profRes.data?.student || profRes.data?.data;
+          } catch (e) {}
+        }
         if (p) setProfileData(p);
 
         const role = p?.careerGoal || p?.targetRole || activeStudent?.careerGoal || 'Data Scientist';
@@ -304,10 +310,20 @@ export default function ResumeAnalyzer({ activeStudent }) {
     }
   };
 
-  const handleExtractFromProfile = () => {
-    const txt = buildResumeFromProfile(profileData || activeStudent || user, user);
+  const handleExtractFromProfile = async () => {
+    let p = profileData || activeStudent;
+    if (!p) {
+      try {
+        const token = localStorage.getItem('token');
+        const headers = token ? { Authorization: `Bearer ${token}` } : {};
+        const profRes = await axios.get('/api/student/profile', { headers });
+        p = profRes.data?.student || profRes.data?.data;
+        if (p) setProfileData(p);
+      } catch (e) {}
+    }
+    const txt = buildResumeFromProfile(p || user, user);
     setResumeText(txt);
-    const role = profileData?.careerGoal || targetRole;
+    const role = p?.careerGoal || p?.targetRole || targetRole;
     setTargetRole(role);
     toast.success('Extracted from your profile!');
     triggerAnalysis(txt, role, jobDescription);

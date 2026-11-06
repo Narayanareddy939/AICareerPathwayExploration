@@ -31,6 +31,16 @@ export const adminService = {
     return res.data;
   },
 
+  createCompany: async (payload) => {
+    const res = await api.post('/admin-v2/companies', payload);
+    return res.data;
+  },
+
+  deleteCompany: async (id) => {
+    const res = await api.delete(`/admin-v2/companies/${id}`);
+    return res.data;
+  },
+
   // Jobs Moderation
   getJobs: async (params = {}) => {
     const res = await api.get('/admin-v2/jobs', { params });

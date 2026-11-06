@@ -167,10 +167,19 @@ router.get('/companies', async (req, res) => {
     const limitNum = Math.min(100, Math.max(1, parseInt(limit, 10) || 25));
 
     const filter = {};
-    if (verificationStatus && verificationStatus !== 'all') {
-      filter.verificationStatus = verificationStatus;
+    if (verificationStatus && verificationStatus !== 'all' && verificationStatus !== '') {
+      const v = String(verificationStatus).trim().toLowerCase();
+      if (v === 'suspended') {
+        filter.status = 'suspended';
+      } else if (v === 'officially_verified' || v === 'verified') {
+        filter.verificationStatus = { $in: ['officially_verified', 'verified'] };
+      } else if (v === 'pending_review' || v === 'pending') {
+        filter.verificationStatus = { $in: ['pending_review', 'pending'] };
+      } else {
+        filter.verificationStatus = v;
+      }
     }
-    if (status && status !== 'all') {
+    if (status && status !== 'all' && status !== '') {
       filter.status = status;
     }
     if (search && search.trim()) {
@@ -319,6 +328,160 @@ router.patch('/companies/:id/status', async (req, res) => {
 });
 
 // ─────────────────────────────────────────────────────────────
+
+// POST /api/admin-v2/companies — Admin directly creates company + recruiter user credentials
+router.post('/companies', async (req, res) => {
+  try {
+    const {
+      name,
+      companyName,
+      email,
+      password,
+      industry,
+      headquarters,
+      location,
+      officialWebsite,
+      website,
+      description,
+      contactPhone,
+      verificationStatus = 'officially_verified',
+      status = 'active'
+    } = req.body;
+
+    const cName = (name || companyName || '').trim();
+    const cEmail = (email || '').toLowerCase().trim();
+    const cPassword = password || 'Company123!';
+
+    if (!cName) {
+      return errorResponse(res, 'Company name is required', 400);
+    }
+    if (!cEmail) {
+      return errorResponse(res, 'Company owner / recruiter email is required', 400);
+    }
+    if (cPassword.length < 6) {
+      return errorResponse(res, 'Password must be at least 6 characters', 400);
+    }
+
+    // Check if user email is already taken
+    const existingUser = await User.findOne({ email: cEmail });
+    if (existingUser) {
+      return errorResponse(res, 'A user with email "' + cEmail + '" already exists', 400);
+    }
+
+    // Normalized name check for company
+    const normalized = cName.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+    let existingCompany = await Company.findOne({
+      $or: [{ normalizedName: normalized }, { name: cName }]
+    });
+
+    // 1. Create Recruiter User account
+    const recruiterUser = await User.create({
+      fullName: cName + ' Owner',
+      email: cEmail,
+      password: cPassword,
+      role: 'recruiter',
+      profileCompleted: true
+    });
+
+    let savedCompany;
+    if (existingCompany) {
+      // Link recruiter to existing company
+      existingCompany.createdBy = recruiterUser._id;
+      existingCompany.contactEmail = cEmail;
+      existingCompany.verificationStatus = verificationStatus;
+      existingCompany.status = status;
+      if (verificationStatus === 'officially_verified') {
+        existingCompany.verifiedBy = req.user._id;
+        existingCompany.lastVerifiedAt = new Date();
+      }
+      savedCompany = await existingCompany.save();
+    } else {
+      // Create new Company
+      savedCompany = await Company.create({
+        name: cName,
+        normalizedName: normalized,
+        industry: industry || 'Technology & Software',
+        headquarters: headquarters || location || 'Bengaluru, India',
+        officialWebsite: officialWebsite || website || '',
+        description: description || (cName + ' verified organizational hiring account.'),
+        contactEmail: cEmail,
+        contactPhone: contactPhone || '',
+        verificationStatus: verificationStatus,
+        status: status,
+        createdBy: recruiterUser._id,
+        verifiedBy: verificationStatus === 'officially_verified' ? req.user._id : null,
+        lastVerifiedAt: verificationStatus === 'officially_verified' ? new Date() : null
+      });
+    }
+
+    // Link user to company
+    recruiterUser.companyId = savedCompany._id;
+    await recruiterUser.save();
+
+    // Audit Log
+    await AuditLog.create({
+      actorId: req.user._id,
+      actorEmail: req.user.email,
+      action: 'company_created_by_admin',
+      entityType: 'company',
+      entityId: savedCompany._id,
+      newValues: {
+        companyName: savedCompany.name,
+        recruiterEmail: cEmail,
+        verificationStatus: savedCompany.verificationStatus
+      }
+    });
+
+    return successResponse(
+      res,
+      {
+        company: savedCompany,
+        recruiterCredentials: {
+          email: cEmail,
+          password: cPassword,
+          role: 'recruiter',
+          companyId: savedCompany._id
+        }
+      },
+      'Company "' + cName + '" and recruiter credentials created successfully',
+      201
+    );
+  } catch (err) {
+    console.error('Admin create company error:', err);
+    return errorResponse(res, err.message, 500);
+  }
+});
+
+// DELETE /api/admin-v2/companies/:id — Admin completely deletes a company
+router.delete('/companies/:id', async (req, res) => {
+  try {
+    const company = await Company.findById(req.params.id);
+    if (!company) return errorResponse(res, 'Company not found', 404);
+
+    const compName = company.name;
+
+    // Delete company posted jobs
+    await PortalJob.deleteMany({ companyId: company._id });
+
+    // Remove company
+    await Company.deleteOne({ _id: company._id });
+
+    // Audit log
+    await AuditLog.create({
+      actorId: req.user._id,
+      actorEmail: req.user.email,
+      action: 'company_deleted_by_admin',
+      entityType: 'company',
+      entityId: company._id,
+      previousValues: { name: compName }
+    });
+
+    return successResponse(res, { id: req.params.id }, 'Company "' + compName + '" deleted successfully');
+  } catch (err) {
+    return errorResponse(res, err.message, 500);
+  }
+});
+
 //  JOB MODERATION
 // ─────────────────────────────────────────────────────────────
 

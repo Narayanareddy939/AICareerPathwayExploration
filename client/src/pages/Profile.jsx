@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
+import { BRANCHES } from '../constants/academic';
 import toast from 'react-hot-toast';
 import { User, Mail, Phone, Book, Code, MapPin, Target, Save, Upload, Camera, Edit2, CheckCircle } from 'lucide-react';
 
-const BRANCHES = ['CSE','IT','ECE','EEE','Mechanical','Civil','Chemical','MBA','MCA','Data Science','AI & ML','Other'];
+// BRANCHES imported from academic constants
 const DEGREES = ['B.Tech','B.E.','B.Sc','BCA','MCA','M.Tech','MBA','Ph.D','Other'];
 const CAREER_GOALS = ['Software Engineer','Full Stack Developer','Data Scientist','Data Analyst','Machine Learning Engineer','DevOps Engineer','Cloud Engineer','Frontend Developer','Backend Developer','Product Manager','Cybersecurity Engineer','Mobile Developer','AI/ML Researcher'];
 const YEARS = ['1st Year','2nd Year','3rd Year','4th Year','Graduated'];

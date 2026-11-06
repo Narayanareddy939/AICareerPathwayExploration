@@ -4,6 +4,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
+import { BRANCHES } from '../constants/academic';
 import {
   User, GraduationCap, Code2, Heart, Target, FileUp,
   ChevronRight, ChevronLeft, Check, Upload, X
@@ -270,7 +271,7 @@ export default function CompleteProfile() {
                       <label style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '0.35rem' }}>BRANCH</label>
                       <select value={form.branch} onChange={e => setForm({ ...form, branch: e.target.value })}>
                         <option value="">Select branch</option>
-                        {['Computer Science & Engineering', 'CSE (Data Science)', 'CSE (AI & ML)', 'Information Technology', 'Electronics & Communication', 'Electrical Engineering', 'Mechanical Engineering', 'Data Science'].map(b => <option key={b} value={b}>{b}</option>)}
+                        {BRANCHES.map(b => <option key={b} value={b}>{b}</option>)}
                       </select>
                     </div>
                     <div>

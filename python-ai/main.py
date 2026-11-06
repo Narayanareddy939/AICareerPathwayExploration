@@ -1,3 +1,70 @@
+
+def get_role_certifications(role, branch):
+    r = (role or '').lower()
+    b = (branch or '').lower()
+    if 'front' in r or 'ui' in r or 'react' in r or 'web' in r:
+        return [
+            'Meta Frontend Developer Professional Certificate',
+            'AWS Certified Cloud Practitioner',
+            'Google Mobile Web Specialist',
+            'freeCodeCamp Full Stack Developer'
+        ]
+    if 'back' in r or 'node' in r or 'java' in r or 'api' in r:
+        return [
+            'AWS Certified Developer - Associate',
+            'Meta Backend Developer Professional Certificate',
+            'Oracle Certified Professional: Java SE',
+            'Docker Certified Associate (DCA)'
+        ]
+    if 'ai' in r or 'ml' in r or 'machine learning' in r:
+        return [
+            'Google Professional Machine Learning Engineer',
+            'AWS Certified Machine Learning - Specialty',
+            'DeepLearning.AI Deep Learning Specialization',
+            'TensorFlow Developer Certificate'
+        ]
+    if 'data' in r:
+        return [
+            'Google Professional Data Engineer',
+            'IBM Data Science Professional Certificate',
+            'Microsoft Certified: Azure Data Scientist Associate',
+            'TensorFlow Developer Certificate'
+        ]
+    if 'devops' in r or 'cloud' in r:
+        return [
+            'Certified Kubernetes Administrator (CKA)',
+            'AWS Certified Solutions Architect - Associate',
+            'Microsoft Certified: Azure Solutions Architect',
+            'HashiCorp Certified: Terraform Associate'
+        ]
+    if 'sec' in r or 'cyber' in r:
+        return [
+            'CompTIA Security+ (SY0-701)',
+            'Certified Ethical Hacker (CEH)',
+            'Cisco Certified CyberOps Associate',
+            'AWS Certified Security - Specialty'
+        ]
+    if 'mobile' in r or 'android' in r or 'ios' in r:
+        return [
+            'Google Associate Android Developer',
+            'Meta React Native Specialization',
+            'Apple Certified iOS App Developer (Swift)',
+            'Flutter Certified Application Developer'
+        ]
+    if 'embed' in r or 'electronic' in b or 'ece' in b:
+        return [
+            'ARM Accredited Engineer (AAE)',
+            'Cisco Certified Network Associate (CCNA)',
+            'Certified Embedded Systems Professional (CESP)',
+            'IPC Standards Specialist Certification'
+        ]
+    return [
+        'AWS Certified Cloud Practitioner',
+        'Google Professional IT Support & Cloud',
+        'Meta Professional Certification',
+        'Certified ScrumMaster (CSM)'
+    ]
+
 """
 AI Carrier — Python Flask AI Engine
 Modular AI/ML Engine integrating:
@@ -10,6 +77,7 @@ Modular AI/ML Engine integrating:
 
 import os
 import sys
+print("Starting AI Carrier Python Engine, loading modules...", flush=True)
 import json
 import pickle
 import numpy as np
@@ -518,9 +586,7 @@ In IT consulting & product companies:
     return jsonify({'reply': reply, 'cardData': card_data})
 
 
-# ─────────────────────────────────────────────────────
-#  Health & Base
-# ─────────────────────────────────────────────────────
+
 @app.route('/', methods=['GET', 'HEAD'])
 def index():
     return jsonify({

@@ -1,3 +1,4 @@
+const { getRecommendedCertifications } = require('../constants/academic');
 const express = require('express');
 const axios = require('axios');
 const path = require('path');

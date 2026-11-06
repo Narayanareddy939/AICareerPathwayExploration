@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { useAuth } from '../context/AuthContext';
+import { BRANCHES, getRecommendedCertifications } from '../constants/academic';
 
 export default function CareerPredictor({ activeStudent, studentList, onRequestMentorship }) {
   const { user } = useAuth();
@@ -110,7 +111,12 @@ export default function CareerPredictor({ activeStudent, studentList, onRequestM
       const dataRoadmap = resRoadmap.data;
 
       if (dataRec.success) {
-        setRecommendation(dataRec);
+        const resolvedCerts = (dataRec.recommendedCertifications && dataRec.recommendedCertifications.length > 0)
+          ? dataRec.recommendedCertifications
+          : (dataRec.certifications && dataRec.certifications.length > 0)
+            ? dataRec.certifications
+            : getRecommendedCertifications(payload.targetRole || dataRec.predictedRole, payload.branch);
+        setRecommendation({ ...dataRec, recommendedCertifications: resolvedCerts });
         // Trigger celebratory confetti
         confetti({
           particleCount: 80,
@@ -178,12 +184,11 @@ export default function CareerPredictor({ activeStudent, studentList, onRequestM
               <select
                 value={formData.branch}
                 onChange={e => setFormData({ ...formData, branch: e.target.value })}
+                style={{ width: '100%' }}
               >
-                <option value="Computer Science & Engineering">Computer Science & Engineering</option>
-                <option value="CSE (Data Science)">CSE (Data Science)</option>
-                <option value="Information Technology">Information Technology</option>
-                <option value="Electronics & Communication">Electronics & Communication</option>
-                <option value="Data Science">Data Science</option>
+                {BRANCHES.map(b => (
+                  <option key={b} value={b}>{b}</option>
+                ))}
               </select>
             </div>
 
@@ -348,12 +353,18 @@ export default function CareerPredictor({ activeStudent, studentList, onRequestM
                   High Impact Certifications
                 </h3>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>
-                  Industry certifications completed by top alumni working in this domain:
+                  Industry certifications completed by top alumni & engineers working in this domain:
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  {recommendation.recommendedCertifications.map((cert, idx) => (
-                    <span key={idx} className="badge badge-emerald" style={{ fontSize: '0.85rem', padding: '0.4rem 0.8rem' }}>
-                      <CheckCircle2 size={12} /> {cert}
+                  {(
+                    (recommendation.recommendedCertifications && recommendation.recommendedCertifications.length > 0)
+                      ? recommendation.recommendedCertifications
+                      : (recommendation.certifications && recommendation.certifications.length > 0)
+                        ? recommendation.certifications
+                        : getRecommendedCertifications(formData.targetRole || recommendation.predictedRole, formData.branch)
+                  ).map((cert, idx) => (
+                    <span key={idx} className="badge badge-emerald" style={{ fontSize: '0.85rem', padding: '0.4rem 0.8rem', display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                      <CheckCircle2 size={13} /> {cert}
                     </span>
                   ))}
                 </div>
